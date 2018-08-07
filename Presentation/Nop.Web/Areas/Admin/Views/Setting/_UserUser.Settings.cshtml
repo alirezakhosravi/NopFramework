@@ -1,0 +1,396 @@
+﻿@using Nop.Core.Domain.Users
+@using Nop.Services
+@model UserUserSettingsModel
+
+<div class="panel-group">
+    @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.UserUserSettingsSettingsTop })
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @T("Admin.Configuration.Settings.UserUser.BlockTitle.Common")
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.UserRegistrationType" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="UserSettings.UserRegistrationType" asp-items="@(((UserRegistrationType)Model.UserSettings.UserRegistrationType).ToSelectList())" />
+                    <span asp-validation-for="UserSettings.UserRegistrationType"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.NotifyNewUserRegistration" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.NotifyNewUserRegistration" />
+                    <span asp-validation-for="UserSettings.NotifyNewUserRegistration"></span>
+                </div>
+            </div>
+            <div class="form-group advanced-setting">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.RequireRegistrationForDownloadableProducts" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.RequireRegistrationForDownloadableProducts" />
+                    <span asp-validation-for="UserSettings.RequireRegistrationForDownloadableProducts"></span>
+                </div>
+            </div>
+            <div class="form-group advanced-setting">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.AllowUsersToCheckGiftCardBalance" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.AllowUsersToCheckGiftCardBalance" />
+                    <span asp-validation-for="UserSettings.AllowUsersToCheckGiftCardBalance"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default advanced-setting">
+        <div class="panel-heading">
+            @T("Admin.Configuration.Settings.UserUser.BlockTitle.Password")
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.PasswordMinLength" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.PasswordMinLength" />
+                    <span asp-validation-for="UserSettings.PasswordMinLength"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.UnduplicatedPasswordsNumber" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.UnduplicatedPasswordsNumber" />
+                    <span asp-validation-for="UserSettings.UnduplicatedPasswordsNumber"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.DefaultPasswordFormat" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="UserSettings.DefaultPasswordFormat" asp-items="@(((PasswordFormat)Model.UserSettings.DefaultPasswordFormat).ToSelectList())" />
+                    <span asp-validation-for="UserSettings.DefaultPasswordFormat"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">                    
+                    <nop-label asp-for="UserSettings.PasswordLifetime" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.PasswordLifetime" />
+                    <span asp-validation-for="UserSettings.PasswordLifetime"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.PasswordRecoveryLinkDaysValid" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.PasswordRecoveryLinkDaysValid" />
+                    <span asp-validation-for="UserSettings.PasswordRecoveryLinkDaysValid"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.FailedPasswordAllowedAttempts" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.FailedPasswordAllowedAttempts" />
+                    <span asp-validation-for="UserSettings.FailedPasswordAllowedAttempts"></span>
+                </div>
+            </div>
+            <div class="form-group" id="pnlFailedPasswordLockoutMinutes">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.FailedPasswordLockoutMinutes" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.FailedPasswordLockoutMinutes" />
+                    <span asp-validation-for="UserSettings.FailedPasswordLockoutMinutes"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.EnteringEmailTwice" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.EnteringEmailTwice" />
+                    <span asp-validation-for="UserSettings.EnteringEmailTwice"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default advanced-setting">
+        <div class="panel-heading">
+            @T("Admin.Configuration.Settings.UserUser.BlockTitle.Account")
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.UsernamesEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.UsernamesEnabled" />
+                    <span asp-validation-for="UserSettings.UsernamesEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.UsernamesEnabled">
+                <div class="form-group advanced-setting" id="pnlAllowUsersToChangeUsernames">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.AllowUsersToChangeUsernames" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.AllowUsersToChangeUsernames" />
+                        <span asp-validation-for="UserSettings.AllowUsersToChangeUsernames"></span>
+                    </div>
+                </div>
+                <div class="form-group advanced-setting" id="pnlCheckUsernameAvailability">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.CheckUsernameAvailabilityEnabled" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.CheckUsernameAvailabilityEnabled" />
+                        <span asp-validation-for="UserSettings.CheckUsernameAvailabilityEnabled"></span>
+                    </div>
+                </div>
+                <div id="pnlUsernameValidationEnabled">
+                    <div class="form-group advanced-setting">
+                        <div class="col-md-3">
+                            <nop-label asp-for="UserSettings.UsernameValidationEnabled" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="UserSettings.UsernameValidationEnabled" />
+                            <span asp-validation-for="UserSettings.UsernameValidationEnabled"></span>
+                        </div>
+                    </div>
+                    <nop-nested-setting asp-for="UserSettings.UsernameValidationEnabled">
+                        <div class="form-group advanced-setting" id="pnlUsernameValidationRule">
+                            <div class="col-md-3">
+                                <nop-label asp-for="UserSettings.UsernameValidationRule" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="UserSettings.UsernameValidationRule" />
+                                <span asp-validation-for="UserSettings.UsernameValidationRule"></span>
+                            </div>
+                        </div>
+                        <div class="form-group advanced-setting" id="pnlUsernameValidationUseRegex">
+                            <div class="col-md-3">
+                                <nop-label asp-for="UserSettings.UsernameValidationUseRegex" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="UserSettings.UsernameValidationUseRegex" />
+                                <span asp-validation-for="UserSettings.UsernameValidationUseRegex"></span>
+                            </div>
+                        </div>
+                    </nop-nested-setting>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group advanced-setting">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.UserNameFormat" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="UserSettings.UserNameFormat" asp-items="@(((UserNameFormat)Model.UserSettings.UserNameFormat).ToSelectList())" />
+                    <span asp-validation-for="UserSettings.UserNameFormat"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.AllowUsersToUploadAvatars" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.AllowUsersToUploadAvatars" />
+                    <span asp-validation-for="UserSettings.AllowUsersToUploadAvatars"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.AllowUsersToUploadAvatars">
+                <div class="form-group" id="pnlDefaultAvatarEnabled">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.DefaultAvatarEnabled" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.DefaultAvatarEnabled" />
+                        <span asp-validation-for="UserSettings.DefaultAvatarEnabled"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.HideDownloadableProductsTab" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.HideDownloadableProductsTab" />
+                    <span asp-validation-for="UserSettings.HideDownloadableProductsTab"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.HideBackInStockSubscriptionsTab" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.HideBackInStockSubscriptionsTab" />
+                    <span asp-validation-for="UserSettings.HideBackInStockSubscriptionsTab"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.HideNewsletterBlock" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.HideNewsletterBlock" />
+                    <span asp-validation-for="UserSettings.HideNewsletterBlock"></span>
+                </div>
+            </div>
+            <div class="form-group" id="pnlNewsletterBlockAllowToUnsubscribe">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.NewsletterBlockAllowToUnsubscribe" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.NewsletterBlockAllowToUnsubscribe" />
+                    <span asp-validation-for="UserSettings.NewsletterBlockAllowToUnsubscribe"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.StoreLastVisitedPage" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.StoreLastVisitedPage" />
+                    <span asp-validation-for="UserSettings.StoreLastVisitedPage"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.StoreIpAddresses" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.StoreIpAddresses" />
+                    <span asp-validation-for="UserSettings.StoreIpAddresses"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default advanced-setting">
+        <div class="panel-heading">
+            @T("Admin.Configuration.Settings.UserUser.BlockTitle.Profile")
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.AllowViewingProfiles" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.AllowViewingProfiles" />
+                    <span asp-validation-for="UserSettings.AllowViewingProfiles"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.ShowUsersLocation" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.ShowUsersLocation" />
+                    <span asp-validation-for="UserSettings.ShowUsersLocation"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.ShowUsersJoinDate" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.ShowUsersJoinDate" />
+                    <span asp-validation-for="UserSettings.ShowUsersJoinDate"></span>
+                </div>
+            </div>
+        </div>
+        <script>
+        $(document).ready(function () {
+            $("#@Html.IdFor(model => model.UserSettings.AllowUsersToUploadAvatars)").click(toggleAvatar);
+            $("#@Html.IdFor(model => model.UserSettings.UsernamesEnabled)").click(toggleUsername);
+            $("#@Html.IdFor(model => model.UserSettings.UsernameValidationEnabled)").click(toggleUsernameValidation);
+
+            toggleAvatar();
+            toggleUsername();
+            toggleUsernameValidation();
+        });
+
+        function toggleAvatar() {
+            if ($('#@Html.IdFor(model => model.UserSettings.AllowUsersToUploadAvatars)').is(':checked')) {
+                $('#pnlDefaultAvatarEnabled').show();
+            } else {
+                $('#pnlDefaultAvatarEnabled').hide();
+            }
+        }
+
+        function toggleUsername() {
+            if ($('#@Html.IdFor(model => model.UserSettings.UsernamesEnabled)').is(':checked')) {
+                $('#pnlAllowUsersToChangeUsernames').show();
+                $('#pnlCheckUsernameAvailability').show();
+                $('#pnlUsernameValidationEnabled').show();
+            } else {
+                $('#pnlAllowUsersToChangeUsernames').hide();
+                $('#pnlCheckUsernameAvailability').hide();
+                $('#pnlUsernameValidationEnabled').hide();
+            }
+        }
+
+            function toggleUsernameValidation() {
+            if ($('#@Html.IdFor(model => model.UserSettings.UsernameValidationEnabled)').is(':checked')) {
+                $('#pnlUsernameValidationRule').show();
+                $('#pnlUsernameValidationUseRegex').show();
+            } else {
+                $('#pnlUsernameValidationRule').hide();
+                $('#pnlUsernameValidationUseRegex').hide();
+            }
+        }
+        </script>
+    </div>
+    <div class="panel panel-default advanced-setting">
+        <div class="panel-heading">
+            @T("Admin.Configuration.Settings.UserUser.BlockTitle.TimeZone")
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="DateTimeSettings.AllowUsersToSetTimeZone" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="DateTimeSettings.AllowUsersToSetTimeZone" />
+                    <span asp-validation-for="DateTimeSettings.AllowUsersToSetTimeZone"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="DateTimeSettings.DefaultTimeZoneId" />
+                </div>
+                <div class="col-md-9">
+                    <nop-select asp-for="DateTimeSettings.DefaultTimeZoneId" asp-items="Model.DateTimeSettings.AvailableTimeZones" />
+                    <span asp-validation-for="DateTimeSettings.DefaultTimeZoneId"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default advanced-setting">
+        <div class="panel-heading">
+            @T("Admin.Configuration.Settings.UserUser.BlockTitle.ExternalAuthentication")
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="ExternalAuthenticationSettings.AllowUsersToRemoveAssociations" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="ExternalAuthenticationSettings.AllowUsersToRemoveAssociations" />
+                    <span asp-validation-for="ExternalAuthenticationSettings.AllowUsersToRemoveAssociations"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.UserUserSettingsSettingsTop })
+</div>

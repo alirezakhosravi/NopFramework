@@ -1,0 +1,41 @@
+@model UserReportsSearchModel
+
+@inject IEventPublisher eventPublisher
+
+@{
+    //page title
+    ViewBag.Title = T("Admin.Reports.Users").Text;
+    //active menu item (system name)
+    Html.SetActiveMenuItemSystemName("User reports");
+}
+
+<nop-antiforgery-token />
+
+<div class="content-header clearfix">
+    <h1 class="pull-left">
+        @T("Admin.Reports.Users")
+    </h1>
+    <div class="pull-right">
+        &nbsp;
+        @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.UserReportsButtons })
+    </div>
+</div>
+
+<div class="content">
+    <div class="form-horizontal">
+        <nop-tabs id="user-reports">
+            <nop-tab asp-name="tab-registeredusers" asp-title="@T("Admin.Reports.Users.RegisteredUsers")">@await Html.PartialAsync("_Users.RegisteredUsers", Model)</nop-tab>
+        </nop-tabs>
+    </div>
+</div>
+
+@{
+    //custom tabs
+    var eventMessage = new AdminTabStripCreated(this.Html, "user-reports");
+    eventPublisher.Publish(eventMessage);
+    foreach (var eventBlock in eventMessage.BlocksToRender)
+    {
+        @eventBlock
+    }
+}
+<script>$(function() { $("[data-tab-name='tab-registeredusers']").trigger("click"); });</script>

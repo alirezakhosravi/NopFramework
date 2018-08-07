@@ -1,0 +1,413 @@
+@model UserUserSettingsModel
+
+<script>
+    $(document).ready(function () {
+        $("#@Html.IdFor(model => model.UserSettings.DateOfBirthEnabled)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.DateOfBirthRequired)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.CountryEnabled)").click(toggleUserCountryFormField);
+        $("#@Html.IdFor(model => model.UserSettings.StateProvinceEnabled)").click(toggleUserStateProvinceFormField);
+        $("#@Html.IdFor(model => model.UserSettings.CompanyEnabled)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.StreetAddressEnabled)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.StreetAddress2Enabled)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.ZipPostalCodeEnabled)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.CityEnabled)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.CountyEnabled)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.PhoneEnabled)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.FaxEnabled)").click(toggleUserRequiredFormField);
+        $("#@Html.IdFor(model => model.UserSettings.NewsletterEnabled)").click(toggleNewsletterEnabledField);
+        $("#@Html.IdFor(model => model.UserSettings.HideNewsletterBlock)").click(toggleHideNewsletterBlock);
+
+        toggleUserCountryFormField();
+        toggleUserStateProvinceFormField();
+        toggleUserRequiredFormField();
+        toggleNewsletterEnabledField();
+        toggleHideNewsletterBlock();
+    });
+
+    function toggleUserCountryFormField() {
+        if ($('#@Html.IdFor(model => model.UserSettings.CountryEnabled)').is(':checked')) {
+            $('#pnlUserCountryRequired').show();
+            $('#pnlUserStateProvinceEnabled').show();
+            toggleUserStateProvinceFormField();
+        } else {
+            $('#pnlUserCountryRequired').hide();
+            $('#pnlUserStateProvinceEnabled').hide();
+            toggleUserStateProvinceFormField();
+        }
+    }
+
+    function toggleUserStateProvinceFormField() {
+        if ($('#@Html.IdFor(model => model.UserSettings.CountryEnabled)').is(':checked') &&
+            $('#@Html.IdFor(model => model.UserSettings.StateProvinceEnabled)').is(':checked')) {
+            $('#pnlUserStateProvinceRequired').show();
+        } else {
+            $('#pnlUserStateProvinceRequired').hide();
+        }
+    }
+
+    function toggleUserRequiredFormField() {
+        if ($('#@Html.IdFor(model => model.UserSettings.DateOfBirthEnabled)').is(':checked')) {
+            $('#pnlUserDateOfBirthRequired').show();
+        } else {
+            $('#pnlUserDateOfBirthRequired').hide();
+        }
+
+        if ($('#@Html.IdFor(model => model.UserSettings.DateOfBirthEnabled)').is(':checked') &&
+            $('#@Html.IdFor(model => model.UserSettings.DateOfBirthRequired)').is(':checked')) {
+            $('#pnlDateOfBirthMinimumAge').show();
+        } else {
+            $('#pnlDateOfBirthMinimumAge').hide();
+        }
+
+        if ($('#@Html.IdFor(model => model.UserSettings.CompanyEnabled)').is(':checked')) {
+            $('#pnlUserCompanyRequired').show();
+        } else {
+            $('#pnlUserCompanyRequired').hide();
+        }
+
+        if ($('#@Html.IdFor(model => model.UserSettings.StreetAddressEnabled)').is(':checked')) {
+            $('#pnlUserStreetAddressRequired').show();
+        } else {
+            $('#pnlUserStreetAddressRequired').hide();
+        }
+
+        if ($('#@Html.IdFor(model => model.UserSettings.StreetAddress2Enabled)').is(':checked')) {
+            $('#pnlUserStreetAddress2Required').show();
+        } else {
+            $('#pnlUserStreetAddress2Required').hide();
+        }
+
+        if ($('#@Html.IdFor(model => model.UserSettings.ZipPostalCodeEnabled)').is(':checked')) {
+            $('#pnlUserZipPostalCodeRequired').show();
+        } else {
+            $('#pnlUserZipPostalCodeRequired').hide();
+        }
+
+        if ($('#@Html.IdFor(model => model.UserSettings.CityEnabled)').is(':checked')) {
+            $('#pnlUserCityRequired').show();
+        } else {
+            $('#pnlUserCityRequired').hide();
+        }
+
+        if ($('#@Html.IdFor(model => model.UserSettings.CountyEnabled)').is(':checked')) {
+            $('#pnlUserCountyRequired').show();
+        } else {
+            $('#pnlUserCountyRequired').hide();
+        }
+
+        if ($('#@Html.IdFor(model => model.UserSettings.PhoneEnabled)').is(':checked')) {
+            $('#pnlUserPhoneRequired').show();
+        } else {
+            $('#pnlUserPhoneRequired').hide();
+        }
+
+        if ($('#@Html.IdFor(model => model.UserSettings.FaxEnabled)').is(':checked')) {
+            $('#pnlUserFaxRequired').show();
+        } else {
+            $('#pnlUserFaxRequired').hide();
+        }
+    }
+
+    function toggleNewsletterEnabledField() {
+        if ($('#@Html.IdFor(model => model.UserSettings.NewsletterEnabled)').is(':checked')) {
+            $('#pnlUserNewsletterTickedByDefault').show();
+        } else {
+            $('#pnlUserNewsletterTickedByDefault').hide();
+        }
+    }
+
+    function toggleHideNewsletterBlock() {
+        if ($('#@Html.IdFor(model => model.UserSettings.HideNewsletterBlock)').is(':checked')) {
+            $('#pnlNewsletterBlockAllowToUnsubscribe').hide();
+        }
+        else {
+            $('#pnlNewsletterBlockAllowToUnsubscribe').show();
+        }
+    }
+</script>
+
+<div class="panel-group">
+    @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.UserUserSettingsUserFormFieldsTop })
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @T("Admin.Configuration.Settings.UserUser.BlockTitle.DefaultFields")
+        </div>
+        <div class="panel-body">
+            <p>
+                <em>@T("Admin.Configuration.Settings.UserUser.UserFormFields.Description")</em>
+            </p>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.GenderEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.GenderEnabled" />
+                    <span asp-validation-for="UserSettings.GenderEnabled"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.DateOfBirthEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.DateOfBirthEnabled" />
+                    <span asp-validation-for="UserSettings.DateOfBirthEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.DateOfBirthEnabled">
+                <div class="form-group" id="pnlUserDateOfBirthRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.DateOfBirthRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.DateOfBirthRequired" />
+                        <span asp-validation-for="UserSettings.DateOfBirthRequired"></span>
+                    </div>
+                </div>
+                <nop-nested-setting asp-for="UserSettings.DateOfBirthRequired">
+                    <div class="form-group" id="pnlDateOfBirthMinimumAge">
+                        <div class="col-md-3">
+                            <nop-label asp-for="UserSettings.DateOfBirthMinimumAge" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="UserSettings.DateOfBirthMinimumAge" />
+                            <span asp-validation-for="UserSettings.DateOfBirthMinimumAge"></span>
+                        </div>
+                    </div>
+                </nop-nested-setting>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.CompanyEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.CompanyEnabled" />
+                    <span asp-validation-for="UserSettings.CompanyEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.CompanyEnabled">
+                <div class="form-group" id="pnlUserCompanyRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.CompanyRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.CompanyRequired" />
+                        <span asp-validation-for="UserSettings.CompanyRequired"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.StreetAddressEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.StreetAddressEnabled" />
+                    <span asp-validation-for="UserSettings.StreetAddressEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.StreetAddressEnabled">
+                <div class="form-group" id="pnlUserStreetAddressRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.StreetAddressRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.StreetAddressRequired" />
+                        <span asp-validation-for="UserSettings.StreetAddressRequired"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.StreetAddress2Enabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.StreetAddress2Enabled" />
+                    <span asp-validation-for="UserSettings.StreetAddress2Enabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.StreetAddress2Enabled">
+                <div class="form-group" id="pnlUserStreetAddress2Required">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.StreetAddress2Required" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.StreetAddress2Required" />
+                        <span asp-validation-for="UserSettings.StreetAddress2Required"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.ZipPostalCodeEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.ZipPostalCodeEnabled" />
+                    <span asp-validation-for="UserSettings.ZipPostalCodeEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.ZipPostalCodeEnabled">
+                <div class="form-group" id="pnlUserZipPostalCodeRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.ZipPostalCodeRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.ZipPostalCodeRequired" />
+                        <span asp-validation-for="UserSettings.ZipPostalCodeRequired"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.CityEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.CityEnabled" />
+                    <span asp-validation-for="UserSettings.CityEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.CityEnabled">
+                <div class="form-group" id="pnlUserCityRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.CityRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.CityRequired" />
+                        <span asp-validation-for="UserSettings.CityRequired"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.CountyEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.CountyEnabled" />
+                    <span asp-validation-for="UserSettings.CountyEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.CountyEnabled">
+                <div class="form-group" id="pnlUserCountyRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.CountyRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.CountyRequired" />
+                        <span asp-validation-for="UserSettings.CountyRequired"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.CountryEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.CountryEnabled" />
+                    <span asp-validation-for="UserSettings.CountryEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.CountryEnabled">
+                <div class="form-group" id="pnlUserCountryRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.CountryRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.CountryRequired" />
+                        <span asp-validation-for="UserSettings.CountryRequired"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group" id="pnlUserStateProvinceEnabled">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.StateProvinceEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.StateProvinceEnabled" />
+                    <span asp-validation-for="UserSettings.StateProvinceEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.StateProvinceEnabled">
+                <div class="form-group" id="pnlUserStateProvinceRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.StateProvinceRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.StateProvinceRequired" />
+                        <span asp-validation-for="UserSettings.StateProvinceRequired"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.PhoneEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.PhoneEnabled" />
+                    <span asp-validation-for="UserSettings.PhoneEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.PhoneEnabled">
+                <div class="form-group" id="pnlUserPhoneRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.PhoneRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.PhoneRequired" />
+                        <span asp-validation-for="UserSettings.PhoneRequired"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.FaxEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.FaxEnabled" />
+                    <span asp-validation-for="UserSettings.FaxEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.FaxEnabled">
+                <div class="form-group" id="pnlUserFaxRequired">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.FaxRequired" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.FaxRequired" />
+                        <span asp-validation-for="UserSettings.FaxRequired"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.AcceptPrivacyPolicyEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.AcceptPrivacyPolicyEnabled" />
+                    <span asp-validation-for="UserSettings.AcceptPrivacyPolicyEnabled"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <nop-label asp-for="UserSettings.NewsletterEnabled" />
+                </div>
+                <div class="col-md-9">
+                    <nop-editor asp-for="UserSettings.NewsletterEnabled" />
+                    <span asp-validation-for="UserSettings.NewsletterEnabled"></span>
+                </div>
+            </div>
+            <nop-nested-setting asp-for="UserSettings.NewsletterEnabled">
+                <div class="form-group" id="pnlUserNewsletterTickedByDefault">
+                    <div class="col-md-3">
+                        <nop-label asp-for="UserSettings.NewsletterTickedByDefault" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="UserSettings.NewsletterTickedByDefault" />
+                        <span asp-validation-for="UserSettings.NewsletterTickedByDefault"></span>
+                    </div>
+                </div>
+            </nop-nested-setting>
+        </div>
+    </div>
+    @*render custom customer attributes*@
+    @await Html.PartialAsync("../UserAttribute/ListBlock.cshtml", Model.UserAttributeSearchModel)
+    @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.UserUserSettingsUserFormFieldsBottom })
+</div>

@@ -1,0 +1,47 @@
+@model UserUserSettingsModel
+@inject IEventPublisher eventPublisher
+
+@{
+    //page title
+    ViewBag.Title = T("Admin.Configuration.Settings.UserUser").Text;
+    //active menu item (system name)
+    Html.SetActiveMenuItemSystemName("User and user settings");
+}
+
+<form asp-controller="Setting" asp-action="UserUser" method="post">
+    <div class="content-header clearfix">
+        <h1 class="pull-left">
+            @T("Admin.Configuration.Settings.UserUser")
+        </h1>
+        <div class="pull-right">
+            <button type="submit" name="save" class="btn bg-blue">
+                <i class="fa fa-floppy-o"></i>
+                @T("Admin.Common.Save")
+            </button>
+            @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.UserUserSettingsButtons })
+        </div>
+    </div>
+    <div asp-validation-summary="All"></div>
+    
+    <div class="content">
+        <div class="form-horizontal">
+            @await Component.InvokeAsync("SettingMode")
+
+            <nop-tabs id="customersettings-edit">
+                <nop-tab asp-name="tab-customer" asp-default="true" asp-title="@T("Admin.Configuration.Settings.UserUser.UserSettings")">@await Html.PartialAsync("_UserUser.Settings", Model)</nop-tab>
+                <nop-tab asp-name="tab-customerformfields" asp-title="@T("Admin.Configuration.Settings.UserUser.UserFormFields")">@await Html.PartialAsync("_UserUser.UserFormFields", Model)</nop-tab>
+                <nop-tab asp-name="tab-addressformfields" asp-title="@T("Admin.Configuration.Settings.UserUser.AddressFormFields")">@await Html.PartialAsync("_UserUser.AddressFormFields", Model)</nop-tab>
+            </nop-tabs>
+        </div>
+    </div>
+
+    @{
+        //custom tabs
+        var eventMessage = new AdminTabStripCreated(this.Html, "customersettings-edit");
+        eventPublisher.Publish(eventMessage);
+        foreach (var eventBlock in eventMessage.BlocksToRender)
+        {
+            @eventBlock
+        }
+    }
+</form>

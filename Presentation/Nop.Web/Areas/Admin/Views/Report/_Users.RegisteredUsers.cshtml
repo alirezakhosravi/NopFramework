@@ -1,0 +1,58 @@
+﻿@model UserReportsSearchModel
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div id="registered-users-grid"></div>
+            <script>
+                $(document).ready(function () {
+                    $("#registered-users-grid").kendoGrid({
+                        dataSource: {
+                            type: "json",
+                            transport: {
+                                read: {
+                                    url: "@Html.Raw(Url.Action("ReportRegisteredUsersList", "Report"))",
+                                    type: "POST",
+                                    dataType: "json",
+                                    data: addAntiForgeryToken
+                                }
+                            },
+                            schema: {
+                                data: "Data",
+                                total: "Total",
+                                errors: "Errors"
+                            },
+                            error: function (e) {
+                                display_kendoui_grid_error(e);
+                                // Cancel the changes
+                                this.cancelChanges();
+                            },
+                            pageSize: @(Model.RegisteredUsers.PageSize),
+                            serverPaging: true,
+                            serverFiltering: true,
+                            serverSorting: true
+                        },
+                        pageable: {
+                            refresh: true,
+                            pageSizes: [@(Model.RegisteredUsers.AvailablePageSizes)],
+                            @await Html.PartialAsync("_GridPagerMessages")
+                        },
+                        editable: {
+                            confirmation: "@T("Admin.Common.DeleteConfirmation")",
+                            mode: "inline"
+                        },
+                        scrollable: false,
+                        columns: [{
+                            field: "Period",
+                            title: "@T("Admin.Reports.Users.RegisteredUsers.Fields.Period")"
+                        }, {
+                            field: "Users",
+                            title: "@T("Admin.Reports.Users.RegisteredUsers.Fields.Users")",
+                            width: 150
+                        }]
+                    });
+                });
+            </script> 
+        </div>
+    </div>
+</div>

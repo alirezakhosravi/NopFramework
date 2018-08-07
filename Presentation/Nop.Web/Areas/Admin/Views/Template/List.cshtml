@@ -1,0 +1,30 @@
+﻿@model TemplatesModel
+
+@inject IEventPublisher eventPublisher
+
+@{
+    //page title
+    ViewBag.Title = T("Admin.System.Templates").Text;
+    //active menu item (system name)
+    Html.SetActiveMenuItemSystemName("Templates");
+}
+
+<nop-antiforgery-token />
+
+<form asp-controller="Templates" asp-action="List" method="post">
+    <div class="content-header clearfix">
+        <h1 class="pull-left">
+            @T("Admin.System.Templates")
+        </h1>
+    </div>
+
+    @{
+        //custom tabs
+        var eventMessage = new AdminTabStripCreated(this.Html, "templates-tabs");
+        eventPublisher.Publish(eventMessage);
+        foreach (var eventBlock in eventMessage.BlocksToRender)
+        {
+            @eventBlock
+        }
+    }
+</form>

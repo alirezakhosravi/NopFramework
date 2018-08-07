@@ -1,0 +1,27 @@
+@model UserAddressModel
+
+@{
+    //page title
+    ViewBag.Title = T("Admin.Users.Users.Addresses.AddNew").Text;
+    //active menu item (system name)
+    Html.SetActiveMenuItemSystemName("Users list");
+}
+
+<form asp-controller="User" asp-action="AddressCreate" method="post">
+    <div class="content-header clearfix">
+        <h1 class="pull-left">
+            @T("Admin.Users.Users.Addresses.AddNew") 
+            <small>
+                <i class="fa fa-arrow-circle-left"></i>
+                <a asp-action="Edit" asp-route-id="@Model.UserId">@T("Admin.Users.Users.Addresses.BackToUser")</a>
+            </small>
+        </h1>
+        <div class="pull-right">
+            <button type="submit" class="btn bg-blue">
+                @T("Admin.Common.Save")
+            </button>
+            @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.UserAddressDetailsButtons })
+        </div>
+    </div>
+    @await Html.PartialAsync("_CreateOrUpdateAddress", Model)
+</form>
