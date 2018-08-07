@@ -80,48 +80,7 @@
                     <span asp-validation-for="Rtl"></span>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-3">
-                    <nop-label asp-for="DefaultCurrencyId" />
-                </div>
-                <div class="col-md-9">
-                    <nop-select asp-for="DefaultCurrencyId" asp-items="Model.AvailableCurrencies" />
-                    <span asp-validation-for="DefaultCurrencyId"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-3">
-                    <nop-label asp-for="SelectedStoreIds" />
-                </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <nop-select asp-for="SelectedStoreIds" asp-items="Model.AvailableStores" asp-multiple="true" />
-                            <script>
-                                $(document).ready(function() {
-                                    var storesIdsInput = $('#@Html.IdFor(model => model.SelectedStoreIds)').data("kendoMultiSelect");
-                                    storesIdsInput.setOptions({
-                                        autoClose: false,
-                                        filter: "contains"
-                                    });
-
-                                    @if (Model.AvailableStores.Count == 0)
-                                    {
-                                        <text>
-                                storesIdsInput.setOptions({
-                                    enable: false,
-                                    placeholder: 'No stores available'
-                                });
-                                storesIdsInput._placeholder();
-                                storesIdsInput._enable();
-                                </text>
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
             <div class="form-group">
                 <div class="col-md-3">
                     <nop-label asp-for="Published" />

@@ -222,7 +222,6 @@ namespace Nop.Web.Areas.Admin.Infrastructure.Mapper
         protected virtual void CreateLocalizationMaps()
         {
             CreateMap<Language, LanguageModel>()
-                .ForMember(model => model.AvailableCurrencies, options => options.Ignore())
                 .ForMember(model => model.LocaleResourceSearchModel, options => options.Ignore());
             CreateMap<LanguageModel, Language>();
         }
