@@ -66,10 +66,10 @@
     <Value>Seleccione el proveedor de datos</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Si necesita información sobre cómo utilizar nopCommerce, visite</Value>
+    <Value>Si necesita información sobre cómo utilizar nopFramework, visite</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>la sección de documentación de nopCommerce.com</Value>
+    <Value>la sección de documentación de https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>ejemplo</Value>
@@ -78,7 +78,7 @@
     <Value>instalar</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Instalación nopCommerce ...</Value>
+    <Value>Instalación nopFramework ...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Las contraseñas no coinciden</Value>
@@ -126,13 +126,13 @@
     <Value>Utilice SQL Server (o SQL Express) de base de datos</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Almacenar la información</Value>
+    <Value>información</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce de instalación</Value>
+    <Value>nopFramework de instalación</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce es el principal ASP.NET tienda online solución de comercio electrónico. Este asistente le guiará a través del proceso de configuración de nopCommerce</Value>
+    <Value>nopFramework es el principal ASP.NET tienda online solución de comercio electrónico. Este asistente le guiará a través del proceso de configuración de nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Para completar este asistente debe saber alguna información acerca de su servidor de base de datos ("cadena de conexión"). Por favor, póngase en contacto con su ISP si es necesario. Si va a instalar en un equipo local o en el servidor es posible que tenga información de su administrador del sistema</Value>

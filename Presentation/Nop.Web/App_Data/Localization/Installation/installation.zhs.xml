@@ -66,10 +66,10 @@
     <Value>选择数据提供程序</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>如果需要了解如何使用nopCommerce, 请访问</Value>
+    <Value>如果需要了解如何使用nopFramework, 请访问</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>nopCommerce.com上的文档部分</Value>
+    <Value>https://github.com/alirezakhosravi/NopFramework 上的文档部分</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>例子</Value>
@@ -78,7 +78,7 @@
     <Value>安装</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>正在安装nopCommerce...</Value>
+    <Value>正在安装nopFramework...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>密码不匹配</Value>
@@ -126,13 +126,13 @@
     <Value>使用SQL Server(或SQL Express)数据库</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>商店信息</Value>
+    <Value>信息</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce 安装</Value>
+    <Value>nopFramework 安装</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce是最优秀的Asp.net 在线电子商务解决方案。这个向导将引导你完成配置过程。</Value>
+    <Value>nopFramework是最优秀的Asp.net 在线电子商务解决方案。这个向导将引导你完成配置过程。</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>完成这个向导，你必须知道如何连接数据库("即连接字符串").如有必要，请联系你的服务提供商。如果在本机或服务器上安装，你可能还需要一些管理员的信息 .</Value>

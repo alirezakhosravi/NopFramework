@@ -66,10 +66,10 @@
     <Value>Wybierz dostawcę danych </Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Jeżeli potrzebujesz więcej informacji na temat korzystania z nopCommerce, zobacz</Value>
+    <Value>Jeżeli potrzebujesz więcej informacji na temat korzystania z nopFramework, zobacz</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>dokumentację na stronie nopCommerce.com</Value>
+    <Value>dokumentację na stronie https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Przykład</Value>
@@ -78,7 +78,7 @@
     <Value>Instalacja</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Instalacja nopCommerce...</Value>
+    <Value>Instalacja nopFramework...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Hasło nie pasuje</Value>
@@ -126,13 +126,13 @@
     <Value>Użyj SQL Server (lub SQL Express) bazy danych</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Informacje o sklepie</Value>
+    <Value>Informacje</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce instalacja</Value>
+    <Value>nopFramework instalacja</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce jest w pełni funkcjonalną platformą e-commerce, stworzoną w oparciu o ASP.NET. Ten kreator poprowadzi cię przez proces instalacji i konfiguracji nopCommerce</Value>
+    <Value>nopFramework jest w pełni funkcjonalną platformą e-commerce, stworzoną w oparciu o ASP.NET. Ten kreator poprowadzi cię przez proces instalacji i konfiguracji nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Aby ukończyć kreatora należy znać kilka informacji na temat serwera bazy danych ("Connection string - ciąg połączenia"). Proszę skontaktować się z usługodawcą hostingu w razie potrzeby. Jeżeli instalujesz na komputerze lokalnym lub serwerze mogą być potrzebne informacje od administratora systemu.</Value>

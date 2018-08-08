@@ -66,10 +66,10 @@
     <Value>Pasirinkite duomenų teikėją</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Jeigu reikia daugiau informacijos kaip naudotis nopCommerce, perskaitykite</Value>
+    <Value>Jeigu reikia daugiau informacijos kaip naudotis nopFramework, perskaitykite</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>dokumentacija nopCommerce.com svetainėje</Value>
+    <Value>dokumentacija https://github.com/alirezakhosravi/NopFramework svetainėje</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Pavyzdys</Value>
@@ -78,7 +78,7 @@
     <Value>Įdiegti</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Diegiama nopCommerce aplikacija...</Value>
+    <Value>Diegiama nopFramework aplikacija...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Slaptažodžiai nesutampa</Value>
@@ -126,13 +126,13 @@
     <Value>Naudoti SQL Serverio (arba SQL Express) duomenų bazę?</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>E-parduotuvės informacija</Value>
+    <Value>informacija</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce diegimas</Value>
+    <Value>nopFramework diegimas</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce yra labiausiai paplitusi ASP.NET elektroninės prekybos sistema. Šis vedlys pedės jums įdiegti bei sukonfiguruoti nopCommerce sistemą.</Value>
+    <Value>nopFramework yra labiausiai paplitusi ASP.NET elektroninės prekybos sistema. Šis vedlys pedės jums įdiegti bei sukonfiguruoti nopFramework sistemą.</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Norėdami įdiegti šią aplikaciją, jūs turite žinoti šiek tiek informacijos apie savo SQL serverį (prisijugimo informaciją). Prašome susisiekti su savo ISP, jei būtina. Jeigu diegiate į vietinį kompiuterį ar serverį, jums gali prireikti informacijos iš jūsų sistemos administratoriaus.</Value>

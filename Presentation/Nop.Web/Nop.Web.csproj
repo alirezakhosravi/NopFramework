@@ -28,6 +28,7 @@
     <Content Remove="wwwroot\images\samples\category_accessories.jpg" />
     <Content Remove="wwwroot\images\samples\category_apparel.jpeg" />
     <Content Remove="wwwroot\db_backups\Index.htm" />
+    <Content Remove="App_Data\dataSettings.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\db_backups\Index.htm" />
@@ -35,7 +36,6 @@
   <ItemGroup>
     <!-- We copy the entire \App_Data directory. But we ignore JSON files and data protection keys  -->
     <Content Include="App_Data\**" CopyToPublishDirectory="PreserveNewest" Exclude="App_Data\*.json" />
-    <Content Update="App_Data\*.json" CopyToPublishDirectory="Never" />
     <Content Update="App_Data\DataProtectionKeys\*.xml" CopyToPublishDirectory="Never" />
 
     <Compile Remove="Plugins\**" />

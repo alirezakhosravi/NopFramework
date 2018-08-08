@@ -66,10 +66,10 @@
     <Value>Sélectionnez le fournisseur de données</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Si vous avez besoin d'informations sur la façon d'utiliser nopCommerce, visitez le site</Value>
+    <Value>Si vous avez besoin d'informations sur la façon d'utiliser nopFramework, visitez le site</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>la section de documentation sur nopCommerce.com</Value>
+    <Value>la section de documentation sur https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>exemple</Value>
@@ -78,7 +78,7 @@
     <Value>installer</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Installation nopCommerce ...</Value>
+    <Value>Installation nopFramework ...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Les mots de passe ne correspondent pas</Value>
@@ -126,13 +126,13 @@
     <Value>Utilisez SQL Server (ou SQL Express) base de données</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>informations sur le magasin</Value>
+    <Value>informations</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>l'installation nopCommerce</Value>
+    <Value>l'installation nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce est le leader ASP.NET boutique en ligne solution e-commerce. Cet assistant va vous guider à travers le processus de configuration nopCommerce</Value>
+    <Value>nopFramework est le leader ASP.NET boutique en ligne solution e-commerce. Cet assistant va vous guider à travers le processus de configuration nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Pour compléter cet assistant, vous devez connaître certaines informations concernant votre serveur de base de données ("chaîne de connexion"). S'il vous plaît contactez votre FAI si nécessaire. Si vous installez sur une machine locale ou serveur que vous pourriez avoir besoin d'informations à partir de votre système d'administration</Value>

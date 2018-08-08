@@ -66,10 +66,10 @@
     <Value>Selectați furnizorul de date</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Daca aveți nevoie de informații cum să folosiți nopCommerce, vizitați</Value>
+    <Value>Daca aveți nevoie de informații cum să folosiți nopFramework, vizitați</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>secțiunea de documente pe nopCommerce.com</Value>
+    <Value>secțiunea de documente pe https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Exemplu</Value>
@@ -78,7 +78,7 @@
     <Value>Instalare</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>nopCommerce se instalează...</Value>
+    <Value>nopFramework se instalează...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Parolele nu se potrivesc</Value>
@@ -126,13 +126,13 @@
     <Value>Folosiți baza de date SQL Server (sau SQL Express)</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Informații magazin</Value>
+    <Value>Informații</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Instalare nopCommerce</Value>
+    <Value>Instalare nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce este soluția lider, de magazin online, pe platforma ASP.NET. Acestă pagină vă va ghida prin procesul de configurare al nopCommerce</Value>
+    <Value>nopFramework este soluția lider, de magazin online, pe platforma ASP.NET. Acestă pagină vă va ghida prin procesul de configurare al nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Pentru a completa toți pașii, trebuie să cunoașteți câteva infomații referitoare la serverul de baze de date ("șirul de conectare"). Vă rugăm să contactați ISP-ul dumneavoastră dacă este necesar. Dacă instalați pe o mașină locală sau server local, este posibil sa aveți nevoie de informații din partea administratului dumneavoastră de sistem.</Value>

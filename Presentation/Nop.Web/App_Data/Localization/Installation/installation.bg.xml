@@ -66,10 +66,10 @@
     <Value>Изберете провайдер на данните</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Ако ви е нужна информация за това, как да използвате и настроите nopCommerce, моля, посетете</Value>
+    <Value>Ако ви е нужна информация за това, как да използвате и настроите nopFramework, моля, посетете</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>раздел "Документация" на сайта nopCommerce.com</Value>
+    <Value>раздел "Документация" на сайта https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Пример</Value>
@@ -78,7 +78,7 @@
     <Value>Инсталирай</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Инсталиране на nopCommerce...</Value>
+    <Value>Инсталиране на nopFramework...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Паролите не съвпадат</Value>
@@ -126,16 +126,16 @@
     <Value>SQL Server или SQL Express</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Информация за магазина</Value>
+    <Value>Информация</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Инсталиране на nopCommerce</Value>
+    <Value>Инсталиране на nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce - е водещо ASP.NET решение за създаване на интернет магазини. На тази страница Вие можете да инсталирате nopCommerce.</Value>
+    <Value>nopFramework - е водещо ASP.NET решение за създаване на интернет магазини. На тази страница Вие можете да инсталирате nopFramework.</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
-    <Value>За да инсталирате успешно nopCommerce, е нужно да знаете низа за връзка с базата данни. Ако нямате тази информация, може да я узнаете от вашия хостинг провайдер. Ако искате да инсталирате nopCommerce на локалния ви компютър, то вие можете да я узнаете от вашия системен администратор.</Value>
+    <Value>За да инсталирате успешно nopFramework, е нужно да знаете низа за връзка с базата данни. Ако нямате тази информация, може да я узнаете от вашия хостинг провайдер. Ако искате да инсталирате nopFramework на локалния ви компютър, то вие можете да я узнаете от вашия системен администратор.</Value>
   </LocaleResource>
   <LocaleResource Name="WindowsAuthentication">
     <Value>

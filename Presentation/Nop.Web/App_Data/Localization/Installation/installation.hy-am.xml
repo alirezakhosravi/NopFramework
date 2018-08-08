@@ -66,10 +66,10 @@
     <Value>Մուտքագրեք տվյալների բազայի պրովայդերը</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Եթե ցանկանում եք իմանալ ինչպես կարգավորել և օգտագործել nopCommerce համակարգը, ապա խնդրում ենք այցելել</Value>
+    <Value>Եթե ցանկանում եք իմանալ ինչպես կարգավորել և օգտագործել nopFramework համակարգը, ապա խնդրում ենք այցելել</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>nopCommerce.com կայքի "Documentation" բաժին</Value>
+    <Value>https://github.com/alirezakhosravi/NopFramework կայքի "Documentation" բաժին</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Օրինակ</Value>
@@ -78,7 +78,7 @@
     <Value>Տեղադրել</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>nopCommerce տեղադրում...</Value>
+    <Value>nopFramework տեղադրում...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Գաղտնաբառերը չեն համընկնում</Value>
@@ -126,16 +126,16 @@
     <Value>SQL Server կամ SQL Express</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Ինֆորմացիա խանութի մասին</Value>
+    <Value>Ինֆորմացիա</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce տեղադրում</Value>
+    <Value>nopFramework տեղադրում</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce առաջատար ASP.NET համակարգ է ինտերնետ խանութ ստեղծելու համար: Այս էջում Դուք կարող եք տեղադրել nopCommerce համակարգը:</Value>
+    <Value>nopFramework առաջատար ASP.NET համակարգ է ինտերնետ խանութ ստեղծելու համար: Այս էջում Դուք կարող եք տեղադրել nopFramework համակարգը:</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
-    <Value>nopCommerce համակարգը հաջողությամբ տեղադրելու համար Դուք պետք է իմանաք տվյալների բազային միանալու կարգավորումների տողը: Եթե Դուք չունեք այդ ինֆորմացիան, ապա կարող եք հարցնել Ձեր հոսթինգ պրովայդերից: Եթե տեղադրում եք լոկալ համակարգչի վրա, ապա կարող եք իմանալ Ձեր ադմինիստրատորից:</Value>
+    <Value>nopFramework համակարգը հաջողությամբ տեղադրելու համար Դուք պետք է իմանաք տվյալների բազային միանալու կարգավորումների տողը: Եթե Դուք չունեք այդ ինֆորմացիան, ապա կարող եք հարցնել Ձեր հոսթինգ պրովայդերից: Եթե տեղադրում եք լոկալ համակարգչի վրա, ապա կարող եք իմանալ Ձեր ադմինիստրատորից:</Value>
   </LocaleResource>
   <LocaleResource Name="WindowsAuthentication">
     <Value>

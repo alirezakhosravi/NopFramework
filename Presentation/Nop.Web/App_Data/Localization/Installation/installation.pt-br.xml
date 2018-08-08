@@ -66,10 +66,10 @@
     <Value>Escolha seu provedor</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Se você precisa de informações em como usar o nopCommerce, visite</Value>
+    <Value>Se você precisa de informações em como usar o nopFramework, visite</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>a sessão de documentação em nopCommerce.com</Value>
+    <Value>a sessão de documentação em https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Exemplo</Value>
@@ -78,7 +78,7 @@
     <Value>Instalar</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Instalando nopCommerce...</Value>
+    <Value>Instalando nopFramework...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>As senhas não são iguais</Value>
@@ -126,13 +126,13 @@
     <Value>Use um banco de dados de servidor SQL (ou SQL Express)</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Guardar informação</Value>
+    <Value>informação</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Instação nopCommerce</Value>
+    <Value>Instação nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce é a solução ASP.NET online líder em lojas de e-commerce. Este passo a passo irá guiar você no processo de configuração do nopCommerce</Value>
+    <Value>nopFramework é a solução ASP.NET online líder em lojas de e-commerce. Este passo a passo irá guiar você no processo de configuração do nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Para completar o passo a passo você precisa saber algumas informações sobre seu servidor de banco de dados ("string de conexão"). Por favor entre em contato com seu provedor de hospedagem se necessário. Se você está instalando em um computador local ou servidor talvez seja necessário informações do seu Administrador de Sistemas.</Value>

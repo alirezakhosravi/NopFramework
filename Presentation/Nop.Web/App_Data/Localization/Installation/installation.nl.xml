@@ -66,10 +66,10 @@
     <Value>Selecteer de data provider</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Als u informatie nodig heeft over hoe nopCommerce te gebruiken, bezoek</Value>
+    <Value>Als u informatie nodig heeft over hoe nopFramework te gebruiken, bezoek</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>de Documentatie sectie op nopCommerce.com</Value>
+    <Value>de Documentatie sectie op https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Voorbeeld</Value>
@@ -78,7 +78,7 @@
     <Value>Installeer</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>nopCommerce installeren...</Value>
+    <Value>nopFramework installeren...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>De wachtwoord komen niet overeen</Value>
@@ -126,16 +126,16 @@
     <Value>Gebruik SQL Server (of SQL Express) database</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Webshop informatie</Value>
+    <Value>informatie</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce installatie</Value>
+    <Value>nopFramework installatie</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce is de toonaangevende ASP.NET webshop e-commerce oplossing. Deze wizard zal u  door de nopCommerce configuratie stappen leiden</Value>
+    <Value>nopFramework is de toonaangevende ASP.NET webshop e-commerce oplossing. Deze wizard zal u  door de nopFramework configuratie stappen leiden</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
-    <Value>Om deze wizard volledig en succesvol te doorlopen, heeft u wat informatie over uw database nodig (de "connectie string"). Indien nodig, neem contact hierover op met uw ISP. Als u nopCommerce op een lokaal systeem installeert, heeft u wellicht informatie van uw Systeembeheerder nodig.</Value>
+    <Value>Om deze wizard volledig en succesvol te doorlopen, heeft u wat informatie over uw database nodig (de "connectie string"). Indien nodig, neem contact hierover op met uw ISP. Als u nopFramework op een lokaal systeem installeert, heeft u wellicht informatie van uw Systeembeheerder nodig.</Value>
   </LocaleResource>
   <LocaleResource Name="WindowsAuthentication">
     <Value>Gebruik geïntegreerde Windows authenticatie</Value>

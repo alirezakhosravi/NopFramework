@@ -66,10 +66,10 @@
     <Value>Select data provider</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>If you need information on how to use nopCommerce, visit</Value>
+    <Value>If you need information on how to use nopFramework, visit</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>the documentation section on nopCommerce.com</Value>
+    <Value>the documentation section on https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Example</Value>
@@ -78,7 +78,7 @@
     <Value>Install</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Installing nopCommerce...</Value>
+    <Value>Installing nopFramework...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>The passwords do not match</Value>
@@ -126,13 +126,13 @@
     <Value>Use SQL Server (or SQL Express) database</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Store information</Value>
+    <Value>Site information</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce installation</Value>
+    <Value>nopFramework installation</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce is the leading ASP.NET online shop e-commerce solution. This wizard will guide you through the process of configuring nopCommerce</Value>
+    <Value>nopFramework is the leading ASP.NET online shop e-commerce solution. This wizard will guide you through the process of configuring nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>To complete this wizard, you must know some information regarding your database server ("connection string"). Please contact your ISP if necessary. If you're installing on a local machine or server, you might need information from your System Admin.</Value>

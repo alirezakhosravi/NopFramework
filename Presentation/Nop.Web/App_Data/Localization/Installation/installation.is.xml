@@ -66,10 +66,10 @@
     <Value>Veljið tengileið</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Ef þig vantar upplýsingar um hvernig nota á nopCommerce, farðu þá á</Value>
+    <Value>Ef þig vantar upplýsingar um hvernig nota á nopFramework, farðu þá á</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>upplýsingasíður á nopCommerce.com</Value>
+    <Value>upplýsingasíður á https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Dæmi</Value>
@@ -78,7 +78,7 @@
     <Value>Setja upp</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Set upp nopCommerce...</Value>
+    <Value>Set upp nopFramework...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Lykilorðin eru ekki eins</Value>
@@ -126,13 +126,13 @@
     <Value>Nota SQL (eða SQL Express) gagnaþjón</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Vista upplýsingar</Value>
+    <Value>upplýsingar</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Uppsetning á nopCommerce</Value>
+    <Value>Uppsetning á nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce er leiðandi ASP.NET vefverslun. Þessi álfur leiðir þig í gegnum uppsetningu á nopCommerce</Value>
+    <Value>nopFramework er leiðandi ASP.NET vefverslun. Þessi álfur leiðir þig í gegnum uppsetningu á nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Til að ljúka þessum álfi, þá þarftu að hafa upplýsingar um gagnaþjón ("tengistreng"). Hafðu samband við vistunaraðila ef þörf er. Ef þú ert að setja upp á eigin þjón þá gæti þig vantað upplýsingar frá kerfisstjóra.</Value>

@@ -1,5 +1,5 @@
 ﻿{
   "DataProvider": "sqlserver",
-  "DataConnectionString": "Data Source=10.1.2.19\\mssqlnew2017,1468;Initial Catalog=test;Integrated Security=False;Persist Security Info=False;User ID=developteam;Password=123456",
+  "DataConnectionString": "Data Source=localhost;Initial Catalog=nopFramework;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123qweRt",
   "RawDataSettings": {}
 }

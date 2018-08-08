@@ -66,10 +66,10 @@
     <Value>Wählen Sie den Daten Provider</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Wenn Sie Hilfe bei der Verwendung von nopCommerce benötigen, besuchen Sie</Value>
+    <Value>Wenn Sie Hilfe bei der Verwendung von nopFramework benötigen, besuchen Sie</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>die Dokumentation auf nopCommerce.com</Value>
+    <Value>die Dokumentation auf https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Beispiel</Value>
@@ -78,7 +78,7 @@
     <Value>Installieren</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Installation nopCommerce...</Value>
+    <Value>Installation nopFramework...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Die Passwörter sind nicht gleich</Value>
@@ -126,13 +126,13 @@
     <Value>SQL Server (oder SQL Express) Datenbank verwenden</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Shop Information</Value>
+    <Value>Information</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce Installation</Value>
+    <Value>nopFramework Installation</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce ist die führende Shop E-Commerce Lösung. Dieser Wizard führt Sie durch die Konfiguration von nopCommerce</Value>
+    <Value>nopFramework ist die führende Shop E-Commerce Lösung. Dieser Wizard führt Sie durch die Konfiguration von nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Um den Wizard abzuschliessen müssen Sie die Daten Ihres Datenbankservers kennen ("connection string"). Bitte kontaktieren Sie gegebenenfalls Ihren ISP. Falls Sie auf einem lokalen Computer installieren benötigen Sie eventuell Informationen von Ihrem Systemadministrator</Value>

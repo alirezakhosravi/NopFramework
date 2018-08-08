@@ -66,7 +66,7 @@
     <Value>data provider کا انتخاب کریں </Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value> اگر آپ کو نوپ کامرس کی ویب سائٹ کے استعمال کے لئے کسی بھی معلومات کی ضرورت ہے, تو پھر یہاں </Value>
+    <Value> اگر آپ کو نوپ فریمورک کی ویب سائٹ کے استعمال کے لئے کسی بھی معلومات کی ضرورت ہے, تو پھر یہاں </Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
     <Value> دستاویزات سیکشن میں جائیں</Value>
@@ -78,7 +78,7 @@
     <Value>انسٹالیشن </Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value> نوپ کامرس انسٹالیشن کر رہا ہے... </Value>
+    <Value> نوپ فریمورک انسٹالیشن کر رہا ہے... </Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>دونوں پاس ورڈ کی ایک دوسرے سے مطابقت نہیں ہے</Value>
@@ -126,13 +126,13 @@
     <Value>ایس کیو ایل سرور کے ڈیٹا بیس (یا ایس کیو ایل ایکسپریس) کو استعمال کریں</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>سٹور کی معلومات</Value>
+    <Value>سٹور</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value> نوپ کامرس کی انسٹالیشن </Value>
+    <Value> نوپ فریمورک کی انسٹالیشن </Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value> نوپ کامرس ایک معروف اے ایس پی.نیٹ آن لائن ای کامرس  سٹور ہے. یہ وزرڈ آپ کی نوپ کامرس کی ترتیب کے عمل میں رہنمائی کرے گا</Value>
+    <Value> نوپ فریمورک ایک معروف اے ایس پی.نیٹ آن لائن ای کامرس  سٹور ہے. یہ وزرڈ آپ کی نوپ فریمورک کی ترتیب کے عمل میں رہنمائی کرے گا</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>اس وزرڈ کو مکمل کرنے کے لئے آپ کو کچھ معلومات آپ کے ڈیٹا بیس سرور کے بارے میں پتہ ہونا چاہئے ("کنکشن سٹرنگ"). براہ مہربانی اگر ضروری ہو تو اپنے آئی ایس پی سے رابطہ کریں. اگر آپ ایک مقامی مشین یا سرور پر انسٹال کر رہے ہیں تو آپ کو اپنے سسٹم ایڈمنسٹریٹر سے معلومات کی ضرورت ہو سکتی ہے.</Value>

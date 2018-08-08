@@ -66,10 +66,10 @@
     <Value>Odaberite davatelja podataka</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Ako su vam potrebne informacije o tome kako se koristi nopCommerce, posjetite</Value>
+    <Value>Ako su vam potrebne informacije o tome kako se koristi nopFramework, posjetite</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>odjeljak dokumentacije na nopCommerce.com</Value>
+    <Value>odjeljak dokumentacije na https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Primjer</Value>
@@ -78,7 +78,7 @@
     <Value>Instalacija</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Instaliram nopCommerce...</Value>
+    <Value>Instaliram nopFramework...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Lozinke se ne podudaraju</Value>
@@ -126,13 +126,13 @@
     <Value>Koristi SQL Server (ili SQL Express) bazu podataka</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Informacije o prodavnici</Value>
+    <Value>Informacije</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce instalacija</Value>
+    <Value>nopFramework instalacija</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce je vodeće ASP.NET e-commerce rješenje za online prodavnice. Ovaj čarobnjak će vas voditi kroz proces konfiguracije nopCommerca</Value>
+    <Value>nopFramework je vodeće ASP.NET e-commerce rješenje za online prodavnice. Ovaj čarobnjak će vas voditi kroz proces konfiguracije nopCommerca</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Za kompletiranje ovog čarobnjaka, morate znati neke informacije o vašoj bazi podataka ("string za povezivanje"). Molimo da kontaktirate vašeg ISP-a ako je to potrebno. Ako instalaciju vršite na lokalnoj mašini ili lokalnom serveru informacije možete tražiti od vašeg sistemskog administratora.</Value>

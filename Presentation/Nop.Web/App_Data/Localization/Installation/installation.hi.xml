@@ -66,10 +66,10 @@
     <Value>डेटा प्रदाता का चयन करें</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>यदि आप कैसे nopCommerce का उपयोग करने पर जानकारी की जरूरत है यात्रा,</Value>
+    <Value>यदि आप कैसे nopFramework का उपयोग करने पर जानकारी की जरूरत है यात्रा,</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>दस्तावेज़ीकरण खंड पर nopCommerce.com</Value>
+    <Value>दस्तावेज़ीकरण खंड पर https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>उदाहरण</Value>
@@ -126,13 +126,13 @@
     <Value>SQL (या SQL एक्सप्रेस) Server डेटाबेस का उपयोग करें</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>स्टोर जानकारी</Value>
+    <Value>जानकारी</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce स्थापना</Value>
+    <Value>nopFramework स्थापना</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce अग्रणी ASP.NET ऑनलाइन दुकान e-वाणिज्य समाधान है. यह विज़ार्ड आपको nopCommerce विन्यस्त करने की प्रक्रिया के माध्यम से मार्गदर्शन करेगा</Value>
+    <Value>nopFramework अग्रणी ASP.NET ऑनलाइन दुकान e-वाणिज्य समाधान है. यह विज़ार्ड आपको nopFramework विन्यस्त करने की प्रक्रिया के माध्यम से मार्गदर्शन करेगा</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>इस जादूगर को पूरा करने के लिए आप अपने डेटाबेस सर्वर के बारे में कुछ जानकारी ("कनेक्शन स्ट्रिंग") पता होना चाहिए. कृपया अपने ISP से संपर्क करें यदि आवश्यक हो.यदि आप एक स्थानीय मशीन या सर्वर पर स्थापित कर रहे हैं आप अपने सिस्टम व्यवस्थापक से जानकारी की आवश्यकता हो सकती है</Value>

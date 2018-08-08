@@ -69,7 +69,7 @@
     <Value>לקבלת מידע אודות שימוש והתאמה אישית של מערכת נופקומרס, כנסו ל</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>מדור "מסמכים" באתר nopCommerce.com או באתר נופקומרס בעברית nopCommerce.co.il </Value>
+    <Value>מדור "מסמכים" באתר nopFramework.com או באתר נופקומרס בעברית https://github.com/alirezakhosravi/NopFramework </Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>דוגמה</Value>
@@ -126,16 +126,16 @@
     <Value>SQL Server או SQL Express</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>פרטי החנות</Value>
+     <Value>החנות</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>התקנת nopCommerce</Value>
+    <Value>התקנת nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
     <Value> NopCommerce  הנו הפתרון המוביל ב  ASP.NETעבור חנות מקוונת. בדף זה ניתן להתקין את מערכת ה NopCommerce</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
-    <Value>על מנת להתקין בהצלחה את מערכת ה nopCommerce , עלייך לדעת את מחרוזת החיבור למסד הנתונים. אם אין לך את המידע הזה, באפשרותך  לקבל את המידע מספק האירוח שלך. אם הנך מתקין את nopCommerce על מחשב האישי שלך, באפשרותך לקבל את זה ממנהל המערכת שלך.</Value>
+    <Value>על מנת להתקין בהצלחה את מערכת ה nopFramework , עלייך לדעת את מחרוזת החיבור למסד הנתונים. אם אין לך את המידע הזה, באפשרותך  לקבל את המידע מספק האירוח שלך. אם הנך מתקין את nopFramework על מחשב האישי שלך, באפשרותך לקבל את זה ממנהל המערכת שלך.</Value>
   </LocaleResource>
   <LocaleResource Name="WindowsAuthentication">
     <Value>אימות  Windows</Value>

@@ -184,7 +184,7 @@ namespace Nop.Web.Controllers
 
             var model = new InstallModel
             {
-                AdminEmail = "admin@yourStore.com",
+                AdminEmail = "admin@yourSite.com",
                 InstallSampleData = false,
                 DatabaseConnectionString = "",
                 DataProvider = DataProviderType.SqlServer,

@@ -67,10 +67,10 @@
     <Value>Pilih provider data</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Jika anda memerlukan informasi mengenai cara penggunaan nopCommerce, kunjungi</Value>
+    <Value>Jika anda memerlukan informasi mengenai cara penggunaan nopFramework, kunjungi</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>bagian dokumentasi di nopCommerce.com</Value>
+    <Value>bagian dokumentasi di https://github.com/alirezakhosravi/NopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Contoh</Value>
@@ -79,7 +79,7 @@
     <Value>Pasang</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Memasang nopCommerce...</Value>
+    <Value>Memasang nopFramework...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Kata sandi tidak cocok</Value>
@@ -127,13 +127,13 @@
     <Value>Gunakan database SQL Server (or SQL Express)</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Informasi Toko</Value>
+    <Value>Informasi</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Pemasangan nopCommerce</Value>
+    <Value>Pemasangan nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce merupakan solusi terkemuka toko online e-commerce ASP.NET. Panduan berikut akan mengarahkan anda melewati proses penyetelan nopCommerce</Value>
+    <Value>nopFramework merupakan solusi terkemuka toko online e-commerce ASP.NET. Panduan berikut akan mengarahkan anda melewati proses penyetelan nopFramework</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Untuk menyelesaikan panduan ini, anda harus mempunyai informasi mengenai server database anda ("connection string"). Harap menghubungi ISP anda jika diperlukan. Jika anda memasang di mesin atau server lokal, anda mungkin memerlukan informasi dari Sistem Admin anda.</Value>

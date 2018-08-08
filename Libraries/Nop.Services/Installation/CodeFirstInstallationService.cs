@@ -50,6 +50,7 @@ namespace Nop.Services.Installation
         private readonly IRepository<SearchTerm> _searchTermRepository;
         private readonly IRepository<StateProvince> _stateProvinceRepository;
         private readonly IRepository<UrlRecord> _urlRecordRepository;
+        private readonly IRepository<UserUserRoleMapping> _userUserRoleMapping;
         private readonly IWebHelper _webHelper;
 
         #endregion
@@ -72,6 +73,7 @@ namespace Nop.Services.Installation
             IRepository<SearchTerm> searchTermRepository,
             IRepository<StateProvince> stateProvinceRepository,
             IRepository<UrlRecord> urlRecordRepository,
+            IRepository<UserUserRoleMapping> userUserRoleMapping,
             IWebHelper webHelper)
         {
             this._genericAttributeService = genericAttributeService;
@@ -90,6 +92,7 @@ namespace Nop.Services.Installation
             this._searchTermRepository = searchTermRepository;
             this._stateProvinceRepository = stateProvinceRepository;
             this._urlRecordRepository = urlRecordRepository;
+            this._userUserRoleMapping = userUserRoleMapping;
             this._webHelper = webHelper;
         }
 
@@ -3050,12 +3053,14 @@ namespace Nop.Services.Installation
                 IsSystemRole = true,
                 SystemName = NopUserDefaults.GuestsRoleName
             };
+
             var userRoles = new List<UserRole>
             {
                 crAdministrators,
                 crRegistered,
                 crGuests
             };
+
             _userRoleRepository.Insert(userRoles);
 
             //admin user
@@ -3070,262 +3075,35 @@ namespace Nop.Services.Installation
                 
             };
 
-            var defaultAdminUserAddress = new Address
-            {
-                FirstName = "John",
-                LastName = "Smith",
-                PhoneNumber = "12345678",
-                Email = defaultUserEmail,
-                FaxNumber = string.Empty,
-                Company = "Nop Solutions Ltd",
-                Address1 = "21 West 52nd Street",
-                Address2 = string.Empty,
-                City = "New York",
-                StateProvince = _stateProvinceRepository.Table.FirstOrDefault(sp => sp.Name == "New York"),
-                Country = _countryRepository.Table.FirstOrDefault(c => c.ThreeLetterIsoCode == "USA"),
-                ZipPostalCode = "10021",
-                CreatedOnUtc = DateTime.UtcNow
-            };
-            //adminUser.Addresses.Add(defaultAdminUserAddress);
-            adminUser.UserAddressMappings.Add(new UserAddressMapping { Address = defaultAdminUserAddress });
-
             _userRepository.Insert(adminUser);
             //set default user name
-            _genericAttributeService.SaveAttribute(adminUser, NopUserDefaults.FirstNameAttribute, "John");
-            _genericAttributeService.SaveAttribute(adminUser, NopUserDefaults.LastNameAttribute, "Smith");
+            _genericAttributeService.SaveAttribute(adminUser, NopUserDefaults.FirstNameAttribute, "FirstName");
+            _genericAttributeService.SaveAttribute(adminUser, NopUserDefaults.LastNameAttribute, "lastName");
 
             //set hashed admin password
             var userRegistrationService = EngineContext.Current.Resolve<IUserRegistrationService>();
             userRegistrationService.ChangePassword(new ChangePasswordRequest(defaultUserEmail, false,
                  PasswordFormat.Hashed, defaultUserPassword));
 
-            //second user
-            var secondUserEmail = "steve_gates@nopCommerce.com";
-            var secondUser = new User
+            var userUserRoleMappingAdministrator = new UserUserRoleMapping
             {
-                UserGuid = Guid.NewGuid(),
-                Email = secondUserEmail,
-                Username = secondUserEmail,
-                Active = true,
-                CreatedOnUtc = DateTime.UtcNow,
-                LastActivityDateUtc = DateTime.UtcNow,
-                
+                UserId = 1,
+                UserRoleId = 1
             };
-            var defaultSecondUserAddress = new Address
+
+            var userUserRoleMappingRegistered = new UserUserRoleMapping
             {
-                FirstName = "Steve",
-                LastName = "Gates",
-                PhoneNumber = "87654321",
-                Email = secondUserEmail,
-                FaxNumber = string.Empty,
-                Company = "Steve Company",
-                Address1 = "750 Bel Air Rd.",
-                Address2 = string.Empty,
-                City = "Los Angeles",
-                StateProvince = _stateProvinceRepository.Table.FirstOrDefault(sp => sp.Name == "California"),
-                Country = _countryRepository.Table.FirstOrDefault(c => c.ThreeLetterIsoCode == "USA"),
-                ZipPostalCode = "90077",
-                CreatedOnUtc = DateTime.UtcNow
+                UserId = 1,
+                UserRoleId = 2
             };
-            //secondUser.Addresses.Add(defaultSecondUserAddress);
-            secondUser.UserAddressMappings.Add(new UserAddressMapping { Address = defaultSecondUserAddress });
 
-            _userRepository.Insert(secondUser);
-            //set default user name
-            _genericAttributeService.SaveAttribute(secondUser, NopUserDefaults.FirstNameAttribute, defaultSecondUserAddress.FirstName);
-            _genericAttributeService.SaveAttribute(secondUser, NopUserDefaults.LastNameAttribute, defaultSecondUserAddress.LastName);
-
-            //set user password
-            _userPasswordRepository.Insert(new UserPassword
+            var userUserRoleMapping = new List<UserUserRoleMapping>()
             {
-                User = secondUser,
-                Password = "123456",
-                PasswordFormat = PasswordFormat.Clear,
-                PasswordSalt = string.Empty,
-                CreatedOnUtc = DateTime.UtcNow
-            });
-
-            //third user
-            var thirdUserEmail = "arthur_holmes@nopCommerce.com";
-            var thirdUser = new User
-            {
-                UserGuid = Guid.NewGuid(),
-                Email = thirdUserEmail,
-                Username = thirdUserEmail,
-                Active = true,
-                CreatedOnUtc = DateTime.UtcNow,
-                LastActivityDateUtc = DateTime.UtcNow,
-                
+                userUserRoleMappingAdministrator,
+                userUserRoleMappingRegistered
             };
-            var defaultThirdUserAddress = new Address
-            {
-                FirstName = "Arthur",
-                LastName = "Holmes",
-                PhoneNumber = "111222333",
-                Email = thirdUserEmail,
-                FaxNumber = string.Empty,
-                Company = "Holmes Company",
-                Address1 = "221B Baker Street",
-                Address2 = string.Empty,
-                City = "London",
-                Country = _countryRepository.Table.FirstOrDefault(c => c.ThreeLetterIsoCode == "GBR"),
-                ZipPostalCode = "NW1 6XE",
-                CreatedOnUtc = DateTime.UtcNow
-            };
-            //thirdUser.Addresses.Add(defaultThirdUserAddress);
-            thirdUser.UserAddressMappings.Add(new UserAddressMapping { Address = defaultThirdUserAddress });
 
-            _userRepository.Insert(thirdUser);
-            //set default user name
-            _genericAttributeService.SaveAttribute(thirdUser, NopUserDefaults.FirstNameAttribute, defaultThirdUserAddress.FirstName);
-            _genericAttributeService.SaveAttribute(thirdUser, NopUserDefaults.LastNameAttribute, defaultThirdUserAddress.LastName);
-
-            //set user password
-            _userPasswordRepository.Insert(new UserPassword
-            {
-                User = thirdUser,
-                Password = "123456",
-                PasswordFormat = PasswordFormat.Clear,
-                PasswordSalt = string.Empty,
-                CreatedOnUtc = DateTime.UtcNow
-            });
-
-            //fourth user
-            var fourthUserEmail = "james_pan@nopCommerce.com";
-            var fourthUser = new User
-            {
-                UserGuid = Guid.NewGuid(),
-                Email = fourthUserEmail,
-                Username = fourthUserEmail,
-                Active = true,
-                CreatedOnUtc = DateTime.UtcNow,
-                LastActivityDateUtc = DateTime.UtcNow,
-                
-            };
-            var defaultFourthUserAddress = new Address
-            {
-                FirstName = "James",
-                LastName = "Pan",
-                PhoneNumber = "369258147",
-                Email = fourthUserEmail,
-                FaxNumber = string.Empty,
-                Company = "Pan Company",
-                Address1 = "St Katharine�s West 16",
-                Address2 = string.Empty,
-                City = "St Andrews",
-                Country = _countryRepository.Table.FirstOrDefault(c => c.ThreeLetterIsoCode == "GBR"),
-                ZipPostalCode = "KY16 9AX",
-                CreatedOnUtc = DateTime.UtcNow
-            };
-            //fourthUser.Addresses.Add(defaultFourthUserAddress);
-            fourthUser.UserAddressMappings.Add(new UserAddressMapping { Address = defaultFourthUserAddress });
-
-            _userRepository.Insert(fourthUser);
-            //set default user name
-            _genericAttributeService.SaveAttribute(fourthUser, NopUserDefaults.FirstNameAttribute, defaultFourthUserAddress.FirstName);
-            _genericAttributeService.SaveAttribute(fourthUser, NopUserDefaults.LastNameAttribute, defaultFourthUserAddress.LastName);
-
-            //set user password
-            _userPasswordRepository.Insert(new UserPassword
-            {
-                User = fourthUser,
-                Password = "123456",
-                PasswordFormat = PasswordFormat.Clear,
-                PasswordSalt = string.Empty,
-                CreatedOnUtc = DateTime.UtcNow
-            });
-
-            //fifth user
-            var fifthUserEmail = "brenda_lindgren@nopCommerce.com";
-            var fifthUser = new User
-            {
-                UserGuid = Guid.NewGuid(),
-                Email = fifthUserEmail,
-                Username = fifthUserEmail,
-                Active = true,
-                CreatedOnUtc = DateTime.UtcNow,
-                LastActivityDateUtc = DateTime.UtcNow,
-                
-            };
-            var defaultFifthUserAddress = new Address
-            {
-                FirstName = "Brenda",
-                LastName = "Lindgren",
-                PhoneNumber = "14785236",
-                Email = fifthUserEmail,
-                FaxNumber = string.Empty,
-                Company = "Brenda Company",
-                Address1 = "1249 Tongass Avenue, Suite B",
-                Address2 = string.Empty,
-                City = "Ketchikan",
-                StateProvince = _stateProvinceRepository.Table.FirstOrDefault(sp => sp.Name == "Alaska"),
-                Country = _countryRepository.Table.FirstOrDefault(c => c.ThreeLetterIsoCode == "USA"),
-                ZipPostalCode = "99901",
-                CreatedOnUtc = DateTime.UtcNow
-            };
-            //fifthUser.Addresses.Add(defaultFifthUserAddress);
-            fifthUser.UserAddressMappings.Add(new UserAddressMapping { Address = defaultFifthUserAddress });
-
-            _userRepository.Insert(fifthUser);
-            //set default user name
-            _genericAttributeService.SaveAttribute(fifthUser, NopUserDefaults.FirstNameAttribute, defaultFifthUserAddress.FirstName);
-            _genericAttributeService.SaveAttribute(fifthUser, NopUserDefaults.LastNameAttribute, defaultFifthUserAddress.LastName);
-
-            //set user password
-            _userPasswordRepository.Insert(new UserPassword
-            {
-                User = fifthUser,
-                Password = "123456",
-                PasswordFormat = PasswordFormat.Clear,
-                PasswordSalt = string.Empty,
-                CreatedOnUtc = DateTime.UtcNow
-            });
-
-            //sixth user
-            var sixthUserEmail = "victoria_victoria@nopCommerce.com";
-            var sixthUser = new User
-            {
-                UserGuid = Guid.NewGuid(),
-                Email = sixthUserEmail,
-                Username = sixthUserEmail,
-                Active = true,
-                CreatedOnUtc = DateTime.UtcNow,
-                LastActivityDateUtc = DateTime.UtcNow,
-                
-            };
-            var defaultSixthUserAddress = new Address
-            {
-                FirstName = "Victoria",
-                LastName = "Terces",
-                PhoneNumber = "45612378",
-                Email = sixthUserEmail,
-                FaxNumber = string.Empty,
-                Company = "Terces Company",
-                Address1 = "201 1st Avenue South",
-                Address2 = string.Empty,
-                City = "Saskatoon",
-                StateProvince = _stateProvinceRepository.Table.FirstOrDefault(sp => sp.Name == "Saskatchewan"),
-                Country = _countryRepository.Table.FirstOrDefault(c => c.ThreeLetterIsoCode == "CAN"),
-                ZipPostalCode = "S7K 1J9",
-                CreatedOnUtc = DateTime.UtcNow
-            };
-            //sixthUser.Addresses.Add(defaultSixthUserAddress);
-            sixthUser.UserAddressMappings.Add(new UserAddressMapping { Address = defaultSixthUserAddress });
-
-            _userRepository.Insert(sixthUser);
-            //set default user name
-            _genericAttributeService.SaveAttribute(sixthUser, NopUserDefaults.FirstNameAttribute, defaultSixthUserAddress.FirstName);
-            _genericAttributeService.SaveAttribute(sixthUser, NopUserDefaults.LastNameAttribute, defaultSixthUserAddress.LastName);
-
-            //set user password
-            _userPasswordRepository.Insert(new UserPassword
-            {
-                User = sixthUser,
-                Password = "123456",
-                PasswordFormat = PasswordFormat.Clear,
-                PasswordSalt = string.Empty,
-                CreatedOnUtc = DateTime.UtcNow
-            });
+            _userUserRoleMapping.Insert(userUserRoleMapping);
 
             //search engine (crawler) built-in user
             var searchEngineUser = new User
@@ -4794,25 +4572,6 @@ namespace Nop.Services.Installation
             _addressRepository.Insert(warehouse2address);
         }
 
-        protected virtual void InstallAffiliates()
-        {
-            var affiliateAddress = new Address
-            {
-                FirstName = "John",
-                LastName = "Smith",
-                Email = "affiliate_email@gmail.com",
-                Company = "Company name here...",
-                City = "New York",
-                Address1 = "21 West 52nd Street",
-                ZipPostalCode = "10021",
-                PhoneNumber = "123456789",
-                StateProvince = _stateProvinceRepository.Table.FirstOrDefault(sp => sp.Name == "New York"),
-                Country = _countryRepository.Table.FirstOrDefault(c => c.ThreeLetterIsoCode == "USA"),
-                CreatedOnUtc = DateTime.UtcNow
-            };
-            _addressRepository.Insert(affiliateAddress);
-        }
-
         #endregion
 
         #region Methods
@@ -4840,7 +4599,6 @@ namespace Nop.Services.Installation
                 return;
             
             InstallWarehouses();
-            InstallAffiliates();
             InstallActivityLog(defaultUserEmail);
             InstallSearchTerms();
         }

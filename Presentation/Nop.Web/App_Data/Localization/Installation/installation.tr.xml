@@ -66,10 +66,10 @@
     <Value>Veri kaynağını seçin</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>nopCommerce'in nasıl kullanıldığı hakkında daha fazla bilgi için </Value>
+    <Value>nopFramework'in nasıl kullanıldığı hakkında daha fazla bilgi için </Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>nopCommerce.com adresincen document bölümünü ziyaret edin.</Value>
+    <Value>https://github.com/alirezakhosravi/NopFramework adresincen document bölümünü ziyaret edin.</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Örnek</Value>
@@ -78,7 +78,7 @@
     <Value>Yükle</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>nopCommerce yükleniyor...</Value>
+    <Value>nopFramework yükleniyor...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Şifreler uyuşmuyor</Value>
@@ -126,13 +126,13 @@
     <Value>SQL Server (veya SQL Express) veritabanı kullan</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Mağaza bilgisi</Value>
+    <Value>bilgisi</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>nopCommerce Yükle</Value>
+    <Value>nopFramework Yükle</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>nopCommerce ASP.NET ile yazılmış lider online e-ticaret çözümüdür. Bu sihirbaz nopCommerce kurulumu sırasında size yol gösterecektir.</Value>
+    <Value>nopFramework ASP.NET ile yazılmış lider online e-ticaret çözümüdür. Bu sihirbaz nopFramework kurulumu sırasında size yol gösterecektir.</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Bu sihirbazı tamamlamak için bazı bilgilere ihtiyaç duyacaksınız. SQL bağlantı cümleciğinizi ("connection string") bilmiyorsanız lütfen internet servis sağlayıcınız ile iletişime geçin. Kurulumu kendi bilgisayarınız üzerinde gerçekleştirecekseniz sistem yöneticinizden bu bilgileri alabilirsiniz.</Value>
