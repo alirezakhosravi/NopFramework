@@ -7,3 +7,6 @@ I'll adding some other capabilities and components to this premitive solution in
 
 
 Fill free to ask me any questions:alirezakhosravi [at] live.com
+
+
+(beta version)
