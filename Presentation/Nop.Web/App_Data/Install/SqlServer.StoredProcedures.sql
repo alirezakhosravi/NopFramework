@@ -242,31 +242,7 @@ BEGIN
 
 	--guests only
 	(EXISTS(SELECT 1 FROM [User_UserRole_Mapping] ccrm with (NOLOCK) inner join [User] with (NOLOCK) on ccrm.[User_Id]=c.[Id] inner join [UserRole] cr with (NOLOCK) on cr.[Id]=ccrm.[UserRole_Id] WHERE cr.[SystemName] = N'Guests'))
-	AND
-	--no orders
-	(NOT EXISTS(SELECT 1 FROM [Order] o with (NOLOCK) inner join [User] with (NOLOCK) on o.[UserId]=c.[Id]))
-	AND
-	--no blog comments
-	(NOT EXISTS(SELECT 1 FROM [BlogComment] bc with (NOLOCK) inner join [User] with (NOLOCK) on bc.[UserId]=c.[Id]))
-	AND
-	--no news comments
-	(NOT EXISTS(SELECT 1 FROM [NewsComment] nc  with (NOLOCK)inner join [User] with (NOLOCK) on nc.[UserId]=c.[Id]))
-	AND
-	--no product reviews
-	(NOT EXISTS(SELECT 1 FROM [ProductReview] pr with (NOLOCK) inner join [User] with (NOLOCK) on pr.[UserId]=c.[Id]))
-	AND
-	--no product reviews helpfulness
-	(NOT EXISTS(SELECT 1 FROM [ProductReviewHelpfulness] prh with (NOLOCK) inner join [User] with (NOLOCK) on prh.[UserId]=c.[Id]))
-	AND
-	--no poll voting
-	(NOT EXISTS(SELECT 1 FROM [PollVotingRecord] pvr with (NOLOCK) inner join [User] with (NOLOCK) on pvr.[UserId]=c.[Id]))
-	AND
-	--no forum topics 
-	(NOT EXISTS(SELECT 1 FROM [Forums_Topic] ft with (NOLOCK) inner join [User] with (NOLOCK) on ft.[UserId]=c.[Id]))
-	AND
-	--no forum posts 
-	(NOT EXISTS(SELECT 1 FROM [Forums_Post] fp with (NOLOCK) inner join [User] with (NOLOCK) on fp.[UserId]=c.[Id]))
-	AND
+	AND   
 	--no system accounts
 	(c.IsSystemAccount = 0)
 	

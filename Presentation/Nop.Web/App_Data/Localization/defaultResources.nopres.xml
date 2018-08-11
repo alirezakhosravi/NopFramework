@@ -13404,8 +13404,8 @@
   <LocaleResource Name="Admin.System.Maintenance.BackupDatabase.Progress">
     <Value>Processing database backup...</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.System.Maintenance.BackupDatabase.Resite">
-    <Value>Resite</Value>
+  <LocaleResource Name="Admin.System.Maintenance.BackupDatabase.Restore">
+    <Value>Restore</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Maintenance.DeleteAbandonedCarts">
     <Value>Deleting abandoned shopping carts</Value>

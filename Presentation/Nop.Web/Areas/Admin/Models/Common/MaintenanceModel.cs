@@ -10,14 +10,11 @@ namespace Nop.Web.Areas.Admin.Models.Common
         public MaintenanceModel()
         {
             DeleteGuests = new DeleteGuestsModel();
-            DeleteAbandonedCarts = new DeleteAbandonedCartsModel();
             DeleteExportedFiles = new DeleteExportedFilesModel();
             BackupFileSearchModel = new BackupFileSearchModel();
         }
 
         public DeleteGuestsModel DeleteGuests { get; set; }
-
-        public DeleteAbandonedCartsModel DeleteAbandonedCarts { get; set; }
 
         public DeleteExportedFilesModel DeleteExportedFiles { get; set; }
 
@@ -36,15 +33,6 @@ namespace Nop.Web.Areas.Admin.Models.Common
             public DateTime? EndDate { get; set; }
 
             public int? NumberOfDeletedUsers { get; set; }
-        }
-
-        public partial class DeleteAbandonedCartsModel : BaseNopModel
-        {
-            [NopResourceDisplayName("Admin.System.Maintenance.DeleteAbandonedCarts.OlderThan")]
-            [UIHint("Date")]
-            public DateTime OlderThan { get; set; }
-
-            public int? NumberOfDeletedItems { get; set; }
         }
 
         public partial class DeleteExportedFilesModel : BaseNopModel

@@ -472,13 +472,15 @@ namespace Nop.Services.Users
         public virtual int DeleteGuestUsers(DateTime? createdFromUtc, DateTime? createdToUtc)
         {
             //prepare parameters
+            var pCreatedFromUtc = _dataProvider.GetDateTimeParameter("CreatedFromUtc", createdFromUtc);
             var pCreatedToUtc = _dataProvider.GetDateTimeParameter("CreatedToUtc", createdToUtc);
             var pTotalRecordsDeleted = _dataProvider.GetOutputInt32Parameter("TotalRecordsDeleted");
 
             //invoke stored procedure
             _dbContext.ExecuteSqlCommand(
-                "EXEC [DeleteGuests] @CreatedToUtc, @TotalRecordsDeleted OUTPUT",
+                "EXEC [DeleteGuests] @CreatedFromUtc, @CreatedToUtc, @TotalRecordsDeleted OUTPUT",
                 false, null,
+                pCreatedFromUtc,
                 pCreatedToUtc,
                 pTotalRecordsDeleted);
 

@@ -405,7 +405,6 @@ namespace Nop.Web.Areas.Admin.Factories
                 throw new ArgumentNullException(nameof(model));
 
             model.DeleteGuests.EndDate = DateTime.UtcNow.AddDays(-7);
-            model.DeleteAbandonedCarts.OlderThan = DateTime.UtcNow.AddDays(-182);
 
             //prepare nested search model
             PrepareBackupFileSearchModel(model.BackupFileSearchModel);
@@ -502,27 +501,9 @@ namespace Nop.Web.Areas.Admin.Factories
                     var entityName = urlRecord.EntityName?.ToLowerInvariant() ?? string.Empty;
                     switch (entityName)
                     {
-                        case "blogpost":
-                            detailsUrl = urlHelper.Action("BlogPostEdit", "Blog", new { id = urlRecord.EntityId });
-                            break;
-                        case "category":
-                            detailsUrl = urlHelper.Action("Edit", "Category", new { id = urlRecord.EntityId });
-                            break;
-                        case "manufacturer":
-                            detailsUrl = urlHelper.Action("Edit", "Manufacturer", new { id = urlRecord.EntityId });
-                            break;
-                        case "product":
-                            detailsUrl = urlHelper.Action("Edit", "Product", new { id = urlRecord.EntityId });
-                            break;
-                        case "newsitem":
-                            detailsUrl = urlHelper.Action("NewsItemEdit", "News", new { id = urlRecord.EntityId });
-                            break;
-                        case "topic":
-                            detailsUrl = urlHelper.Action("Edit", "Topic", new { id = urlRecord.EntityId });
-                            break;
-                        case "vendor":
-                            detailsUrl = urlHelper.Action("Edit", "Vendor", new { id = urlRecord.EntityId });
-                            break;
+                        //case "Type":
+                            //detailsUrl = urlHelper.Action("actionName", "controllerName", new { id = urlRecord.EntityId });
+                            //break;
                     }
 
                     urlRecordModel.DetailsUrl = detailsUrl;

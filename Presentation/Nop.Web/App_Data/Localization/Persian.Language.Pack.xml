@@ -12609,7 +12609,7 @@
   <LocaleResource Name="Admin.System.Maintenance.BackupDatabase.Progress">
     <Value>در حال پردازش نسخه پشتیبانی پایگاه داده...</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.System.Maintenance.BackupDatabase.Resite">
+  <LocaleResource Name="Admin.System.Maintenance.BackupDatabase.Restore">
     <Value>بازیابی</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Maintenance.DeleteAbandonedCarts">

@@ -128,18 +128,6 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost, ActionName("Maintenance")]
-        [FormValueRequired("delete-abondoned-carts")]
-        public virtual IActionResult MaintenanceDeleteAbandonedCarts(MaintenanceModel model)
-        {
-            if (!_permissionService.Authorize(StandardPermissionProvider.ManageMaintenance))
-                return AccessDeniedView();
-
-            var olderThanDateValue = _dateTimeHelper.ConvertToUtcTime(model.DeleteAbandonedCarts.OlderThan, _dateTimeHelper.CurrentTimeZone);
-
-            return View(model);
-        }
-
-        [HttpPost, ActionName("Maintenance")]
         [FormValueRequired("delete-exported-files")]
         public virtual IActionResult MaintenanceDeleteFiles(MaintenanceModel model)
         {
