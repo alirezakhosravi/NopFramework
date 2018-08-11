@@ -449,6 +449,7 @@ namespace Nop.Services.Configuration
             Expression<Func<T, TPropType>> keySelector, bool clearCache = true) where T : ISettings, new()
         {
             DeleteSetting(settings, keySelector);
+            SaveSetting(settings, keySelector, clearCache);
         }
 
         /// <summary>

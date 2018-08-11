@@ -129,7 +129,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             if (!_permissionService.Authorize(StandardPermissionProvider.ManageSettings))
                 return AccessDeniedView();
 
-            //load settings for a chosen store scope
+            //load settings for a chosen site scope
             var mediaSettings = _settingService.LoadSetting<MediaSettings>();
             mediaSettings = model.ToSettings(mediaSettings);
 
@@ -137,9 +137,9 @@ namespace Nop.Web.Areas.Admin.Controllers
             //this behavior can increase performance because cached settings will not be cleared 
             //and loaded from database after each update
             _settingService.SaveSetting(mediaSettings, x => x.AvatarPictureSize, true);
-            _settingService.SaveSetting(mediaSettings, x => x.MaximumImageSize, false);
-            _settingService.SaveSetting(mediaSettings, x => x.MultipleThumbDirectories, false);
-            _settingService.SaveSetting(mediaSettings, x => x.DefaultImageQuality, false);
+            _settingService.SaveSetting(mediaSettings, x => x.MaximumImageSize, true);
+            _settingService.SaveSetting(mediaSettings, x => x.MultipleThumbDirectories, true);
+            _settingService.SaveSetting(mediaSettings, x => x.DefaultImageQuality, true);
 
             //now clear settings cache
             _settingService.ClearCache();
@@ -222,7 +222,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             dateTimeSettings.AllowUsersToSetTimeZone = model.DateTimeSettings.AllowUsersToSetTimeZone;
             _settingService.SaveSetting(dateTimeSettings);
 
-            externalAuthenticationSettings.AllowUsersToRemoveAssociations = model.ExternalAuthenticationSettings.AllowUsersToRemoveAssociations;
+            //externalAuthenticationSettings.AllowUsersitemoveAssociations = model.ExternalAuthenticationSettings.AllowUsersitemoveAssociations;
             _settingService.SaveSetting(externalAuthenticationSettings);
 
             //activity log
@@ -248,7 +248,7 @@ namespace Nop.Web.Areas.Admin.Controllers
 
             //notify admin that CSS bundling is not allowed in virtual directories
             if (model.SeoSettings.EnableCssBundling && this.HttpContext.Request.PathBase.HasValue)
-                WarningNotification(_localizationService.GetResource("Admin.Configuration.Settings.GeneralCommon.EnableCssBundling.Warning"), false);
+                WarningNotification(_localizationService.GetResource("Admin.Configuration.Settings.GeneralCommon.EnableCssBundling.Warning"), true);
 
             return View(model);
         }
@@ -259,32 +259,44 @@ namespace Nop.Web.Areas.Admin.Controllers
             if (!_permissionService.Authorize(StandardPermissionProvider.ManageSettings))
                 return AccessDeniedView();
             
-            //store information settings
+            //site information settings
             var siteInformationSettings = _settingService.LoadSetting<SiteInformationSettings>();
             var commonSettings = _settingService.LoadSetting<CommonSettings>();
             siteInformationSettings.DefaultSiteTheme = model.SiteInformationSettings.DefaultSiteTheme;
             siteInformationSettings.AllowUserToSelectTheme = model.SiteInformationSettings.AllowUserToSelectTheme;
             siteInformationSettings.LogoPictureId = model.SiteInformationSettings.LogoPictureId;
-
             //EU Cookie law
             siteInformationSettings.DisplayEuCookieLawWarning = model.SiteInformationSettings.DisplayEuCookieLawWarning;
-
             //social pages
             siteInformationSettings.FacebookLink = model.SiteInformationSettings.FacebookLink;
             siteInformationSettings.TwitterLink = model.SiteInformationSettings.TwitterLink;
             siteInformationSettings.YoutubeLink = model.SiteInformationSettings.YoutubeLink;
             siteInformationSettings.GooglePlusLink = model.SiteInformationSettings.GooglePlusLink;
-
             //contact us
             commonSettings.SubjectFieldOnContactUsForm = model.SiteInformationSettings.SubjectFieldOnContactUsForm;
             commonSettings.UseSystemEmailForContactUsForm = model.SiteInformationSettings.UseSystemEmailForContactUsForm;
-
             //terms of service
             commonSettings.PopupForTermsOfServiceLinks = model.SiteInformationSettings.PopupForTermsOfServiceLinks;
-
             //sitemap
             commonSettings.SitemapEnabled = model.SiteInformationSettings.SitemapEnabled;
             commonSettings.SitemapPageSize = model.SiteInformationSettings.SitemapPageSize;
+
+            //we do not clear cache after each setting update.
+            //this behavior can increase performance because cached settings will not be cleared 
+            //and loaded from database after each update
+            _settingService.SaveSettingOverridable(siteInformationSettings, x => x.DefaultSiteTheme, true);
+            _settingService.SaveSettingOverridable(siteInformationSettings, x => x.AllowUserToSelectTheme, true);
+            _settingService.SaveSettingOverridable(siteInformationSettings, x => x.LogoPictureId, true);
+            _settingService.SaveSettingOverridable(siteInformationSettings, x => x.DisplayEuCookieLawWarning, true);
+            _settingService.SaveSettingOverridable(siteInformationSettings, x => x.FacebookLink, true);
+            _settingService.SaveSettingOverridable(siteInformationSettings, x => x.TwitterLink, true);
+            _settingService.SaveSettingOverridable(siteInformationSettings, x => x.YoutubeLink, true);
+            _settingService.SaveSettingOverridable(siteInformationSettings, x => x.GooglePlusLink, true);
+            _settingService.SaveSettingOverridable(commonSettings, x => x.SubjectFieldOnContactUsForm, true);
+            _settingService.SaveSettingOverridable(commonSettings, x => x.UseSystemEmailForContactUsForm, true);
+            _settingService.SaveSettingOverridable(commonSettings, x => x.PopupForTermsOfServiceLinks, true);
+            _settingService.SaveSettingOverridable(commonSettings, x => x.SitemapEnabled, true);
+            _settingService.SaveSettingOverridable(commonSettings, x => x.SitemapPageSize, true);
 
             //now clear settings cache
             _settingService.ClearCache();
@@ -306,6 +318,24 @@ namespace Nop.Web.Areas.Admin.Controllers
             seoSettings.OpenGraphMetaTags = model.SeoSettings.OpenGraphMetaTags;
             seoSettings.CustomHeadTags = model.SeoSettings.CustomHeadTags;
 
+            //we do not clear cache after each setting update.
+            //this behavior can increase performance because cached settings will not be cleared 
+            //and loaded from database after each update
+            _settingService.SaveSettingOverridable(seoSettings, x => x.PageTitleSeparator, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.PageTitleSeoAdjustment, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.DefaultTitle, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.DefaultMetaKeywords, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.DefaultMetaDescription, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.GenerateProductMetaDescription, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.ConvertNonWesternChars, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.CanonicalUrlsEnabled, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.WwwRequirement, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.EnableJsBundling, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.EnableCssBundling, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.TwitterMetaTags, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.OpenGraphMetaTags, true);
+            _settingService.SaveSettingOverridable(seoSettings, x => x.CustomHeadTags, true);
+
             //now clear settings cache
             _settingService.ClearCache();
 
@@ -320,7 +350,7 @@ namespace Nop.Web.Areas.Admin.Controllers
                         securitySettings.AdminAreaAllowedIpAddresses.Add(s.Trim());
             securitySettings.ForceSslForAllPages = model.SecuritySettings.ForceSslForAllPages;
             securitySettings.EnableXsrfProtectionForAdminArea = model.SecuritySettings.EnableXsrfProtectionForAdminArea;
-            //securitySettings.EnableXsrfProtectionForPublicSite = model.SecuritySettings.EnableXsrfProtectionForPublicSite;
+            securitySettings.EnableXsrfProtectionForSite = model.SecuritySettings.EnableXsrfProtectionForPublicSite;
             securitySettings.HoneypotEnabled = model.SecuritySettings.HoneypotEnabled;
             _settingService.SaveSetting(securitySettings);
 
@@ -332,6 +362,16 @@ namespace Nop.Web.Areas.Admin.Controllers
             captchaSettings.ShowOnContactUsPage = model.CaptchaSettings.ShowOnContactUsPage;
             captchaSettings.ReCaptchaPublicKey = model.CaptchaSettings.ReCaptchaPublicKey;
             captchaSettings.ReCaptchaPrivateKey = model.CaptchaSettings.ReCaptchaPrivateKey;
+
+            //we do not clear cache after each setting update.
+            //this behavior can increase performance because cached settings will not be cleared 
+            //and loaded from database after each update
+            _settingService.SaveSettingOverridable(captchaSettings, x => x.Enabled, true);
+            _settingService.SaveSettingOverridable(captchaSettings, x => x.ShowOnLoginPage, true);
+            _settingService.SaveSettingOverridable(captchaSettings, x => x.ShowOnRegistrationPage, true);
+            _settingService.SaveSettingOverridable(captchaSettings, x => x.ShowOnContactUsPage, true);
+            _settingService.SaveSettingOverridable(captchaSettings, x => x.ReCaptchaPublicKey, true);
+            _settingService.SaveSettingOverridable(captchaSettings, x => x.ReCaptchaPrivateKey, true);
 
             // now clear settings cache
             _settingService.ClearCache();
@@ -347,6 +387,12 @@ namespace Nop.Web.Areas.Admin.Controllers
             var pdfSettings = _settingService.LoadSetting<PdfSettings>();
             pdfSettings.LetterPageSizeEnabled = model.PdfSettings.LetterPageSizeEnabled;
             pdfSettings.LogoPictureId = model.PdfSettings.LogoPictureId;
+
+            //we do not clear cache after each setting update.
+            //this behavior can increase performance because cached settings will not be cleared 
+            //and loaded from database after each update
+            _settingService.SaveSettingOverridable(pdfSettings, x => x.LetterPageSizeEnabled, true);
+            _settingService.SaveSettingOverridable(pdfSettings, x => x.LogoPictureId, true);
 
             //now clear settings cache
             _settingService.ClearCache();
@@ -383,6 +429,10 @@ namespace Nop.Web.Areas.Admin.Controllers
             displayDefaultMenuItemSettings.DisplayUserInfoMenuItem = model.DisplayDefaultMenuItemSettings.DisplayUserInfoMenuItem;
             displayDefaultMenuItemSettings.DisplayContactUsMenuItem = model.DisplayDefaultMenuItemSettings.DisplayContactUsMenuItem;
 
+            _settingService.SaveSettingOverridable(displayDefaultMenuItemSettings, x => x.DisplayHomePageMenuItem, true);
+            _settingService.SaveSettingOverridable(displayDefaultMenuItemSettings, x => x.DisplayUserInfoMenuItem, true);
+            _settingService.SaveSettingOverridable(displayDefaultMenuItemSettings, x => x.DisplayContactUsMenuItem, true);
+
             //now clear settings cache
             _settingService.ClearCache();
 
@@ -397,6 +447,11 @@ namespace Nop.Web.Areas.Admin.Controllers
             displayDefaultFooterItemSettings.DisplayUserInfoFooterItem = model.DisplayDefaultFooterItemSettings.DisplayUserInfoFooterItem;
             displayDefaultFooterItemSettings.DisplayUserAddressesFooterItem = model.DisplayDefaultFooterItemSettings.DisplayUserAddressesFooterItem;
 
+            _settingService.SaveSettingOverridable(displayDefaultFooterItemSettings, x => x.DisplaySitemapFooterItem, true);
+            _settingService.SaveSettingOverridable(displayDefaultFooterItemSettings, x => x.DisplayContactUsFooterItem, true);
+            _settingService.SaveSettingOverridable(displayDefaultFooterItemSettings, x => x.DisplayUserInfoFooterItem, true);
+            _settingService.SaveSettingOverridable(displayDefaultFooterItemSettings, x => x.DisplayUserAddressesFooterItem, true);
+
             //now clear settings cache
             _settingService.ClearCache();
 
@@ -407,6 +462,8 @@ namespace Nop.Web.Areas.Admin.Controllers
             //this behavior can increase performance because cached settings will not be cleared 
             //and loaded from database after each update
             adminAreaSettings.UseRichEditorInMessageTemplates = model.AdminAreaSettings.UseRichEditorInMessageTemplates;
+
+            _settingService.SaveSettingOverridable(adminAreaSettings, x => x.UseRichEditorInMessageTemplates, true);
 
             //now clear settings cache
             _settingService.ClearCache();
@@ -497,7 +554,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             
             if (!setting.Name.Equals(model.Name, StringComparison.InvariantCultureIgnoreCase))
             {
-                //setting name or store has been changed
+                //setting name or site has been changed
                 _settingService.DeleteSetting(setting);
             }
 
@@ -551,7 +608,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             return new NullJsonResult();
         }
 
-        //action displaying notification (warning) to a store owner about a lot of traffic 
+        //action displaying notification (warning) to a site owner about a lot of traffic 
         //between the Redis server and the application when LoadAllLocaleRecordsOnStartup setting is set
         public IActionResult RedisCacheHighTrafficWarning(bool loadAllLocaleRecordsOnStartup)
         {
