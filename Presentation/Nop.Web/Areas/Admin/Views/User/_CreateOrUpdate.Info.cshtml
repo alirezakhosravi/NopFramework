@@ -168,21 +168,21 @@
                 </div>
                 <script>
                     $(document).ready(function() {
-                        var customerRolesIdsInput = $('#@Html.IdFor(model => model.SelectedUserRoleIds)').data("kendoMultiSelect");
-                        customerRolesIdsInput.setOptions({
-                            customerRolesIdsInput: false,
+                        var userRolesIdsInput = $('#@Html.IdFor(model => model.SelectedUserRoleIds)').data("kendoMultiSelect");
+                        userRolesIdsInput.setOptions({
+                            userRolesIdsInput: false,
                             filter: "contains"
                         });
 
                         @if (Model.AvailableUserRoles.Count == 0)
                         {
                             <text>
-                                customerRolesIdsInput.setOptions({
+                                userRolesIdsInput.setOptions({
                                     enable: false,
                                     placeholder: '@T("Admin.Users.Users.Fields.UserRoles.NoRoles")'
                                 });
-                                customerRolesIdsInput._placeholder();
-                                customerRolesIdsInput._enable();
+                                userRolesIdsInput._placeholder();
+                                userRolesIdsInput._enable();
                             </text>
                         }
                     });

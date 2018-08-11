@@ -5775,16 +5775,22 @@
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.DefaultSiteTimeZone.Hint">
     <Value>منطقه زمانی پیش فرض سایت برای استفاده نمایش تاریخ ها</Value>
   </LocaleResource>
+ <LocaleResource Name="Admin.Configuration.Settings.UserUser.DefaultTimeZone">
+    <Value>منطقه زمانی پیش فرض سایت</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.DefaultTimeZone.Hint">
+    <Value>منطقه زمانی پیش فرض سایت برای استفاده نمایش تاریخ ها</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.EnteringEmailTwice">
     <Value>نیاز به ورود ایمیل مجدد</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.EnteringEmailTwice.Hint">
     <Value>اجبار به وارد کردن دو بار ایمیل در طی ثبت نام</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersitemoveAssociations">
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToRemoveAssociations">
     <Value>اجازه به کاربران جهت حذف وابستگی ها.</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersitemoveAssociations.Hint">
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToRemoveAssociations.Hint">
     <Value>بررسی که کاربران اجازه حذف احراز هویت خارجی را داشته باشند.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.FaxEnabled">
@@ -5919,16 +5925,16 @@
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.StateProvinceRequired.Hint">
     <Value>فعال کنید اگر می خواهید ضروری استان باشد</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.SiteIpAddresses">
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.StoreIpAddresses">
     <Value>IP آدرس سایت</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.SiteIpAddresses.Hint">
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.StoreIpAddresses.Hint">
     <Value>هنگام فعال بودن، آدرس IP کاربران ذخیره می شود. هنگامی که غیرفعال است، می تواند عملکرد را بهبود بخشد. علاوه بر این  برای ذخیره آدرس های IP در برخی کشورها ممنوع است(اطلاعات حریم خصوصی افراد).</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.SiteLastVisitedPage">
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.StoreLastVisitedPage">
     <Value>آخرین صفحه بازدید شده سایت</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.SiteLastVisitedPage.Hint">
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.StoreLastVisitedPage.Hint">
     <Value>وقتی که فعال باشد، آخرین صفحه های دیده شده ذخیره می شود، وقتی که فعال باشد، سیستم می تواند عملکرد بهتری داشته باشد</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.StreetAddress2Enabled">
@@ -6720,22 +6726,22 @@
   <LocaleResource Name="Admin.Configuration.Settings.Media.MultipleThumbDirectories.Hint">
     <Value>فعال کنید برای فعال شدن چند پوشه تصویر بند انگشتی، می تواند برای هاست شما در صورتی که هرگونه محدودیتی در تعداد فایل مجاز در هر پوشه دارد مفید باشد</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase">
     <Value>تصاویر ذخیره شده در</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.Change">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.Change">
     <Value>تغییر</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.Database">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.Database">
     <Value>پایگاه داده</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.FileSystem">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.FileSystem">
     <Value>فایل سیستم</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.Hint">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.Hint">
     <Value>مقداری که نشان دهد آیا تصاویر در پایگاه داده یا سیستم فایل ذخیره می شود</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.Note">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.Note">
     <Value>توجه: فراموش نکنید قبل از تغییر این گزینه از پایگاه داده پشتیبان تهیه کنید</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Media.ProductDetailsPictureSize">

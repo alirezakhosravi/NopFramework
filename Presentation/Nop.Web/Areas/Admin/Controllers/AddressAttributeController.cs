@@ -13,6 +13,7 @@ using Nop.Web.Framework.Mvc.Filters;
 
 namespace Nop.Web.Areas.Admin.Controllers
 {
+    [NonController]
     public partial class AddressAttributeController : BaseAdminController
     {
         #region Fields

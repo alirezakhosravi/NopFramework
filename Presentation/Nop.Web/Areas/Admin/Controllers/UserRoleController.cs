@@ -150,11 +150,7 @@ namespace Nop.Web.Areas.Admin.Controllers
 
                     if (userRole.IsSystemRole && !userRole.SystemName.Equals(model.SystemName, StringComparison.InvariantCultureIgnoreCase))
                         throw new NopException(_localizationService.GetResource("Admin.Users.UserRoles.Fields.SystemName.CantEditSystem"));
-
-                    if (NopUserDefaults.RegisteredRoleName.Equals(userRole.SystemName, StringComparison.InvariantCultureIgnoreCase) &&
-                        model.PurchasedWithProductId > 0)
-                        throw new NopException(_localizationService.GetResource("Admin.Users.UserRoles.Fields.PurchasedWithProduct.Registered"));
-
+                    
                     userRole = model.ToEntity(userRole);
                     _userService.UpdateUserRole(userRole);
 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Localization;
 
 namespace Nop.Core.Domain.Users
@@ -19,11 +20,6 @@ namespace Nop.Core.Domain.Users
         /// Gets or sets a value indicating whether the attribute is required
         /// </summary>
         public bool IsRequired { get; set; }
-
-        /// <summary>
-        /// Gets or sets the attribute control type identifier
-        /// </summary>
-        public int AttributeControlTypeId { get; set; }
 
         /// <summary>
         /// Gets or sets the display order

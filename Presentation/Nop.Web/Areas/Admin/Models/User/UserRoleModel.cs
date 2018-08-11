@@ -17,7 +17,6 @@ namespace Nop.Web.Areas.Admin.Models.Users
 
         public UserRoleModel()
         {
-            this.TaxDisplayTypeValues = new List<SelectListItem>();
         }
 
         #endregion
@@ -26,12 +25,6 @@ namespace Nop.Web.Areas.Admin.Models.Users
 
         [NopResourceDisplayName("Admin.Users.UserRoles.Fields.Name")]
         public string Name { get; set; }
-
-        [NopResourceDisplayName("Admin.Users.UserRoles.Fields.FreeShipping")]
-        public bool FreeShipping { get; set; }
-
-        [NopResourceDisplayName("Admin.Users.UserRoles.Fields.TaxExempt")]
-        public bool TaxExempt { get; set; }
 
         [NopResourceDisplayName("Admin.Users.UserRoles.Fields.Active")]
         public bool Active { get; set; }
@@ -44,20 +37,6 @@ namespace Nop.Web.Areas.Admin.Models.Users
 
         [NopResourceDisplayName("Admin.Users.UserRoles.Fields.EnablePasswordLifetime")]
         public bool EnablePasswordLifetime { get; set; }
-
-        [NopResourceDisplayName("Admin.Users.UserRoles.Fields.OverrideTaxDisplayType")]
-        public bool OverrideTaxDisplayType { get; set; }
-
-        [NopResourceDisplayName("Admin.Users.UserRoles.Fields.DefaultTaxDisplayType")]
-        public int DefaultTaxDisplayTypeId { get; set; }
-
-        public IList<SelectListItem> TaxDisplayTypeValues { get; set; }
-
-        [NopResourceDisplayName("Admin.Users.UserRoles.Fields.PurchasedWithProduct")]
-        public int PurchasedWithProductId { get; set; }
-
-        [NopResourceDisplayName("Admin.Users.UserRoles.Fields.PurchasedWithProduct")]
-        public string PurchasedWithProductName { get; set; }
 
         #endregion
     }

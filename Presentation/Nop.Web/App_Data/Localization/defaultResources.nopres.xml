@@ -532,7 +532,7 @@
     <Value>The credentials provided are incorrect</Value>
   </LocaleResource>
   <LocaleResource Name="Account.Login.WrongCredentials.UserNotExist">
-    <Value>No customer account found</Value>
+    <Value>No user account found</Value>
   </LocaleResource>
   <LocaleResource Name="Account.Login.WrongCredentials.Deleted">
     <Value>User is deleted</Value>
@@ -736,16 +736,16 @@
     <Value>Added a new currency (ID = {0})</Value>
   </LocaleResource>  
   <LocaleResource Name="ActivityLog.AddNewUser">
-    <Value>Added a new customer (ID = {0})</Value>
+    <Value>Added a new user (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.AddNewUserAttribute">
-    <Value>Added a new customer attribute (ID = {0})</Value>
+    <Value>Added a new user attribute (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.AddNewUserAttributeValue">
-    <Value>Added a new customer attribute value (ID = {0})</Value>
+    <Value>Added a new user attribute value (ID = {0})</Value>
   </LocaleResource>  
   <LocaleResource Name="ActivityLog.AddNewUserRole">
-    <Value>Added a new customer role ('{0}')</Value>
+    <Value>Added a new user role ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.AddNewDiscount">
     <Value>Added a new discount ('{0}')</Value>
@@ -844,16 +844,16 @@
    <Value>Deleted a currency (ID = {0})</Value>
   </LocaleResource>  
   <LocaleResource Name="ActivityLog.DeleteUser">
-    <Value>Deleted a customer (ID = {0})</Value>
+    <Value>Deleted a user (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteUserAttribute">
-   <Value>Deleted a customer attribute (ID = {0})</Value>
+   <Value>Deleted a user attribute (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteUserAttributeValue">
-   <Value>Deleted a customer attribute value (ID = {0})</Value>
+   <Value>Deleted a user attribute value (ID = {0})</Value>
   </LocaleResource>  
   <LocaleResource Name="ActivityLog.DeleteUserRole">
-    <Value>Deleted a customer role ('{0}')</Value>
+    <Value>Deleted a user role ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteDiscount">
     <Value>Deleted a discount ('{0}')</Value>
@@ -973,16 +973,16 @@
    <Value>Edited a currency (ID = {0})</Value>
   </LocaleResource>  
   <LocaleResource Name="ActivityLog.EditUser">
-    <Value>Edited a customer (ID = {0})</Value>
+    <Value>Edited a user (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditUserAttribute">
-   <Value>Edited a customer attribute (ID = {0})</Value>
+   <Value>Edited a user attribute (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditUserAttributeValue">
-   <Value>Edited a customer attribute value (ID = {0})</Value>
+   <Value>Edited a user attribute value (ID = {0})</Value>
   </LocaleResource>  
   <LocaleResource Name="ActivityLog.EditUserRole">
-    <Value>Edited a customer role ('{0}')</Value>
+    <Value>Edited a user role ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditDiscount">
     <Value>Edited a discount ('{0}')</Value>
@@ -1069,10 +1069,10 @@
     <Value>Edited a widget (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.Impersonation.Started.SiteOwner">
-    <Value>Started customer impersonation (Email: {0}, ID = {1})</Value>
+    <Value>Started user impersonation (Email: {0}, ID = {1})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.Impersonation.Finished.SiteOwner">
-    <Value>Finished customer impersonation (Email: {0}, ID = {1})</Value>
+    <Value>Finished user impersonation (Email: {0}, ID = {1})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.Impersonation.Started.User">
     <Value>Impersonated by site owner (Email: {0}, ID = {1})</Value>
@@ -1126,7 +1126,7 @@
     <Value>Placed a new order (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.PublicSite.SendPM">
-    <Value>Sent PM to customer ('{0}')</Value>
+    <Value>Sent PM to user ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.PublicSite.ViewCategory">
     <Value>Public site. Viewed a category details page ('{0}')</Value>
@@ -1288,7 +1288,7 @@
     <Value>Required</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Address.AddressAttributes.Fields.IsRequired.Hint">
-    <Value>When an attribute is required, the customer must choose an appropriate attribute value before they can continue.</Value>
+    <Value>When an attribute is required, the user must choose an appropriate attribute value before they can continue.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Address.AddressAttributes.Fields.AttributeControlType">
     <Value>Control type</Value>
@@ -1474,7 +1474,7 @@
     <Value>back to affiliate list</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Affiliates.Users">
-    <Value>Affiliated customers</Value>
+    <Value>Affiliated users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Affiliates.Users.Name">
     <Value>Name</Value>
@@ -1483,7 +1483,7 @@
     <Value>The affiliate has been deleted successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Affiliates.Description">
-    <Value>Affiliate is an Internet-based marketing practice in which a business rewards one or more affiliates for each visitor or customer. It is a web-based pay-for-performance program designed to compensate affiliate partner for driving qualified leads or sales to a merchant web site.</Value>
+    <Value>Affiliate is an Internet-based marketing practice in which a business rewards one or more affiliates for each visitor or user. It is a web-based pay-for-performance program designed to compensate affiliate partner for driving qualified leads or sales to a merchant web site.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Affiliates.EditAffiliateDetails">
     <Value>Edit affiliate details</Value>
@@ -1510,7 +1510,7 @@
     <Value>Affiliate URL</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Affiliates.Fields.URL.Hint">
-    <Value>When this hyperlink is clicked from the affiliate site, this site looks for an Affiliate ID query string parameter. If one exists, the customer is tagged with that affiliate.</Value>
+    <Value>When this hyperlink is clicked from the affiliate site, this site looks for an Affiliate ID query string parameter. If one exists, the user is tagged with that affiliate.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Affiliates.Info">
     <Value>Affiliate info</Value>
@@ -1519,7 +1519,7 @@
     <Value>Load only with orders</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Affiliates.List.LoadOnlyWithOrders.Hint">
-    <Value>Check to load affiliates only with orders placed (by affiliated customers).</Value>
+    <Value>Check to load affiliates only with orders placed (by affiliated users).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Affiliates.List.OrdersCreatedFromUtc">
     <Value>Orders start date</Value>
@@ -1639,7 +1639,7 @@
     <Value>The attribute has been deleted successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Attributes.CheckoutAttributes.Description">
-    <Value>Checkout attributes are displayed on the shopping cart page and provide the opportunity to offer more services to customers, i.e. gift wrapping, before placing the order.</Value>
+    <Value>Checkout attributes are displayed on the shopping cart page and provide the opportunity to offer more services to users, i.e. gift wrapping, before placing the order.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Attributes.CheckoutAttributes.EditAttributeDetails">
     <Value>Edit checkout attribute details</Value>
@@ -1678,7 +1678,7 @@
     <Value>Required</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Attributes.CheckoutAttributes.Fields.IsRequired.Hint">
-    <Value>When an attribute is required, the customer must choose an appropriate attribute value before they can continue.</Value>
+    <Value>When an attribute is required, the user must choose an appropriate attribute value before they can continue.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Attributes.CheckoutAttributes.Fields.IsTaxExempt">
     <Value>Tax exempt</Value>
@@ -1762,7 +1762,7 @@
     <Value>Pre-selected</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Attributes.CheckoutAttributes.Values.Fields.IsPreSelected.Hint">
-    <Value>Determines whether this attribute value is pre-selected for the customer.</Value>
+    <Value>Determines whether this attribute value is pre-selected for the user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Attributes.CheckoutAttributes.Values.Fields.Name">
     <Value>Name</Value>
@@ -1852,7 +1852,7 @@
     <Value>Is pre-selected</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Attributes.ProductAttributes.PredefinedValues.Fields.IsPreSelected.Hint">
-    <Value>Determines whether this attribute value is pre-selected for the customer.</Value>
+    <Value>Determines whether this attribute value is pre-selected for the user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Attributes.ProductAttributes.PredefinedValues.Fields.Name">
     <Value>Name</Value>
@@ -2062,16 +2062,16 @@
     <Value>Edit category details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Categories.Fields.AclUserRoles">
-    <Value>Limited to customer roles</Value>
+    <Value>Limited to user roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Categories.Fields.AclUserRoles.Hint">
-    <Value>Select customer roles for which the category will be shown. Leave empty if you want this category to be visible to all users.</Value>
+    <Value>Select user roles for which the category will be shown. Leave empty if you want this category to be visible to all users.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Categories.Fields.AllowUsersToSelectPageSize">
-    <Value>Allow customers to select page size</Value>
+    <Value>Allow users to select page size</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Categories.Fields.AllowUsersToSelectPageSize.Hint">
-    <Value>Whether customers are allowed to select the page size from a predefined list of options.</Value>
+    <Value>Whether users are allowed to select the page size from a predefined list of options.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Categories.Fields.CategoryTemplate">
     <Value>Category template</Value>
@@ -2281,16 +2281,16 @@
     <Value>Edit manufacturer details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Manufacturers.Fields.AclUserRoles">
-    <Value>Limited to customer roles</Value>
+    <Value>Limited to user roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Manufacturers.Fields.AclUserRoles.Hint">
-    <Value>Select customer roles for which the manufacturer will be shown. Leave empty if you want this manufacturer to be visible to all users.</Value>
+    <Value>Select user roles for which the manufacturer will be shown. Leave empty if you want this manufacturer to be visible to all users.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Manufacturers.Fields.AllowUsersToSelectPageSize">
-    <Value>Allow customers to select page size</Value>
+    <Value>Allow users to select page size</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Manufacturers.Fields.AllowUsersToSelectPageSize.Hint">
-    <Value>Whether customers are allowed to select the page size from a predefined list of options.</Value>
+    <Value>Whether users are allowed to select the page size from a predefined list of options.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Manufacturers.Fields.CreatedOn">
     <Value>Created on</Value>
@@ -2464,7 +2464,7 @@
     <Value>User</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.ProductReviews.Fields.User.Hint">
-    <Value>The customer who created the review.</Value>
+    <Value>The user who created the review.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.ProductReviews.Fields.IsApproved">
     <Value>Is approved</Value>
@@ -2482,13 +2482,13 @@
     <Value>Rating</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.ProductReviews.Fields.Rating.Hint">
-    <Value>The customer's product rating.</Value>
+    <Value>The user's product rating.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.ProductReviews.Fields.ReplyText">
     <Value>Reply text</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.ProductReviews.Fields.ReplyText.Hint">
-    <Value>The reply text (by a site owner). If specified, then it'll be visible to a customer. Leave empty to ignore this functionality.</Value>
+    <Value>The reply text (by a site owner). If specified, then it'll be visible to a user. Leave empty to ignore this functionality.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.ProductReviews.Fields.ReviewText">
     <Value>Review text</Value>
@@ -2572,7 +2572,7 @@
     <Value>Rating</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.AdditionalProductReviews.Fields.VisibleToAllUsers">
-    <Value>Visible to all customers</Value>
+    <Value>Visible to all users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products">
     <Value>Products</Value>
@@ -2680,7 +2680,7 @@
     <Value>User roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.AclUserRoles.Hint">
-    <Value>Choose one or several customer roles i.e. administrators, vendors, guests, who will be able to see this product in catalog. If you don't need this option just leave this field empty. In order to use this functionality, you have to disable the following setting: Configuration > Catalog settings > Ignore ACL rules (sitewide).</Value>
+    <Value>Choose one or several user roles i.e. administrators, vendors, guests, who will be able to see this product in catalog. If you don't need this option just leave this field empty. In order to use this functionality, you have to disable the following setting: Configuration > Catalog settings > Ignore ACL rules (sitewide).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.AdditionalShippingCharge">
     <Value>Additional shipping charge</Value>
@@ -2692,7 +2692,7 @@
     <Value>Admin comment</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.AdminComment.Hint">
-    <Value>This comment is for internal use only, not visible for customers.</Value>
+    <Value>This comment is for internal use only, not visible for users.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.AllowAddingOnlyExistingAttributeCombinations">
     <Value>Allow only existing attribute combinations</Value>
@@ -2704,13 +2704,13 @@
     <Value>Allow back in stock subscriptions</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.AllowBackInStockSubscriptions.Hint">
-    <Value>Allow customers to subscribe to a notification list for a product that has gone out of stock.</Value>
+    <Value>Allow users to subscribe to a notification list for a product that has gone out of stock.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.AllowUserReviews">
-    <Value>Allow customer reviews</Value>
+    <Value>Allow user reviews</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.AllowUserReviews.Hint">
-    <Value>Check to allow customers to review this product.</Value>
+    <Value>Check to allow users to review this product.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.AllowedQuantities">
     <Value>Allowed quantities</Value>
@@ -2800,7 +2800,7 @@
     <Value>User enters price</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.UserEntersPrice.Hint">
-    <Value>An option indicating whether customer should enter price.</Value>
+    <Value>An option indicating whether user should enter price.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.DeliveryDate">
     <Value>Delivery date</Value>
@@ -2842,13 +2842,13 @@
     <Value>Display availability</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.DisplayStockAvailability.Hint">
-    <Value>Check to display stock availability. When enabled, customers will see stock availability.</Value>
+    <Value>Check to display stock availability. When enabled, users will see stock availability.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.DisplayStockQuantity">
     <Value>Display stock quantity</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.DisplayStockQuantity.Hint">
-    <Value>Check to display stock quantity. When enabled, customers will see stock quantity.</Value>
+    <Value>Check to display stock quantity. When enabled, users will see stock quantity.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.Download">
     <Value>Download file</Value>
@@ -2866,7 +2866,7 @@
     <Value>Number of days</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.DownloadExpirationDays.Hint">
-    <Value>The number of days during customers keeps access to the file (e.g. 14). Leave this field blank to allow continuous downloads.</Value>
+    <Value>The number of days during users keeps access to the file (e.g. 14). Leave this field blank to allow continuous downloads.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.FullDescription">
     <Value>Full description</Value>
@@ -2896,7 +2896,7 @@
     <Value>Has user agreement</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.HasUserAgreement.Hint">
-    <Value>Select this checkbox if the customer has a user agreement (a customer must agree with this user agreement when trying to download the product).</Value>
+    <Value>Select this checkbox if the user has a user agreement (a user must agree with this user agreement when trying to download the product).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.Height">
     <Value>Height</Value>
@@ -2914,7 +2914,7 @@
     <Value>Downloadable product</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.IsDownload.Hint">
-    <Value>Check if the product is downloadable. When customers purchase a downloadable product, they can download it direct from your site. The link will be visible after checkout.</Value>
+    <Value>Check if the product is downloadable. When users purchase a downloadable product, they can download it direct from your site. The link will be visible after checkout.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.IsFreeShipping">
     <Value>Free shipping</Value>
@@ -2932,7 +2932,7 @@
     <Value>Recurring product</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.IsRecurring.Hint">
-    <Value>Check if it is a recurring product. For any product, you can define a recurring cycle to enable the system to automatically create orders that repeat when a customer purchases such products.</Value>
+    <Value>Check if it is a recurring product. For any product, you can define a recurring cycle to enable the system to automatically create orders that repeat when a user purchases such products.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.IsRental">
     <Value>Is rental</Value>
@@ -3085,7 +3085,7 @@
     <Value>Not returnable</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.NotReturnable.Hint">
-    <Value>Check if this product is not returnable. In this case a customer won't be allowed to submit return request.</Value>
+    <Value>Check if this product is not returnable. In this case a user won't be allowed to submit return request.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.OldPrice">
     <Value>Old price</Value>
@@ -3097,13 +3097,13 @@
     <Value>Maximum cart qty</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.OrderMaximumQuantity.Hint">
-    <Value>Set the maximum quantity allowed in a customer's shopping cart e.g. set to 5 to only allow customers to purchase 5 of this product.</Value>
+    <Value>Set the maximum quantity allowed in a user's shopping cart e.g. set to 5 to only allow users to purchase 5 of this product.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.OrderMinimumQuantity">
     <Value>Minimum cart qty</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.OrderMinimumQuantity.Hint">
-    <Value>Set the minimum quantity allowed in a customer's shopping cart e.g. set to 3 to only allow customers to purchase 3 or more of this product.</Value>
+    <Value>Set the minimum quantity allowed in a user's shopping cart e.g. set to 3 to only allow users to purchase 3 or more of this product.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.OverriddenGiftCardAmount">
     <Value>Overridden gift card amount</Value>
@@ -3130,7 +3130,7 @@
     <Value>Product cost</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.ProductCost.Hint">
-    <Value>Product cost is a prime product cost. This field is only for internal use, not visible for customers.</Value>
+    <Value>Product cost is a prime product cost. This field is only for internal use, not visible for users.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.ProductTags">
     <Value>Product tags</Value>
@@ -3175,7 +3175,7 @@
     <Value>Total cycles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.RecurringTotalCycles.Hint">
-    <Value>Total cycles are number of times customer will receive the recurring product.</Value>
+    <Value>Total cycles are number of times user will receive the recurring product.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.RentalPriceLength">
     <Value>Rental period length</Value>
@@ -3271,7 +3271,7 @@
     <Value>Unlimited downloads</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.UnlimitedDownloads.Hint">
-    <Value>When a customer purchases a download product, they can download the item unlimited number of times.</Value>
+    <Value>When a user purchases a download product, they can download the item unlimited number of times.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.UpdatedOn">
     <Value>Updated on</Value>
@@ -3622,7 +3622,7 @@
     <Value>Is Required</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Fields.IsRequired.Hint">
-    <Value>When an attribute is required, the customer must choose an appropriate attribute value before they can continue.</Value>
+    <Value>When an attribute is required, the user must choose an appropriate attribute value before they can continue.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Fields.TextPrompt">
     <Value>Text prompt</Value>
@@ -3703,13 +3703,13 @@
     <Value>The associated product is downloadable, keep in mind that won't be able to download it.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Values.Fields.AssociatedProduct.GiftCard">
-    <Value>The associated product is a gift card, keep in mind that customers can not specify its details in the product details page.</Value>
+    <Value>The associated product is a gift card, keep in mind that users can not specify its details in the product details page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Values.Fields.AssociatedProduct.HasAttributes">
-    <Value>The associated product has attributes, keep in mind that customers can not select them in the product details page.</Value>
+    <Value>The associated product has attributes, keep in mind that users can not select them in the product details page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Values.Fields.AssociatedProduct.HasRequiredAttributes">
-    <Value>The associated product has required product attributes, so customers won't be able to choose this product attribute value.</Value>
+    <Value>The associated product has required product attributes, so users won't be able to choose this product attribute value.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Values.Fields.AssociatedProduct.Hint">
     <Value>Associated product.</Value>
@@ -3748,7 +3748,7 @@
     <Value>Is pre-selected</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Values.Fields.IsPreSelected.Hint">
-    <Value>Determines whether this attribute value is pre-selected for the customer.</Value>
+    <Value>Determines whether this attribute value is pre-selected for the user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Values.Fields.Name">
     <Value>Name</Value>
@@ -3793,7 +3793,7 @@
     <Value>User enters quantity</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Values.Fields.UserEntersQty.Hint">
-    <Value>Allow customers enter the quantity of associated product.</Value>
+    <Value>Allow users enter the quantity of associated product.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Values.Fields.WeightAdjustment">
     <Value>Weight adjustment</Value>
@@ -3988,10 +3988,10 @@
     <Value>User role</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.TierPrices.Fields.UserRole.All">
-    <Value>All customer roles</Value>
+    <Value>All user roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.TierPrices.Fields.UserRole.Hint">
-    <Value>Select customer role for which the tier price will be available.</Value>
+    <Value>Select user role for which the tier price will be available.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.TierPrices.Fields.EndDateTimeUtc">
     <Value>End date</Value>
@@ -4222,7 +4222,7 @@
     <Value>Access control list</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.ACL.Description">
-    <Value>Access control list is a list of permissions attached to customer roles. This list specifies the access rights of users to objects.</Value>
+    <Value>Access control list is a list of permissions attached to user roles. This list specifies the access rights of users to objects.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.ACL.Permission">
     <Value>Permission name</Value>
@@ -4270,7 +4270,7 @@
     <Value>User Email</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.ActivityLog.ActivityLog.Fields.UserEmail.Hint">
-    <Value>A customer Email.</Value>
+    <Value>A user Email.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.ActivityLog.ActivityLogType">
     <Value>Activity Types</Value>
@@ -4309,13 +4309,13 @@
     <Value>Allows billing</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Countries.Fields.AllowsBilling.Hint">
-    <Value>Allow billing to customers located in this country.</Value>
+    <Value>Allow billing to users located in this country.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Countries.Fields.AllowsShipping">
     <Value>Allows shipping</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Countries.Fields.AllowsShipping.Hint">
-    <Value>Allow shipping to customers located in this country.</Value>
+    <Value>Allow shipping to users located in this country.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Countries.Fields.DisplayOrder">
     <Value>Display order</Value>
@@ -4357,7 +4357,7 @@
     <Value>Subject to VAT</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Countries.Fields.SubjectToVat.Hint">
-    <Value>Value indicating whether customers in this country must be charged EU VAT (the European Union Value Added Tax).</Value>
+    <Value>Value indicating whether users in this country must be charged EU VAT (the European Union Value Added Tax).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Countries.Fields.ThreeLetterIsoCode">
     <Value>Three letter ISO code</Value>
@@ -4966,10 +4966,10 @@
     <Value>Edit plugin details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Plugins.Fields.AclUserRoles">
-    <Value>Limited to customer roles</Value>
+    <Value>Limited to user roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Plugins.Fields.AclUserRoles.Hint">
-    <Value>Choose one or several customer roles i.e. administrators, vendors, guests, who will be able to use this plugin. If you don't need this option just leave this field empty.</Value>
+    <Value>Choose one or several user roles i.e. administrators, vendors, guests, who will be able to use this plugin. If you don't need this option just leave this field empty.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Plugins.Fields.Author">
     <Value>Author</Value>
@@ -5224,7 +5224,7 @@
     <Value>Display blog RSS feed link in the browser address bar</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Blog.ShowHeaderRSSUrl.Hint">
-    <Value>Check to enable the blog RSS feed link in customers browser address bar.</Value>
+    <Value>Check to enable the blog RSS feed link in users browser address bar.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Blog.ShowBlogCommentsPerSite">
     <Value>Blog comments per site</Value>
@@ -5320,7 +5320,7 @@
     <Value>'Compare Products' enabled</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.CompareProductsEnabled.Hint">
-    <Value>Check to allow customers to use the 'Compare Products' option in your site.</Value>
+    <Value>Check to allow users to use the 'Compare Products' option in your site.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.DefaultViewMode">
     <Value>Default view mode</Value>
@@ -5380,7 +5380,7 @@
     <Value>'Email a friend' enabled</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.EmailAFriendEnabled.Hint">
-    <Value>Check to allow customers to use the 'Email a friend' option in your site.</Value>
+    <Value>Check to allow users to use the 'Email a friend' option in your site.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ExportImportAllowDownloadImages">
     <Value>Export/Import products. Allow download images</Value>
@@ -5479,10 +5479,10 @@
     <Value>The number of products to display when 'New products' page is enabled.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.NotifyUserAboutProductReviewReply">
-    <Value>Notify customer about product review reply</Value>
+    <Value>Notify user about product review reply</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.NotifyUserAboutProductReviewReply.Hint">
-    <Value>Check to notify customer about product review reply.</Value>
+    <Value>Check to notify user about product review reply.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.NotifySiteOwnerAboutNewProductReviews">
     <Value>Notify about new product reviews</Value>
@@ -5512,7 +5512,7 @@
     <Value>Product review possible only after product purchasing</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductReviewPossibleOnlyAfterPurchasing.Hint">
-    <Value>Check if product can be reviewed only by customer who have already ordered it.</Value>
+    <Value>Check if product can be reviewed only by user who have already ordered it.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductReviewsMustBeApproved">
     <Value>Product reviews must be approved</Value>
@@ -5530,19 +5530,19 @@
     <Value>'Products also purchased' enabled</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductsAlsoPurchasedEnabled.Hint">
-    <Value>Check to allow customers to view a list of products purchased by other customers who purchased the above.</Value>
+    <Value>Check to allow users to view a list of products purchased by other users who purchased the above.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductsAlsoPurchasedNumber">
     <Value>Number of also purchased products to display</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductsAlsoPurchasedNumber.Hint">
-    <Value>The number of products also purchased by other customers to display when 'Products also purchased' option is enabled.</Value>
+    <Value>The number of products also purchased by other users to display when 'Products also purchased' option is enabled.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductsByTagAllowUsersToSelectPageSize">
-    <Value>Allow customers to select 'Products by tag' page size</Value>
+    <Value>Allow users to select 'Products by tag' page size</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductsByTagAllowUsersToSelectPageSize.Hint">
-    <Value>Whether customers are allowed to select the 'Products by tag' page size from a predefined list of options.</Value>
+    <Value>Whether users are allowed to select the 'Products by tag' page size from a predefined list of options.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductsByTagPageSize">
     <Value>'Products by tag' page. Products per page</Value>
@@ -5578,7 +5578,7 @@
     <Value>'Recently viewed products' enabled</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.RecentlyViewedProductsEnabled.Hint">
-    <Value>Check to allow customers to use the 'Recently viewed products' feature in your site.</Value>
+    <Value>Check to allow users to use the 'Recently viewed products' feature in your site.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.RecentlyViewedProductsNumber">
     <Value>Number of 'Recently viewed products'</Value>
@@ -5593,10 +5593,10 @@
     <Value>Remove required products from the cart if the main one is removed.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.SearchPageAllowUsersToSelectPageSize">
-    <Value>Search page. Allow customers to select page size</Value>
+    <Value>Search page. Allow users to select page size</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.SearchPageAllowUsersToSelectPageSize.Hint">
-    <Value>Search page. Check to allow customers to select the page size from a predefined list of options.</Value>
+    <Value>Search page. Check to allow users to select the page size from a predefined list of options.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.SearchPagePageSizeOptions">
     <Value>Search page. Page size options (comma separated)</Value>
@@ -5719,7 +5719,7 @@
     <Value>'Accept privacy policy' enabled</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AcceptPrivacyPolicyEnabled.Hint">
-    <Value>Ask customers to accept privacy policy during registration.</Value>
+    <Value>Ask users to accept privacy policy during registration.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AddressFormFields">
     <Value>Address form fields</Value>
@@ -5836,34 +5836,34 @@
     <Value>Check if 'Zip / postal code' is required.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToCheckGiftCardBalance">
-    <Value>Allow customers to check gift card balance</Value>
+    <Value>Allow users to check gift card balance</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToCheckGiftCardBalance.Hint">
-    <Value>Check to allow customers to check gift card balance. If checked, then CAPTCHA setting must be enabled in the admin area. This feature is potentially not safe and CAPTCHA is needed to prevent and complicate bruteforce.</Value>
+    <Value>Check to allow users to check gift card balance. If checked, then CAPTCHA setting must be enabled in the admin area. This feature is potentially not safe and CAPTCHA is needed to prevent and complicate bruteforce.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToSetTimeZone">
-    <Value>Allow customers to select time zone</Value>
+    <Value>Allow users to select time zone</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToSetTimeZone.Hint">
-    <Value>Check to allow customers to select time zone. If checked, then time zone can be selected on the public site (account page). If not, then default time zone will be used.</Value>
+    <Value>Check to allow users to select time zone. If checked, then time zone can be selected on the public site (account page). If not, then default time zone will be used.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToUploadAvatars">
-    <Value>Allow customers to upload avatars</Value>
+    <Value>Allow users to upload avatars</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToUploadAvatars.Hint">
-    <Value>A value indicating whether customers are allowed to upload avatars.</Value>
+    <Value>A value indicating whether users are allowed to upload avatars.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToChangeUsernames">
-    <Value>Allow customers to change their usernames</Value>
+    <Value>Allow users to change their usernames</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToChangeUsernames.Hint">
-    <Value>A value indicating whether customers are allowed to change their usernames.</Value>
+    <Value>A value indicating whether users are allowed to change their usernames.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowViewingProfiles">
-    <Value>Allow viewing of customer profiles</Value>
+    <Value>Allow viewing of user profiles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowViewingProfiles.Hint">
-    <Value>A value indicating whether the viewing of customer profiles is allowed.</Value>
+    <Value>A value indicating whether the viewing of user profiles is allowed.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.BlockTitle.Account">
     <Value>Account</Value>
@@ -5887,10 +5887,10 @@
     <Value>Time zone</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.CheckUsernameAvailabilityEnabled">
-    <Value>Allow customers to check the availability of usernames</Value>
+    <Value>Allow users to check the availability of usernames</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.CheckUsernameAvailabilityEnabled.Hint">
-    <Value>A value indicating whether customers are allowed to check the availability of usernames (when registering or changing in 'My Account').</Value>
+    <Value>A value indicating whether users are allowed to check the availability of usernames (when registering or changing in 'My Account').</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.CityEnabled">
     <Value>'City' enabled</Value>
@@ -5944,7 +5944,7 @@
     <Value>User form fields</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.UserFormFields.Description">
-    <Value>You can create and manage the customer form fields available during registration below.</Value>
+    <Value>You can create and manage the user form fields available during registration below.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.UserNameFormat">
     <Value>User name format</Value>
@@ -5965,7 +5965,7 @@
     <Value>User minimum age</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.DateOfBirthMinimumAge.Hint">
-    <Value>Enter minimum allowed age. Leave empty if customers of all ages are allowed.</Value>
+    <Value>Enter minimum allowed age. Leave empty if users of all ages are allowed.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.DateOfBirthRequired">
     <Value>'Date of Birth' required</Value>
@@ -5983,12 +5983,18 @@
     <Value>Default password format</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.DefaultPasswordFormat.Hint">
-    <Value>Choose default password format. Please keep in mind that this setting will be applied only to the newly registered customers.</Value>
+    <Value>Choose default password format. Please keep in mind that this setting will be applied only to the newly registered users.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.DefaultSiteTimeZone">
     <Value>Default site time zone</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.DefaultSiteTimeZone.Hint">
+    <Value>The default site time zone used to display dates.</Value>
+  </LocaleResource>
+ <LocaleResource Name="Admin.Configuration.Settings.UserUser.DefaultTimeZone">
+    <Value>Default site time zone</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.DefaultTimeZone.Hint">
     <Value>The default site time zone used to display dates.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.EnteringEmailTwice">
@@ -5997,11 +6003,11 @@
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.EnteringEmailTwice.Hint">
     <Value>Force entering email twice during registration.</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersitemoveAssociations">
-    <Value>Allow customers to remove associations</Value>
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToRemoveAssociations">
+    <Value>Allow users to remove associations</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersitemoveAssociations.Hint">
-    <Value>Check to allow customers to remove external authentication associations.</Value>
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.AllowUsersToRemoveAssociations.Hint">
+    <Value>Check to allow users to remove external authentication associations.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.FaxEnabled">
     <Value>'Fax number' enabled</Value>
@@ -6055,7 +6061,7 @@
     <Value>Newsletter box. Allow to unsubscribe</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.NewsletterBlockAllowToUnsubscribe.Hint">
-    <Value>Check if you want to allow customers to display "unsubscribe" option in the newsletter block.</Value>
+    <Value>Check if you want to allow users to display "unsubscribe" option in the newsletter block.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.NewsletterEnabled">
     <Value>'Newsletter' enabled</Value>
@@ -6070,16 +6076,16 @@
     <Value>A value indicating whether 'Newsletter' checkbox is ticked by default on the registration page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.NotifyNewUserRegistration">
-    <Value>Notify about new customer registration</Value>
+    <Value>Notify about new user registration</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.NotifyNewUserRegistration.Hint">
-    <Value>Notify the site owner when a new customer is registered.</Value>
+    <Value>Notify the site owner when a new user is registered.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.PasswordLifetime">
     <Value>Password lifetime</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.PasswordLifetime.Hint">
-    <Value>Specify number of days for password expiration. Don't forget to check "EnablePasswordLifetime" property on customer role edit page for those roles, who will have to change passwords.</Value>
+    <Value>Specify number of days for password expiration. Don't forget to check "EnablePasswordLifetime" property on user role edit page for those roles, who will have to change passwords.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.PasswordMinLength">
     <Value>Password minimum length</Value>
@@ -6112,16 +6118,16 @@
     <Value>Require account creation to purchase downloadable products.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.ShowUsersJoinDate">
-    <Value>Show customers join date</Value>
+    <Value>Show users join date</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.ShowUsersJoinDate.Hint">
-    <Value>A value indicating whether to show customers join date.</Value>
+    <Value>A value indicating whether to show users join date.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.ShowUsersLocation">
-    <Value>Show customer's location</Value>
+    <Value>Show user's location</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.ShowUsersLocation.Hint">
-    <Value>A value indicating whether customer's location is shown.</Value>
+    <Value>A value indicating whether user's location is shown.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.StateProvinceEnabled">
     <Value>'State/province' enabled</Value>
@@ -6135,16 +6141,16 @@
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.StateProvinceRequired.Hint">
     <Value>Check if 'State/province' is required.</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.SiteIpAddresses">
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.StoreIpAddresses">
     <Value>Site IP addresses</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.SiteIpAddresses.Hint">
-    <Value>When enabled, IP addresses of customers will be sited. When disabled, it can improve performance. Furthermore, it's prohibited to site IP addresses in some countries (private customer data).</Value>
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.StoreIpAddresses.Hint">
+    <Value>When enabled, IP addresses of users will be sited. When disabled, it can improve performance. Furthermore, it's prohibited to site IP addresses in some countries (private user data).</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.SiteLastVisitedPage">
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.StoreLastVisitedPage">
     <Value>Site last visited page</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.UserUser.SiteLastVisitedPage.Hint">
+  <LocaleResource Name="Admin.Configuration.Settings.UserUser.StoreLastVisitedPage.Hint">
     <Value>When enabled, the last visited page will be sited. When disabled, it can improve performance.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.StreetAddress2Enabled">
@@ -6175,7 +6181,7 @@
     <Value>Unduplicated passwords number</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.UnduplicatedPasswordsNumber.Hint">
-    <Value>Specify the number of customer passwords that mustn't be the same as the previous one, enter 0 if the customer can use the same password time after time.</Value>
+    <Value>Specify the number of user passwords that mustn't be the same as the previous one, enter 0 if the user can use the same password time after time.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.UsernamesEnabled">
     <Value>'Usernames' enabled</Value>
@@ -6205,7 +6211,7 @@
     <Value>Registration method</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.UserRegistrationType.Hint">
-    <Value>Determines customer registration method. Standard - mode where visitors can register and no approval is required. Email Validation - mode where user must respond to validation email that is sent to them before they are activated. Admin Approval - mode where visitors can register but admin approval is required. Disabled - mode where registration is disabled.</Value>
+    <Value>Determines user registration method. Standard - mode where visitors can register and no approval is required. Email Validation - mode where user must respond to validation email that is sent to them before they are activated. Admin Approval - mode where visitors can register but admin approval is required. Disabled - mode where registration is disabled.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.UserUser.ZipPostalCodeEnabled">
     <Value>'Zip / postal code' enabled</Value>
@@ -6241,22 +6247,22 @@
     <Value>Set the page size for active discussions page e.g. '10' results per page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.AllowUsersToDeletePosts">
-    <Value>Allow customers to delete posts</Value>
+    <Value>Allow users to delete posts</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.AllowUsersToDeletePosts.Hint">
-    <Value>A value indicating whether customers are allowed to delete posts that they created.</Value>
+    <Value>A value indicating whether users are allowed to delete posts that they created.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.AllowUsersToEditPosts">
-    <Value>Allow customers to edit posts</Value>
+    <Value>Allow users to edit posts</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.AllowUsersToEditPosts.Hint">
-    <Value>A value indicating whether customers are allowed to edit posts that they created.</Value>
+    <Value>A value indicating whether users are allowed to edit posts that they created.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.AllowUsersToManageSubscriptions">
-    <Value>Allow customers to manage forum subscriptions</Value>
+    <Value>Allow users to manage forum subscriptions</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.AllowUsersToManageSubscriptions.Hint">
-    <Value>Check if you want to allow customers to manage forum subscriptions.</Value>
+    <Value>Check if you want to allow users to manage forum subscriptions.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.AllowGuestsToCreatePosts">
     <Value>Allow guests to create posts</Value>
@@ -6328,7 +6334,7 @@
     <Value>Notify about private messages</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.NotifyAboutPrivateMessages.Hint">
-    <Value>Indicates whether a customer should be notified by email about new private messages.</Value>
+    <Value>Indicates whether a user should be notified by email about new private messages.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.PostsPageSize">
     <Value>Posts page size</Value>
@@ -6355,16 +6361,16 @@
     <Value>Shows an alert for new Private Messages.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.ShowUsersPostCount">
-    <Value>Show customers post count</Value>
+    <Value>Show users post count</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.ShowUsersPostCount.Hint">
-    <Value>A value indicating whether to show customers post count.</Value>
+    <Value>A value indicating whether to show users post count.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.SignaturesEnabled">
     <Value>Signature enabled</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.SignaturesEnabled.Hint">
-    <Value>Add an opportunity for customers to specify signature. Signature will be displayed below each forum post.</Value>
+    <Value>Add an opportunity for users to specify signature. Signature will be displayed below each forum post.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Forums.TopicsPageSize">
     <Value>Topics page size</Value>
@@ -6400,10 +6406,10 @@
     <Value>Check to display this consent on the registration page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Gdpr.Consent.DisplayOnUserInfoPage">
-    <Value>Display on 'customer info' page</Value>
+    <Value>Display on 'user info' page</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Gdpr.Consent.DisplayOnUserInfoPage.Hint">
-    <Value>Check to display this consent on the 'customer info' page.</Value>
+    <Value>Check to display this consent on the 'user info' page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Gdpr.Consent.DisplayOrder">
     <Value>Display order</Value>
@@ -6424,7 +6430,7 @@
     <Value>Message</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Gdpr.Consent.Message.Hint">
-    <Value>Enter message (question) displayed to customers.</Value>
+    <Value>Enter message (question) displayed to users.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Gdpr.Consent.Message.Required">
     <Value>Please provide a message.</Value>
@@ -6433,7 +6439,7 @@
     <Value>Required message</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Gdpr.Consent.RequiredMessage.Hint">
-    <Value>Enter message (error) displayed when this consent is not ticked by a customer.</Value>
+    <Value>Enter message (error) displayed when this consent is not ticked by a user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Gdpr.Consent.RequiredMessage.Required">
     <Value>Please provide a required message.</Value>
@@ -6475,16 +6481,16 @@
     <Value>IP addresses allowed to access the Back End. Leave this field empty if you do not want to restrict access to the Back End. Use comma to separate them (e.g. 127.0.0.10,232.18.204.16).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.AllowUserToSelectTheme">
-    <Value>Allow customers to select a theme</Value>
+    <Value>Allow users to select a theme</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.AllowUserToSelectTheme.Hint">
-    <Value>Check to allow customers to select a site theme.</Value>
+    <Value>Check to allow users to select a site theme.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.AutomaticallyDetectLanguage">
     <Value>Automatically detect language</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.AutomaticallyDetectLanguage.Hint">
-    <Value>Check to automatically detect language based on a customer browser settings.</Value>
+    <Value>Check to automatically detect language based on a user browser settings.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.BlockTitle.AdminArea">
     <Value>Admin area</Value>
@@ -6637,7 +6643,7 @@
     <Value>Disable PDF invoices for pending orders</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisablePdfInvoicesForPendingOrders.Hint">
-    <Value>If checked, customers won't be allowed to print PDF invoices for pending orders.</Value>
+    <Value>If checked, users won't be allowed to print PDF invoices for pending orders.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultFooterItemSettingsModel.DisplayApplyVendorAccountFooterItem">
     <Value>Display "Apply for vendor account"</Value>
@@ -6775,7 +6781,7 @@
     <Value>Display EU cookie law warning</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayEuCookieLawWarning.Hint">
-    <Value>Make the site EU cookie law compliant. When enabled, new customers will see an appropriate warning box.</Value>
+    <Value>Make the site EU cookie law compliant. When enabled, new users will see an appropriate warning box.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableCssBundling">
     <Value>CSS bundling and minification</Value>
@@ -7021,7 +7027,7 @@
     <Value>Contact us page. 'Subject' field</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.SubjectFieldOnContactUsForm.Hint">
-    <Value>Check to allow a customer to type a subject on the contact us page.</Value>
+    <Value>Check to allow a user to type a subject on the contact us page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.TwitterLink">
     <Value>Twitter page URL</Value>
@@ -7045,7 +7051,7 @@
     <Value>Contact us page. Use system email</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.UseSystemEmailForContactUsForm.Hint">
-    <Value>Check to use your system email as "From" field when sending emails from contact us page. Otherwise, customer email will be used (please note that some email services do not allow it).</Value>
+    <Value>Check to use your system email as "From" field when sending emails from contact us page. Otherwise, user email will be used (please note that some email services do not allow it).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.WwwRequirement">
     <Value>WWW prefix requirement</Value>
@@ -7137,22 +7143,22 @@
   <LocaleResource Name="Admin.Configuration.Settings.Media.MultipleThumbDirectories.Hint">
     <Value>Check to enable multiple thumb directories. It can be helpful if your hosting company has some limitations to the number of allowed files per directory.</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase">
-    <Value>Pictures are sited into...</Value>
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase">
+    <Value>Pictures are stored into...</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.Change">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.Change">
     <Value>Change</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.Database">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.Database">
     <Value>database</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.FileSystem">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.FileSystem">
     <Value>file system</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.Hint">
-    <Value>A value indicating whether pictures are sited in database or file system.</Value>
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.Hint">
+    <Value>A value indicating whether pictures are stored in database or file system.</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesSitedIntoDatabase.Note">
+  <LocaleResource Name="Admin.Configuration.Settings.Media.PicturesStoredIntoDatabase.Note">
     <Value>NOTE: Do not forget to backup your database before changing this option</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Media.ProductDetailsPictureSize">
@@ -7234,7 +7240,7 @@
     <Value>Display news RSS feed link in the browser address bar</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.News.ShowHeaderRSSUrl.Hint">
-    <Value>Check to enable the news RSS feed link in customers browser address bar.</Value>
+    <Value>Check to enable the news RSS feed link in users browser address bar.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.News.ShowNewsCommentsPerSite">
     <Value>News comments per site</Value>
@@ -7267,25 +7273,25 @@
     <Value>Anonymous checkout allowed</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.AnonymousCheckoutAllowed.Hint">
-    <Value>Check to enable anonymous checkout (customers are not required to login/register when purchasing products).</Value>
+    <Value>Check to enable anonymous checkout (users are not required to login/register when purchasing products).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.AttachPdfInvoiceToOrderCompletedEmail">
     <Value>Attach PDF invoice ("order completed" email)</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.AttachPdfInvoiceToOrderCompletedEmail.Hint">
-    <Value>Check to attach PDF invoice to the "order completed" email sent to a customer.</Value>
+    <Value>Check to attach PDF invoice to the "order completed" email sent to a user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.AttachPdfInvoiceToOrderPaidEmail">
     <Value>Attach PDF invoice ("order paid" email)</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.AttachPdfInvoiceToOrderPaidEmail.Hint">
-    <Value>Check to attach PDF invoice to the "order paid" email sent to a customer.</Value>
+    <Value>Check to attach PDF invoice to the "order paid" email sent to a user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.AttachPdfInvoiceToOrderPlacedEmail">
     <Value>Attach PDF invoice ("order placed" email)</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.AttachPdfInvoiceToOrderPlacedEmail.Hint">
-    <Value>Check to attach PDF invoice to the "order placed" email sent to a customer.</Value>
+    <Value>Check to attach PDF invoice to the "order placed" email sent to a user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.AutoUpdateOrderTotalsOnEditingOrder">
     <Value>Auto update order totals</Value>
@@ -7369,7 +7375,7 @@
     <Value>Disable "Order completed" page</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.DisableOrderCompletedPage.Hint">
-    <Value>When disabled, customers will be automatically redirected to the order details page.</Value>
+    <Value>When disabled, users will be automatically redirected to the order details page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ExportWithProducts">
     <Value>Export orders with products</Value>
@@ -7381,7 +7387,7 @@
     <Value>Is re-order allowed</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.IsReOrderAllowed.Hint">
-    <Value>Check if you want to allow customers to make re-orders.</Value>
+    <Value>Check if you want to allow users to make re-orders.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.MinOrderSubtotalAmount">
     <Value>Min order sub-total amount</Value>
@@ -7405,7 +7411,7 @@
     <Value>Number of days that the return request is available</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.NumberOfDaysReturnRequestAvailable.Hint">
-    <Value>Set a certain number of days that the Return Request Link will be available in the customer area. For example, if the site owner allows returns within 30 days of purchase, they would set this to 30. Logged in customers, viewing orders in My Account, would then not see Return Request buttons for orders completed more than thirty days ago.</Value>
+    <Value>Set a certain number of days that the Return Request Link will be available in the user area. For example, if the site owner allows returns within 30 days of purchase, they would set this to 30. Logged in users, viewing orders in My Account, would then not see Return Request buttons for orders completed more than thirty days ago.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.OnePageCheckoutDisplayOrderTotalsOnPaymentInfoTab">
     <Value>Order totals on payment info tab</Value>
@@ -7417,7 +7423,7 @@
     <Value>Use one page checkout</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.OnePageCheckoutEnabled.Hint">
-    <Value>One page checkout is a single web page your customers can use to buy a products/service from you.</Value>
+    <Value>One page checkout is a single web page your users can use to buy a products/service from you.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.OrderIdent">
     <Value>Order ID</Value>
@@ -7453,7 +7459,7 @@
     <Value>Edit return request action details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ReturnRequestActions.Hint">
-    <Value>List of actions a customer will be able to choose when submitting a return request.</Value>
+    <Value>List of actions a user will be able to choose when submitting a return request.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ReturnRequestActions.Name.Required">
     <Value>Please provide a name.</Value>
@@ -7513,7 +7519,7 @@
     <Value>Edit return request reason details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ReturnRequestReasons.Hint">
-    <Value>List of reasons a customer will be able to choose when submitting a return request.</Value>
+    <Value>List of reasons a user will be able to choose when submitting a return request.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ReturnRequestReasons.Name.Required">
     <Value>Please provide a name.</Value>
@@ -7531,10 +7537,10 @@
     <Value>Allow file uploads</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ReturnRequestsAllowFiles.Hint">
-    <Value>Check if you want to allow customers to upload files when submitting return requests.</Value>
+    <Value>Check if you want to allow users to upload files when submitting return requests.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ReturnRequestsDescription1">
-    <Value>The returns system will allow your customers to request a return on items they've purchased. These are also known as RMA requests.</Value>
+    <Value>The returns system will allow your users to request a return on items they've purchased. These are also known as RMA requests.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ReturnRequestsDescription2">
     <Value>NOTE: This option is available for completed orders.</Value>
@@ -7543,7 +7549,7 @@
     <Value>Enable Returns System</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ReturnRequestsEnabled.Hint">
-    <Value>Check if you want to allow customers to submit return requests for items they've previously purchased.</Value>
+    <Value>Check if you want to allow users to submit return requests for items they've previously purchased.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.ReturnRequestSettings">
     <Value>Return request settings</Value>
@@ -7552,13 +7558,13 @@
     <Value>Terms of service (confirm order page)</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.TermsOfServiceOnOrderConfirmPage.Hint">
-    <Value>Require customers to accept or decline terms of service before processing the order (on the confirm order page).</Value>
+    <Value>Require users to accept or decline terms of service before processing the order (on the confirm order page).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.TermsOfServiceOnShoppingCartPage">
     <Value>Terms of service (shopping cart page)</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Order.TermsOfServiceOnShoppingCartPage.Hint">
-    <Value>Require customers to accept or decline terms of service before processing the order (on the shopping cart page).</Value>
+    <Value>Require users to accept or decline terms of service before processing the order (on the shopping cart page).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.ACL">
     <Value>User roles</Value>
@@ -7573,7 +7579,7 @@
     <Value>Allow back in stock subscriptions</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.AllowUserReviews">
-    <Value>Allow customer reviews</Value>
+    <Value>Allow user reviews</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.AllowedQuantities">
     <Value>Allowed quantities</Value>
@@ -7810,7 +7816,7 @@
     <Value>Common</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.RewardPoints.Description">
-    <Value>The Reward Points Program allows customers to earn points for certain actions they take on the site. Points are awarded based on making purchases and customer actions such as registration.</Value>
+    <Value>The Reward Points Program allows users to earn points for certain actions they take on the site. Points are awarded based on making purchases and user actions such as registration.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.RewardPoints.DisplayHowMuchWillBeEarned">
     <Value>Display how much will be earned</Value>
@@ -7954,10 +7960,10 @@
     <Value>Check to display pickup points on the map.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Shipping.DisplayShipmentEventsToUsers">
-    <Value>Display shipment events (customers)</Value>
+    <Value>Display shipment events (users)</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Shipping.DisplayShipmentEventsToUsers.Hint">
-    <Value>Check if you want your customers to see shipment events on their shipment details pages (if supported by your shipping rate computation method).</Value>
+    <Value>Check if you want your users to see shipment events on their shipment details pages (if supported by your shipping rate computation method).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Shipping.DisplayShipmentEventsToSiteOwner">
     <Value>Display shipment events (site owner)</Value>
@@ -7969,7 +7975,7 @@
     <Value>Estimate shipping enabled</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Shipping.EstimateShippingEnabled.Hint">
-    <Value>Check to allow customers to estimate shipping on shopping cart page.</Value>
+    <Value>Check to allow users to estimate shipping on shopping cart page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Shipping.FreeShippingOverXEnabled">
     <Value>Free shipping over 'X'</Value>
@@ -8002,10 +8008,10 @@
     <Value>Check if you want to hide 'Shipping total' label when shipping is not required.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Shipping.NotifyUserAboutShippingFromMultipleLocations">
-    <Value>Notify customer about shipping from multiple locations</Value>
+    <Value>Notify user about shipping from multiple locations</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Shipping.NotifyUserAboutShippingFromMultipleLocations.Hint">
-    <Value>Check if you want customers to be notified when shipping from multiple locations.</Value>
+    <Value>Check if you want users to be notified when shipping from multiple locations.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Shipping.ShipToSameAddress">
     <Value>Ship to the same address</Value>
@@ -8035,7 +8041,7 @@
     <Value>Allow cart item editing</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ShoppingCart.AllowCartItemEditing.Hint">
-    <Value>Check to allow customers to edit items already placed in the cart or wishlist. It could be useful when your products have attributes or any other fields entered by a customer.</Value>
+    <Value>Check to allow users to edit items already placed in the cart or wishlist. It could be useful when your products have attributes or any other fields entered by a user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ShoppingCart.AllowOutOfStockItemsToBeAddedToWishlist">
     <Value>Allow 'out of stock' items to be added to wishlist</Value>
@@ -8068,19 +8074,19 @@
     <Value>Display cart after adding a product</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ShoppingCart.DisplayCartAfterAddingProduct.Hint">
-    <Value>If checked, a customer will be taken to the shopping cart page immediately after adding a product to their cart. If unchecked, a customer will stay on the same page from which the product was added to the cart.</Value>
+    <Value>If checked, a user will be taken to the shopping cart page immediately after adding a product to their cart. If unchecked, a user will stay on the same page from which the product was added to the cart.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ShoppingCart.DisplayWishlistAfterAddingProduct">
     <Value>Display wishlist after adding a product</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ShoppingCart.DisplayWishlistAfterAddingProduct.Hint">
-    <Value>If checked, a customer will be taken to the wishlist page immediately after adding a product to their wishlist. If unchecked, a customer will stay on the same page from which the product was added to the cart.</Value>
+    <Value>If checked, a user will be taken to the wishlist page immediately after adding a product to their wishlist. If unchecked, a user will stay on the same page from which the product was added to the cart.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ShoppingCart.EmailWishlistEnabled">
-    <Value>Allow customers to email their wishlists</Value>
+    <Value>Allow users to email their wishlists</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ShoppingCart.EmailWishlistEnabled.Hint">
-    <Value>Check to allow customers to email their wishlists to friends.</Value>
+    <Value>Check to allow users to email their wishlists to friends.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ShoppingCart.MaximumShoppingCartItems">
     <Value>Maximum shopping cart items</Value>
@@ -8140,7 +8146,7 @@
     <Value>Show product images on wishlist</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ShoppingCart.ShowProductImagesOnWishList.Hint">
-    <Value>Determines whether product images should be displayed in customer wishlists.</Value>
+    <Value>Determines whether product images should be displayed in user wishlists.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.SiteScope">
     <Value>Multi-site configuration for</Value>
@@ -8158,10 +8164,10 @@
     <Value>Tax settings</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Tax.AllowUsersToSelectTaxDisplayType">
-    <Value>Allow customers to select tax display type</Value>
+    <Value>Allow users to select tax display type</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Tax.AllowUsersToSelectTaxDisplayType.Hint">
-    <Value>A value indicating whether customers are allowed to select tax display type.</Value>
+    <Value>A value indicating whether users are allowed to select tax display type.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Tax.BlockTitle.Common">
     <Value>Common</Value>
@@ -8203,7 +8209,7 @@
     <Value>Allow VAT exemption</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Tax.EuVatAllowVatExemption.Hint">
-    <Value>Check if this site will exempt eligible VAT-registered customers from VAT.</Value>
+    <Value>Check if this site will exempt eligible VAT-registered users from VAT.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Tax.EuVatAssumeValid">
     <Value>Assume VAT always valid</Value>
@@ -8320,22 +8326,22 @@
     <Value>Vendor settings</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Vendor.AllowUsersToApplyForVendorAccount">
-    <Value>Allow customers to apply for vendor account</Value>
+    <Value>Allow users to apply for vendor account</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Vendor.AllowUsersToApplyForVendorAccount.Hint">
-    <Value>Check to allow customers users to fill a form to become a new vendor. Then a site owner will have to manually approve it.</Value>
+    <Value>Check to allow users users to fill a form to become a new vendor. Then a site owner will have to manually approve it.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Vendor.AllowUsersToContactVendors">
-    <Value>Allow customers to contact vendors</Value>
+    <Value>Allow users to contact vendors</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Vendor.AllowUsersToContactVendors.Hint">
-    <Value>Check to allow customers to contact vendors.</Value>
+    <Value>Check to allow users to contact vendors.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Vendor.AllowSearchByVendor">
     <Value>Allow search by vendor</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Vendor.AllowSearchByVendor.Hint">
-    <Value>Check to allow customers to search by vendor on advanced search page.</Value>
+    <Value>Check to allow users to search by vendor on advanced search page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Vendor.AllowVendorsToEditInfo">
     <Value>Allow vendors to edit info</Value>
@@ -8887,7 +8893,7 @@
     <Value>Allow comments</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Blog.BlogPosts.Fields.AllowComments.Hint">
-    <Value>When checked, customers can leave comments about your blog entry.</Value>
+    <Value>When checked, users can leave comments about your blog entry.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Blog.BlogPosts.Fields.Body">
     <Value>Body</Value>
@@ -8920,7 +8926,7 @@
     <Value>Language</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Blog.BlogPosts.Fields.Language.Hint">
-    <Value>The language of this blog entry. A customer will only see the blog entries for their selected language.</Value>
+    <Value>The language of this blog entry. A user will only see the blog entries for their selected language.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Blog.BlogPosts.Fields.LimitedToSites">
     <Value>Limited to sites</Value>
@@ -9088,7 +9094,7 @@
     <Value>Description</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Forums.Forum.Fields.Description.Hint">
-    <Value>The description of the forum. This is the description that the customer will see.</Value>
+    <Value>The description of the forum. This is the description that the user will see.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Forums.Forum.Fields.DisplayOrder">
     <Value>Display Order</Value>
@@ -9109,7 +9115,7 @@
     <Value>Name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Forums.Forum.Fields.Name.Hint">
-    <Value>The name of this forum. This is the name that the customer will see.</Value>
+    <Value>The name of this forum. This is the name that the user will see.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Forums.Forum.Fields.Name.Required">
     <Value>Forum group name is required.</Value>
@@ -9148,7 +9154,7 @@
     <Value>Name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Forums.ForumGroup.Fields.Name.Hint">
-    <Value>The name of this forum group. This is the name that the customer will see.</Value>
+    <Value>The name of this forum group. This is the name that the user will see.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Forums.ForumGroup.Fields.Name.Required">
     <Value>Forum Group Name is required.</Value>
@@ -9178,25 +9184,25 @@
 	  <Value><![CDATA[This message template is used when a new blog comment to the certain blog post is created. The message is received by a site owner. You can set up this option by ticking the checkbox <strong>Notify about new blog comments</strong> in Configuration - Settings - Blog settings.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.User.BackInStock">
-	  <Value><![CDATA[This message template is used when the customer subscribed for the certain product which is unavailable at the moment to notify the customer about the product being back to stock again. You can set up this option by ticking the checkbox <strong>Allow back in stock subscriptions</strong> in Product info tab - Inventory section.]]></Value>
+	  <Value><![CDATA[This message template is used when the user subscribed for the certain product which is unavailable at the moment to notify the user about the product being back to stock again. You can set up this option by ticking the checkbox <strong>Allow back in stock subscriptions</strong> in Product info tab - Inventory section.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.User.EmailRevalidationMessage">
-	  <Value>This message template is used when a customer changes an email address in his account. The customer receives a message to confirm an email address used when changing email address.</Value>
+	  <Value>This message template is used when a user changes an email address in his account. The user receives a message to confirm an email address used when changing email address.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.User.EmailValidationMessage">
-	  <Value>This message template is used when Configuration - Settings - User settings - "Registration method" dropdownlist is set to "Email validation". The customer receives a message to confirm an email address used when registering.</Value>
+	  <Value>This message template is used when Configuration - Settings - User settings - "Registration method" dropdownlist is set to "Email validation". The user receives a message to confirm an email address used when registering.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.User.NewOrderNote">
-	  <Value>This message template is used when the customer gets a notification about a new order being placed from this account.</Value>
+	  <Value>This message template is used when the user gets a notification about a new order being placed from this account.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.User.NewPM">
-	  <Value><![CDATA[This message template is used when the customer gets a notification about a new private message being received. You can set up this option by ticking the checkbox <strong>Show alert for PM</strong> in Configuration - Settings - Forum settings.]]></Value>
+	  <Value><![CDATA[This message template is used when the user gets a notification about a new private message being received. You can set up this option by ticking the checkbox <strong>Show alert for PM</strong> in Configuration - Settings - Forum settings.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.User.PasswordRecovery">
-	  <Value>This message template is used when a customer forgets a password needed to log in the account. The customer receives a message with a link for entering a new password.</Value>
+	  <Value>This message template is used when a user forgets a password needed to log in the account. The user receives a message with a link for entering a new password.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.User.WelcomeMessage">
-	  <Value>This message template is used to welcome a new customer after registration.</Value>
+	  <Value>This message template is used to welcome a new user after registration.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.Forums.NewForumPost">
 	  <Value>This message template is used when a new forum post in certain forum topic is created. The message is received by a site owner.</Value>
@@ -9205,13 +9211,13 @@
 	  <Value>This message template is used when a new forum topic is created. The message is received by a site owner.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.GiftCard.Notification">
-	  <Value>This message template is used to send a notification to a customer about getting a gift card.</Value>
+	  <Value>This message template is used to send a notification to a user about getting a gift card.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.NewUser.Notification">
-	  <Value><![CDATA[This message template is used when a new customer is registered. The message is received by a site owner. You can set up this option by ticking the checkbox <strong>Notify about new customer registration</strong> in Configuration - Settings - User settings.]]></Value>
+	  <Value><![CDATA[This message template is used when a new user is registered. The message is received by a site owner. You can set up this option by ticking the checkbox <strong>Notify about new user registration</strong> in Configuration - Settings - User settings.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.NewReturnRequest.UserNotification">
-	  <Value>This message template is used to notify a customer about a new return request submitted from his/her account.</Value>
+	  <Value>This message template is used to notify a user about a new return request submitted from his/her account.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.NewReturnRequest.SiteOwnerNotification">
 	  <Value>This message template is used when a new return request is created. The message is received by a site owner.</Value>
@@ -9220,25 +9226,25 @@
 	  <Value><![CDATA[This message template is used when a new comment to the certain news item is created. The message is received by a site owner. You can set up this option by ticking the checkbox <strong>Notify about new news comments</strong> in Configuration - Settings - News settings.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.NewsLetterSubscription.ActivationMessage">
-	  <Value>This message template is used when a customer subscribes to the newsletter to confirm the subscription.</Value>
+	  <Value>This message template is used when a user subscribes to the newsletter to confirm the subscription.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.NewsLetterSubscription.DeactivationMessage">
-	  <Value><![CDATA[This message template is used when a customer unsubscribes to the newsletter to confirm the subscription deactivation. You can allow users to unsubscribe by ticking the checkbox <strong>Newsletter box. Allow to unsubscribe</strong> in Configuration - Settings - User settings.]]></Value>
+	  <Value><![CDATA[This message template is used when a user unsubscribes to the newsletter to confirm the subscription deactivation. You can allow users to unsubscribe by ticking the checkbox <strong>Newsletter box. Allow to unsubscribe</strong> in Configuration - Settings - User settings.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.NewVATSubmitted.SiteOwnerNotification">
 	  <Value><![CDATA[This message template is used when a new VAT is submitted. The message is received by a site owner. You can set up this option by clicking <strong>Notify admin when a new VAT number is submitted</strong> in Configuration - Settings - Tax settings.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.OrderCancelled.UserNotification">
-	  <Value>This message template is used to notify a customer that the certain order was cancelled. The order can be cancelled by a customer on the account page or by site owner in Users - Users in Orders tab or in Sales - Orders.</Value>
+	  <Value>This message template is used to notify a user that the certain order was cancelled. The order can be cancelled by a user on the account page or by site owner in Users - Users in Orders tab or in Sales - Orders.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.OrderCompleted.UserNotification">
-	  <Value>This message template is used to notify a customer that the certain order was completed. The order gets the order status Complete when it's paid and delivered, or it can be changed manually to Complete in Sales - Orders.</Value>
+	  <Value>This message template is used to notify a user that the certain order was completed. The order gets the order status Complete when it's paid and delivered, or it can be changed manually to Complete in Sales - Orders.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.OrderPaid.AffiliateNotification">
     <Value>This message template is used to notify an affiliate that the certain order was paid. The order gets the status Paid when the amount was charged.</Value>
   </LocaleResource>   
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.OrderPaid.UserNotification">
-	  <Value>This message template is used to notify a customer that the certain order was paid. The order gets the payment status Paid when the amount was charged, or it can be changed manually Sales - Orders by clicking Mark as paid button in Payment status.</Value>
+	  <Value>This message template is used to notify a user that the certain order was paid. The order gets the payment status Paid when the amount was charged, or it can be changed manually Sales - Orders by clicking Mark as paid button in Payment status.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.OrderPaid.SiteOwnerNotification">
 	  <Value>This message template is used to notify a site owner that the certain order was paid. The order gets the status Paid when the amount was charged, or it can be changed manually Sales - Orders by clicking Mark as paid button in Payment status.</Value>
@@ -9250,7 +9256,7 @@
     <Value>This message template is used to notify an affiliate that the certain order was placed.</Value>
   </LocaleResource>    
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.OrderPlaced.UserNotification">
-	  <Value>This message template is used to notify a customer that the certain order was placed. Orders can be viewed by a customer on the account page.</Value>
+	  <Value>This message template is used to notify a user that the certain order was placed. Orders can be viewed by a user on the account page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.OrderPlaced.SiteOwnerNotification">
 	  <Value>This message template is used to notify a site owner that the certain order was placed. Orders can be viewed by a site owner in Sales - Orders or in Users menu.</Value>
@@ -9259,16 +9265,16 @@
 	  <Value>This message template is used to notify a vendor that the certain order was placed. Orders can be viewed by a vendor in Sales - Orders. You can allow them to access this part of Admin Area in Configuration - Access control list.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.OrderRefunded.UserNotification">
-	  <Value>This message template is used to notify a customer that the certain order was refunded. The customer can submit to refund the order when the payment status is paid on the account page, or it can be done by a site owner in Sales - Orders by clicking "Refund" button.</Value>
+	  <Value>This message template is used to notify a user that the certain order was refunded. The user can submit to refund the order when the payment status is paid on the account page, or it can be done by a site owner in Sales - Orders by clicking "Refund" button.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.OrderRefunded.SiteOwnerNotification">
-	  <Value>This message template is used to notify a site owner that the certain order was refunded. The customer can submit to refund the order when the payment status is paid on the account page, or it can be done by a site owner in Sales - Orders by clicking "Refund" button.</Value>
+	  <Value>This message template is used to notify a site owner that the certain order was refunded. The user can submit to refund the order when the payment status is paid on the account page, or it can be done by a site owner in Sales - Orders by clicking "Refund" button.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.Product.ProductReview">
 	  <Value><![CDATA[This message template is used to notify a site owner that a new product review is created. You can set up this option by ticking the checkbox <strong>Notify about new product reviews</strong> in Configuration - Settings - Catalog settings.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.ProductReview.Reply.UserNotification">
-    <Value><![CDATA[This message template is used to notify customers when a site owner (or vendor) replies to their product reviews. You can set up this option by ticking the checkbox <strong>Notify customer about product review reply</strong> in Configuration - Settings - Catalog settings.]]></Value>
+    <Value><![CDATA[This message template is used to notify users when a site owner (or vendor) replies to their product reviews. You can set up this option by ticking the checkbox <strong>Notify user about product review reply</strong> in Configuration - Settings - Catalog settings.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.QuantityBelow.AttributeCombination.SiteOwnerNotification">
 	  <Value>This message template is used to notify a site owner that the certain product attribute combination is getting low stock. You can set up the combination minimum quantity when creating or editing the product in Product attribute tab - Attributes combinations tab in Notify admin for quantity below field.</Value>
@@ -9277,16 +9283,16 @@
 	  <Value><![CDATA[This message template is used to notify a site owner that the certain product is getting low stock. You can set up the minimum product quantity when creating or editing the product in Inventory section, <strong>Minimum stock qty field</strong>.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.RecurringPaymentCancelled.UserNotification">
-	  <Value>This message template is used to notify a customer that the certain recurring payment is cancelled. Payment can be cancelled by a customer in the account page or by a site owner in Sales - Recurring payments in History tab by clicking "Cancel recurring payment" button.</Value>
+	  <Value>This message template is used to notify a user that the certain recurring payment is cancelled. Payment can be cancelled by a user in the account page or by a site owner in Sales - Recurring payments in History tab by clicking "Cancel recurring payment" button.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.RecurringPaymentCancelled.SiteOwnerNotification">
-	  <Value>This message template is used to notify a site owner that the certain recurring payment is cancelled. Payment can be cancelled by a customer in the account page or by a site owner in Sales - Recurring payments in History tab by clicking "Cancel recurring payment" button.</Value>
+	  <Value>This message template is used to notify a site owner that the certain recurring payment is cancelled. Payment can be cancelled by a user in the account page or by a site owner in Sales - Recurring payments in History tab by clicking "Cancel recurring payment" button.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.RecurringPaymentFailed.UserNotification">
-	  <Value>This message template is used to notify a customer that the certain recurring payment is failed. For example, the amount can't be charged from the provided credit card.</Value>
+	  <Value>This message template is used to notify a user that the certain recurring payment is failed. For example, the amount can't be charged from the provided credit card.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.ReturnRequestStatusChanged.UserNotification">
-	  <Value>This message template is used to notify a customer that the request status to the certain order is changed. You can set up this option in Sales - Return requests by clicking "Notify customer about status change" button.</Value>
+	  <Value>This message template is used to notify a user that the request status to the certain order is changed. You can set up this option in Sales - Return requests by clicking "Notify user about status change" button.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.Service.ContactUs">
 	  <Value>This message template is used to notify a site owner about a message sent through the contact form.</Value>
@@ -9298,19 +9304,19 @@
 	  <Value>This message template is used to send "email a friend" message.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.ShipmentDelivered.UserNotification">
-	  <Value><![CDATA[This message template is used to notify a customer that the shipping status of the certain order is set to delivered. You can set up this option in Configuration - Settings - Shipping settings by ticking the checkbox <strong>Display shipment events (customers)</strong>.]]></Value>
+	  <Value><![CDATA[This message template is used to notify a user that the shipping status of the certain order is set to delivered. You can set up this option in Configuration - Settings - Shipping settings by ticking the checkbox <strong>Display shipment events (users)</strong>.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.ShipmentSent.UserNotification">
-	  <Value><![CDATA[This message template is used to notify a customer that the shipping status of the certain order is sent. You can set up this option in Configuration - Settings - Shipping settings by ticking the checkbox <strong>Display shipment events (customers)</strong>.]]></Value>
+	  <Value><![CDATA[This message template is used to notify a user that the shipping status of the certain order is sent. You can set up this option in Configuration - Settings - Shipping settings by ticking the checkbox <strong>Display shipment events (users)</strong>.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.VendorAccountApply.SiteOwnerNotification">
-	  <Value><![CDATA[This message template is used to notify a site owner that new user has applied for vendor account. You can allow customers to apply for vendor account in Configuration - Setting - Vendor settings by ticking the checkbox <strong>Allow customers to apply for vendor account</strong>.]]></Value>
+	  <Value><![CDATA[This message template is used to notify a site owner that new user has applied for vendor account. You can allow users to apply for vendor account in Configuration - Setting - Vendor settings by ticking the checkbox <strong>Allow users to apply for vendor account</strong>.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.VendorInformationChange.SiteOwnerNotification">
 	  <Value><![CDATA[This message template is used to notify a site owner that the vendor changed some vendor's details. You can allow vendors to change info about themselves in Configuration - Setting - Vendor settings by ticking the checkbox <strong>Allow vendors to edit info</strong>.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.Wishlist.EmailAFriend">
-	  <Value>This message template is used when a customer wants to share some product from the wishlist with a friend by sending an email. You can set up this option by ticking the checkbox <strong>Allow customers to email their wishlists</strong> in Configuration - Settings - Shopping cart settings.</Value>
+	  <Value>This message template is used when a user wants to share some product from the wishlist with a friend by sending an email. You can set up this option by ticking the checkbox <strong>Allow users to email their wishlists</strong> in Configuration - Settings - Shopping cart settings.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.EditMessageTemplateDetails">
     <Value>Edit message template details</Value>
@@ -9532,7 +9538,7 @@
     <Value>Allow comments</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.News.NewsItems.Fields.AllowComments.Hint">
-    <Value>When checked, customers can leave comments about your news entry.</Value>
+    <Value>When checked, users can leave comments about your news entry.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.News.NewsItems.Fields.Comments">
     <Value>View comments</Value>
@@ -9559,7 +9565,7 @@
     <Value>Language</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.News.NewsItems.Fields.Language.Hint">
-    <Value>The language of this news entry. A customer will only see the news entries for their selected language.</Value>
+    <Value>The language of this news entry. A user will only see the news entries for their selected language.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.News.NewsItems.Fields.LimitedToSites">
     <Value>Limited to sites</Value>
@@ -9691,7 +9697,7 @@
     <Value>Language</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Polls.Fields.Language.Hint">
-    <Value>The language of this poll. A customer will only see the polls for their selected language.</Value>
+    <Value>The language of this poll. A user will only see the polls for their selected language.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Polls.Fields.LimitedToSites">
     <Value>Limited to sites</Value>
@@ -9766,13 +9772,13 @@
     <Value>Accessible when site closed</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Topics.Fields.AccessibleWhenSiteClosed.Hint">
-    <Value>Check to allow customer to view this topic details page when the site is closed.</Value>
+    <Value>Check to allow user to view this topic details page when the site is closed.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Topics.Fields.AclUserRoles">
     <Value>User roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Topics.Fields.AclUserRoles.Hint">
-    <Value>Select customer roles for which the topic will be shown. Leave empty if you want this topic to be visible to all users.</Value>
+    <Value>Select user roles for which the topic will be shown. Leave empty if you want this topic to be visible to all users.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Topics.Fields.Body">
     <Value>Body</Value>
@@ -9973,25 +9979,25 @@
     <Value>Users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes">
-    <Value>Custom customer attributes</Value>
+    <Value>Custom user attributes</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Added">
     <Value>The new attribute has been added successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.AddNew">
-    <Value>Add a new customer attribute</Value>
+    <Value>Add a new user attribute</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.BackToList">
-    <Value>back to customer attribute list</Value>
+    <Value>back to user attribute list</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Deleted">
     <Value>The attribute has been deleted successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Description">
-    <Value>If the default form fields are not enough for your needs, then you can manage additional customer attributes below.</Value>
+    <Value>If the default form fields are not enough for your needs, then you can manage additional user attributes below.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.EditAttributeDetails">
-    <Value>Edit customer attribute details</Value>
+    <Value>Edit user attribute details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Fields.AttributeControlType">
     <Value>Control type</Value>
@@ -10003,19 +10009,19 @@
     <Value>Display order</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Fields.DisplayOrder.Hint">
-    <Value>The customer attribute display order. 1 represents the first item in the list.</Value>
+    <Value>The user attribute display order. 1 represents the first item in the list.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Fields.IsRequired">
     <Value>Required</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Fields.IsRequired.Hint">
-    <Value>When an attribute is required, the customer must choose an appropriate attribute value before they can continue.</Value>
+    <Value>When an attribute is required, the user must choose an appropriate attribute value before they can continue.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Fields.Name">
     <Value>Name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Fields.Name.Hint">
-    <Value>The name of the customer attribute.</Value>
+    <Value>The name of the user attribute.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Fields.Name.Required">
     <Value>Please provide a name.</Value>
@@ -10030,10 +10036,10 @@
     <Value>Attribute values</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Values.AddNew">
-    <Value>Add a new customer value</Value>
+    <Value>Add a new user value</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Values.EditValueDetails">
-    <Value>Edit customer value details</Value>
+    <Value>Edit user value details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Values.Fields.DisplayOrder">
     <Value>Display order</Value>
@@ -10045,43 +10051,43 @@
     <Value>Pre-selected</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Values.Fields.IsPreSelected.Hint">
-    <Value>Determines whether this attribute value is pre-selected for the customer.</Value>
+    <Value>Determines whether this attribute value is pre-selected for the user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Values.Fields.Name">
     <Value>Name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Values.Fields.Name.Hint">
-    <Value>The name of the customer value.</Value>
+    <Value>The name of the user value.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Values.Fields.Name.Required">
     <Value>Please provide a name.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserAttributes.Values.SaveBeforeEdit">
-    <Value>You need to save the customer attribute before you can add values for this customer attribute page.</Value>
+    <Value>You need to save the user attribute before you can add values for this user attribute page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles">
     <Value>User roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Added">
-    <Value>The new customer role has been added successfully.</Value>
+    <Value>The new user role has been added successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.AddNew">
-    <Value>Add a new customer role</Value>
+    <Value>Add a new user role</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.BackToList">
-    <Value>back to customer role list</Value>
+    <Value>back to user role list</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Deleted">
-    <Value>The customer role has been deleted successfully.</Value>
+    <Value>The user role has been deleted successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.EditUserRoleDetails">
-    <Value>Edit customer role details</Value>
+    <Value>Edit user role details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.Active">
     <Value>Active</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.Active.CantEditSystem">
-    <Value>System customer roles can't be disabled.</Value>
+    <Value>System user roles can't be disabled.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.Active.Hint">
     <Value>Check to make this role active.</Value>
@@ -10096,13 +10102,13 @@
     <Value>Enable password lifetime</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.EnablePasswordLifetime.Hint">
-    <Value>Check to force customers to change their passwords after a specified time.</Value>
+    <Value>Check to force users to change their passwords after a specified time.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.FreeShipping">
     <Value>Free shipping</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.FreeShipping.Hint">
-    <Value>Check to allow customers in this role to get free shipping on their orders.</Value>
+    <Value>Check to allow users in this role to get free shipping on their orders.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.IsSystemRole">
     <Value>Is system role</Value>
@@ -10114,7 +10120,7 @@
     <Value>Name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.Name.Hint">
-    <Value>The name of the customer role.</Value>
+    <Value>The name of the user role.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.Name.Required">
     <Value>Please provide a name.</Value>
@@ -10132,10 +10138,10 @@
     <Value>Choose a product</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.PurchasedWithProduct.Hint">
-    <Value>A customer is added to this customer role once a specified product is purchased (paid). Please note that in case of refund or order cancellation you have to manually remove a customer from this role.</Value>
+    <Value>A user is added to this user role once a specified product is purchased (paid). Please note that in case of refund or order cancellation you have to manually remove a user from this role.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.PurchasedWithProduct.Registered">
-    <Value>You cannot specify "Purchased with product" value for "Registered" customer role</Value>
+    <Value>You cannot specify "Purchased with product" value for "Registered" user role</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.PurchasedWithProduct.Remove">
     <Value>Remove</Value>
@@ -10144,19 +10150,19 @@
     <Value>System name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.SystemName.CantEditSystem">
-    <Value>The system name of system customer roles can't be edited.</Value>
+    <Value>The system name of system user roles can't be edited.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.SystemName.Hint">
-    <Value>The system name of the customer role.</Value>
+    <Value>The system name of the user role.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.TaxExempt">
     <Value>Tax exempt</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Fields.TaxExempt.Hint">
-    <Value>Check to allow customers in this role to make tax free purchases.</Value>
+    <Value>Check to allow users in this role to make tax free purchases.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.UserRoles.Updated">
-    <Value>The customer role has been updated successfully.</Value>
+    <Value>The user role has been updated successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users">
     <Value>Users</Value>
@@ -10180,13 +10186,13 @@
     <Value>The IP address for the search.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.AddUserToGuestsOrRegisteredRoleError">
-    <Value>Add the customer to 'Guests' or 'Registered' customer role</Value>
+    <Value>Add the user to 'Guests' or 'Registered' user role</Value>
   </LocaleResource>  
   <LocaleResource Name="Admin.Users.Users.Added">
-    <Value>The new customer has been added successfully.</Value>
+    <Value>The new user has been added successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.AddNew">
-    <Value>Add a new customer</Value>
+    <Value>Add a new user</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Addresses">
     <Value>Addresses</Value>
@@ -10201,7 +10207,7 @@
     <Value>Add a new address</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Addresses.BackToUser">
-    <Value>back to customer details</Value>
+    <Value>back to user details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Addresses.EditAddress">
     <Value>Edit address</Value>
@@ -10219,7 +10225,7 @@
     <Value>You can't delete the last administrator. At least one administrator account should exists.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.AdminCouldNotbeVendor">
-    <Value>A customer with a vendor associated could not be in "Administrators" role.</Value>
+    <Value>A user with a vendor associated could not be in "Administrators" role.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.AssociatedExternalAuth">
     <Value>External authentication</Value>
@@ -10249,10 +10255,10 @@
     <Value>Subscribed on</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.BackToList">
-    <Value>back to customer list</Value>
+    <Value>back to user list</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.CannotBeInVendoRoleWithoutVendorAssociated">
-    <Value>A customer in the Vendors role should have a vendor account associated.</Value>
+    <Value>A user in the Vendors role should have a vendor account associated.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Gdpr">
     <Value>GDPR</Value>
@@ -10273,16 +10279,16 @@
     <Value>Current shopping cart and wishlist</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Deleted">
-    <Value>The customer has been deleted successfully.</Value>
+    <Value>The user has been deleted successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.EditUserDetails">
-    <Value>Edit customer details</Value>
+    <Value>Edit user details</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Active">
     <Value>Active</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Active.Hint">
-    <Value>Is this customer's account active. To disable/suspend a customer's account, uncheck this.</Value>
+    <Value>Is this user's account active. To disable/suspend a user's account, uncheck this.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.AdminComment">
     <Value>Admin comment</Value>
@@ -10294,7 +10300,7 @@
     <Value>Affiliate</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Affiliate.Hint">
-    <Value>The affiliate who the customer is linked to.</Value>
+    <Value>The affiliate who the user is linked to.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Affiliate.Remove">
     <Value>Remove affiliate</Value>
@@ -10339,28 +10345,28 @@
     <Value>Created on</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.CreatedOn.Hint">
-    <Value>The date the customer record is created.</Value>
+    <Value>The date the user record is created.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.UserRoles">
     <Value>User roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.UserRoles.Hint">
-    <Value>Choose customer roles of this user.</Value>
+    <Value>Choose user roles of this user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.UserRoles.NoRoles">
-    <Value>No customer roles available. Create at least one customer role before mapping.</Value>
+    <Value>No user roles available. Create at least one user role before mapping.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.DateOfBirth">
     <Value>Date of birth</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.DateOfBirth.Hint">
-    <Value>The customer's date of birth.</Value>
+    <Value>The user's date of birth.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Email">
     <Value>Email</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Email.Hint">
-    <Value>The customer's email.</Value>
+    <Value>The user's email.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Email.Required">
     <Value>Please provide an email.</Value>
@@ -10378,7 +10384,7 @@
     <Value>First name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.FirstName.Hint">
-    <Value>The customer's first name.</Value>
+    <Value>The user's first name.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.FirstName.Required">
     <Value>Please provide a first name.</Value>
@@ -10393,7 +10399,7 @@
     <Value>Female</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Gender.Hint">
-    <Value>The customer's gender.</Value>
+    <Value>The user's gender.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Gender.Male">
     <Value>Male</Value>
@@ -10408,7 +10414,7 @@
     <Value>Is tax exempt</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.IsTaxExempt.Hint">
-    <Value>Determines whether the customer is tax exempt.</Value>
+    <Value>Determines whether the user is tax exempt.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.LastActivityDate">
     <Value>Last activity</Value>
@@ -10420,7 +10426,7 @@
     <Value>Last name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.LastName.Hint">
-    <Value>The customer's last name.</Value>
+    <Value>The user's last name.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.LastName.Required">
     <Value>Please provide a last name.</Value>
@@ -10444,7 +10450,7 @@
     <Value>Change password</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Password.Hint">
-    <Value>The customer's password.</Value>
+    <Value>The user's password.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Phone">
     <Value>Phone</Value>
@@ -10459,7 +10465,7 @@
     <Value>Registered in the site</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.RegisteredInSite.Hint">
-    <Value>Indicating in which site the customer is registered</Value>
+    <Value>Indicating in which site the user is registered</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.StateProvince">
     <Value>State / province</Value>
@@ -10489,7 +10495,7 @@
     <Value>System name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.SystemName.Hint">
-    <Value>The system name of the customer role.</Value>
+    <Value>The system name of the user role.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.TimeZoneId">
     <Value>Time zone</Value>
@@ -10501,7 +10507,7 @@
     <Value>Username</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Username.Hint">
-    <Value>The customer's username.</Value>
+    <Value>The user's username.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Username.Required">
     <Value>Please provide a username.</Value>
@@ -10525,7 +10531,7 @@
     <Value>Manager of vendor</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Vendor.Hint">
-    <Value>Choose a vendor associated to this customer account. When associated this customer will be able to login to the chosen vendor portal and manage his products and orders.</Value>
+    <Value>Choose a vendor associated to this user account. When associated this user will be able to login to the chosen vendor portal and manage his products and orders.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Fields.Vendor.None">
     <Value>Not a vendor</Value>
@@ -10540,7 +10546,7 @@
     <Value>Zip / postal code is required</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.GuestsAndRegisteredRolesError">
-    <Value>The customer cannot be in both 'Guests' and 'Registered' customer roles</Value>
+    <Value>The user cannot be in both 'Guests' and 'Registered' user roles</Value>
   </LocaleResource>  
   <LocaleResource Name="Admin.Users.Users.Impersonate">
     <Value>Place order (impersonate)</Value>
@@ -10549,7 +10555,7 @@
     <Value>Place order</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Impersonate.Description1">
-    <Value>During the order placement process, you will see almost exactly what the customer would see while browsing this site, with the exception of the header menu (you will see the following text 'Impersonated as customer@email.here - finish session'). Navigate to the products the customer wants and add them to the cart exactly as the customer would, then use the 'Checkout' button to proceed through the usual checkout process.</Value>
+    <Value>During the order placement process, you will see almost exactly what the user would see while browsing this site, with the exception of the header menu (you will see the following text 'Impersonated as user@email.here - finish session'). Navigate to the products the user wants and add them to the cart exactly as the user would, then use the 'Checkout' button to proceed through the usual checkout process.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Impersonate.Description2">
     <Value>Note: Click 'finish session' link in order to finish this session</Value>
@@ -10561,7 +10567,7 @@
     <Value>User roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.List.UserRoles.Hint">
-    <Value>Filter by customer role.</Value>
+    <Value>Filter by user role.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.List.SearchCompany">
     <Value>Company</Value>
@@ -10780,13 +10786,13 @@
     <Value>Some comment here...</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.Updated">
-    <Value>The customer has been updated successfully.</Value>
+    <Value>The user has been updated successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.Users.ValidEmailRequiredRegisteredRole">
-    <Value>Valid Email is required for customer to be in 'Registered' role</Value>
+    <Value>Valid Email is required for user to be in 'Registered' role</Value>
   </LocaleResource>  
   <LocaleResource Name="Admin.Users.Users.VendorShouldBeInVendorsRole">
-    <Value>Note: if you have a vendor associated with this customer, then also ensure it is in "Vendors" customer role.</Value>
+    <Value>Note: if you have a vendor associated with this user, then also ensure it is in "Vendors" user role.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.GdprLog">
     <Value>GDPR requests (log)</Value>
@@ -10819,7 +10825,7 @@
     <Value>Guest</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.OnlineUsers">
-    <Value>Online customers</Value>
+    <Value>Online users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Users.OnlineUsers.Fields.UserInfo">
     <Value>User info</Value>
@@ -10852,7 +10858,7 @@
     <Value>Orders</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Dashboard.NumberOfUsers">
-    <Value>Registered customers</Value>
+    <Value>Registered users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Dashboard.NumberOfPendingReturnRequests">
     <Value>Pending return requests</Value>
@@ -11215,7 +11221,7 @@
     <Value>User</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.Fields.User.Hint">
-    <Value>The customer who placed this order.</Value>
+    <Value>The user who placed this order.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.Fields.UserEmail">
     <Value>Email</Value>
@@ -11485,7 +11491,7 @@
     <Value>Shipping method</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.Fields.ShippingMethod.Hint">
-    <Value>The customers chosen shipping method for this order. You can manage shipping methods from Configuration : Shipping : Shipping Methods.</Value>
+    <Value>The users chosen shipping method for this order. You can manage shipping methods from Configuration : Shipping : Shipping Methods.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.Fields.ShippingStatus">
     <Value>Shipping status</Value>
@@ -11542,19 +11548,19 @@
     <Value>Billing email address</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.List.BillingEmail.Hint">
-    <Value>Filter by customer billing email address.</Value>
+    <Value>Filter by user billing email address.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.List.BillingLastName">
     <Value>Billing last name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.List.BillingLastName.Hint">
-    <Value>Filter by customer billing last name.</Value>
+    <Value>Filter by user billing last name.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.List.BillingPhone">
     <Value>Billing phone number</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.List.BillingPhone.Hint">
-    <Value>Filter by customer billing phone number.</Value>
+    <Value>Filter by user billing phone number.</Value>
   </LocaleResource>  
   <LocaleResource Name="Admin.Orders.List.EndDate">
     <Value>End date</Value>
@@ -11644,10 +11650,10 @@
     <Value>Created on</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.OrderNotes.Fields.DisplayToUser">
-    <Value>Display to customer</Value>
+    <Value>Display to user</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.OrderNotes.Fields.DisplayToUser.Hint">
-    <Value>A value indicating whether to display this order note to a customer.</Value>
+    <Value>A value indicating whether to display this order note to a user.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.OrderNotes.Fields.Download">
     <Value>Attached file</Value>
@@ -12142,10 +12148,10 @@
     <Value>Created on</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Campaigns.Fields.UserRole">
-    <Value>Limited to customer role</Value>
+    <Value>Limited to user role</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Campaigns.Fields.UserRole.Hint">
-    <Value>Choose a customer role to which this email will be sent.</Value>
+    <Value>Choose a user role to which this email will be sent.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Campaigns.Fields.DontSendBeforeDate">
     <Value>Planned date of sending</Value>
@@ -12211,7 +12217,7 @@
     <Value>The campaign has been updated successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Campaigns.Warning">
-    <Value>Make sure you've tested the campaign before sending it out to multiple customers. Save your campaign first by clicking "Save" button.</Value>
+    <Value>Make sure you've tested the campaign before sending it out to multiple users. Save your campaign first by clicking "Save" button.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Discounts">
     <Value>Discounts</Value>
@@ -12319,7 +12325,7 @@
     <Value>URL with coupon code</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Discounts.Fields.DiscountUrl.Hint">
-    <Value>The sample link that includes a discount coupon code, so that customers do not have to input the coupon code at checkout. You can also use this query parameter with any other link to your site, for example link to certain product or category.</Value>
+    <Value>The sample link that includes a discount coupon code, so that users do not have to input the coupon code at checkout. You can also use this query parameter with any other link to your site, for example link to certain product or category.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Discounts.Fields.EndDate">
     <Value>End date</Value>
@@ -12367,7 +12373,7 @@
     <Value>Requires coupon code</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Discounts.Fields.RequiresCouponCode.Hint">
-    <Value>If checked, a customer must supply a valid coupon code for the discount to be applied.</Value>
+    <Value>If checked, a user must supply a valid coupon code for the discount to be applied.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Discounts.Fields.StartDate">
     <Value>Start date</Value>
@@ -12439,7 +12445,7 @@
     <Value>Default requirement group</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Discounts.Requirements.Description">
-    <Value><![CDATA[Set up requirements to a created discount if you want to limit it to certain user categories depending on a customer role, the amount spent, etc. You can use single requirement type, or group several types and apply them simultaneously.<br>Requirement group is a useful feature for creating discount requirement templates. You can create a requirement group just once and then use it every time you want this limitation to be applied. You can include one requirement group into another one if needed.]]></Value>
+    <Value><![CDATA[Set up requirements to a created discount if you want to limit it to certain user categories depending on a user role, the amount spent, etc. You can use single requirement type, or group several types and apply them simultaneously.<br>Requirement group is a useful feature for creating discount requirement templates. You can create a requirement group just once and then use it every time you want this limitation to be applied. You can include one requirement group into another one if needed.]]></Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Discounts.Requirements.DiscountRequirementType">
     <Value>Discount requirement type</Value>
@@ -12463,7 +12469,7 @@
     <Value>Group name</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Discounts.Requirements.GroupName.Hint">
-    <Value>Specify name of the requirement group (e.g. "Permitted customer roles").</Value>
+    <Value>Specify name of the requirement group (e.g. "Permitted user roles").</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.Discounts.Requirements.InteractionTypeInGroup">
     <Value>Interaction type in this group is</Value>
@@ -12523,7 +12529,7 @@
     <Value>User roles</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.NewsLetterSubscriptions.List.UserRoles.Hint">
-    <Value>Search by a specific customer role.</Value>
+    <Value>Search by a specific user role.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Promotions.NewsLetterSubscriptions.List.SearchActive">
     <Value>Active</Value>
@@ -12733,7 +12739,7 @@
     <Value>The start date for the search.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Reports.Users.RegisteredUsers">
-    <Value>Registered customers</Value>
+    <Value>Registered users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Reports.Users.RegisteredUsers.Fields.Users">
     <Value>Count</Value>
@@ -12757,7 +12763,7 @@
     <Value>Run report</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Reports.Users.UserStatistics">
-    <Value>New customers</Value>
+    <Value>New users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Reports.Users.UserStatistics.Month">
     <Value>Month</Value>
@@ -12955,7 +12961,7 @@
     <Value>The return request has been deleted successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.Description">
-    <Value>The Return Request feature (RMA) enables customers to send products back to you. Here you can find all submitted return requests.</Value>
+    <Value>The Return Request feature (RMA) enables users to send products back to you. Here you can find all submitted return requests.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.EditReturnRequestDetails">
     <Value>Edit return request details</Value>
@@ -12976,7 +12982,7 @@
     <Value>User comments</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.Fields.UserComments.Hint">
-    <Value>Entered customer comments.</Value>
+    <Value>Entered user comments.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.Fields.CustomNumber">
     <Value>ID</Value>
@@ -13039,13 +13045,13 @@
     <Value>Download</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.Fields.UploadedFile.Hint">
-    <Value>File uploaded by customer</Value>
+    <Value>File uploaded by user</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.Notified">
-    <Value>The customer has been notified successfully.</Value>
+    <Value>The user has been notified successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.NotifyUser">
-    <Value>Notify customer about status change</Value>
+    <Value>Notify user about status change</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.OrderItemDeleted">
     <Value>Order item is deleted</Value>
@@ -13192,7 +13198,7 @@
     <Value>Required</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Settings.ReviewType.Fields.IsRequired.Hint">
-    <Value>When required, customers have to choose an appropriate rating value before they can continue.</Value>
+    <Value>When required, users have to choose an appropriate rating value before they can continue.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Settings.ReviewType.Fields.Name">
     <Value>Name</Value>
@@ -13204,10 +13210,10 @@
     <Value>Please provide a name.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Settings.ReviewType.Fields.VisibleToAllUsers">
-    <Value>Visible to all customers</Value>
+    <Value>Visible to all users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Settings.ReviewType.Fields.VisibleToAllUsers.Hint">
-    <Value>Sets visibility of the review type for all customers.</Value>
+    <Value>Sets visibility of the review type for all users.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Settings.ReviewType.Updated">
     <Value>The review type has been updated successfully.</Value>
@@ -13297,7 +13303,7 @@
     <Value>User</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Log.Fields.User.Hint">
-    <Value>Name of the customer who caused the exception.</Value>
+    <Value>Name of the user who caused the exception.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Log.Fields.FullMessage">
     <Value>Full message</Value>
@@ -13432,7 +13438,7 @@
     <Value>{0} files were deleted</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Maintenance.DeleteGuests">
-    <Value>Deleting guest customers</Value>
+    <Value>Deleting guest users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Maintenance.DeleteGuests.EndDate">
     <Value>End date</Value>
@@ -13444,7 +13450,7 @@
     <Value>Only without shopping cart</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Maintenance.DeleteGuests.OnlyWithoutShoppingCart.Hint">
-    <Value>A value indicating whether we need to find customers without shopping carts/wishlists. If unchecked, then all customers will be found.</Value>
+    <Value>A value indicating whether we need to find users without shopping carts/wishlists. If unchecked, then all users will be found.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Maintenance.DeleteGuests.StartDate">
     <Value>Start date</Value>
@@ -13453,7 +13459,7 @@
     <Value>The start date for the search.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Maintenance.DeleteGuests.TotalDeleted">
-    <Value>{0} customers were deleted</Value>
+    <Value>{0} users were deleted</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Maintenance.ReIndexTables">
     <Value>Re-index database tables</Value>
@@ -14020,19 +14026,19 @@
     <Value>Admin comment. For internal use.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Vendors.Fields.AllowUsersToSelectPageSize">
-    <Value>Allow customers to select page size</Value>
+    <Value>Allow users to select page size</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Vendors.Fields.AllowUsersToSelectPageSize.Hint">
-    <Value>Whether customers are allowed to select the page size from a predefined list of options.</Value>
+    <Value>Whether users are allowed to select the page size from a predefined list of options.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Vendors.Fields.AssociatedUserEmails">
     <Value>Users</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Vendors.Fields.AssociatedUserEmails.Hint">
-    <Value>A list of customer accounts which could be used to manage products and orders of this vendor (have access to the vendor portal). You can associate customers to a vendor on a customer details page. If you don't want the vendor to have access to the vendor portal, then do not associate any customer account with it.</Value>
+    <Value>A list of user accounts which could be used to manage products and orders of this vendor (have access to the vendor portal). You can associate users to a vendor on a user details page. If you don't want the vendor to have access to the vendor portal, then do not associate any user account with it.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Vendors.Fields.AssociatedUserEmails.None">
-    <Value>No customer account associated to this vendor.</Value>
+    <Value>No user account associated to this vendor.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Vendors.Fields.Description">
     <Value>Description</Value>
@@ -14245,7 +14251,7 @@
     <Value>Notify me when available</Value>
   </LocaleResource>
   <LocaleResource Name="BackInStockSubscriptions.OnlyRegistered">
-    <Value>Only registered customers can use this feature</Value>
+    <Value>Only registered users can use this feature</Value>
   </LocaleResource>
   <LocaleResource Name="BackInStockSubscriptions.PopupTitle">
     <Value>Receive an email when this arrives in stock</Value>
@@ -14839,7 +14845,7 @@
     <Value>Allow qty below 0</Value>
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Catalog.BackorderMode.AllowQtyBelow0AndNotifyUser">
-    <Value>Allow qty below 0 and notify customer</Value>
+    <Value>Allow qty below 0 and notify user</Value>
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Catalog.BackorderMode.NoBackorders">
     <Value>No backorders</Value>
@@ -14971,7 +14977,7 @@
     <Value>Hours</Value>
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Users.UserRegistrationType.AdminApproval">
-    <Value>A customer should be approved by administrator</Value>
+    <Value>A user should be approved by administrator</Value>
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Users.UserRegistrationType.Disabled">
     <Value>Registration is disabled</Value>
@@ -15010,7 +15016,7 @@
     <Value>N times only</Value>
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Discounts.DiscountLimitationType.NTimesPerUser">
-    <Value>N times per customer</Value>
+    <Value>N times per user</Value>
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Discounts.DiscountLimitationType.Unlimited">
     <Value>Unlimited</Value>
@@ -15076,7 +15082,7 @@
     <Value>Export data</Value>
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Gdpr.GdprRequestType.DeleteUser">
-    <Value>Delete customer</Value>
+    <Value>Delete user</Value>
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Logging.LogLevel.Debug">
     <Value>Debug</Value>
@@ -16768,7 +16774,7 @@
     <Value>Enter friend's email</Value>
   </LocaleResource>
   <LocaleResource Name="Products.EmailAFriend.OnlyRegisteredUsers">
-    <Value>Only registered customers can use email a friend feature</Value>
+    <Value>Only registered users can use email a friend feature</Value>
   </LocaleResource>
   <LocaleResource Name="Products.EmailAFriend.PersonalMessage">
     <Value>Personal message</Value>
@@ -17080,7 +17086,7 @@
     <Value>From</Value>
   </LocaleResource>
   <LocaleResource Name="Reviews.Helpfulness.OnlyRegistered">
-    <Value>Only registered customers can set review helpfulness</Value>
+    <Value>Only registered users can set review helpfulness</Value>
   </LocaleResource>
   <LocaleResource Name="Reviews.Helpfulness.SuccessfullyVoted">
     <Value>Successfully voted</Value>
@@ -17155,7 +17161,7 @@
     <Value>Earned promotion for order #{0}</Value>
   </LocaleResource>
   <LocaleResource Name="RewardPoints.Message.EarnedForRegistration">
-    <Value>Registered as customer</Value>
+    <Value>Registered as user</Value>
   </LocaleResource>
   <LocaleResource Name="RewardPoints.Message.Expired">
     <Value>Unused reward points from {0} have expired</Value>
@@ -17626,7 +17632,7 @@
     <Value>Apply for vendor account</Value>
   </LocaleResource>
   <LocaleResource Name="Vendors.ApplyAccount.AlreadyApplied">
-    <Value>You already applied for a vendor account. Please register as a new customer in order to apply for one more vendor account.</Value>
+    <Value>You already applied for a vendor account. Please register as a new user in order to apply for one more vendor account.</Value>
   </LocaleResource>
   <LocaleResource Name="Vendors.ApplyAccount.Button">
     <Value>Submit</Value>
@@ -17701,7 +17707,7 @@
     <Value>Enter friend's email</Value>
   </LocaleResource>
   <LocaleResource Name="Wishlist.EmailAFriend.OnlyRegisteredUsers">
-    <Value>Only registered customers can use email a friend feature</Value>
+    <Value>Only registered users can use email a friend feature</Value>
   </LocaleResource>
   <LocaleResource Name="Wishlist.EmailAFriend.PersonalMessage">
     <Value>Personal message</Value>

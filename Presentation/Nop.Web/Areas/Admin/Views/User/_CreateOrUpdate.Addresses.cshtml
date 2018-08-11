@@ -4,11 +4,11 @@
     @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.UserDetailsAddressesTop, additionalData = Model })
     <div class="panel panel-default">
         <div class="panel-body">
-            <div id="customer-addresses-grid"></div>
+            <div id="user-addresses-grid"></div>
 
             <script>
                 $(document).ready(function () {
-                    $("#customer-addresses-grid").kendoGrid({
+                    $("#user-addresses-grid").kendoGrid({
                         dataSource: {
                             type: "json",
                             transport: {
@@ -25,7 +25,7 @@
                                     }
                                 },
                                 destroy: {
-                                    url: "@Html.Raw(Url.Action("AddressDelete", "User", new { customerId = Model.Id }))",
+                                    url: "@Html.Raw(Url.Action("AddressDelete", "User", new { userId = Model.Id }))",
                                     type: "POST",
                                     dataType: "json",
                                     data: addAntiForgeryToken
@@ -84,7 +84,7 @@
                             width: 100,
                             headerAttributes: { style: "text-align:center" },
                             attributes: { style: "text-align:center" },
-                            template: '<a class="btn btn-default" href="@Url.Content("~/Admin/User/AddressEdit?customerId=")@Model.Id&addressid=#=Id#"><i class="fa fa-pencil"></i>@T("Admin.Common.Edit")</a>'
+                            template: '<a class="btn btn-default" href="@Url.Content("~/Admin/User/AddressEdit?userId=")@Model.Id&addressid=#=Id#"><i class="fa fa-pencil"></i>@T("Admin.Common.Edit")</a>'
                         }, {
                             command: { name: "destroy", text: "@T("Admin.Common.Delete")" },
                             title: "@T("Admin.Common.Delete")",
@@ -97,7 +97,7 @@
             </script>
         </div>
         <div class="panel-footer">
-            <button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("AddressCreate", new { customerId = Model.Id })'">
+            <button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("AddressCreate", new { userId = Model.Id })'">
                 @T("Admin.Users.Users.Addresses.AddButton")
             </button>
         </div>

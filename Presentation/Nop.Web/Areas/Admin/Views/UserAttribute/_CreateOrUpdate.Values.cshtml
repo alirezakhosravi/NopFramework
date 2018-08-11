@@ -8,11 +8,11 @@
             /*TODO display the following warning if values are not supported by selected attribute control type - 'Values are not required for this attribute control type' */
             
             <div class="panel-body">
-                <div id="customerattributevalues-grid"></div>
+                <div id="userattributevalues-grid"></div>
 
                 <script>
                     $(document).ready(function () {
-                        $("#customerattributevalues-grid").kendoGrid({
+                        $("#userattributevalues-grid").kendoGrid({
                             dataSource: {
                                 type: "json",
                                 transport: {
@@ -83,7 +83,7 @@
                                 width: 100,
                                 headerAttributes: { style: "text-align:center" },
                                 attributes: { style: "text-align:center" },
-                                template: "<button onclick=\"javascript:OpenWindow('@Url.Content("~/Admin/UserAttribute/ValueEditPopup/")#=Id#?btnId=btnRefresh&formId=customerattribute-form', 800, 400, true); return false;\" class='btn btn-default'><i class=\"fa fa-pencil\"></i>@T("Admin.Common.Edit")</button>"
+                                template: "<button onclick=\"javascript:OpenWindow('@Url.Content("~/Admin/UserAttribute/ValueEditPopup/")#=Id#?btnId=btnRefresh&formId=userattribute-form', 800, 400, true); return false;\" class='btn btn-default'><i class=\"fa fa-pencil\"></i>@T("Admin.Common.Edit")</button>"
                             }, {
                                 command: { name: "destroy", text: "@T("Admin.Common.Delete")" },
                                 title: "@T("Admin.Common.Delete")",
@@ -96,7 +96,7 @@
                 </script>
             </div>
             <div class="panel-footer">
-                <button type="submit" id="btnAddNewValue" onclick="javascript:OpenWindow('@(Url.Action("ValueCreatePopup", "UserAttribute", new { customerAttributeId = Model.Id, btnId = "btnRefresh", formId = "customerattribute-form" }))', 800, 400, true); return false;" class="btn btn-primary">
+                <button type="submit" id="btnAddNewValue" onclick="javascript:OpenWindow('@(Url.Action("ValueCreatePopup", "UserAttribute", new { userAttributeId = Model.Id, btnId = "btnRefresh", formId = "userattribute-form" }))', 800, 400, true); return false;" class="btn btn-primary">
                     @T("Admin.Users.UserAttributes.Values.AddNew")
                 </button>
                 <input type="submit" id="btnRefresh" style="display: none" />
@@ -104,7 +104,7 @@
                     $(document).ready(function () {
                         $('#btnRefresh').click(function () {
                             //refresh grid
-                            var grid = $("#customerattributevalues-grid").data('kendoGrid');
+                            var grid = $("#userattributevalues-grid").data('kendoGrid');
                             grid.dataSource.read();
 
                             //return false to don't reload a page

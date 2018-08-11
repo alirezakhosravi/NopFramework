@@ -22,8 +22,8 @@ namespace Nop.Web.Areas.Admin.Models.Messages
         [NopResourceDisplayName("Admin.Promotions.NewsLetterSubscriptions.Fields.Active")]
         public bool Active { get; set; }
 
-        [NopResourceDisplayName("Admin.Promotions.NewsLetterSubscriptions.Fields.Store")]
-        public string StoreName { get; set; }
+        [NopResourceDisplayName("Admin.Promotions.NewsLetterSubscriptions.Fields.Site")]
+        public string SiteName { get; set; }
 
         [NopResourceDisplayName("Admin.Promotions.NewsLetterSubscriptions.Fields.CreatedOn")]
         public DateTime CreatedOn { get; set; }

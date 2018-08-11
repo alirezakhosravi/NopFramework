@@ -18,8 +18,6 @@ namespace Nop.Web.Areas.Admin.Models.Directory
         public CountryModel()
         {
             Locales = new List<CountryLocalizedModel>();
-            SelectedStoreIds = new List<int>();
-            AvailableStores = new List<SelectListItem>();
             StateProvinceSearchModel = new StateProvinceSearchModel();
         }
 
@@ -29,12 +27,6 @@ namespace Nop.Web.Areas.Admin.Models.Directory
 
         [NopResourceDisplayName("Admin.Configuration.Countries.Fields.Name")]
         public string Name { get; set; }
-
-        [NopResourceDisplayName("Admin.Configuration.Countries.Fields.AllowsBilling")]
-        public bool AllowsBilling { get; set; }
-
-        [NopResourceDisplayName("Admin.Configuration.Countries.Fields.AllowsShipping")]
-        public bool AllowsShipping { get; set; }
 
         [NopResourceDisplayName("Admin.Configuration.Countries.Fields.TwoLetterIsoCode")]
         public string TwoLetterIsoCode { get; set; }
@@ -58,11 +50,6 @@ namespace Nop.Web.Areas.Admin.Models.Directory
         public int NumberOfStates { get; set; }
 
         public IList<CountryLocalizedModel> Locales { get; set; }
-
-        //store mapping
-        [NopResourceDisplayName("Admin.Configuration.Countries.Fields.LimitedToStores")]
-        public IList<int> SelectedStoreIds { get; set; }
-        public IList<SelectListItem> AvailableStores { get; set; }
 
         public StateProvinceSearchModel StateProvinceSearchModel { get; set; }
 

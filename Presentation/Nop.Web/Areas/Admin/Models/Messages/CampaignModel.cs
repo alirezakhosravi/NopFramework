@@ -19,7 +19,7 @@ namespace Nop.Web.Areas.Admin.Models.Messages
 
         public CampaignModel()
         {
-            this.AvailableStores = new List<SelectListItem>();
+            this.AvailableSites = new List<SelectListItem>();
             this.AvailableUserRoles = new List<SelectListItem>();
             this.AvailableEmailAccounts = new List<SelectListItem>();
         }
@@ -37,9 +37,9 @@ namespace Nop.Web.Areas.Admin.Models.Messages
         [NopResourceDisplayName("Admin.Promotions.Campaigns.Fields.Body")]
         public string Body { get; set; }
 
-        [NopResourceDisplayName("Admin.Promotions.Campaigns.Fields.Store")]
-        public int StoreId { get; set; }
-        public IList<SelectListItem> AvailableStores { get; set; }
+        [NopResourceDisplayName("Admin.Promotions.Campaigns.Fields.Site")]
+        public int SiteId { get; set; }
+        public IList<SelectListItem> AvailableSites { get; set; }
 
         [NopResourceDisplayName("Admin.Promotions.Campaigns.Fields.UserRole")]
         public int UserRoleId { get; set; }

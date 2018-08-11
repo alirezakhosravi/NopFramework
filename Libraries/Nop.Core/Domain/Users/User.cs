@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Nop.Core.Domain.Common;
 
 namespace Nop.Core.Domain.Users
 {
@@ -129,6 +130,12 @@ namespace Nop.Core.Domain.Users
         {
             get => _userRoles ?? (_userRoles = UserUserRoleMappings.Select(mapping => mapping.UserRole).ToList());
         }
+
+        /// <summary>
+        /// Gets or sets customer addresses
+        /// </summary>
+        public IList<Address> Addresses => UserAddressMappings.Select(mapping => mapping.Address).ToList();
+
 
         /// <summary>
         /// Gets or sets User-address mappings

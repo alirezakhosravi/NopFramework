@@ -18,6 +18,7 @@ using Nop.Services.Users;
 using Nop.Web.Areas.Admin.Infrastructure.Mapper.Extensions;
 using Nop.Web.Areas.Admin.Models.Common;
 using Nop.Web.Areas.Admin.Models.Users;
+using Nop.Web.Framework.Extensions;
 using Nop.Web.Framework.Factories;
 
 namespace Nop.Web.Areas.Admin.Factories
@@ -449,7 +450,6 @@ namespace Nop.Web.Areas.Admin.Factories
                     model.LastActivityDate = _dateTimeHelper.ConvertToUserTime(user.LastActivityDateUtc, DateTimeKind.Utc);
                     model.LastIpAddress = user.LastIpAddress;
                     model.LastVisitedPage = _genericAttributeService.GetAttribute<string>(user, NopUserDefaults.LastVisitedPageAttribute);
-
                 }
 
                 //prepare external authentication records
@@ -528,23 +528,23 @@ namespace Nop.Web.Areas.Admin.Factories
                 throw new ArgumentNullException(nameof(user));
 
             //get user addresses
-            //var addresses = user.Addresses
-                //.OrderByDescending(address => address.CreatedOnUtc).ThenByDescending(address => address.Id).ToList();
+            var addresses = user.Addresses
+                .OrderByDescending(address => address.CreatedOnUtc).ThenByDescending(address => address.Id).ToList();
 
             //prepare list model
             var model = new UserAddressListModel
             {
-                //Data = addresses.PaginationByRequestModel(searchModel).Select(address =>
-                //{
-                //    //fill in model values from the entity        
-                //    var addressModel = address.ToModel<AddressModel>();
+                Data = addresses.PaginationByRequestModel(searchModel).Select(address =>
+                {
+                    //fill in model values from the entity        
+                    var addressModel = address.ToModel<AddressModel>();
 
-                //    //fill in additional values (not existing in the entity)
-                //    PrepareModelAddressHtml(addressModel, address);
+                    //fill in additional values (not existing in the entity)
+                    PrepareModelAddressHtml(addressModel, address);
 
-                //    return addressModel;
-                //}),
-                //Total = addresses.Count
+                    return addressModel;
+                }),
+                Total = addresses.Count
             };
 
             return model;

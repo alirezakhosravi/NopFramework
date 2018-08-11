@@ -30,12 +30,6 @@ namespace Nop.Web.Areas.Admin.Models.Users
         [NopResourceDisplayName("Admin.Users.UserAttributes.Fields.IsRequired")]
         public bool IsRequired { get; set; }
 
-        [NopResourceDisplayName("Admin.Users.UserAttributes.Fields.AttributeControlType")]
-        public int AttributeControlTypeId { get; set; }
-
-        [NopResourceDisplayName("Admin.Users.UserAttributes.Fields.AttributeControlType")]
-        public string AttributeControlTypeName { get; set; }
-
         [NopResourceDisplayName("Admin.Users.UserAttributes.Fields.DisplayOrder")]
         public int DisplayOrder { get; set; }
 

@@ -49,7 +49,7 @@
                 </button>
                 <nop-action-confirmation asp-button-id="resend-activation-message" />
             }
-            <span id="customer-delete" class="btn bg-red">
+            <span id="user-delete" class="btn bg-red">
                 <i class="fa fa-trash-o"></i>
                 @T("Admin.Common.Delete")
             </span>
@@ -58,7 +58,7 @@
     </div>
     @await Html.PartialAsync("_CreateOrUpdate", Model)
 </form>
-<nop-delete-confirmation asp-model-id="@Model.Id" asp-button-id="customer-delete" />
+<nop-delete-confirmation asp-model-id="@Model.Id" asp-button-id="user-delete" />
 
 @*send email form*@
 <div id="sendemail-window" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="sendemail-window-title">

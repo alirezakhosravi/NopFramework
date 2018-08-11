@@ -137,8 +137,6 @@ namespace Nop.Web.Areas.Admin.Factories
             if (country == null)
             {
                 model.Published = true;
-                model.AllowsBilling = true;
-                model.AllowsShipping = true;
             }
 
             //prepare localized models

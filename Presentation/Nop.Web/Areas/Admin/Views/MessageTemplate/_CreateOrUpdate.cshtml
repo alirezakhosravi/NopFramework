@@ -227,8 +227,8 @@
                         <div class="col-md-9">
                             @{
                                 //Static file attachments do not support URLs yet
-                                //A store owner have to upload a file
-                                //we store a value into "ViewData" and then use it in the Download.cshtml file
+                                //A Site owner have to upload a file
+                                //we Site a value into "ViewData" and then use it in the Download.cshtml file
                                 ViewData["nop.DownloadEditor.DisableUrl"] = true;
                             }
                             <div class="checkbox">
@@ -245,30 +245,30 @@
                     </div>
                     <div class="form-group advanced-setting">
                         <div class="col-md-3">
-                            <nop-label asp-for="SelectedStoreIds" />
+                            <nop-label asp-for="SelectedSiteIds" />
                         </div>
                         <div class="col-md-9">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <nop-select asp-for="SelectedStoreIds" asp-items="Model.AvailableStores" asp-multiple="true" />
+                                    <nop-select asp-for="SelectedSiteIds" asp-items="Model.AvailableSites" asp-multiple="true" />
                                     <script>
                                         $(document).ready(function() {
-                                            var storesIdsInput = $('#@Html.IdFor(model => model.SelectedStoreIds)')
+                                            var SitesIdsInput = $('#@Html.IdFor(model => model.SelectedSiteIds)')
                                                 .data("kendoMultiSelect");
-                                            storesIdsInput.setOptions({
+                                            SitesIdsInput.setOptions({
                                                 autoClose: false,
                                                 filter: "contains"
                                             });
 
-                                            @if (Model.AvailableStores.Count == 0)
+                                            @if (Model.AvailableSites.Count == 0)
                                             {
                                                 <text>
-                                                    storesIdsInput.setOptions({
+                                                    SitesIdsInput.setOptions({
                                                         enable: false,
-                                                        placeholder: 'No stores available'
+                                                        placeholder: 'No Sites available'
                                                     });
-                                                    storesIdsInput._placeholder();
-                                                    storesIdsInput._enable();
+                                                    SitesIdsInput._placeholder();
+                                                    SitesIdsInput._enable();
                                                 </text>
                                             }
                                         });

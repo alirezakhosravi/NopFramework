@@ -107,8 +107,6 @@
                                             fields: {
                                                 Name: { editable: true, type: "string" },
                                                 Value: { editable: true, type: "string" },
-                                                Store: { editable: true, type: "string" },
-                                                StoreId: { editable: true, type: "number" },
                                                 Id: { editable: false, type: "number" }
                                             }
                                         }
@@ -148,12 +146,6 @@
                                         field: "Value",
                                         title: "@T("Admin.Configuration.Settings.AllSettings.Fields.Value")",
                                         width: 300
-                                    }, {
-                                        field: "StoreId",
-                                        title: "@T("Admin.Configuration.Settings.AllSettings.Fields.StoreName")",
-                                        width: 150,
-                                        editor: storeDropDownEditor,
-                                        template: "#:Store#"
                                     }, {
                                         command: [
                                             {

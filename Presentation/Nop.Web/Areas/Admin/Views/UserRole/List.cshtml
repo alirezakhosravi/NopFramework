@@ -71,20 +71,6 @@
                                     title: "@T("Admin.Users.UserRoles.Fields.Name")",
                                     width: 300
                                 }, {
-                                    field: "FreeShipping",
-                                    title: "@T("Admin.Users.UserRoles.Fields.FreeShipping")",
-                                    width: 100,
-                                    headerAttributes: { style: "text-align:center" },
-                                    attributes: { style: "text-align:center" },
-                                    template: '# if(FreeShipping) {# <i class="fa fa-check true-icon"></i> #} else {# <i class="fa fa-close false-icon"></i> #} #'
-                                }, {
-                                    field: "TaxExempt",
-                                    title: "@T("Admin.Users.UserRoles.Fields.TaxExempt")",
-                                    width: 100,
-                                    headerAttributes: { style: "text-align:center" },
-                                    attributes: { style: "text-align:center" },
-                                    template: '# if(TaxExempt) {# <i class="fa fa-check true-icon"></i> #} else {# <i class="fa fa-close false-icon"></i> #} #'
-                                }, {
                                     field: "Active",
                                     title: "@T("Admin.Users.UserRoles.Fields.Active")",
                                     width: 100,
@@ -99,9 +85,12 @@
                                     attributes: { style: "text-align:center" },
                                     template: '# if(IsSystemRole) {# <i class="fa fa-check true-icon"></i> #} else {# <i class="fa fa-close false-icon"></i> #} #'
                                 }, {
-                                    field: "PurchasedWithProductName",
-                                    title: "@T("Admin.Users.UserRoles.Fields.PurchasedWithProduct")",
-                                    width: 200
+                                    field: "EnablePasswordLifetime",
+                                    title: "@T("Admin.Users.UserRoles.Fields.EnablePasswordLifetime")",
+                                    width: 100,
+                                    headerAttributes: { style: "text-align:center" },
+                                    attributes: { style: "text-align:center" },
+                                    template: '# if(EnablePasswordLifetime) {# <i class="fa fa-check true-icon"></i> #} else {# <i class="fa fa-close false-icon"></i> #} #'
                                 }, {
                                     field: "Id",
                                     title: "@T("Admin.Common.Edit")",

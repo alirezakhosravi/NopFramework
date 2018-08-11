@@ -135,13 +135,13 @@
                                     title: "@T("Admin.Configuration.ActivityLog.ActivityLog.Fields.ActivityLogType")",
                                     width: 200
                                 }, {
-                                    field: "CustomerId",
-                                    title: "@T("Admin.Configuration.ActivityLog.ActivityLog.Fields.Customer")",
+                                    field: "UserId",
+                                    title: "@T("Admin.Configuration.ActivityLog.ActivityLog.Fields.User")",
                                     width: 100,
-                                    template: '<a href="@Url.Content("~/Admin/Customer/Edit/")#=CustomerId#">#:CustomerEmail#</a>'
+                                    template: '<a href="@Url.Content("~/Admin/User/Edit/")#=UserId#">#:UserEmail#</a>'
                                 }, {
                                     field: "IpAddress",
-                                    title: "@T("Admin.Customers.Customers.ActivityLog.IpAddress")",
+                                    title: "@T("Admin.Users.Users.ActivityLog.IpAddress")",
                                     width: 100
                                 }, {
                                     field: "Comment",

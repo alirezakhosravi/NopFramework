@@ -22,7 +22,6 @@ using Nop.Services.Configuration;
 using Nop.Services.Users;
 using Nop.Services.Helpers;
 using Nop.Services.Localization;
-using Nop.Services.Media;
 using Nop.Services.Seo;
 
 namespace Nop.Services.Installation

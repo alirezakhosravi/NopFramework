@@ -163,10 +163,12 @@ namespace Nop.Web.Areas.Admin.Infrastructure.Mapper
                 .ForMember(entity => entity.StateProvince, options => options.Ignore());
 
             CreateMap<AddressAttribute, AddressAttributeModel>()
+                .ForMember(model => model.Locales, options => options.Ignore())
                 .ForMember(model => model.AddressAttributeValueSearchModel, options => options.Ignore())
                 .ForMember(model => model.AttributeControlTypeName, options => options.Ignore());
-            
+
             CreateMap<AddressAttributeValue, AddressAttributeValueModel>();
+            
             CreateMap<AddressAttributeValueModel, AddressAttributeValue>()
                 .ForMember(entity => entity.AddressAttribute, options => options.Ignore());
 
@@ -181,16 +183,16 @@ namespace Nop.Web.Areas.Admin.Infrastructure.Mapper
         protected virtual void CreateUsersMaps()
         {
             CreateMap<UserAttribute, UserAttributeModel>()
-                .ForMember(model => model.AttributeControlTypeName, options => options.Ignore())
                 .ForMember(model => model.UserAttributeValueSearchModel, options => options.Ignore());
-            
+            CreateMap<UserAttributeModel, UserAttribute>()
+                .ForMember(entity => entity.UserAttributeValues, options => options.Ignore());
+
             CreateMap<UserAttributeValue, UserAttributeValueModel>();
             CreateMap<UserAttributeValueModel, UserAttributeValue>()
                 .ForMember(entity => entity.UserAttribute, options => options.Ignore());
 
-            CreateMap<UserRole, UserRoleModel>()
-                .ForMember(model => model.PurchasedWithProductName, options => options.Ignore())
-                .ForMember(model => model.TaxDisplayTypeValues, options => options.Ignore());
+            CreateMap<UserRole, UserRoleModel>();
+
             CreateMap<UserRoleModel, UserRole>()
                 .ForMember(entity => entity.PermissionRecordUserRoleMappings, options => options.Ignore());
 
@@ -209,7 +211,10 @@ namespace Nop.Web.Areas.Admin.Infrastructure.Mapper
         protected virtual void CreateDirectoryMaps()
         {
             CreateMap<Country, CountryModel>()
+                .ForMember(model => model.NumberOfStates, options => options.MapFrom(entity => entity.StateProvinces != null ? entity.StateProvinces.Count : 0))
                 .ForMember(model => model.StateProvinceSearchModel, options => options.Ignore());
+            CreateMap<CountryModel, Country>()
+                .ForMember(entity => entity.StateProvinces, options => options.Ignore());
             
             CreateMap<StateProvince, StateProvinceModel>();
             CreateMap<StateProvinceModel, StateProvince>()
@@ -277,7 +282,7 @@ namespace Nop.Web.Areas.Admin.Infrastructure.Mapper
                 .ForMember(model => model.AllowedTokens, options => options.Ignore())
                 .ForMember(model => model.AvailableUserRoles, options => options.Ignore())
                 .ForMember(model => model.AvailableEmailAccounts, options => options.Ignore())
-                .ForMember(model => model.AvailableStores, options => options.Ignore())
+                .ForMember(model => model.AvailableSites, options => options.Ignore())
                 .ForMember(model => model.CreatedOn, options => options.Ignore())
                 .ForMember(model => model.DontSendBeforeDate, options => options.Ignore())
                 .ForMember(model => model.EmailAccountId, options => options.Ignore())
@@ -297,14 +302,14 @@ namespace Nop.Web.Areas.Admin.Infrastructure.Mapper
                 .ForMember(model => model.AllowedTokens, options => options.Ignore())
                 .ForMember(model => model.AvailableEmailAccounts, options => options.Ignore())
                 .ForMember(model => model.HasAttachedDownload, options => options.Ignore())
-                .ForMember(model => model.ListOfStores, options => options.Ignore())
+                .ForMember(model => model.ListOfSites, options => options.Ignore())
                 .ForMember(model => model.SendImmediately, options => options.Ignore());
             CreateMap<MessageTemplateModel, MessageTemplate>()
                 .ForMember(entity => entity.DelayPeriod, options => options.Ignore());
 
             CreateMap<NewsLetterSubscription, NewsletterSubscriptionModel>()
                 .ForMember(model => model.CreatedOn, options => options.Ignore())
-                .ForMember(model => model.StoreName, options => options.Ignore());
+                .ForMember(model => model.SiteName, options => options.Ignore());
             CreateMap<NewsletterSubscriptionModel, NewsLetterSubscription>()
                 .ForMember(entity => entity.CreatedOnUtc, options => options.Ignore())
                 .ForMember(entity => entity.NewsLetterSubscriptionGuid, options => options.Ignore());
@@ -344,18 +349,18 @@ namespace Nop.Web.Areas.Admin.Infrastructure.Mapper
         protected virtual void CreateSecurityMaps()
         {
             CreateMap<CaptchaSettings, CaptchaSettingsModel>()
-                .ForMember(model => model.Enabled_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ReCaptchaPrivateKey_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ReCaptchaPublicKey_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ShowOnApplyVendorPage_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ShowOnBlogCommentPage_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ShowOnContactUsPage_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ShowOnEmailProductToFriendPage_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ShowOnEmailWishlistToFriendPage_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ShowOnLoginPage_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ShowOnNewsCommentPage_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ShowOnProductReviewPage_OverrideForStore, options => options.Ignore())
-                .ForMember(model => model.ShowOnRegistrationPage_OverrideForStore, options => options.Ignore());
+                .ForMember(model => model.Enabled_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ReCaptchaPrivateKey_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ReCaptchaPublicKey_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ShowOnApplyVendorPage_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ShowOnBlogCommentPage_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ShowOnContactUsPage_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ShowOnEmailProductToFriendPage_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ShowOnEmailWishlistToFriendPage_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ShowOnLoginPage_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ShowOnNewsCommentPage_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ShowOnProductReviewPage_OverrideForSite, options => options.Ignore())
+                .ForMember(model => model.ShowOnRegistrationPage_OverrideForSite, options => options.Ignore());
             CreateMap<CaptchaSettingsModel, CaptchaSettings>()
                 .ForMember(settings => settings.AutomaticallyChooseLanguage, options => options.Ignore())
                 .ForMember(settings => settings.ReCaptchaDefaultLanguage, options => options.Ignore())

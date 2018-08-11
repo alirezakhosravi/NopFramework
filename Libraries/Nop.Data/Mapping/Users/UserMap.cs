@@ -5,7 +5,7 @@ using Nop.Core.Domain.Users;
 namespace Nop.Data.Mapping.Users
 {
     /// <summary>
-    /// Represents a customer mapping configuration
+    /// Represents a user mapping configuration
     /// </summary>
     public partial class UserMap : NopEntityTypeConfiguration<User>
     {
@@ -18,14 +18,15 @@ namespace Nop.Data.Mapping.Users
         public override void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable(nameof(User));
-            builder.HasKey(customer => customer.Id);
+            builder.HasKey(user => user.Id);
 
-            builder.Property(customer => customer.Username).HasMaxLength(1000);
-            builder.Property(customer => customer.Email).HasMaxLength(1000);
-            builder.Property(customer => customer.EmailToRevalidate).HasMaxLength(1000);
-            builder.Property(customer => customer.SystemName).HasMaxLength(400);
+            builder.Property(user => user.Username).HasMaxLength(1000);
+            builder.Property(user => user.Email).HasMaxLength(1000);
+            builder.Property(user => user.EmailToRevalidate).HasMaxLength(1000);
+            builder.Property(user => user.SystemName).HasMaxLength(400);
 
-            builder.Ignore(customer => customer.UserRoles);
+            builder.Ignore(user => user.UserRoles);
+            builder.Ignore(user => user.Addresses);
 
             base.Configure(builder);
         }

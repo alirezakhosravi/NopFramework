@@ -14,16 +14,16 @@ namespace Nop.Web.Areas.Admin.Models.Messages
 
         public MessageTemplateSearchModel()
         {
-            AvailableStores = new List<SelectListItem>();
+            AvailableSites = new List<SelectListItem>();
         }
 
         #endregion
 
         #region Properties
 
-        [NopResourceDisplayName("Admin.ContentManagement.MessageTemplates.List.SearchStore")]
-        public int SearchStoreId { get; set; }
-        public IList<SelectListItem> AvailableStores { get; set; }
+        [NopResourceDisplayName("Admin.ContentManagement.MessageTemplates.List.SearchSite")]
+        public int SearchSiteId { get; set; }
+        public IList<SelectListItem> AvailableSites { get; set; }
 
         #endregion
     }

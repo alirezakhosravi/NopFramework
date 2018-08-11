@@ -8,6 +8,8 @@ namespace Nop.Core.Domain.Directory
     /// </summary>
     public partial class Country : BaseEntity, ILocalizedEntity
     {
+        private ICollection<StateProvince> _stateProvinces;
+
         /// <summary>
         /// Gets or sets the name
         /// </summary>
@@ -37,5 +39,14 @@ namespace Nop.Core.Domain.Directory
         /// Gets or sets the display order
         /// </summary>
         public int DisplayOrder { get; set; }
+
+        /// <summary>
+        /// Gets or sets the state/provinces
+        /// </summary>
+        public virtual ICollection<StateProvince> StateProvinces
+        {
+            get => _stateProvinces ?? (_stateProvinces = new List<StateProvince>());
+            protected set => _stateProvinces = value;
+        }
      }
 }

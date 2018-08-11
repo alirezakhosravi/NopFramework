@@ -128,7 +128,19 @@ namespace Nop.Web.Areas.Admin.Controllers
         {
             if (!_permissionService.Authorize(StandardPermissionProvider.ManageSettings))
                 return AccessDeniedView();
-            
+
+            //load settings for a chosen store scope
+            var mediaSettings = _settingService.LoadSetting<MediaSettings>();
+            mediaSettings = model.ToSettings(mediaSettings);
+
+            //we do not clear cache after each setting update.
+            //this behavior can increase performance because cached settings will not be cleared 
+            //and loaded from database after each update
+            _settingService.SaveSetting(mediaSettings, x => x.AvatarPictureSize, true);
+            _settingService.SaveSetting(mediaSettings, x => x.MaximumImageSize, false);
+            _settingService.SaveSetting(mediaSettings, x => x.MultipleThumbDirectories, false);
+            _settingService.SaveSetting(mediaSettings, x => x.DefaultImageQuality, false);
+
             //now clear settings cache
             _settingService.ClearCache();
 
@@ -172,6 +184,47 @@ namespace Nop.Web.Areas.Admin.Controllers
             if (!_permissionService.Authorize(StandardPermissionProvider.ManageSettings))
                 return AccessDeniedView();
             
+            var userSettings = _settingService.LoadSetting<UserSettings>();
+
+            var lastUsernameValidationRule = userSettings.UsernameValidationRule;
+            var lastUsernameValidationEnabledValue = userSettings.UsernameValidationEnabled;
+            var lastUsernameValidationUseRegexValue = userSettings.UsernameValidationUseRegex;
+
+            var addressSettings = _settingService.LoadSetting<AddressSettings>();
+            var dateTimeSettings = _settingService.LoadSetting<DateTimeSettings>();
+            var externalAuthenticationSettings = _settingService.LoadSetting<ExternalAuthenticationSettings>();
+
+            userSettings = model.UserSettings.ToSettings(userSettings);
+
+            if (userSettings.UsernameValidationEnabled && userSettings.UsernameValidationUseRegex)
+            {
+                try
+                {
+                    //validate regex rule
+                    var unused = Regex.IsMatch("test_user_name", userSettings.UsernameValidationRule);
+                }
+                catch (ArgumentException)
+                {
+                    //restoring previous settings
+                    userSettings.UsernameValidationRule = lastUsernameValidationRule;
+                    userSettings.UsernameValidationEnabled = lastUsernameValidationEnabledValue;
+                    userSettings.UsernameValidationUseRegex = lastUsernameValidationUseRegexValue;
+
+                    ErrorNotification(_localizationService.GetResource("Admin.Configuration.Settings.UserSettings.RegexValidationRule.Error"));
+                }
+            }
+
+            _settingService.SaveSetting(userSettings);
+
+            addressSettings = model.AddressSettings.ToSettings(addressSettings);
+            _settingService.SaveSetting(addressSettings);
+
+            dateTimeSettings.AllowUsersToSetTimeZone = model.DateTimeSettings.AllowUsersToSetTimeZone;
+            _settingService.SaveSetting(dateTimeSettings);
+
+            externalAuthenticationSettings.AllowUsersToRemoveAssociations = model.ExternalAuthenticationSettings.AllowUsersToRemoveAssociations;
+            _settingService.SaveSetting(externalAuthenticationSettings);
+
             //activity log
             _userActivityService.InsertActivity("EditSettings", _localizationService.GetResource("ActivityLog.EditSettings"));
 

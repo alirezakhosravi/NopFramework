@@ -14,10 +14,7 @@ namespace Nop.Web.Models.Common
 
         public bool IsRequired { get; set; }
 
-        /// <summary>
-        /// Default value for textboxes
-        /// </summary>
-        public string DefaultValue { get; set; }
+        public int DisplayOrder { get; set; }
 
         public IList<AddressAttributeValueModel> Values { get; set; }
     }
