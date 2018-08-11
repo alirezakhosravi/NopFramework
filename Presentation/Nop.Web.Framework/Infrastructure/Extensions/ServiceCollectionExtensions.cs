@@ -325,7 +325,7 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
 
                 //whether MiniProfiler should be displayed
                 miniProfilerOptions.ShouldProfile = request =>
-                    EngineContext.Current.Resolve<SiteInformationSettings>().DisplayMiniProfilerInPublicSite;
+                    EngineContext.Current.Resolve<SiteInformationSettings>().DisplayMiniProfilerInSite;
 
                 //determine who can access the MiniProfiler results
                 miniProfilerOptions.ResultsAuthorize = request =>

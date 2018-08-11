@@ -3142,83 +3142,11 @@ namespace Nop.Services.Installation
 
             _activityLogRepository.Insert(new ActivityLog
             {
-                ActivityLogType = _activityLogTypeRepository.Table.First(alt => alt.SystemKeyword.Equals("EditCategory")),
-                Comment = "Edited a category ('Computers')",
-                CreatedOnUtc = DateTime.UtcNow,
-                User = defaultUser,
-                IpAddress = "127.0.0.1"
-            });
-            _activityLogRepository.Insert(new ActivityLog
-            {
-                ActivityLogType = _activityLogTypeRepository.Table.First(alt => alt.SystemKeyword.Equals("EditDiscount")),
-                Comment = "Edited a discount ('Sample discount with coupon code')",
-                CreatedOnUtc = DateTime.UtcNow,
-                User = defaultUser,
-                IpAddress = "127.0.0.1"
-            });
-            _activityLogRepository.Insert(new ActivityLog
-            {
                 ActivityLogType = _activityLogTypeRepository.Table.First(alt => alt.SystemKeyword.Equals("EditSpecAttribute")),
                 Comment = "Edited a specification attribute ('CPU Type')",
                 CreatedOnUtc = DateTime.UtcNow,
                 User = defaultUser,
                 IpAddress = "127.0.0.1"
-            });
-            _activityLogRepository.Insert(new ActivityLog
-            {
-                ActivityLogType = _activityLogTypeRepository.Table.First(alt => alt.SystemKeyword.Equals("AddNewProductAttribute")),
-                Comment = "Added a new product attribute ('Some attribute')",
-                CreatedOnUtc = DateTime.UtcNow,
-                User = defaultUser,
-                IpAddress = "127.0.0.1"
-            });
-            _activityLogRepository.Insert(new ActivityLog
-            {
-                ActivityLogType = _activityLogTypeRepository.Table.First(alt => alt.SystemKeyword.Equals("DeleteGiftCard")),
-                Comment = "Deleted a gift card ('bdbbc0ef-be57')",
-                CreatedOnUtc = DateTime.UtcNow,
-                User = defaultUser,
-                IpAddress = "127.0.0.1"
-            });
-        }
-
-        protected virtual void InstallSearchTerms()
-        {
-            _searchTermRepository.Insert(new SearchTerm
-            {
-                Count = 34,
-                Keyword = "computer",
-                
-            });
-            _searchTermRepository.Insert(new SearchTerm
-            {
-                Count = 30,
-                Keyword = "camera",
-                
-            });
-            _searchTermRepository.Insert(new SearchTerm
-            {
-                Count = 27,
-                Keyword = "jewelry",
-                
-            });
-            _searchTermRepository.Insert(new SearchTerm
-            {
-                Count = 26,
-                Keyword = "shoes",
-                
-            });
-            _searchTermRepository.Insert(new SearchTerm
-            {
-                Count = 19,
-                Keyword = "jeans",
-                
-            });
-            _searchTermRepository.Insert(new SearchTerm
-            {
-                Count = 10,
-                Keyword = "gift",
-                
             });
         }
 
@@ -3603,45 +3531,15 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "AddNewAffiliate",
-                    Enabled = true,
-                    Name = "Add a new affiliate"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewBlogPost",
-                    Enabled = true,
-                    Name = "Add a new blog post"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "AddNewCampaign",
                     Enabled = true,
                     Name = "Add a new campaign"
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "AddNewCategory",
-                    Enabled = true,
-                    Name = "Add a new category"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewCheckoutAttribute",
-                    Enabled = true,
-                    Name = "Add a new checkout attribute"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "AddNewCountry",
                     Enabled = true,
                     Name = "Add a new country"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewCurrency",
-                    Enabled = true,
-                    Name = "Add a new currency"
                 },
                 new ActivityLogType
                 {
@@ -3669,63 +3567,15 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "AddNewDiscount",
-                    Enabled = true,
-                    Name = "Add a new discount"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "AddNewEmailAccount",
                     Enabled = true,
                     Name = "Add a new email account"
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "AddNewGiftCard",
-                    Enabled = true,
-                    Name = "Add a new gift card"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "AddNewLanguage",
                     Enabled = true,
                     Name = "Add a new language"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewManufacturer",
-                    Enabled = true,
-                    Name = "Add a new manufacturer"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewMeasureDimension",
-                    Enabled = true,
-                    Name = "Add a new measure dimension"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewMeasureWeight",
-                    Enabled = true,
-                    Name = "Add a new measure weight"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewNews",
-                    Enabled = true,
-                    Name = "Add a new news"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewProduct",
-                    Enabled = true,
-                    Name = "Add a new product"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewProductAttribute",
-                    Enabled = true,
-                    Name = "Add a new product attribute"
                 },
                 new ActivityLogType
                 {
@@ -3753,33 +3603,9 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "AddNewTopic",
-                    Enabled = true,
-                    Name = "Add a new topic"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "AddNewReviewType",
                     Enabled = true,
                     Name = "Add a new review type"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewVendor",
-                    Enabled = true,
-                    Name = "Add a new vendor"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewVendorAttribute",
-                    Enabled = true,
-                    Name = "Add a new vendor attribute"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "AddNewVendorAttributeValue",
-                    Enabled = true,
-                    Name = "Add a new vendor attribute value"
                 },
                 new ActivityLogType
                 {
@@ -3813,51 +3639,15 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "DeleteAffiliate",
-                    Enabled = true,
-                    Name = "Delete an affiliate"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteBlogPost",
-                    Enabled = true,
-                    Name = "Delete a blog post"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteBlogPostComment",
-                    Enabled = true,
-                    Name = "Delete a blog post comment"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "DeleteCampaign",
                     Enabled = true,
                     Name = "Delete a campaign"
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "DeleteCategory",
-                    Enabled = true,
-                    Name = "Delete category"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteCheckoutAttribute",
-                    Enabled = true,
-                    Name = "Delete a checkout attribute"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "DeleteCountry",
                     Enabled = true,
                     Name = "Delete a country"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteCurrency",
-                    Enabled = true,
-                    Name = "Delete a currency"
                 },
                 new ActivityLogType
                 {
@@ -3885,21 +3675,9 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "DeleteDiscount",
-                    Enabled = true,
-                    Name = "Delete a discount"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "DeleteEmailAccount",
                     Enabled = true,
                     Name = "Delete an email account"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteGiftCard",
-                    Enabled = true,
-                    Name = "Delete a gift card"
                 },
                 new ActivityLogType
                 {
@@ -3909,75 +3687,15 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "DeleteManufacturer",
-                    Enabled = true,
-                    Name = "Delete a manufacturer"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteMeasureDimension",
-                    Enabled = true,
-                    Name = "Delete a measure dimension"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteMeasureWeight",
-                    Enabled = true,
-                    Name = "Delete a measure weight"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "DeleteMessageTemplate",
                     Enabled = true,
                     Name = "Delete a message template"
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "DeleteNews",
-                    Enabled = true,
-                    Name = "Delete a news"
-                },
-                 new ActivityLogType
-                {
-                    SystemKeyword = "DeleteNewsComment",
-                    Enabled = true,
-                    Name = "Delete a news comment"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteOrder",
-                    Enabled = true,
-                    Name = "Delete an order"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "DeletePlugin",
                     Enabled = true,
                     Name = "Delete a plugin"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteProduct",
-                    Enabled = true,
-                    Name = "Delete a product"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteProductAttribute",
-                    Enabled = true,
-                    Name = "Delete a product attribute"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteProductReview",
-                    Enabled = true,
-                    Name = "Delete a product review"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteReturnRequest",
-                    Enabled = true,
-                    Name = "Delete a return request"
                 },
                 new ActivityLogType
                 {
@@ -4017,30 +3735,6 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "DeleteTopic",
-                    Enabled = true,
-                    Name = "Delete a topic"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteVendor",
-                    Enabled = true,
-                    Name = "Delete a vendor"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteVendorAttribute",
-                    Enabled = true,
-                    Name = "Delete a vendor attribute"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "DeleteVendorAttributeValue",
-                    Enabled = true,
-                    Name = "Delete a vendor attribute value"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "DeleteWarehouse",
                     Enabled = true,
                     Name = "Delete a warehouse"
@@ -4071,45 +3765,15 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "EditAffiliate",
-                    Enabled = true,
-                    Name = "Edit an affiliate"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditBlogPost",
-                    Enabled = true,
-                    Name = "Edit a blog post"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "EditCampaign",
                     Enabled = true,
                     Name = "Edit a campaign"
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "EditCategory",
-                    Enabled = true,
-                    Name = "Edit category"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditCheckoutAttribute",
-                    Enabled = true,
-                    Name = "Edit a checkout attribute"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "EditCountry",
                     Enabled = true,
                     Name = "Edit a country"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditCurrency",
-                    Enabled = true,
-                    Name = "Edit a currency"
                 },
                 new ActivityLogType
                 {
@@ -4137,21 +3801,9 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "EditDiscount",
-                    Enabled = true,
-                    Name = "Edit a discount"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "EditEmailAccount",
                     Enabled = true,
                     Name = "Edit an email account"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditGiftCard",
-                    Enabled = true,
-                    Name = "Edit a gift card"
                 },
                 new ActivityLogType
                 {
@@ -4161,75 +3813,15 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "EditManufacturer",
-                    Enabled = true,
-                    Name = "Edit a manufacturer"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditMeasureDimension",
-                    Enabled = true,
-                    Name = "Edit a measure dimension"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditMeasureWeight",
-                    Enabled = true,
-                    Name = "Edit a measure weight"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "EditMessageTemplate",
                     Enabled = true,
                     Name = "Edit a message template"
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "EditNews",
-                    Enabled = true,
-                    Name = "Edit a news"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditOrder",
-                    Enabled = true,
-                    Name = "Edit an order"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "EditPlugin",
                     Enabled = true,
                     Name = "Edit a plugin"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditProduct",
-                    Enabled = true,
-                    Name = "Edit a product"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditProductAttribute",
-                    Enabled = true,
-                    Name = "Edit a product attribute"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditProductReview",
-                    Enabled = true,
-                    Name = "Edit a product review"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditPromotionProviders",
-                    Enabled = true,
-                    Name = "Edit promotion providers"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditReturnRequest",
-                    Enabled = true,
-                    Name = "Edit a return request"
                 },
                 new ActivityLogType
                 {
@@ -4269,24 +3861,6 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "EditVendor",
-                    Enabled = true,
-                    Name = "Edit a vendor"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditVendorAttribute",
-                    Enabled = true,
-                    Name = "Edit a vendor attribute"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "EditVendorAttributeValue",
-                    Enabled = true,
-                    Name = "Edit a vendor attribute value"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "EditWarehouse",
                     Enabled = true,
                     Name = "Edit a warehouse"
@@ -4317,24 +3891,6 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "ImportCategories",
-                    Enabled = true,
-                    Name = "Categories were imported"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "ImportManufacturers",
-                    Enabled = true,
-                    Name = "Manufacturers were imported"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "ImportProducts",
-                    Enabled = true,
-                    Name = "Products were imported"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "ImportStates",
                     Enabled = true,
                     Name = "States were imported"
@@ -4354,30 +3910,6 @@ namespace Nop.Services.Installation
                 //public site activities
                 new ActivityLogType
                 {
-                    SystemKeyword = "PublicSite.ViewCategory",
-                    Enabled = false,
-                    Name = "Public site. View a category"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.ViewManufacturer",
-                    Enabled = false,
-                    Name = "Public site. View a manufacturer"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.ViewProduct",
-                    Enabled = false,
-                    Name = "Public site. View a product"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.PlaceOrder",
-                    Enabled = false,
-                    Name = "Public site. Place an order"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "PublicSite.SendPM",
                     Enabled = false,
                     Name = "Public site. Send PM"
@@ -4390,24 +3922,6 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "PublicSite.AddToCompareList",
-                    Enabled = false,
-                    Name = "Public site. Add to compare list"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.AddToShoppingCart",
-                    Enabled = false,
-                    Name = "Public site. Add to shopping cart"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.AddToWishlist",
-                    Enabled = false,
-                    Name = "Public site. Add to wishlist"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "PublicSite.Login",
                     Enabled = false,
                     Name = "Public site. Login"
@@ -4417,60 +3931,6 @@ namespace Nop.Services.Installation
                     SystemKeyword = "PublicSite.Logout",
                     Enabled = false,
                     Name = "Public site. Logout"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.AddProductReview",
-                    Enabled = false,
-                    Name = "Public site. Add product review"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.AddNewsComment",
-                    Enabled = false,
-                    Name = "Public site. Add news comment"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.AddBlogComment",
-                    Enabled = false,
-                    Name = "Public site. Add blog comment"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.AddForumTopic",
-                    Enabled = false,
-                    Name = "Public site. Add forum topic"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.EditForumTopic",
-                    Enabled = false,
-                    Name = "Public site. Edit forum topic"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.DeleteForumTopic",
-                    Enabled = false,
-                    Name = "Public site. Delete forum topic"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.AddForumPost",
-                    Enabled = false,
-                    Name = "Public site. Add forum post"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.EditForumPost",
-                    Enabled = false,
-                    Name = "Public site. Edit forum post"
-                },
-                new ActivityLogType
-                {
-                    SystemKeyword = "PublicSite.DeleteForumPost",
-                    Enabled = false,
-                    Name = "Public site. Delete forum post"
                 },
                 new ActivityLogType
                 {
@@ -4599,7 +4059,6 @@ namespace Nop.Services.Installation
             
             InstallWarehouses();
             InstallActivityLog(defaultUserEmail);
-            InstallSearchTerms();
         }
 
         #endregion

@@ -6,7 +6,7 @@
 @{
     const string panelId = "popular-search-terms-box";
     const string hidePanelAttributeName = "HidePopularSearchTermsReport";
-    var hidePanel = genericAttributeService.GetAttribute<bool>(workContext.CurrentCustomer, hidePanelAttributeName);
+    var hidePanel = genericAttributeService.GetAttribute<bool>(workContext.CurrentUser, hidePanelAttributeName);
 }
 
 <div class="box box-info @if(hidePanel){<text>collapsed-box</text>}" id="@panelId">

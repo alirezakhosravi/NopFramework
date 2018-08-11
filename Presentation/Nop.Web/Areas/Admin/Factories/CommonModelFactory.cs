@@ -499,12 +499,12 @@ namespace Nop.Web.Areas.Admin.Factories
                     //details URL
                     var detailsUrl = string.Empty;
                     var entityName = urlRecord.EntityName?.ToLowerInvariant() ?? string.Empty;
-                    switch (entityName)
-                    {
+                    //switch (entityName)
+                    //{
                         //case "Type":
                             //detailsUrl = urlHelper.Action("actionName", "controllerName", new { id = urlRecord.EntityId });
                             //break;
-                    }
+                    //}
 
                     urlRecordModel.DetailsUrl = detailsUrl;
 

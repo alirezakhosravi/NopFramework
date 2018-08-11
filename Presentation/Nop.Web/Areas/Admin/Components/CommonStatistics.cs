@@ -40,8 +40,7 @@ namespace Nop.Web.Areas.Admin.Components
         /// <returns>View component result</returns>
         public IViewComponentResult Invoke()
         {
-            if (!_permissionService.Authorize(StandardPermissionProvider.ManageUsers) ||
-                !_permissionService.Authorize(StandardPermissionProvider.ManageReturnRequests))
+            if (!_permissionService.Authorize(StandardPermissionProvider.ManageUsers))
             {
                 return Content(string.Empty);
             }

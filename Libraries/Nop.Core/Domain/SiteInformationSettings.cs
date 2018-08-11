@@ -25,7 +25,7 @@ namespace Nop.Core.Domain
         /// <summary>
         /// Gets or sets a value indicating whether mini profiler should be displayed in public site (used for debugging)
         /// </summary>
-        public bool DisplayMiniProfilerInPublicSite { get; set; }
+        public bool DisplayMiniProfilerInSite { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether mini profiler should be displayed only for users with access to the admin area

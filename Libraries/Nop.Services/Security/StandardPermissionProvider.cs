@@ -14,7 +14,6 @@ namespace Nop.Services.Security
         public static readonly PermissionRecord AllowUserImpersonation = new PermissionRecord { Name = "Admin area. Allow User Impersonation", SystemName = "AllowUserImpersonation", Category = "Users" };
         public static readonly PermissionRecord ManageAttributes = new PermissionRecord { Name = "Admin area. Manage Attributes", SystemName = "ManageAttributes", Category = "Catalog" };
         public static readonly PermissionRecord ManageUsers = new PermissionRecord { Name = "Admin area. Manage Users", SystemName = "ManageUsers", Category = "Users" };
-        public static readonly PermissionRecord ManageReturnRequests = new PermissionRecord { Name = "Admin area. Manage Return Requests", SystemName = "ManageReturnRequests", Category = "Orders" };
         public static readonly PermissionRecord ManageNewsletterSubscribers = new PermissionRecord { Name = "Admin area. Manage Newsletter Subscribers", SystemName = "ManageNewsletterSubscribers", Category = "Promo" };
         public static readonly PermissionRecord ManageWidgets = new PermissionRecord { Name = "Admin area. Manage Widgets", SystemName = "ManageWidgets", Category = "Content Management" };
         public static readonly PermissionRecord ManageMessageTemplates = new PermissionRecord { Name = "Admin area. Manage Message Templates", SystemName = "ManageMessageTemplates", Category = "Content Management" };
@@ -45,7 +44,6 @@ namespace Nop.Services.Security
                 AllowUserImpersonation,
                 ManageAttributes,
                 ManageUsers,
-                ManageReturnRequests,
                 ManageNewsletterSubscribers,
                 ManageWidgets,
                 ManageMessageTemplates,
@@ -82,7 +80,6 @@ namespace Nop.Services.Security
                         AllowUserImpersonation,
                         ManageAttributes,
                         ManageUsers,
-                        ManageReturnRequests,
                         ManageNewsletterSubscribers,
                         ManageWidgets,
                         ManageMessageTemplates,

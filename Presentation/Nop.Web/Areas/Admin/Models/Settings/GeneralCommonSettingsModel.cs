@@ -20,6 +20,7 @@ namespace Nop.Web.Areas.Admin.Models.Settings
             DisplayDefaultMenuItemSettings = new DisplayDefaultMenuItemSettingsModel();
             DisplayDefaultFooterItemSettings = new DisplayDefaultFooterItemSettingsModel();
             AdminAreaSettings = new AdminAreaSettingsModel();
+            SiteInformationSettings = new SiteInformationSettingsModel();
         }
 
         #endregion
@@ -44,6 +45,7 @@ namespace Nop.Web.Areas.Admin.Models.Settings
 
         public AdminAreaSettingsModel AdminAreaSettings { get; set; }
 
+        public SiteInformationSettingsModel SiteInformationSettings { get; set; }
         #endregion
     }
 }

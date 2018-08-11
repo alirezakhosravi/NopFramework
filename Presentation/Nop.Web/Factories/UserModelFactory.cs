@@ -491,14 +491,6 @@ namespace Nop.Web.Factories
 
             model.UserNavigationItems.Add(new UserNavigationItemModel
             {
-                RouteName = "UserOrders",
-                Title = _localizationService.GetResource("Account.UserOrders"),
-                Tab = UserNavigationEnum.Orders,
-                ItemClass = "user-orders"
-            });
-
-            model.UserNavigationItems.Add(new UserNavigationItemModel
-            {
                 RouteName = "UserChangePassword",
                 Title = _localizationService.GetResource("Account.ChangePassword"),
                 Tab = UserNavigationEnum.ChangePassword,
@@ -513,17 +505,6 @@ namespace Nop.Web.Factories
                     Title = _localizationService.GetResource("Account.Avatar"),
                     Tab = UserNavigationEnum.Avatar,
                     ItemClass = "user-avatar"
-                });
-            }
-
-            if (_captchaSettings.Enabled)
-            {
-                model.UserNavigationItems.Add(new UserNavigationItemModel
-                {
-                    RouteName = "CheckGiftCardBalance",
-                    Title = _localizationService.GetResource("CheckGiftCardBalance"),
-                    Tab = UserNavigationEnum.CheckGiftCardBalance,
-                    ItemClass = "user-check-gift-card-balance"
                 });
             }
 

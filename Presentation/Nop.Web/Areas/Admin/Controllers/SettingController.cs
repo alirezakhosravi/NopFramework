@@ -259,6 +259,155 @@ namespace Nop.Web.Areas.Admin.Controllers
             if (!_permissionService.Authorize(StandardPermissionProvider.ManageSettings))
                 return AccessDeniedView();
             
+            //store information settings
+            var siteInformationSettings = _settingService.LoadSetting<SiteInformationSettings>();
+            var commonSettings = _settingService.LoadSetting<CommonSettings>();
+            siteInformationSettings.DefaultSiteTheme = model.SiteInformationSettings.DefaultSiteTheme;
+            siteInformationSettings.AllowUserToSelectTheme = model.SiteInformationSettings.AllowUserToSelectTheme;
+            siteInformationSettings.LogoPictureId = model.SiteInformationSettings.LogoPictureId;
+
+            //EU Cookie law
+            siteInformationSettings.DisplayEuCookieLawWarning = model.SiteInformationSettings.DisplayEuCookieLawWarning;
+
+            //social pages
+            siteInformationSettings.FacebookLink = model.SiteInformationSettings.FacebookLink;
+            siteInformationSettings.TwitterLink = model.SiteInformationSettings.TwitterLink;
+            siteInformationSettings.YoutubeLink = model.SiteInformationSettings.YoutubeLink;
+            siteInformationSettings.GooglePlusLink = model.SiteInformationSettings.GooglePlusLink;
+
+            //contact us
+            commonSettings.SubjectFieldOnContactUsForm = model.SiteInformationSettings.SubjectFieldOnContactUsForm;
+            commonSettings.UseSystemEmailForContactUsForm = model.SiteInformationSettings.UseSystemEmailForContactUsForm;
+
+            //terms of service
+            commonSettings.PopupForTermsOfServiceLinks = model.SiteInformationSettings.PopupForTermsOfServiceLinks;
+
+            //sitemap
+            commonSettings.SitemapEnabled = model.SiteInformationSettings.SitemapEnabled;
+            commonSettings.SitemapPageSize = model.SiteInformationSettings.SitemapPageSize;
+
+            //now clear settings cache
+            _settingService.ClearCache();
+
+            //seo settings
+            var seoSettings = _settingService.LoadSetting<SeoSettings>();
+            seoSettings.PageTitleSeparator = model.SeoSettings.PageTitleSeparator;
+            seoSettings.PageTitleSeoAdjustment = (PageTitleSeoAdjustment)model.SeoSettings.PageTitleSeoAdjustment;
+            seoSettings.DefaultTitle = model.SeoSettings.DefaultTitle;
+            seoSettings.DefaultMetaKeywords = model.SeoSettings.DefaultMetaKeywords;
+            seoSettings.DefaultMetaDescription = model.SeoSettings.DefaultMetaDescription;
+            seoSettings.GenerateProductMetaDescription = model.SeoSettings.GenerateProductMetaDescription;
+            seoSettings.ConvertNonWesternChars = model.SeoSettings.ConvertNonWesternChars;
+            seoSettings.CanonicalUrlsEnabled = model.SeoSettings.CanonicalUrlsEnabled;
+            seoSettings.WwwRequirement = (WwwRequirement)model.SeoSettings.WwwRequirement;
+            seoSettings.EnableJsBundling = model.SeoSettings.EnableJsBundling;
+            seoSettings.EnableCssBundling = model.SeoSettings.EnableCssBundling;
+            seoSettings.TwitterMetaTags = model.SeoSettings.TwitterMetaTags;
+            seoSettings.OpenGraphMetaTags = model.SeoSettings.OpenGraphMetaTags;
+            seoSettings.CustomHeadTags = model.SeoSettings.CustomHeadTags;
+
+            //now clear settings cache
+            _settingService.ClearCache();
+
+            //security settings
+            var securitySettings = _settingService.LoadSetting<SecuritySettings>();
+            if (securitySettings.AdminAreaAllowedIpAddresses == null)
+                securitySettings.AdminAreaAllowedIpAddresses = new List<string>();
+            securitySettings.AdminAreaAllowedIpAddresses.Clear();
+            if (!string.IsNullOrEmpty(model.SecuritySettings.AdminAreaAllowedIpAddresses))
+                foreach (var s in model.SecuritySettings.AdminAreaAllowedIpAddresses.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                    if (!string.IsNullOrWhiteSpace(s))
+                        securitySettings.AdminAreaAllowedIpAddresses.Add(s.Trim());
+            securitySettings.ForceSslForAllPages = model.SecuritySettings.ForceSslForAllPages;
+            securitySettings.EnableXsrfProtectionForAdminArea = model.SecuritySettings.EnableXsrfProtectionForAdminArea;
+            //securitySettings.EnableXsrfProtectionForPublicSite = model.SecuritySettings.EnableXsrfProtectionForPublicSite;
+            securitySettings.HoneypotEnabled = model.SecuritySettings.HoneypotEnabled;
+            _settingService.SaveSetting(securitySettings);
+
+            //captcha settings
+            var captchaSettings = _settingService.LoadSetting<CaptchaSettings>();
+            captchaSettings.Enabled = model.CaptchaSettings.Enabled;
+            captchaSettings.ShowOnLoginPage = model.CaptchaSettings.ShowOnLoginPage;
+            captchaSettings.ShowOnRegistrationPage = model.CaptchaSettings.ShowOnRegistrationPage;
+            captchaSettings.ShowOnContactUsPage = model.CaptchaSettings.ShowOnContactUsPage;
+            captchaSettings.ReCaptchaPublicKey = model.CaptchaSettings.ReCaptchaPublicKey;
+            captchaSettings.ReCaptchaPrivateKey = model.CaptchaSettings.ReCaptchaPrivateKey;
+
+            // now clear settings cache
+            _settingService.ClearCache();
+
+            if (captchaSettings.Enabled &&
+                (string.IsNullOrWhiteSpace(captchaSettings.ReCaptchaPublicKey) || string.IsNullOrWhiteSpace(captchaSettings.ReCaptchaPrivateKey)))
+            {
+                //captcha is enabled but the keys are not entered
+                ErrorNotification(_localizationService.GetResource("Admin.Configuration.Settings.GeneralCommon.CaptchaAppropriateKeysNotEnteredError"));
+            }
+
+            //PDF settings
+            var pdfSettings = _settingService.LoadSetting<PdfSettings>();
+            pdfSettings.LetterPageSizeEnabled = model.PdfSettings.LetterPageSizeEnabled;
+            pdfSettings.LogoPictureId = model.PdfSettings.LogoPictureId;
+
+            //now clear settings cache
+            _settingService.ClearCache();
+
+            //localization settings
+            var localizationSettings = _settingService.LoadSetting<LocalizationSettings>();
+            localizationSettings.UseImagesForLanguageSelection = model.LocalizationSettings.UseImagesForLanguageSelection;
+            if (localizationSettings.SeoFriendlyUrlsForLanguagesEnabled != model.LocalizationSettings.SeoFriendlyUrlsForLanguagesEnabled)
+            {
+                localizationSettings.SeoFriendlyUrlsForLanguagesEnabled = model.LocalizationSettings.SeoFriendlyUrlsForLanguagesEnabled;
+
+                //clear cached values of routes
+                RouteData.Routers.ClearSeoFriendlyUrlsCachedValueForRoutes();
+            }
+
+            localizationSettings.AutomaticallyDetectLanguage = model.LocalizationSettings.AutomaticallyDetectLanguage;
+            localizationSettings.LoadAllLocaleRecordsOnStartup = model.LocalizationSettings.LoadAllLocaleRecordsOnStartup;
+            localizationSettings.LoadAllLocalizedPropertiesOnStartup = model.LocalizationSettings.LoadAllLocalizedPropertiesOnStartup;
+            localizationSettings.LoadAllUrlRecordsOnStartup = model.LocalizationSettings.LoadAllUrlRecordsOnStartup;
+            _settingService.SaveSetting(localizationSettings);
+
+            //full-text (not overridable)
+            commonSettings = _settingService.LoadSetting<CommonSettings>();
+            commonSettings.FullTextMode = (FulltextSearchMode)model.FullTextSettings.SearchMode;
+            _settingService.SaveSetting(commonSettings);
+
+            //display default menu item
+            var displayDefaultMenuItemSettings = _settingService.LoadSetting<DisplayDefaultMenuItemSettings>();
+
+            //we do not clear cache after each setting update.
+            //this behavior can increase performance because cached settings will not be cleared 
+            //and loaded from database after each update
+            displayDefaultMenuItemSettings.DisplayHomePageMenuItem = model.DisplayDefaultMenuItemSettings.DisplayHomePageMenuItem;
+            displayDefaultMenuItemSettings.DisplayUserInfoMenuItem = model.DisplayDefaultMenuItemSettings.DisplayUserInfoMenuItem;
+            displayDefaultMenuItemSettings.DisplayContactUsMenuItem = model.DisplayDefaultMenuItemSettings.DisplayContactUsMenuItem;
+
+            //now clear settings cache
+            _settingService.ClearCache();
+
+            //display default footer item
+            var displayDefaultFooterItemSettings = _settingService.LoadSetting<DisplayDefaultFooterItemSettings>();
+
+            //we do not clear cache after each setting update.
+            //this behavior can increase performance because cached settings will not be cleared 
+            //and loaded from database after each update
+            displayDefaultFooterItemSettings.DisplaySitemapFooterItem = model.DisplayDefaultFooterItemSettings.DisplaySitemapFooterItem;
+            displayDefaultFooterItemSettings.DisplayContactUsFooterItem = model.DisplayDefaultFooterItemSettings.DisplayContactUsFooterItem;
+            displayDefaultFooterItemSettings.DisplayUserInfoFooterItem = model.DisplayDefaultFooterItemSettings.DisplayUserInfoFooterItem;
+            displayDefaultFooterItemSettings.DisplayUserAddressesFooterItem = model.DisplayDefaultFooterItemSettings.DisplayUserAddressesFooterItem;
+
+            //now clear settings cache
+            _settingService.ClearCache();
+
+            //admin area
+            var adminAreaSettings = _settingService.LoadSetting<AdminAreaSettings>();
+
+            //we do not clear cache after each setting update.
+            //this behavior can increase performance because cached settings will not be cleared 
+            //and loaded from database after each update
+            adminAreaSettings.UseRichEditorInMessageTemplates = model.AdminAreaSettings.UseRichEditorInMessageTemplates;
+
             //now clear settings cache
             _settingService.ClearCache();
 

@@ -458,6 +458,8 @@ namespace Nop.Web.Areas.Admin.Factories
                 //prepare nested search models
                 PrepareUserAddressSearchModel(model.UserAddressSearchModel, user);
                 PrepareUserActivityLogSearchModel(model.UserActivityLogSearchModel, user);
+
+                model.SelectedUserRoleIds = user.UserUserRoleMappings.Select(mapping => mapping.UserRoleId).ToList();
             }
             else
             {

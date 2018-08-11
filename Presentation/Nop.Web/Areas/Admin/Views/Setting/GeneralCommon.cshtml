@@ -20,34 +20,120 @@
             @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.GeneralCommonSettingsButtons })
         </div>
     </div>
-
-    <script>
-        $(document).ready(function () {
+    <script>$(document).ready(function() {
+            $("#@Html.IdFor(model => model.SiteInformationSettings.SitemapEnabled)").click(toggleSitemapSettings);
             $("#@Html.IdFor(model => model.LocalizationSettings.LoadAllLocaleRecordsOnStartup)").click(toggleLoadAllLocaleRecordsOnStartup);
             toggleSitemapSettings();
             toggleLoadAllLocaleRecordsOnStartup();
-        });
+});
 
-        function toggleSitemapSettings() {
-            $("#pnlSitemapPageSize, #pnlSitemapIncludeCategories, #pnlSitemapIncludeManufacturers, #pnlSitemapIncludeProducts, #pnlSitemapIncludeProductTags").hide();
-        }
+function toggleSitemapSettings() {
+            if ($('#@Html.IdFor(model => model.SiteInformationSettings.SitemapEnabled)').is(':checked')) {
+                $("#pnlSitemapPageSize, #pnlSitemapIncludeCategories, #pnlSitemapIncludeManufacturers, #pnlSitemapIncludeProducts, #pnlSitemapIncludeProductTags").show();
+            }
+            else {
+                $("#pnlSitemapPageSize, #pnlSitemapIncludeCategories, #pnlSitemapIncludeManufacturers, #pnlSitemapIncludeProducts, #pnlSitemapIncludeProductTags").hide();
+            }
+}
 
-        function toggleLoadAllLocaleRecordsOnStartup() {
+function toggleLoadAllLocaleRecordsOnStartup() {
             warningValidation('@Url.Action("RedisCacheHighTrafficWarning", "Setting")',
                 '@Html.NameFor(model => model.LocalizationSettings.LoadAllLocaleRecordsOnStartup)',
                 {
                     loadAllLocaleRecordsOnStartup: $('#@Html.IdFor(model => model.LocalizationSettings.LoadAllLocaleRecordsOnStartup)').is(':checked')
                 });
-        }
-    </script>
-
+}</script>
     <div class="content">
         <div class="form-horizontal">
             @await Component.InvokeAsync("SettingMode")
             <div asp-validation-summary="All"></div>
-
             <div class="panel-group">
                 @await Component.InvokeAsync("AdminWidget", new { widgetZone = AdminWidgetZones.GeneralCommonSettingsTop })
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        @T("Admin.Configuration.Settings.GeneralCommon.BlockTitle.Common")
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-md-9">
+                                <div id="theme-selection-block" class="theme-selection-block clearfix">
+                                    @foreach (var theme in Model.SiteInformationSettings.AvailableSiteThemes)
+                                    {
+                                    <div class="checkbox">
+                                        <label>
+                                            <span>
+                                                <input type="radio" name="@Html.NameFor(x => x.SiteInformationSettings.DefaultSiteTheme)" value="@theme.SystemName" @if (theme.SystemName.Equals(Model.SiteInformationSettings.DefaultSiteTheme, StringComparison.InvariantCultureIgnoreCase)) { <text> checked="checked" </text> }>
+                                                @theme.FriendlyName
+                                            </span>
+                                            <img src="@Url.Content(theme.PreviewImageUrl)" alt="@theme.PreviewText" title="@theme.PreviewText">
+                                        </label>
+                                    </div>
+                                    }
+                                </div>
+                                <span asp-validation-for="SiteInformationSettings.DefaultSiteTheme"></span>
+                                <p><em>@T("Admin.Configuration.Settings.GeneralCommon.DefaultSiteTheme.GetMore")</em></p>
+                            </div>
+                        </div>
+                        <div class="form-group" @(Model.SiteInformationSettings.AvailableSiteThemes.Count == 1 ? Html.Raw("style=\"display:none\"") : null)>
+                            <div class="col-md-3">
+                                <nop-label asp-for="SiteInformationSettings.AllowUserToSelectTheme" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.AllowUserToSelectTheme" />
+                                <span asp-validation-for="SiteInformationSettings.AllowUserToSelectTheme"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <nop-label asp-for="SiteInformationSettings.LogoPictureId" />
+                            </div>
+                            <div class="col-md-9" id="logo-block">
+                                <nop-editor asp-for="SiteInformationSettings.LogoPictureId" />
+                                <span asp-validation-for="SiteInformationSettings.LogoPictureId"></span>
+                            </div>
+                        </div>
+                        <div class="form-group advanced-setting">
+                            <div class="col-md-3">
+                              
+                                <nop-label asp-for="SiteInformationSettings.DisplayEuCookieLawWarning" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.DisplayEuCookieLawWarning" />
+                                <span asp-validation-for="SiteInformationSettings.DisplayEuCookieLawWarning"></span>
+                            </div>
+                        </div>
+                        <div class="form-group advanced-setting">
+                            <div class="col-md-3">
+                               
+                                <nop-label asp-for="SiteInformationSettings.SubjectFieldOnContactUsForm" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.SubjectFieldOnContactUsForm" />
+                                <span asp-validation-for="SiteInformationSettings.SubjectFieldOnContactUsForm"></span>
+                            </div>
+                        </div>
+                        <div class="form-group advanced-setting">
+                            <div class="col-md-3">
+                                
+                                <nop-label asp-for="SiteInformationSettings.UseSystemEmailForContactUsForm" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.UseSystemEmailForContactUsForm" />
+                                <span asp-validation-for="SiteInformationSettings.UseSystemEmailForContactUsForm"></span>
+                            </div>
+                        </div>
+                        <div class="form-group advanced-setting">
+                            <div class="col-md-3">
+                           
+                                <nop-label asp-for="SiteInformationSettings.PopupForTermsOfServiceLinks" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.PopupForTermsOfServiceLinks" />
+                                <span asp-validation-for="SiteInformationSettings.PopupForTermsOfServiceLinks"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="panel panel-default advanced-setting">
                     <div class="panel-heading">
                         @T("Admin.Configuration.Settings.GeneralCommon.BlockTitle.TopMenuItems")
@@ -55,7 +141,7 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <div class="col-md-3">
-                             
+                                
                                 <nop-label asp-for="DisplayDefaultMenuItemSettings.DisplayHomePageMenuItem" />
                             </div>
                             <div class="col-md-9">
@@ -66,6 +152,7 @@
 
                         <div class="form-group">
                             <div class="col-md-3">
+
                                 <nop-label asp-for="DisplayDefaultMenuItemSettings.DisplayUserInfoMenuItem" />
                             </div>
                             <div class="col-md-9">
@@ -73,10 +160,11 @@
                                 <span asp-validation-for="DisplayDefaultMenuItemSettings.DisplayUserInfoMenuItem"></span>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            
                         <div class="form-group">
                             <div class="col-md-3">
-                                
+                              
                                 <nop-label asp-for="DisplayDefaultMenuItemSettings.DisplayContactUsMenuItem" />
                             </div>
                             <div class="col-md-9">
@@ -86,7 +174,7 @@
                         </div>
                     </div>
                 </div>
-            
+                </div>
                 <div class="panel panel-default advanced-setting">
                     <div class="panel-heading">
                         @T("Admin.Configuration.Settings.GeneralCommon.BlockTitle.FooterItems")
@@ -94,7 +182,7 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <div class="col-md-3">
-                                
+
                                 <nop-label asp-for="DisplayDefaultFooterItemSettings.DisplaySitemapFooterItem" />
                             </div>
                             <div class="col-md-9">
@@ -104,7 +192,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-3">
-                                
+                          
                                 <nop-label asp-for="DisplayDefaultFooterItemSettings.DisplayContactUsFooterItem" />
                             </div>
                             <div class="col-md-9">
@@ -112,10 +200,12 @@
                                 <span asp-validation-for="DisplayDefaultFooterItemSettings.DisplayContactUsFooterItem"></span>
                             </div>
                         </div>
-                                           
+
+                        <div class="form-group">
+                            
                         <div class="form-group">
                             <div class="col-md-3">
-                              
+                               
                                 <nop-label asp-for="DisplayDefaultFooterItemSettings.DisplayUserInfoFooterItem" />
                             </div>
                             <div class="col-md-9">
@@ -126,7 +216,7 @@
                        
                         <div class="form-group">
                             <div class="col-md-3">
-                             
+                               
                                 <nop-label asp-for="DisplayDefaultFooterItemSettings.DisplayUserAddressesFooterItem" />
                             </div>
                             <div class="col-md-9">
@@ -136,7 +226,81 @@
                         </div>
                     </div>
                 </div>
-            
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        @T("Admin.Configuration.Settings.GeneralCommon.BlockTitle.SocialMedia")
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-md-3">
+                          
+                                <nop-label asp-for="SiteInformationSettings.FacebookLink" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.FacebookLink" />
+                                <span asp-validation-for="SiteInformationSettings.FacebookLink"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                           
+                                <nop-label asp-for="SiteInformationSettings.TwitterLink" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.TwitterLink" />
+                                <span asp-validation-for="SiteInformationSettings.TwitterLink"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+
+                                <nop-label asp-for="SiteInformationSettings.YoutubeLink" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.YoutubeLink" />
+                                <span asp-validation-for="SiteInformationSettings.YoutubeLink"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <nop-label asp-for="SiteInformationSettings.GooglePlusLink" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.GooglePlusLink" />
+                                <span asp-validation-for="SiteInformationSettings.GooglePlusLink"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default advanced-setting">
+                    <div class="panel-heading">
+                        @T("Admin.Configuration.Settings.GeneralCommon.BlockTitle.Sitemap")
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <nop-label asp-for="SiteInformationSettings.SitemapEnabled" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="SiteInformationSettings.SitemapEnabled" />
+                                <span asp-validation-for="SiteInformationSettings.SitemapEnabled"></span>
+                            </div>
+                        </div>
+                        <nop-nested-setting asp-for="SiteInformationSettings.SitemapEnabled">
+                            <div class="form-group advanced-setting" id="pnlSitemapPageSize">
+                                <div class="col-md-3">
+                                    <nop-label asp-for="SiteInformationSettings.SitemapPageSize" />
+                                </div>
+                                <div class="col-md-9">
+                                    <nop-editor asp-for="SiteInformationSettings.SitemapPageSize" />
+                                    <span asp-validation-for="SiteInformationSettings.SitemapPageSize"></span>
+                                </div>
+                            </div>
+
+                        </nop-nested-setting>
+                    </div>
+                </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         @T("Admin.Configuration.Settings.GeneralCommon.BlockTitle.SEO")
@@ -144,7 +308,6 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <div class="col-md-3">
-                               
                                 <nop-label asp-for="SeoSettings.DefaultTitle" />
                             </div>
                             <div class="col-md-9">
@@ -154,7 +317,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                                
                                 <nop-label asp-for="SeoSettings.PageTitleSeoAdjustment" />
                             </div>
                             <div class="col-md-9">
@@ -164,7 +326,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-
                                 <nop-label asp-for="SeoSettings.PageTitleSeparator" />
                             </div>
                             <div class="col-md-9">
@@ -174,7 +335,6 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-3">
-
                                 <nop-label asp-for="SeoSettings.DefaultMetaKeywords" />
                             </div>
                             <div class="col-md-9">
@@ -184,7 +344,6 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-3">
-                           
                                 <nop-label asp-for="SeoSettings.DefaultMetaDescription" />
                             </div>
                             <div class="col-md-9">
@@ -194,7 +353,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                               
                                 <nop-label asp-for="SeoSettings.GenerateProductMetaDescription" />
                             </div>
                             <div class="col-md-9">
@@ -204,7 +362,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                               
                                 <nop-label asp-for="SeoSettings.EnableJsBundling" />
                             </div>
                             <div class="col-md-9">
@@ -214,7 +371,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                               
                                 <nop-label asp-for="SeoSettings.EnableCssBundling" />
                             </div>
                             <div class="col-md-9">
@@ -224,7 +380,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                                
                                 <nop-label asp-for="SeoSettings.WwwRequirement" />
                             </div>
                             <div class="col-md-9">
@@ -234,7 +389,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                               
                                 <nop-label asp-for="SeoSettings.ConvertNonWesternChars" />
                             </div>
                             <div class="col-md-9">
@@ -244,7 +398,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                               
                                 <nop-label asp-for="SeoSettings.CanonicalUrlsEnabled" />
                             </div>
                             <div class="col-md-9">
@@ -254,7 +407,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                                
                                 <nop-label asp-for="SeoSettings.TwitterMetaTags" />
                             </div>
                             <div class="col-md-9">
@@ -264,7 +416,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                                
                                 <nop-label asp-for="SeoSettings.OpenGraphMetaTags" />
                             </div>
                             <div class="col-md-9">
@@ -274,7 +425,6 @@
                         </div>
                         <div class="form-group advanced-setting">
                             <div class="col-md-3">
-                                <nop-override-store-checkbox asp-for="SeoSettings.
                                 <nop-label asp-for="SeoSettings.CustomHeadTags" />
                             </div>
                             <div class="col-md-9">
@@ -320,7 +470,7 @@
                             <div class="col-md-3">
                                 <nop-label asp-for="SecuritySettings.EnableXsrfProtectionForPublicSite" />
                             </div>
-                            <div class="col-md-9"> 
+                            <div class="col-md-9">
                                 <nop-editor asp-for="SecuritySettings.EnableXsrfProtectionForPublicSite" />
                                 <span asp-validation-for="SecuritySettings.EnableXsrfProtectionForPublicSite"></span>
                             </div>
@@ -358,11 +508,10 @@
                         @T("Admin.Configuration.Settings.GeneralCommon.BlockTitle.Captcha")
                     </div>
                     <div class="panel-body">
-                       @T("Admin.Configuration.Settings.GeneralCommon.Captcha.Instructions")
+                        @T("Admin.Configuration.Settings.GeneralCommon.Captcha.Instructions")
                         <div class="form-group">
                             <div class="col-md-3">
-                          
-                                <nop-label asp-for="CaptchaSettings.Enabled"/>
+                                <nop-label asp-for="CaptchaSettings.Enabled" />
                             </div>
                             <div class="col-md-9">
                                 <nop-editor asp-for="CaptchaSettings.Enabled" />
@@ -372,7 +521,6 @@
                         <nop-nested-setting asp-for="CaptchaSettings.Enabled">
                             <div class="form-group" id="ssCaptchaShowOnLoginPagepnl">
                                 <div class="col-md-3">
-                                 
                                     <nop-label asp-for="CaptchaSettings.ShowOnLoginPage" />
                                 </div>
                                 <div class="col-md-9">
@@ -382,7 +530,6 @@
                             </div>
                             <div class="form-group" id="ssCaptchaShowOnRegistrationPagepnl">
                                 <div class="col-md-3">
-                                  
                                     <nop-label asp-for="CaptchaSettings.ShowOnRegistrationPage" />
                                 </div>
                                 <div class="col-md-9">
@@ -392,7 +539,6 @@
                             </div>
                             <div class="form-group" id="ssCaptchaShowOnContactUsPagepnl">
                                 <div class="col-md-3">
-                                   
                                     <nop-label asp-for="CaptchaSettings.ShowOnContactUsPage" />
                                 </div>
                                 <div class="col-md-9">
@@ -402,7 +548,6 @@
                             </div>
                             <div class="form-group" id="ssCaptchaShowOnEmailWishlistToFriendPagepnl">
                                 <div class="col-md-3">
-                                    
                                     <nop-label asp-for="CaptchaSettings.ShowOnEmailWishlistToFriendPage" />
                                 </div>
                                 <div class="col-md-9">
@@ -412,7 +557,6 @@
                             </div>
                             <div class="form-group" id="ssCaptchaShowOnEmailProductToFriendPagepnl">
                                 <div class="col-md-3">
-                            
                                     <nop-label asp-for="CaptchaSettings.ShowOnEmailProductToFriendPage" />
                                 </div>
                                 <div class="col-md-9">
@@ -422,7 +566,6 @@
                             </div>
                             <div class="form-group" id="ssCaptchaShowOnBlogCommentPagepnl">
                                 <div class="col-md-3">
-                                 
                                     <nop-label asp-for="CaptchaSettings.ShowOnBlogCommentPage" />
                                 </div>
                                 <div class="col-md-9">
@@ -432,7 +575,6 @@
                             </div>
                             <div class="form-group" id="ssCaptchaShowOnNewsCommentPagepnl">
                                 <div class="col-md-3">
-                                   
                                     <nop-label asp-for="CaptchaSettings.ShowOnNewsCommentPage" />
                                 </div>
                                 <div class="col-md-9">
@@ -442,7 +584,6 @@
                             </div>
                             <div class="form-group" id="ssCaptchaShowOnProductReviewPagepnl">
                                 <div class="col-md-3">
-                                    
                                     <nop-label asp-for="CaptchaSettings.ShowOnProductReviewPage" />
                                 </div>
                                 <div class="col-md-9">
@@ -452,17 +593,15 @@
                             </div>
                             <div class="form-group" id="ssCaptchaShowOnApplyVendorPagepnl">
                                 <div class="col-md-3">
-                        
                                     <nop-label asp-for="CaptchaSettings.ShowOnApplyVendorPage" />
                                 </div>
                                 <div class="col-md-9">
                                     <nop-editor asp-for="CaptchaSettings.ShowOnApplyVendorPage" />
                                     <span asp-validation-for="CaptchaSettings.ShowOnApplyVendorPage"></span>
                                 </div>
-                            </div>                            
+                            </div>
                             <div class="form-group" id="ssReCaptchaPublicKeypnl">
                                 <div class="col-md-3">
-
                                     <nop-label asp-for="CaptchaSettings.ReCaptchaPublicKey" />
                                 </div>
                                 <div class="col-md-9">
@@ -472,7 +611,6 @@
                             </div>
                             <div class="form-group" id="ssReCaptchaPrivateKeypnl">
                                 <div class="col-md-3">
-
                                     <nop-label asp-for="CaptchaSettings.ReCaptchaPrivateKey" />
                                 </div>
                                 <div class="col-md-9">
@@ -482,13 +620,12 @@
                             </div>
                         </nop-nested-setting>
                     </div>
-                    <script>
-                        $(document).ready(function () {
+                    <script>$(document).ready(function() {
                             $("#@Html.IdFor(model => model.CaptchaSettings.Enabled)").click(toggleReCaptcha);
                             toggleReCaptcha();
-                        });
+});
 
-                        function toggleReCaptcha() {
+function toggleReCaptcha() {
                             if ($('#@Html.IdFor(model => model.CaptchaSettings.Enabled)').is(':checked')) {
                                 $('#ssCaptchaShowOnLoginPagepnl').show();
                                 $('#ssCaptchaShowOnRegistrationPagepnl').show();
@@ -514,8 +651,7 @@
                                 $('#ssReCaptchaPublicKeypnl').hide();
                                 $('#ssReCaptchaPrivateKeypnl').hide();
                             }
-                        }
-                    </script>
+}</script>
                 </div>
                 <div class="panel panel-default advanced-setting">
                     <div class="panel-heading">
@@ -524,7 +660,6 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <div class="col-md-3">
-                                
                                 <nop-label asp-for="PdfSettings.LogoPictureId" />
                             </div>
                             <div class="col-md-9" id="pdf-logo-picture">
@@ -532,10 +667,8 @@
                                 <span asp-validation-for="PdfSettings.LogoPictureId"></span>
                             </div>
                         </div>
-                      
                         <div class="form-group">
                             <div class="col-md-3">
-                             
                                 <nop-label asp-for="PdfSettings.LetterPageSizeEnabled" />
                             </div>
                             <div class="col-md-9">
@@ -615,53 +748,53 @@
                         <p>
                             @if (Model.FullTextSettings.Supported)
                             {
-                                @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.Supported")
+                            @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.Supported")
                             }
                             else
                             {
-                                @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.NotSupported")
+                            @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.NotSupported")
                             }
                         </p>
                         @if (Model.FullTextSettings.Supported)
                         {
-                            <div class="form-group">
-                                <div class="col-md-3">
-                                    <div class="label-wrapper">
-                                        <label class="control-label">
-                                            @if (Model.FullTextSettings.Enabled)
-                                            {
-                                                @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.CurrenlyEnabled")
-                                            }
-                                            else
-                                            {
-                                                @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.CurrenlyDisabled")
-                                            }
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <button type="submit" name="togglefulltext" class="btn btn-primary">
-                                        @(Model.FullTextSettings.Enabled ? T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.Disable").Text : T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.Enable").Text)
-                                    </button>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <div class="label-wrapper">
+                                    <label class="control-label">
+                                        @if (Model.FullTextSettings.Enabled)
+                                        {
+                                        @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.CurrenlyEnabled")
+                                        }
+                                        else
+                                        {
+                                        @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.CurrenlyDisabled")
+                                        }
+                                    </label>
                                 </div>
                             </div>
-                            if (Model.FullTextSettings.Enabled)
-                            {
-                                <div class="form-group">
-                                    <div class="col-md-9 col-md-offset-3">
-                                        @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.NoiseWords")
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-3">
-                                        <nop-label asp-for="FullTextSettings.SearchMode" />
-                                    </div>
-                                    <div class="col-md-9">
-                                        <nop-select asp-for="FullTextSettings.SearchMode" asp-items="Model.FullTextSettings.SearchModeValues" />
-                                        <span asp-validation-for="FullTextSettings.SearchMode"></span>
-                                    </div>
-                                </div>
-                            }
+                            <div class="col-md-9">
+                                <button type="submit" name="togglefulltext" class="btn btn-primary">
+                                    @(Model.FullTextSettings.Enabled ? T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.Disable").Text : T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.Enable").Text)
+                                </button>
+                            </div>
+                        </div>
+                        if (Model.FullTextSettings.Enabled)
+                        {
+                        <div class="form-group">
+                            <div class="col-md-9 col-md-offset-3">
+                                @T("Admin.Configuration.Settings.GeneralCommon.FullTextSettings.NoiseWords")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <nop-label asp-for="FullTextSettings.SearchMode" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-select asp-for="FullTextSettings.SearchMode" asp-items="Model.FullTextSettings.SearchModeValues" />
+                                <span asp-validation-for="FullTextSettings.SearchMode"></span>
+                            </div>
+                        </div>
+                        }
                         }
                     </div>
                 </div>
@@ -672,7 +805,6 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <div class="col-md-3">
-                             
                                 <nop-label asp-for="AdminAreaSettings.UseRichEditorInMessageTemplates" />
                             </div>
                             <div class="col-md-9">
