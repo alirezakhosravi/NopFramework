@@ -267,42 +267,6 @@ namespace Nop.Web.Areas.Admin.Factories
         }
 
         /// <summary>
-        /// Prepare paged list model of plugins of the official feed
-        /// </summary>
-        /// <param name="searchModel">Search model of plugins of the official feed</param>
-        /// <returns>List model of plugins of the official feed</returns>
-        public virtual OfficialFeedPluginListModel PrepareOfficialFeedPluginListModel(OfficialFeedPluginSearchModel searchModel)
-        {
-            if (searchModel == null)
-                throw new ArgumentNullException(nameof(searchModel));
-
-            //get plugins
-            var plugins = _officialFeedManager.GetAllPlugins(categoryId: searchModel.SearchCategoryId,
-                versionId: searchModel.SearchVersionId,
-                price: searchModel.SearchPriceId,
-                searchTerm: searchModel.SearchName,
-                pageIndex: searchModel.Page - 1, pageSize: searchModel.PageSize);
-
-            //prepare list model
-            var model = new OfficialFeedPluginListModel
-            {
-                //fill in model values from the entity
-                Data = plugins.Select(plugin => new OfficialFeedPluginModel
-                {
-                    Url = plugin.Url,
-                    Name = plugin.Name,
-                    CategoryName = plugin.Category,
-                    SupportedVersions = plugin.SupportedVersions,
-                    PictureUrl = plugin.PictureUrl,
-                    Price = plugin.Price
-                }),
-                Total = plugins.TotalCount
-            };
-
-            return model;
-        }
-
-        /// <summary>
         /// Prepare plugins configuration model
         /// </summary>
         /// <param name="pluginsConfigurationModel">Plugins configuration model</param>

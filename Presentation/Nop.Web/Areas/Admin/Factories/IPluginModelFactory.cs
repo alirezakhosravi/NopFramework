@@ -39,13 +39,6 @@ namespace Nop.Web.Areas.Admin.Factories
         OfficialFeedPluginSearchModel PrepareOfficialFeedPluginSearchModel(OfficialFeedPluginSearchModel searchModel);
 
         /// <summary>
-        /// Prepare paged list model of plugins of the official feed
-        /// </summary>
-        /// <param name="searchModel">Search model of plugins of the official feed</param>
-        /// <returns>List model of plugins of the official feed</returns>
-        OfficialFeedPluginListModel PrepareOfficialFeedPluginListModel(OfficialFeedPluginSearchModel searchModel);
-
-        /// <summary>
         /// Prepare plugins configuration model
         /// </summary>
         /// <param name="configModel">Plugins configuration model</param>

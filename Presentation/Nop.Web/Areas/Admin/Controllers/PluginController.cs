@@ -434,19 +434,6 @@ namespace Nop.Web.Areas.Admin.Controllers
 
             return View(model);
         }
-
-        [HttpPost]
-        public virtual IActionResult OfficialFeedSelect(OfficialFeedPluginSearchModel searchModel)
-        {
-            if (!_permissionService.Authorize(StandardPermissionProvider.ManagePlugins))
-                return AccessDeniedKendoGridJson();
-
-            //prepare model
-            var model = _pluginModelFactory.PrepareOfficialFeedPluginListModel(searchModel);
-
-            return Json(model);
-        }
-
         #endregion
     }
 }
