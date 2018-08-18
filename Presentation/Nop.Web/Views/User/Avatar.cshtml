@@ -1,4 +1,4 @@
-﻿@model CustomerAvatarModel
+﻿@model UserAvatarModel
 @{
     Layout = "_ColumnsTwo";
 
@@ -10,9 +10,9 @@
 }
 @section left
 {
-    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.Avatar })
+    @await Component.InvokeAsync("UserNavigation", new { selectedTabId = UserNavigationEnum.Avatar })
 }
-<form asp-route="CustomerAvatar" method="post" enctype="multipart/form-data">
+<form asp-route="UserAvatar" method="post" enctype="multipart/form-data">
     <div class="page account-page avatar-page">
         <div class="page-title">
             <h1>@T("Account.MyAccount") - @T("Account.Avatar")</h1>

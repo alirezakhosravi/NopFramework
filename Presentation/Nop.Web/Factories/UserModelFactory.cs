@@ -519,22 +519,19 @@ namespace Nop.Web.Factories
         /// <returns>User address list model</returns>
         public virtual UserAddressListModel PrepareUserAddressListModel()
         {
-            //var addresses = _workContext.CurrentUser.Addresses
-                ////enabled for the current store
-                //.Where(a => a.Country == null))
-                //.ToList();
+            var addresses = _workContext.CurrentUser.Addresses.ToList();
 
             var model = new UserAddressListModel();
-            //foreach (var address in addresses)
-            //{
-            //    var addressModel = new AddressModel();
-            //    _addressModelFactory.PrepareAddressModel(addressModel,
-            //        address: address,
-            //        excludeProperties: false,
-            //        addressSettings: _addressSettings,
-            //        loadCountries: () => _countryService.GetAllCountries(_workContext.WorkingLanguage.Id));
-            //    model.Addresses.Add(addressModel);
-            //}
+            foreach (var address in addresses)
+            {
+                var addressModel = new AddressModel();
+                _addressModelFactory.PrepareAddressModel(addressModel,
+                    address: address,
+                    excludeProperties: false,
+                    addressSettings: _addressSettings,
+                    loadCountries: () => _countryService.GetAllCountries(_workContext.WorkingLanguage.Id));
+                model.Addresses.Add(addressModel);
+            }
             return model;
         }
 

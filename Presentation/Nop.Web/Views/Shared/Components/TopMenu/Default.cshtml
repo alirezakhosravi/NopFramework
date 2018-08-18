@@ -1,48 +1,31 @@
-﻿@*@model TopMenuModel*@
+﻿@model TopMenuModel
+
+@if (Model == null) { return; }
+
 <ul class="top-menu">
     @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderMenuBefore })
-    @*@if (Model.DisplayHomePageMenuItem)
+    @if (Model.DisplayHomePageMenuItem)
     {
         <li><a href="@Url.RouteUrl("HomePage")">@T("HomePage")</a></li>
-    }*@
+    }
 
     @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderMenuAfter })
 </ul>
 @{
     <ul class="top-menu mobile">
         @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.MobHeaderMenuBefore })
-        @*@if (Model.DisplayHomePageMenuItem)
+        @if (Model.DisplayHomePageMenuItem)
         {
             <li><a href="@Url.RouteUrl("HomePage")">@T("HomePage")</a></li>
-        }
-        @foreach (var topic in Model.Topics)
-        {
-            <li><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
-        }
-        @if (Model.NewProductsEnabled && Model.DisplayNewProductsMenuItem)
-        {
-            <li><a href="@Url.RouteUrl("NewProducts")">@T("Products.NewProducts")</a></li>
-        }
-        @if (Model.DisplayProductSearchMenuItem)
-        {
-            <li><a href="@Url.RouteUrl("ProductSearch")">@T("Search")</a></li>
         }
         @if (Model.DisplayUserInfoMenuItem)
         {
             <li><a href="@Url.RouteUrl("UserInfo")">@T("Account.MyAccount")</a></li>
         }
-        @if (Model.BlogEnabled && Model.DisplayBlogMenuItem)
-        {
-            <li><a href="@Url.RouteUrl("Blog")">@T("Blog")</a></li>
-        }
-        @if (Model.ForumEnabled && Model.DisplayForumsMenuItem)
-        {
-            <li><a href="@Url.RouteUrl("Boards")">@T("Forum.Forums")</a></li>
-        }
         @if (Model.DisplayContactUsMenuItem)
         {
             <li><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
-        }*@
+        }
         @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.MobHeaderMenuAfter })
     </ul>
     <script asp-location="Footer">

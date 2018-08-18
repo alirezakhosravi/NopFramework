@@ -13,7 +13,7 @@
             <li><a href="@Url.RouteUrl("Register")" class="ico-register">@T("Account.Register")</a></li>
             <li><a href="@Url.RouteUrl("Login")" class="ico-login">@T("Account.Login")</a></li>
         }
-        @if (Model.AllowPrivateMessages)
+        @*@if (Model.AllowPrivateMessages)
         {
             <li>
                 <a href="@Url.RouteUrl("PrivateMessages", new { tab = "" })" class="ico-inbox">
@@ -21,7 +21,7 @@
                     <span class="inbox-unread">@Model.UnreadPrivateMessages</span>
                 </a>
             </li>
-        }
+        }*@
        
         @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderLinksAfter })
     </ul>

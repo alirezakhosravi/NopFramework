@@ -46,6 +46,16 @@ namespace Nop.Web.Infrastructure
             routeBuilder.MapLocalizedRoute("UserAddresses", "user/addresses",
 				new { controller = "User", action = "Addresses" });
             
+            routeBuilder.MapLocalizedRoute("UserAddressEdit", "user/addressedit/{addressId:min(0)}",
+                new { controller = "User", action = "AddressEdit" });
+
+            routeBuilder.MapLocalizedRoute("UserAddressAdd", "user/addressadd",
+                new { controller = "User", action = "AddressAdd" });
+
+
+            routeBuilder.MapLocalizedRoute("UserChangePassword", "user/changepassword",
+                new { controller = "User", action = "ChangePassword" });
+            
             //contact us
             routeBuilder.MapLocalizedRoute("ContactUs", "contactus",
 				new { controller = "Common", action = "ContactUs" });
@@ -122,30 +132,30 @@ namespace Nop.Web.Infrastructure
             routeBuilder.MapLocalizedRoute("UploadFileReturnRequest", "uploadfilereturnrequest",
 				new { controller = "ReturnRequest", action = "UploadFileReturnRequest" });
             
-            //private messages
-            routeBuilder.MapLocalizedRoute("PrivateMessages", "privatemessages/{tab?}",
-				new { controller = "PrivateMessages", action = "Index" });
+    //        //private messages
+    //        routeBuilder.MapLocalizedRoute("PrivateMessages", "privatemessages/{tab?}",
+				//new { controller = "PrivateMessages", action = "Index" });
 
-            routeBuilder.MapLocalizedRoute("PrivateMessagesPaged", "privatemessages/{tab?}/page/{pageNumber:min(0)}",
-				new { controller = "PrivateMessages", action = "Index" });
+    //        routeBuilder.MapLocalizedRoute("PrivateMessagesPaged", "privatemessages/{tab?}/page/{pageNumber:min(0)}",
+				//new { controller = "PrivateMessages", action = "Index" });
 
-            routeBuilder.MapLocalizedRoute("PrivateMessagesInbox", "inboxupdate",
-				new { controller = "PrivateMessages", action = "InboxUpdate" });
+    //        routeBuilder.MapLocalizedRoute("PrivateMessagesInbox", "inboxupdate",
+				//new { controller = "PrivateMessages", action = "InboxUpdate" });
 
-            routeBuilder.MapLocalizedRoute("PrivateMessagesSent", "sentupdate",
-				new { controller = "PrivateMessages", action = "SentUpdate" });
+    //        routeBuilder.MapLocalizedRoute("PrivateMessagesSent", "sentupdate",
+				//new { controller = "PrivateMessages", action = "SentUpdate" });
 
-            routeBuilder.MapLocalizedRoute("SendPM", "sendpm/{toUserId:min(0)}",
-				new { controller = "PrivateMessages", action = "SendPM" });
+    //        routeBuilder.MapLocalizedRoute("SendPM", "sendpm/{toUserId:min(0)}",
+				//new { controller = "PrivateMessages", action = "SendPM" });
 
-            routeBuilder.MapLocalizedRoute("SendPMReply", "sendpm/{toUserId:min(0)}/{replyToMessageId:min(0)}",
-				new { controller = "PrivateMessages", action = "SendPM" });
+    //        routeBuilder.MapLocalizedRoute("SendPMReply", "sendpm/{toUserId:min(0)}/{replyToMessageId:min(0)}",
+				//new { controller = "PrivateMessages", action = "SendPM" });
 
-            routeBuilder.MapLocalizedRoute("ViewPM", "viewpm/{privateMessageId:min(0)}",
-				new { controller = "PrivateMessages", action = "ViewPM" });
+    //        routeBuilder.MapLocalizedRoute("ViewPM", "viewpm/{privateMessageId:min(0)}",
+				//new { controller = "PrivateMessages", action = "ViewPM" });
 
-            routeBuilder.MapLocalizedRoute("DeletePM", "deletepm/{privateMessageId:min(0)}",
-				new { controller = "PrivateMessages", action = "DeletePM" });
+    //        routeBuilder.MapLocalizedRoute("DeletePM", "deletepm/{privateMessageId:min(0)}",
+				//new { controller = "PrivateMessages", action = "DeletePM" });
             
             //robots.txt
             routeBuilder.MapRoute("robots.txt", "robots.txt",
@@ -169,6 +179,13 @@ namespace Nop.Web.Infrastructure
             //page not found
             routeBuilder.MapLocalizedRoute("PageNotFound", "page-not-found", 
                 new { controller = "Common", action = "PageNotFound" });
+
+            //search
+            routeBuilder.MapLocalizedRoute("search", "search/{q}",
+                new { controller = "Search", action = "Search" });
+
+            routeBuilder.MapLocalizedRoute("SearchAutoComplete", "searchautocomplete/{q}",
+                new { controller = "Search", action = "SearchTermAutoComplete" });
         }
 
         #endregion

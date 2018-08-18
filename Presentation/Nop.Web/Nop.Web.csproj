@@ -28,7 +28,6 @@
     <Content Remove="wwwroot\images\samples\category_accessories.jpg" />
     <Content Remove="wwwroot\images\samples\category_apparel.jpeg" />
     <Content Remove="wwwroot\db_backups\Index.htm" />
-    <Content Remove="App_Data\dataSettings.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\db_backups\Index.htm" />
@@ -36,6 +35,7 @@
   <ItemGroup>
     <!-- We copy the entire \App_Data directory. But we ignore JSON files and data protection keys  -->
     <Content Include="App_Data\**" CopyToPublishDirectory="PreserveNewest" Exclude="App_Data\*.json" />
+    <Content Update="App_Data\*.json" CopyToPublishDirectory="Never" />
     <Content Update="App_Data\DataProtectionKeys\*.xml" CopyToPublishDirectory="Never" />
 
     <Compile Remove="Plugins\**" />
@@ -74,6 +74,8 @@
     <Folder Include="wwwroot\images\samples\" />
     <Folder Include="wwwroot\images\thumbs\" />
     <Folder Include="wwwroot\db_backups\" />
+    <Folder Include="Views\Search\" />
+    <Folder Include="Models\Search\" />
   </ItemGroup>
 
   <!-- This target execute after "Build" target.
@@ -98,7 +100,7 @@
     <!-- When .NET Core builds a project, it copies all referenced libraries to the output folder.
       For plugins it creates too many unnecessary files that just take up space.
       At the moment you can't disable this behavior. That's why we have to manually delete all unnecessary libraries from plugin output directories. -->
-    <MSBuild Projects="$(MSBuildProjectDirectory)\..\..\Build\ClearPluginAssemblies.proj" Properties="PluginPath=$(PluginsFolders)" Targets="NopClear" />
+<!--    <MSBuild Projects="$(MSBuildProjectDirectory)\..\..\Build\ClearPluginAssemblies.proj" Properties="PluginPath=$(PluginsFolders)" Targets="NopClear" />-->
   </Target>
 
 </Project>

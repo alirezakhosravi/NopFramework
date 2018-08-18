@@ -742,14 +742,14 @@ namespace Nop.Web.Controllers
             var user = _workContext.CurrentUser;
 
             //find address (ensure that it belongs to the current user)
-            //var address = user.Addresses.FirstOrDefault(a => a.Id == addressId);
-            //if (address != null)
-            //{
-            //    _userService.RemoveUserAddress(user, address);
-            //    _userService.UpdateUser(user);
-            //    //now delete the address record
-            //    _addressService.DeleteAddress(address);
-            //}
+            var address = user.Addresses.FirstOrDefault(a => a.Id == addressId);
+            if (address != null)
+            {
+                _userService.RemoveUserAddress(user, address);
+                _userService.UpdateUser(user);
+                //now delete the address record
+                _addressService.DeleteAddress(address);
+            }
 
             //redirect to the address list page
             return Json(new
@@ -827,17 +827,17 @@ namespace Nop.Web.Controllers
 
             var user = _workContext.CurrentUser;
             //find address (ensure that it belongs to the current user)
-            //var address = user.Addresses.FirstOrDefault(a => a.Id == addressId);
-            //if (address == null)
-                ////address is not found
-                //return RedirectToRoute("UserAddresses");
+            var address = user.Addresses.FirstOrDefault(a => a.Id == addressId);
+            if (address == null)
+                //address is not found
+                return RedirectToRoute("UserAddresses");
 
             var model = new UserAddressEditModel();
-            //_addressModelFactory.PrepareAddressModel(model.Address,
-                //address: address,
-                //excludeProperties: false,
-                //addressSettings: _addressSettings,
-                //loadCountries: () => _countryService.GetAllCountries(_workContext.WorkingLanguage.Id));
+            _addressModelFactory.PrepareAddressModel(model.Address,
+                address: address,
+                excludeProperties: false,
+                addressSettings: _addressSettings,
+                loadCountries: () => _countryService.GetAllCountries(_workContext.WorkingLanguage.Id));
 
             return View(model);
         }
@@ -851,10 +851,10 @@ namespace Nop.Web.Controllers
 
             var user = _workContext.CurrentUser;
             //find address (ensure that it belongs to the current user)
-            //var address = user.Addresses.FirstOrDefault(a => a.Id == addressId);
-            //if (address == null)
-                ////address is not found
-                //return RedirectToRoute("UserAddresses");
+            var address = user.Addresses.FirstOrDefault(a => a.Id == addressId);
+            if (address == null)
+                //address is not found
+                return RedirectToRoute("UserAddresses");
 
             //custom address attributes
             var customAttributes = _addressAttributeParser.ParseCustomAddressAttributes(model.Form);
@@ -864,22 +864,22 @@ namespace Nop.Web.Controllers
                 ModelState.AddModelError("", error);
             }
 
-            //if (ModelState.IsValid)
-            //{
-            //    address = model.Address.ToEntity(address);
-            //    address.CustomAttributes = customAttributes;
-            //    _addressService.UpdateAddress(address);
+            if (ModelState.IsValid)
+            {
+                address = model.Address.ToEntity(address);
+                address.CustomAttributes = customAttributes;
+                _addressService.UpdateAddress(address);
 
-            //    return RedirectToRoute("UserAddresses");
-            //}
+                return RedirectToRoute("UserAddresses");
+            }
 
-            ////If we got this far, something failed, redisplay form
-            //_addressModelFactory.PrepareAddressModel(model.Address,
-                //address: address,
-                //excludeProperties: true,
-                //addressSettings: _addressSettings,
-                //loadCountries: () => _countryService.GetAllCountries(_workContext.WorkingLanguage.Id),
-                //overrideAttributesXml: customAttributes);
+            //If we got this far, something failed, redisplay form
+            _addressModelFactory.PrepareAddressModel(model.Address,
+                address: address,
+                excludeProperties: true,
+                addressSettings: _addressSettings,
+                loadCountries: () => _countryService.GetAllCountries(_workContext.WorkingLanguage.Id),
+                overrideAttributesXml: customAttributes);
             return View(model);
         }
 

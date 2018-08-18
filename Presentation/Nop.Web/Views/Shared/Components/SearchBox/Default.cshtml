@@ -1,5 +1,5 @@
 ﻿@using System.Text.Encodings.Web
-<form asp-route="ProductSearch" method="get" id="small-search-box-form">
+<form asp-route="Search" method="get" id="small-search-box-form">
     <input type="text" class="search-box-text" id="small-searchterms" autocomplete="off" name="q" placeholder="@T("Search.SearchBox.Tooltip")" aria-label="@T("Search.SearchBox.Text.Label")" />
     @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.SearchBoxBeforeSearchButton })
     <input type="submit" class="button-1 search-box-button" value="@T("Search.Button")"/>
@@ -13,7 +13,7 @@
                 $('#small-searchterms').autocomplete({
                         delay: 500,
                         minLength: @(Model.SearchTermMinimumLength.ToString()),
-                        source: '@(Url.RouteUrl("ProductSearchAutoComplete"))',
+                        source: '@(Url.RouteUrl("SearchAutoComplete"))',
                         appendTo: '.search-box',
                         select: function(event, ui) {
                             $("#small-searchterms").val(ui.item.label);
