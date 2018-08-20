@@ -1,0 +1,37 @@
+﻿@model IEnumerable<SearchModel>
+
+@{
+    Layout = "_ColumnsOne";
+
+    //page class
+    Html.AppendPageCssClassParts("html-home-page");
+}
+<div class="page home-page">
+    <div class="page-body">
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomePageTop })
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>@(T("Search.Title").Text)</th>
+                    <th>@(T("Search.Description").Text)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Select((data, index) => new { data, index }))
+                {
+                    <tr>
+                        <td>@(item.index + 1)</td>
+                        <td><a href="@(item.data.Route)">@(item.data.Title)</a></td>
+                        <td>@(item.data.Description)</td>
+                        <td><a href="@(item.data.Route)">@(T("Search.ShowDetail").Text)</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomePageBottom })
+    </div>
+</div>

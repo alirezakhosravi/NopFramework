@@ -10,7 +10,7 @@ namespace Nop.Web.Components
         {
         }
 
-        public IViewComponentResult Invoke(int? productThumbPictureSize)
+        public IViewComponentResult Invoke()
         {
             return View();
         }

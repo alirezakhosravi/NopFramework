@@ -60,6 +60,7 @@ namespace Nop.Web.Infrastructure
             builder.RegisterType<Factories.ExternalAuthenticationModelFactory>().As<Factories.IExternalAuthenticationModelFactory>().InstancePerLifetimeScope();
             builder.RegisterType<Factories.ProfileModelFactory>().As<Factories.IProfileModelFactory>().InstancePerLifetimeScope();
             builder.RegisterType<Factories.WidgetModelFactory>().As<Factories.IWidgetModelFactory>().InstancePerLifetimeScope();
+            builder.RegisterType<Factories.SearchModelFactory>().As<Factories.ISearchModelFactory>().InstancePerLifetimeScope();
         }
 
         /// <summary>

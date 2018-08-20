@@ -38,6 +38,7 @@ using Nop.Services.Themes;
 using Nop.Web.Framework.Mvc.Routing;
 using Nop.Web.Framework.Themes;
 using Nop.Web.Framework.UI;
+using Nop.Services.Search;
 
 namespace Nop.Web.Framework.Infrastructure
 {
@@ -153,7 +154,8 @@ namespace Nop.Web.Framework.Infrastructure
             builder.RegisterType<EventPublisher>().As<IEventPublisher>().SingleInstance();
             builder.RegisterType<SubscriptionService>().As<ISubscriptionService>().SingleInstance();
             builder.RegisterType<SettingService>().As<ISettingService>().InstancePerLifetimeScope();
-
+            builder.RegisterType<SearchEntity>().As<ISearchEntity>().SingleInstance();
+            builder.RegisterType<SearchService>().As<ISearchService>().SingleInstance();
 
             builder.RegisterType<ActionContextAccessor>().As<IActionContextAccessor>().InstancePerLifetimeScope();
 

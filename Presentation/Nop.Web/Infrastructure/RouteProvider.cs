@@ -181,10 +181,10 @@ namespace Nop.Web.Infrastructure
                 new { controller = "Common", action = "PageNotFound" });
 
             //search
-            routeBuilder.MapLocalizedRoute("search", "search/{q}",
-                new { controller = "Search", action = "Search" });
+            routeBuilder.MapLocalizedRoute("Search", "search/",
+                new { controller = "Search", action = "SearchResult" });
 
-            routeBuilder.MapLocalizedRoute("SearchAutoComplete", "searchautocomplete/{q}",
+            routeBuilder.MapLocalizedRoute("SearchAutoComplete", "searchautocomplete/",
                 new { controller = "Search", action = "SearchTermAutoComplete" });
         }
 

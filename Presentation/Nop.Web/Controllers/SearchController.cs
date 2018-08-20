@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Nop.Core;
-using Nop.Core.Domain;
-using Nop.Core.Domain.Localization;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nop.Web.Factories;
 using Nop.Web.Framework.Mvc.Filters;
 using Nop.Web.Framework.Security;
 
@@ -15,42 +9,34 @@ namespace Nop.Web.Controllers
     {
         #region Fields
 
-        private readonly IWebHelper _webHelper;
-        private readonly IWorkContext _workContext;
-        private readonly LocalizationSettings _localizationSettings;
-        private readonly SiteInformationSettings _siteInformationSettings;
+        private readonly ISearchModelFactory _searchModelFactory;
 
         #endregion
 
         #region Ctor
 
-        public SearchController(
-            IWebHelper webHelper,
-            IWorkContext workContext,
-            LocalizationSettings localizationSettings,
-            SiteInformationSettings siteInformationSettings)
+        public SearchController(ISearchModelFactory searchModelFactory)
         {
-            this._webHelper = webHelper;
-            this._workContext = workContext;
-            this._localizationSettings = localizationSettings;
-            this._siteInformationSettings = siteInformationSettings;
+            this._searchModelFactory = searchModelFactory;
         }
 
         #endregion
 
         #region Methods
-        [HttpPost]
+        [HttpGet]
         [HttpsRequirement(SslRequirement.NoMatter)]
-        public virtual IActionResult Search(string q)
+        public virtual IActionResult SearchResult(string q)
         {
-            return View();
+            var model = _searchModelFactory.GetSearchResult(q);
+            return View(model);
         }
 
-        [HttpPost]
+        [HttpGet]
         [HttpsRequirement(SslRequirement.NoMatter)]
-        public virtual IActionResult SearchTermAutoComplete(string q)
+        public virtual IActionResult SearchTermAutoComplete(string term)
         {
-            return Json(new { });
+            var model = _searchModelFactory.GetSearchResult(term);
+            return Json(model);
         }
 
         #endregion

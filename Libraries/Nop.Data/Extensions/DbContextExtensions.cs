@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
@@ -301,6 +303,27 @@ namespace Nop.Data.Extensions
                 return;
 
             context.ExecuteSqlScript(File.ReadAllText(filePath));
+        }
+
+        public static List<T> ToListof<T>(this DataTable dataTable)
+        {
+            var columnNames = dataTable.Columns.Cast<DataColumn>()
+            .Select(c => c.ColumnName)
+            .ToList();
+
+            var properties = typeof(T).GetProperties();
+            DataRow[] rows = dataTable.Select();
+            return rows.Select(row =>
+            {
+                var objT = Activator.CreateInstance<T>();
+                foreach (var pro in properties)
+                {
+                    if (columnNames.Contains(pro.Name))
+                        pro.SetValue(objT, row[pro.Name]);
+                }
+
+                return objT;
+            }).ToList();
         }
 
         #endregion

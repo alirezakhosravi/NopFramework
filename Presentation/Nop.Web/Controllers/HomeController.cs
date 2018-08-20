@@ -6,7 +6,7 @@ namespace Nop.Web.Controllers
 {
     public partial class HomeController : BasePublicController
     {
-        [HttpsRequirement(SslRequirement.No)]
+        [HttpsRequirement(SslRequirement.NoMatter)]
         public virtual IActionResult Index()
         {
             return View();

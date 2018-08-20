@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Nop.Core;
 
@@ -64,6 +66,20 @@ namespace Nop.Data
         /// <param name="entity">Entity</param>
         void Detach<TEntity>(TEntity entity) where TEntity : BaseEntity;
 
+        /// <summary>
+        /// Gets the table name by type.
+        /// </summary>
+        /// <returns>The table name with schema.</returns>
+        /// <param name="type">Type.</param>
+        string GetTableNameByType(Type type);
+
+        /// <summary>
+        /// Creates a LINQ query for the query type based on a raw SQL query
+        /// </summary>
+        /// <typeparam name="TQuery">Query type</typeparam>
+        /// <param name="sql">The raw SQL query</param>
+        /// <returns>An IQueryable representing the raw SQL query</returns>
+        IList<TQuery> DynamicSqlQuery<TQuery>(string sql) where TQuery : class;
         #endregion
     }
 }

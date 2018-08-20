@@ -1,10 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using Microsoft.EntityFrameworkCore;
 using Nop.Core;
+using Nop.Data.Extensions;
 using Nop.Data.Mapping;
 
 namespace Nop.Data
@@ -166,6 +170,35 @@ namespace Nop.Data
             entityEntry.State = EntityState.Detached;
         }
 
+        public string GetTableNameByType(Type type)
+        {
+            var tableName = base.Model.FindEntityType(type).Relational().TableName;
+            var schema = base.Model.FindEntityType(type).Relational().Schema ?? "dbo";
+
+            return $"{schema}.{tableName}";
+        }
+
+        /// <summary>
+        /// Creates a LINQ query for the query type based on a raw SQL query
+        /// </summary>
+        /// <typeparam name="TQuery">Query type</typeparam>
+        /// <param name="sql">The raw SQL query</param>
+        /// <returns>An IQueryable representing the raw SQL query</returns>
+        public IList<TQuery> DynamicSqlQuery<TQuery>(string sql) where TQuery : class
+        {
+            using (var command = base.Database.GetDbConnection().CreateCommand())
+            {
+                command.CommandText = sql;
+                base.Database.OpenConnection();
+                var result = command.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(result);
+                var results = dataTable.ToListof<TQuery>();
+                base.Database.CloseConnection();
+
+                return (results);
+            }
+        }
         #endregion
     }
 }

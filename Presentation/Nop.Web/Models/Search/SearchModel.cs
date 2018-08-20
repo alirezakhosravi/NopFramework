@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Nop.Web.Framework.Models;
 
 namespace Nop.Web.Models.Search
 {
-    public class SearchModel
+    public class SearchModel : BaseNopModel
     {
-        public SearchModel()
-        {
-        }
+        #region Properties
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        public string Route { get; set; }
+        #endregion
     }
 }
