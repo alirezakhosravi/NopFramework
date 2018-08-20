@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Nop.Core;
@@ -79,7 +81,7 @@ namespace Nop.Data
         /// <typeparam name="TQuery">Query type</typeparam>
         /// <param name="sql">The raw SQL query</param>
         /// <returns>An IQueryable representing the raw SQL query</returns>
-        IList<TQuery> DynamicSqlQuery<TQuery>(string sql) where TQuery : class;
+        IList<TQuery> DynamicSqlQuery<TQuery>(string sql, CommandType commandType, params DbParameter[] parameters) where TQuery : class;
         #endregion
     }
 }

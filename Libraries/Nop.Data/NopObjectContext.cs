@@ -35,9 +35,9 @@ namespace Nop.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //dynamically load all entity and query type configurations
-            var typeConfigurations = Assembly.GetExecutingAssembly().GetTypes().Where(type => 
-                (type.BaseType?.IsGenericType ?? false) 
-                    && (type.BaseType.GetGenericTypeDefinition() == typeof(NopEntityTypeConfiguration<>) 
+            var typeConfigurations = Assembly.GetExecutingAssembly().GetTypes().Where(type =>
+                (type.BaseType?.IsGenericType ?? false)
+                    && (type.BaseType.GetGenericTypeDefinition() == typeof(NopEntityTypeConfiguration<>)
                         || type.BaseType.GetGenericTypeDefinition() == typeof(NopQueryTypeConfiguration<>)));
 
             foreach (var typeConfiguration in typeConfigurations)
@@ -45,7 +45,7 @@ namespace Nop.Data
                 var configuration = (IMappingConfiguration)Activator.CreateInstance(typeConfiguration);
                 configuration.ApplyConfiguration(modelBuilder);
             }
-            
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -106,7 +106,7 @@ namespace Nop.Data
         {
             return this.Query<TQuery>().FromSql(sql);
         }
-        
+
         /// <summary>
         /// Creates a LINQ query for the entity based on a raw SQL query
         /// </summary>
@@ -145,10 +145,10 @@ namespace Nop.Data
             }
             else
                 result = this.Database.ExecuteSqlCommand(sql, parameters);
-            
+
             //return previous timeout back
             this.Database.SetCommandTimeout(previousTimeout);
-            
+
             return result;
         }
 
@@ -165,7 +165,7 @@ namespace Nop.Data
             var entityEntry = this.Entry(entity);
             if (entityEntry == null)
                 return;
-            
+
             //set the entity is not being tracked by the context
             entityEntry.State = EntityState.Detached;
         }
@@ -184,19 +184,36 @@ namespace Nop.Data
         /// <typeparam name="TQuery">Query type</typeparam>
         /// <param name="sql">The raw SQL query</param>
         /// <returns>An IQueryable representing the raw SQL query</returns>
-        public IList<TQuery> DynamicSqlQuery<TQuery>(string sql) where TQuery : class
+        public IList<TQuery> DynamicSqlQuery<TQuery>(string sql, CommandType commandType, params DbParameter[] parameters) where TQuery : class
         {
             using (var command = base.Database.GetDbConnection().CreateCommand())
             {
-                command.CommandText = sql;
-                base.Database.OpenConnection();
-                var result = command.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(result);
-                var results = dataTable.ToListof<TQuery>();
-                base.Database.CloseConnection();
+                try
+                {
+                    base.Database.OpenConnection();
+                    command.CommandText = sql;
+                    command.CommandType = commandType;
 
-                return (results);
+                    foreach (var param in parameters)
+                    {
+                        DbParameter dbParameter = command.CreateParameter();
+                        dbParameter.DbType = param.DbType;
+                        dbParameter.ParameterName = param.ParameterName;
+                        dbParameter.Value = param.Value;
+                        command.Parameters.Add(dbParameter);
+                    }
+
+                    var result = command.ExecuteReader();
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(result);
+                    var results = dataTable.ToListof<TQuery>();
+
+                    return (results);
+                }
+                finally
+                {
+                    base.Database.CloseConnection();
+                }
             }
         }
         #endregion

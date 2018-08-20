@@ -7,6 +7,6 @@ namespace Nop.Services.Search
 {
     public interface ISearchEntity
     {
-        IList<SearchResult> GetSearchResults(IDbContext dbContext, string q);
+        IList<SearchResult> GetSearchResults(string q);
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using Nop.Core.Domain.Localization;
 
 namespace Nop.Core.Domain.Directory

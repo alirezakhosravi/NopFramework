@@ -38,7 +38,7 @@ namespace Nop.Services.Search
         /// <param name="q">The search value.</param>
         public IList<SearchResult> GetSeatchResult(string q)
         {
-            var model = _searchEntity.GetSearchResults(_dbContext, q);
+            var model = _searchEntity.GetSearchResults(q);
 
             return model;
         }

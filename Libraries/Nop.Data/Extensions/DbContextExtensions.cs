@@ -319,7 +319,16 @@ namespace Nop.Data.Extensions
                 foreach (var pro in properties)
                 {
                     if (columnNames.Contains(pro.Name))
-                        pro.SetValue(objT, row[pro.Name]);
+                    {
+                        if (pro.PropertyType.Name == typeof(string).Name)
+                        {
+                            pro.SetValue(objT, row[pro.Name].ToString());
+                        }
+                        else
+                        {
+                            pro.SetValue(objT, row[pro.Name]);
+                        }
+                    }
                 }
 
                 return objT;
