@@ -91,24 +91,65 @@ namespace Nop.Services.Search
                 query = string.Empty;
                 var attributes = GetAttributes(type);
 
-                bool hasName = attributes.Any(e => e.Value.IsUseForName) || type.GetProperty("Name") != null;
-                bool hasDescription = attributes.Any(e => e.Value.IsUseForDescription) || type.GetProperty("Description") != null;
-                bool hasId = attributes.Any(e => e.Value.IsUseForId) || type.GetProperty("Id") != null;
+                bool hasName = attributes.Any(e => e.Value.UseFor == ParameterType.Name) || type.GetProperty("Name") != null;
+                bool hasDescription = attributes.Any(e => e.Value.UseFor == ParameterType.Description) || type.GetProperty("Description") != null;
+                bool hasId = attributes.Any(e => e.Value.UseFor == ParameterType.Id) || type.GetProperty("Id") != null;
 
                 if (!hasName && !hasDescription) continue;
 
                 var entity = Activator.CreateInstance(type) as ISearchable;
 
                 //create column
-                var column = (hasId ? $"{attributes.FirstOrDefault(e => e.Value.IsUseForId).Key ?? "Id" } AS Id" : "'' AS Name")
-                    + "," + (hasName ? $"{attributes.FirstOrDefault(e => e.Value.IsUseForName).Key ?? "Name"} AS Name" : "'' AS Name")
-                    + "," + (hasDescription ? $"{attributes.FirstOrDefault(e => e.Value.IsUseForDescription).Key ?? "Description"} AS Description" : "'' AS Description")
-                    + $",'{entity.Route.GetRoute()}' AS Route";
+                var column = string.Empty;
+
+                if (hasId)
+                {
+                    column = $"{attributes.FirstOrDefault(e => e.Value.UseFor == ParameterType.Id).Key ?? "Id" } AS Id";
+                }
+                else
+                {
+                    column = "' ' AS Id";
+                }
+
+                if (hasName)
+                {
+                    column += $", {attributes.FirstOrDefault(e => e.Value.UseFor == ParameterType.Name).Key ?? "Name"} AS Name";
+                }
+                else
+                {
+                    column += ", ' ' AS Name";
+                }
+
+                if (hasDescription)
+                {
+                    column += $", {attributes.FirstOrDefault(e => e.Value.UseFor == ParameterType.Description).Key ?? "Description"} AS Description";
+                }
+                else
+                {
+                    column += ", ' ' AS Description";
+                }
+
+                column += $", '{type.Name}' AS TableName, '{entity.Route.GetRoute()}' AS Route";
 
                 //create whereclouse
                 var where = string.Empty;
 
-                foreach (var attribute in attributes)
+                if (!attributes.Any(e => e.Value.UseFor == ParameterType.Name) && type.GetProperty("Name") != null)
+                {
+                    where = $"{where} Name LIKE N'%{q}%'";
+                }
+
+                if (!attributes.Any(e => e.Value.UseFor == ParameterType.Description) && type.GetProperty("Description") != null)
+                {
+                    if (!string.IsNullOrEmpty(where))
+                    {
+                        where = $"{where} OR ";
+                    }
+
+                    where = $"{where} Description LIKE N'%{q}%'";
+                }
+
+                foreach (var attribute in attributes.Where(e => !e.Value.Ignore))
                 {
                     if (!string.IsNullOrEmpty(where))
                     {
@@ -118,7 +159,7 @@ namespace Nop.Services.Search
                     where = $"{where} {attribute.Key} LIKE N'%{q}%' ";
                 }
 
-                query += $"SELECT Id, '{type.Name}' AS TableName, {column} FROM {dbContext.GetTableNameByType(type)} WHERE {where}";
+                query += $"SELECT {column} FROM {dbContext.GetTableNameByType(type)} WHERE {where}";
                 var dbValues = dbContext.DynamicSqlQuery<SearchResult>(query).ToList() ?? new List<SearchResult>();
 
                 dbValues = dbValues.Select(e => new SearchResult

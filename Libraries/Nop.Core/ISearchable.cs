@@ -16,9 +16,8 @@ namespace Nop.Core
     public interface ISearchableAttribute
     {
         #region Properties
-        bool IsUseForName { get; set; }
-        bool IsUseForDescription { get; set; }
-        bool IsUseForId { get; set; }
+        ParameterType UseFor { get; set; }
+        bool Ignore { get; set; }
         #endregion
     }
 
@@ -26,9 +25,8 @@ namespace Nop.Core
     public class SearchableAttribute : Attribute, ISearchableAttribute
     {
         #region Properties
-        public bool IsUseForName { get; set; } = false;
-        public bool IsUseForDescription { get; set; } = false;
-        public bool IsUseForId { get; set; } = false;
+        public ParameterType UseFor { get; set; } = ParameterType.None;
+        public bool Ignore { get; set; } = false;
         #endregion
     }
 
@@ -58,5 +56,5 @@ namespace Nop.Core
         #endregion
     }
 
-    public enum ParameterType { Id, Name, Description }
+    public enum ParameterType { None, Id, Name, Description }
 }

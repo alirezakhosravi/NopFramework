@@ -48,5 +48,5 @@ namespace Nop.Core.Domain.Directory
             get => _stateProvinces ?? (_stateProvinces = new List<StateProvince>());
             protected set => _stateProvinces = value;
         }
-     }
+    }
 }
