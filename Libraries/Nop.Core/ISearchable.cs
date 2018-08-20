@@ -7,12 +7,29 @@ namespace Nop.Core
 {
     public interface ISearchable
     {
+        #region Properties
         [NotMapped]
         RouteModel Route { get; }
+        #endregion
     }
 
     public interface ISearchableAttribute
     {
+        #region Properties
+        bool IsUseForName { get; set; }
+        bool IsUseForDescription { get; set; }
+        bool IsUseForId { get; set; }
+        #endregion
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class SearchableAttribute : Attribute, ISearchableAttribute
+    {
+        #region Properties
+        public bool IsUseForName { get; set; } = false;
+        public bool IsUseForDescription { get; set; } = false;
+        public bool IsUseForId { get; set; } = false;
+        #endregion
     }
 
     public class RouteModel
@@ -20,7 +37,7 @@ namespace Nop.Core
         #region ctor
         public RouteModel()
         {
-            Parameters = new List<string>();
+            Parameters = new List<ParameterType>();
         }
         #endregion
 
@@ -29,7 +46,7 @@ namespace Nop.Core
 
         public string RouteUrl { get; set; }
 
-        public List<string> Parameters { get; set; }
+        public IList<ParameterType> Parameters { get; set; }
         #endregion
 
         #region Method
@@ -40,4 +57,6 @@ namespace Nop.Core
         }
         #endregion
     }
+
+    public enum ParameterType { Id, Name, Description }
 }
