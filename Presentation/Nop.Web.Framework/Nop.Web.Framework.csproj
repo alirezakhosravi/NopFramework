@@ -24,4 +24,7 @@
     <ProjectReference Include="..\..\Libraries\Nop.Services\Nop.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Events\ProductSearchEvent.cs" />
+  </ItemGroup>
 </Project>

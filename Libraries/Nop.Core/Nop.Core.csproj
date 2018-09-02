@@ -30,4 +30,11 @@
     <Compile Remove="Domain\Catalog\AttributeControlType.cs" />
     <Compile Remove="Domain\Customers\RewardPointsActivatingDelayPeriod.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\Notifications\" />
+    <Folder Include="Domain\Notifications\Extensions\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Infrastructure\Collections\" />
+    <Folder Include="Infrastructure\Reflection\" />
+  </ItemGroup>
 </Project>
