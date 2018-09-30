@@ -39,7 +39,6 @@ namespace Nop.Core.Http
             if (!DataSettingsManager.DatabaseIsInstalled)
             {
                 var installUrl = $"{webHelper.GetSiteLocation(false)}{NopHttpDefaults.InstallPath}";
-                var xxx = webHelper.GetThisPageUrl(false);
                 if (!webHelper.GetThisPageUrl(false).StartsWith(installUrl, StringComparison.InvariantCultureIgnoreCase))
                 {
                     //redirect

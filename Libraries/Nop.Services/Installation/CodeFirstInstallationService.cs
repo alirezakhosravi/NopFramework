@@ -3455,6 +3455,7 @@ namespace Nop.Services.Installation
 
             settingService.SaveSetting(new SiteInformationSettings
             {
+                DefaultSiteTheme = "DefaultClean",
                 AllowUserToSelectTheme = false,
                 DisplayMiniProfilerForAdminOnly = false,
                 DisplayEuCookieLawWarning = false,

@@ -32,15 +32,6 @@ namespace Nop.Data
         /// <param name="modelBuilder">The builder being used to construct the model for this context</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            try
-            {
-                base.Database.Migrate();
-            }
-            catch
-            {
-                // do noting
-            }
-
             //dynamically load all entity and query type configurations
             var typeConfigurations = Assembly.GetExecutingAssembly().GetTypes().Where(type =>
                 (type.BaseType?.IsGenericType ?? false)
@@ -221,6 +212,18 @@ namespace Nop.Data
                 {
                     base.Database.CloseConnection();
                 }
+            }
+        }
+
+        public void UpdateDatabase()
+        {
+            try
+            {
+                this.Database.Migrate();
+            }
+            catch (Exception ex)
+            {
+                // do noting
             }
         }
         #endregion

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
+using Microsoft.EntityFrameworkCore.Design;
 using Nop.Core.Data;
 using Nop.Core.Domain.Common;
 using Nop.Core.Infrastructure;
@@ -46,6 +47,7 @@ namespace Nop.Data
             //create stored procedures 
             context.ExecuteSqlScriptFromFile(fileProvider.MapPath(NopDataDefaults.SqlServerStoredProceduresFilePath));
 
+            context.UpdateDatabase();
         }
 
         /// <summary>

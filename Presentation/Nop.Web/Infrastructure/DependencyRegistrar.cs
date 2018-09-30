@@ -8,7 +8,7 @@ using Nop.Web.Framework.Factories;
 using Nop.Web.Infrastructure.Installation;
 using Nop.Services.Notifications;
 using Nop.Web.Infrastructure.Hubs;
-using System;
+using Nop.Core.Data;
 
 namespace Nop.Web.Infrastructure
 {
@@ -78,17 +78,29 @@ namespace Nop.Web.Infrastructure
                        .SingleInstance();
             }
 
-            //notifivation observers
+            //notification observers
+
             var observers = typeFinder.FindClassesOfType(typeof(INotificationObserver)).ToList();
             foreach (var observer in observers)
             {
-                builder.RegisterType(observer)
-                    .As(observer.FindInterfaces((type, criteria) =>
-                    {
-                        return true;
-                    }, typeof(INotificationObserver)))
-                       .SingleInstance().AutoActivate();
+                if (DataSettingsManager.DatabaseIsInstalled)
+                {
+                    builder.RegisterType(observer)
+                        .As(observer.FindInterfaces((type, criteria) =>
+                        {
+                            return true;
+                        }, typeof(INotificationObserver))).SingleInstance().AutoActivate();
+                }
+                else
+                {
+                    builder.RegisterType(observer)
+                      .As(observer.FindInterfaces((type, criteria) =>
+                      {
+                          return true;
+                      }, typeof(INotificationObserver))).SingleInstance();
+                }
             }
+
         }
 
         /// <summary>

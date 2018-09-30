@@ -15,7 +15,9 @@ using Nop.Core.Plugins;
 using Nop.Services.Installation;
 using Nop.Services.Plugins;
 using Nop.Services.Security;
+using Nop.Services.Themes;
 using Nop.Web.Framework.Security;
+using Nop.Web.Framework.Themes;
 using Nop.Web.Infrastructure.Installation;
 using Nop.Web.Models.Install;
 
@@ -29,7 +31,6 @@ namespace Nop.Web.Controllers
         private readonly INopFileProvider _fileProvider;
         private readonly NopConfig _config;
         private readonly IWebHelper _webHelper;
-
         #endregion
 
         #region Ctor
@@ -37,7 +38,7 @@ namespace Nop.Web.Controllers
         public InstallController(IInstallationLocalizationService locService, 
             INopFileProvider fileProvider,
             NopConfig config,
-                                 IWebHelper webHelper)
+            IWebHelper webHelper)
         {
             this._locService = locService;
             this._fileProvider = fileProvider;
@@ -359,6 +360,8 @@ namespace Nop.Web.Controllers
 
                     //reset cache
                     DataSettingsManager.ResetCache();
+                    var cacheManager = EngineContext.Current.Resolve<IStaticCacheManager>();
+                    cacheManager.Clear();
 
                     //install plugins
                     PluginManager.MarkAllPluginsAsUninstalled();
@@ -389,6 +392,13 @@ namespace Nop.Web.Controllers
                     {
                         var provider = (IPermissionProvider)Activator.CreateInstance(providerType);
                         EngineContext.Current.Resolve<IPermissionService>().InstallPermissions(provider);
+                    }
+
+                    //register default notification observer
+                    var observers = EngineContext.Current.ResolveAll<Services.Notifications.INotificationObserver>();
+                    foreach (var observer in observers)
+                    {
+                        observer.Handler.Register(observer);
                     }
 
                     //restart application

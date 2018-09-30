@@ -52,6 +52,7 @@ namespace Nop.Web.Framework.Mvc.Razor
         {
             var workContext = EngineContext.Current.Resolve<IWorkContext>();
             var supportRtl = workContext.WorkingLanguage.Rtl;
+
             if (supportRtl)
             {
                 //ensure that the active theme also supports it

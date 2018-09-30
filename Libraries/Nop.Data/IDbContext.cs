@@ -82,6 +82,11 @@ namespace Nop.Data
         /// <param name="sql">The raw SQL query</param>
         /// <returns>An IQueryable representing the raw SQL query</returns>
         IList<TQuery> DynamicSqlQuery<TQuery>(string sql, CommandType commandType, params DbParameter[] parameters) where TQuery : class;
+
+        /// <summary>
+        /// Update the database.
+        /// </summary>
+        void UpdateDatabase();
         #endregion
     }
 }

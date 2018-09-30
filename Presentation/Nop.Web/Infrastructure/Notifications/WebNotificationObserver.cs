@@ -58,7 +58,7 @@ namespace Nop.Web.Infrastructure.Notifications
                 if (message.ListOfUserIds.Any())
                 {
                     message.ListOfUserIds.ToList().ForEach(e => 
-                                                           _notificationHub.SendNotificationToUser(_userService.GetUserById(e).Username, message.Body));
+                        _notificationHub.SendNotificationToUser(_userService.GetUserById(e).Username, message.Body));
                 }
                 else
                 {
