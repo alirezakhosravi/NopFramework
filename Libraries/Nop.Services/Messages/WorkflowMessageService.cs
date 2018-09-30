@@ -9,6 +9,8 @@ using Nop.Core.Domain.Messages;
 using Nop.Services.Users;
 using Nop.Services.Events;
 using Nop.Services.Localization;
+using Nop.Services.Notifications;
+using Nop.Core.Domain.Notification;
 
 namespace Nop.Services.Messages
 {
@@ -29,6 +31,7 @@ namespace Nop.Services.Messages
         private readonly IMessageTemplateService _messageTemplateService;
         private readonly IMessageTokenProvider _messageTokenProvider;
         private readonly IQueuedEmailService _queuedEmailService;
+        private readonly IQueuedNotificationService _queuedNotificationService;
         private readonly ITokenizer _tokenizer;
 
         #endregion
@@ -45,6 +48,7 @@ namespace Nop.Services.Messages
             IMessageTemplateService messageTemplateService,
             IMessageTokenProvider messageTokenProvider,
             IQueuedEmailService queuedEmailService,
+            IQueuedNotificationService queuedNotificationService,
             ITokenizer tokenizer)
         {
             this._commonSettings = commonSettings;
@@ -57,6 +61,7 @@ namespace Nop.Services.Messages
             this._messageTemplateService = messageTemplateService;
             this._messageTokenProvider = messageTokenProvider;
             this._queuedEmailService = queuedEmailService;
+            this._queuedNotificationService = queuedNotificationService;
             this._tokenizer = tokenizer;
         }
 
@@ -162,7 +167,7 @@ namespace Nop.Services.Messages
                 var toEmail = emailAccount.Email;
                 var toName = emailAccount.DisplayName;
 
-                return SendNotification(messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
+                return SendNotification(user.Id.ToString(), messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
             }).ToList();
         }
 
@@ -200,7 +205,7 @@ namespace Nop.Services.Messages
                 var toEmail = user.Email;
                 var toName = _userService.GetUserFullName(user);
 
-                return SendNotification(messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
+                return SendNotification(user.Id.ToString(), messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
             }).ToList();
         }
 
@@ -238,7 +243,7 @@ namespace Nop.Services.Messages
                 var toEmail = user.Email;
                 var toName = _userService.GetUserFullName(user);
 
-                return SendNotification(messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
+                return SendNotification(user.Id.ToString(), messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
             }).ToList();
         }
 
@@ -277,7 +282,7 @@ namespace Nop.Services.Messages
                 var toEmail = user.EmailToRevalidate;
                 var toName = _userService.GetUserFullName(user);
 
-                return SendNotification(messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
+                return SendNotification(user.Id.ToString(), messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
             }).ToList();
         }
 
@@ -315,7 +320,7 @@ namespace Nop.Services.Messages
                 var toEmail = user.Email;
                 var toName = _userService.GetUserFullName(user);
 
-                return SendNotification(messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
+                return SendNotification(user.Id.ToString(), messageTemplate, emailAccount, languageId, tokens, toEmail, toName);
             }).ToList();
         }
 
@@ -378,7 +383,7 @@ namespace Nop.Services.Messages
                 var toEmail = emailAccount.Email;
                 var toName = emailAccount.DisplayName;
 
-                return SendNotification(messageTemplate, emailAccount, languageId, tokens, toEmail, toName,
+                return SendNotification(string.Empty, messageTemplate, emailAccount, languageId, tokens, toEmail, toName,
                     fromEmail: fromEmail,
                     fromName: fromName,
                     subject: subject,
@@ -407,7 +412,7 @@ namespace Nop.Services.Messages
             //event notification
             _eventPublisher.MessageTokensAdded(messageTemplate, tokens);
 
-            return SendNotification(messageTemplate, emailAccount, languageId, tokens, sendToEmail, null);
+            return SendNotification(string.Empty, messageTemplate, emailAccount, languageId, tokens, sendToEmail, null);
         }
 
         /// <summary>
@@ -477,6 +482,49 @@ namespace Nop.Services.Messages
 
             _queuedEmailService.InsertQueuedEmail(email);
             return email.Id;
+        }
+
+        public virtual int SendNotification(string userIds, MessageTemplate messageTemplate,
+            EmailAccount emailAccount, int languageId, IEnumerable<Token> tokens,
+            string toEmailAddress, string toName,
+            string attachmentFilePath = null, string attachmentFileName = null,
+            string replyToEmailAddress = null, string replyToName = null,
+            string fromEmail = null, string fromName = null, string subject = null)
+        {
+            if (messageTemplate == null)
+                throw new ArgumentNullException(nameof(messageTemplate));
+
+            if (emailAccount == null)
+                throw new ArgumentNullException(nameof(emailAccount));
+
+            SendNotification(messageTemplate, emailAccount, languageId, tokens, toEmailAddress, toName,
+                            attachmentFilePath, attachmentFileName, replyToEmailAddress, replyToName, fromEmail, fromName, subject);
+
+            //retrieve localized message template data
+            if (string.IsNullOrEmpty(subject))
+                subject = _localizationService.GetLocalized(messageTemplate, mt => mt.Subject, languageId);
+            var body = _localizationService.GetLocalized(messageTemplate, mt => mt.Body, languageId);
+
+            //Replace subject and body tokens 
+            var subjectReplaced = _tokenizer.Replace(subject, tokens, false);
+            var bodyReplaced = _tokenizer.Replace(body, tokens, true);
+
+            var notification = new QueuedNotification
+            {
+                Priority = QueuedNotificationPriority.High,
+                UserIds = userIds,
+                Subject = subjectReplaced,
+                Body = bodyReplaced,
+                AttachmentFilePath = attachmentFilePath,
+                AttachmentFileName = attachmentFileName,
+                AttachedDownloadId = messageTemplate.AttachedDownloadId,
+                CreatedOnUtc = DateTime.UtcNow,
+                DontSendBeforeDateUtc = !messageTemplate.DelayBeforeSend.HasValue ? null
+                    : (DateTime?)(DateTime.UtcNow + TimeSpan.FromHours(messageTemplate.DelayPeriod.ToHours(messageTemplate.DelayBeforeSend.Value)))
+            };
+
+            _queuedNotificationService.InsertQueuedNotification(notification);
+            return notification.Id;
         }
 
         #endregion

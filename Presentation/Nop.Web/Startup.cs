@@ -1,8 +1,10 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nop.Web.Framework.Infrastructure.Extensions;
+using Nop.Web.Infrastructure.Hubs;
 
 namespace Nop.Web
 {
@@ -36,6 +38,9 @@ namespace Nop.Web
         /// <param name="services">Collection of service descriptors</param>
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR();
+            services.AddSingleton<IUserIdProvider, CustomUserIdProvider>();
+
             return services.ConfigureApplicationServices(Configuration);
         }
 
@@ -46,6 +51,11 @@ namespace Nop.Web
         public void Configure(IApplicationBuilder application)
         {
             application.ConfigureRequestPipeline();
+
+            application.UseSignalR(routes =>
+            {
+                routes.MapHub<NotificationHub>("/notificationHub");
+            });
         }
     }
 }

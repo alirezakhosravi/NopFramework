@@ -1,5 +1,7 @@
 ﻿{
   "DataProvider": "sqlserver",
-  "DataConnectionString": "Data Source=localhost;Initial Catalog=nopFramework;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123qweRt",
-  "RawDataSettings": {}
+  "DataConnectionString": "Data Source=localhost;Initial Catalog=NopFramework;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123qweRt",
+  "RawDataSettings": {
+    "Host": "http://localhost:55390"
+  }
 }

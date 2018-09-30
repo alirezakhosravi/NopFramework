@@ -39,6 +39,7 @@ using Nop.Web.Framework.Mvc.Routing;
 using Nop.Web.Framework.Themes;
 using Nop.Web.Framework.UI;
 using Nop.Services.Search;
+using Nop.Services.Notifications;
 
 namespace Nop.Web.Framework.Infrastructure
 {
@@ -156,8 +157,10 @@ namespace Nop.Web.Framework.Infrastructure
             builder.RegisterType<SettingService>().As<ISettingService>().InstancePerLifetimeScope();
             builder.RegisterType<SearchEntity>().As<ISearchEntity>().SingleInstance();
             builder.RegisterType<SearchService>().As<ISearchService>().SingleInstance();
-
+            builder.RegisterType<NotificationHandler>().As<INotificationHandler>().SingleInstance();
             builder.RegisterType<ActionContextAccessor>().As<IActionContextAccessor>().InstancePerLifetimeScope();
+            builder.RegisterType<WorkflowNotificationService>().As<IWorkflowNotificationService>().InstancePerLifetimeScope();
+            builder.RegisterType<QueuedNotificationService>().As<IQueuedNotificationService>().InstancePerLifetimeScope();
 
             //register all settings
             builder.RegisterSource(new SettingsSource());

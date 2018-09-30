@@ -28,6 +28,7 @@ namespace Nop.Web.Controllers
         private readonly IInstallationLocalizationService _locService;
         private readonly INopFileProvider _fileProvider;
         private readonly NopConfig _config;
+        private readonly IWebHelper _webHelper;
 
         #endregion
 
@@ -35,11 +36,13 @@ namespace Nop.Web.Controllers
 
         public InstallController(IInstallationLocalizationService locService, 
             INopFileProvider fileProvider,
-            NopConfig config)
+            NopConfig config,
+                                 IWebHelper webHelper)
         {
             this._locService = locService;
             this._fileProvider = fileProvider;
             this._config = config;
+            this._webHelper = webHelper;
         }
         
         #endregion
@@ -338,11 +341,14 @@ namespace Nop.Web.Controllers
                     }
 
                     //save settings
-                    DataSettingsManager.SaveSettings(new DataSettings
+                    DataSettings dataSettings = new DataSettings
                     {
                         DataProvider = model.DataProvider,
                         DataConnectionString = connectionString
-                    }, _fileProvider);
+                    };
+                    dataSettings.RawDataSettings.Add("Host", _webHelper.GetSiteLocation());
+
+                    DataSettingsManager.SaveSettings(dataSettings, _fileProvider);
 
                     //initialize database
                     EngineContext.Current.Resolve<IDataProvider>().InitializeDatabase();

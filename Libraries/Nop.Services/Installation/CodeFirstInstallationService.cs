@@ -23,6 +23,7 @@ using Nop.Services.Users;
 using Nop.Services.Helpers;
 using Nop.Services.Localization;
 using Nop.Services.Seo;
+using Nop.Data;
 
 namespace Nop.Services.Installation
 {
@@ -3222,6 +3223,22 @@ namespace Nop.Services.Installation
                     Name = MessageTemplateSystemNames.ContactUsMessage,
                     Subject = "%Site.Name%. Contact us",
                     Body = $"<p>{Environment.NewLine}%ContactUs.Body%{Environment.NewLine}</p>{Environment.NewLine}",
+                    IsActive = true,
+                    EmailAccountId = eaGeneral.Id
+                },
+                new MessageTemplate
+                {
+                    Name = MessageTemplateSystemNames.UserEmailValidationMessage,
+                    Subject = "%Site.Name%. Email validation",
+                    Body = $"<a href=\"%Site.URL%\">%Site.Name%</a>{Environment.NewLine}<br />{Environment.NewLine}<br />{Environment.NewLine}To activate your account <a href=\"%User.AccountActivationURL%\">click here</a>.{Environment.NewLine}<br />{Environment.NewLine}<br />{Environment.NewLine}%Site.Name%{Environment.NewLine}",
+                    IsActive = true,
+                    EmailAccountId = eaGeneral.Id
+                },
+                new MessageTemplate
+                {
+                    Name = MessageTemplateSystemNames.GeneralNotification,
+                    Subject = "",
+                    Body = $"",
                     IsActive = true,
                     EmailAccountId = eaGeneral.Id
                 }

@@ -3,17 +3,15 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Nop.Core;
-using Nop.Core.Domain.Users;
-using Nop.Core.Domain.Directory;
 using Nop.Core.Domain.Localization;
+using Nop.Core.Domain.Users;
 using Nop.Core.Http;
 using Nop.Services.Authentication;
 using Nop.Services.Common;
-using Nop.Services.Users;
-using Nop.Services.Directory;
 using Nop.Services.Helpers;
 using Nop.Services.Localization;
 using Nop.Services.Tasks;
+using Nop.Services.Users;
 using Nop.Web.Framework.Localization;
 
 namespace Nop.Web.Framework

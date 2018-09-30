@@ -26,9 +26,6 @@ namespace Nop.Core.Domain.Messages
         /// <returns>Result</returns>
         public bool Equals(EmailSubscribedEvent other)
         {
-            if (ReferenceEquals(null, other)) 
-                return false;
-
             if (ReferenceEquals(this, other)) 
                 return true;
 

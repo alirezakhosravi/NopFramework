@@ -34,7 +34,7 @@ namespace Nop.Core.Data
         /// <summary>
         /// Gets or sets a raw settings
         /// </summary>
-        public IDictionary<string, string> RawDataSettings { get; }
+        public IDictionary<string, string> RawDataSettings { get; private set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the information is entered
@@ -43,6 +43,18 @@ namespace Nop.Core.Data
         [JsonIgnore]
         public bool IsValid => DataProvider != DataProviderType.Unknown && !string.IsNullOrEmpty(DataConnectionString);
 
+        /// <summary>
+        /// Adds the raw data settings.
+        /// </summary>
+        /// <param name="key">Key.</param>
+        /// <param name="value">Value.</param>
+        public void AddRawData(string key, string value)
+        {
+            if (!string.IsNullOrEmpty(key))
+            {
+                RawDataSettings.Add(key, value);
+            }
+        }
         #endregion
     }
 }

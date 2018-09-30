@@ -32,6 +32,11 @@ namespace Nop.Core.Domain.Messages
         /// </summary>
         public const string UserPasswordRecoveryMessage = "User.PasswordRecovery";
 
+        /// <summary>
+        /// The general template notification.
+        /// </summary>
+        public const string GeneralNotification = "System.GeneralNotification";
+
         #endregion
 
         #region Misc

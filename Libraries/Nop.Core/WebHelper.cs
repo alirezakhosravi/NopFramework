@@ -456,6 +456,11 @@ namespace Nop.Core
                 storeLocation = IsRequestAvailable() ? $"{storeHost.TrimEnd('/')}{_httpContextAccessor.HttpContext.Request.PathBase}" : storeHost;
             }
 
+            if (string.IsNullOrEmpty(storeHost) && DataSettingsManager.DatabaseIsInstalled)
+            {
+                storeLocation = DataSettingsManager.LoadSettings().RawDataSettings.FirstOrDefault(e => e.Key == "Host").Value ?? string.Empty;
+            }
+
             //ensure that URL is ended with slash
             storeLocation = $"{storeLocation.TrimEnd('/')}/";
 

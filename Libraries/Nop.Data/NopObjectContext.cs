@@ -32,6 +32,15 @@ namespace Nop.Data
         /// <param name="modelBuilder">The builder being used to construct the model for this context</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            try
+            {
+                base.Database.Migrate();
+            }
+            catch
+            {
+                // do noting
+            }
+
             //dynamically load all entity and query type configurations
             var typeConfigurations = Assembly.GetExecutingAssembly().GetTypes().Where(type =>
                 (type.BaseType?.IsGenericType ?? false)

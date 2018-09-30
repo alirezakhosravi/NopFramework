@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
+using Nop.Core.Domain.Messages;
 using Nop.Core.Infrastructure;
 using Nop.Core.Plugins;
 using Nop.Services.Logging;
+using Nop.Services.Notifications;
 
 namespace Nop.Services.Events
 {
@@ -14,14 +16,16 @@ namespace Nop.Services.Events
         #region Fields
 
         private readonly ISubscriptionService _subscriptionService;
+        private readonly INotificationHandler _notificationHandler;
 
         #endregion
 
         #region Ctor
 
-        public EventPublisher(ISubscriptionService subscriptionService)
+        public EventPublisher(ISubscriptionService subscriptionService, INotificationHandler notificationHandler)
         {
             _subscriptionService = subscriptionService;
+            _notificationHandler = notificationHandler;
         }
 
         #endregion
@@ -73,6 +77,8 @@ namespace Nop.Services.Events
 
             //publish event to subscribers
             subscribers.ForEach(subscriber => PublishToConsumer(subscriber, eventMessage));
+
+            _notificationHandler.NotifyObservers(eventMessage);
         }
 
         #endregion

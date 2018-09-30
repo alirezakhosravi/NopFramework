@@ -629,6 +629,42 @@ namespace Nop.Data.Migrations
                     b.ToTable("QueuedEmail");
                 });
 
+            modelBuilder.Entity("Nop.Core.Domain.Notification.QueuedNotification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AttachedDownloadId");
+
+                    b.Property<string>("AttachmentFileName");
+
+                    b.Property<string>("AttachmentFilePath");
+
+                    b.Property<string>("Body");
+
+                    b.Property<DateTime>("CreatedOnUtc");
+
+                    b.Property<DateTime?>("DontSendBeforeDateUtc");
+
+                    b.Property<string>("ObserverIdentifier");
+
+                    b.Property<int>("PriorityId");
+
+                    b.Property<DateTime?>("SentOnUtc");
+
+                    b.Property<int>("SentTries");
+
+                    b.Property<string>("Subject")
+                        .HasMaxLength(1000);
+
+                    b.Property<string>("UserIds");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("QueuedNotification");
+                });
+
             modelBuilder.Entity("Nop.Core.Domain.Security.AclRecord", b =>
                 {
                     b.Property<int>("Id")

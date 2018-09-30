@@ -637,6 +637,7 @@ INSERT [dbo].[Setting] ([Id], [Name], [Value]) VALUES (585, N'captchasettings.au
 SET IDENTITY_INSERT [dbo].[Setting] OFF
 GO
 
+
 SET IDENTITY_INSERT [dbo].[ScheduleTask] ON 
 INSERT [dbo].[ScheduleTask] ([Id], [Name], [Seconds], [Type], [Enabled], [StopOnError], [LastStartUtc], [LastEndUtc], [LastSuccessUtc]) VALUES (1, N'Send emails', 60, N'Nop.Services.Messages.QueuedMessagesSendTask, Nop.Services', 1, 0, NULL, NULL, NULL)
 INSERT [dbo].[ScheduleTask] ([Id], [Name], [Seconds], [Type], [Enabled], [StopOnError], [LastStartUtc], [LastEndUtc], [LastSuccessUtc]) VALUES (2, N'Keep alive', 300, N'Nop.Services.Common.KeepAliveTask, Nop.Services', 1, 0, NULL, NULL, NULL)

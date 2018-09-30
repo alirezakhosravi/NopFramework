@@ -30,7 +30,6 @@ namespace Nop.Services.Tasks
 
         static TaskThread()
         {
-            var context = EngineContext.Current.Resolve<IDbContext>();
             _scheduleTaskUrl = $"{NopTaskDefaults.ScheduleTaskPath}";
         }
 
@@ -63,7 +62,8 @@ namespace Nop.Services.Tasks
                 {
                     using (var client = new WebClient())
                     {
-                        client.UploadValues(_scheduleTaskUrl, postData);
+                        var context = EngineContext.Current.Resolve<IWebHelper>();
+                        client.UploadValues($"{context.GetSiteLocation()}{_scheduleTaskUrl}", postData);
                     }
                 }
                 catch (Exception ex)

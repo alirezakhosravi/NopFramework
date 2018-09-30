@@ -199,9 +199,9 @@ namespace Nop.Services.Messages
             var queuedEmailTableName = _dbContext.GetTableName<QueuedEmail>();
             _dbContext.ExecuteSqlCommand($"TRUNCATE TABLE [{queuedEmailTableName}]");
 
-            //var queuedEmails = _queuedEmailRepository.Table.ToList();
-            //foreach (var qe in queuedEmails)
-            //    _queuedEmailRepository.Delete(qe);
+            var queuedEmails = _queuedEmailRepository.Table.ToList();
+            foreach (var qe in queuedEmails)
+                _queuedEmailRepository.Delete(qe);
         }
 
         #endregion

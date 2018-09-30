@@ -1,10 +1,14 @@
 using Autofac;
+using System.Linq;
 using Nop.Core.Configuration;
 using Nop.Core.Infrastructure;
 using Nop.Core.Infrastructure.DependencyManagement;
 using Nop.Web.Areas.Admin.Factories;
 using Nop.Web.Framework.Factories;
 using Nop.Web.Infrastructure.Installation;
+using Nop.Services.Notifications;
+using Nop.Web.Infrastructure.Hubs;
+using System;
 
 namespace Nop.Web.Infrastructure
 {
@@ -61,6 +65,30 @@ namespace Nop.Web.Infrastructure
             builder.RegisterType<Factories.ProfileModelFactory>().As<Factories.IProfileModelFactory>().InstancePerLifetimeScope();
             builder.RegisterType<Factories.WidgetModelFactory>().As<Factories.IWidgetModelFactory>().InstancePerLifetimeScope();
             builder.RegisterType<Factories.SearchModelFactory>().As<Factories.ISearchModelFactory>().InstancePerLifetimeScope();
+
+            //signalr hub
+            var hubs = typeFinder.FindClassesOfType(typeof(IBaseHub)).ToList();
+            foreach (var hub in hubs)
+            {
+                builder.RegisterType(hub)
+                    .As(hub.FindInterfaces((type, criteria) =>
+                    {
+                        return true;
+                    }, typeof(IBaseHub)))
+                       .SingleInstance();
+            }
+
+            //notifivation observers
+            var observers = typeFinder.FindClassesOfType(typeof(INotificationObserver)).ToList();
+            foreach (var observer in observers)
+            {
+                builder.RegisterType(observer)
+                    .As(observer.FindInterfaces((type, criteria) =>
+                    {
+                        return true;
+                    }, typeof(INotificationObserver)))
+                       .SingleInstance().AutoActivate();
+            }
         }
 
         /// <summary>

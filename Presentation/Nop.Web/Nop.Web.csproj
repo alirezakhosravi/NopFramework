@@ -28,14 +28,20 @@
     <Content Remove="wwwroot\images\samples\category_accessories.jpg" />
     <Content Remove="wwwroot\images\samples\category_apparel.jpeg" />
     <Content Remove="wwwroot\db_backups\Index.htm" />
+    <Content Remove="wwwroot\lib\signalr\dist\browser\signalr.js" />
+    <Content Remove="wwwroot\lib\signalr\dist\browser\signalr.min.js" />
+    <Content Remove="wwwroot\lib\signalr\dist\browser\signalr %28copy%29.js" />
+    <Content Remove="wwwroot\lib\signalr\dist\browser\signalrClient.js" />
+    <Content Remove="scheduletask\runtask.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\db_backups\Index.htm" />
+    <None Include="wwwroot\lib\signalr\dist\browser\signalr.js" />
+    <None Include="wwwroot\lib\signalr\dist\browser\signalr.min.js" />
   </ItemGroup>
   <ItemGroup>
     <!-- We copy the entire \App_Data directory. But we ignore JSON files and data protection keys  -->
     <Content Include="App_Data\**" CopyToPublishDirectory="PreserveNewest" Exclude="App_Data\*.json" />
-    <Content Update="App_Data\*.json" CopyToPublishDirectory="Never" />
     <Content Update="App_Data\DataProtectionKeys\*.xml" CopyToPublishDirectory="Never" />
 
     <Compile Remove="Plugins\**" />
@@ -76,10 +82,19 @@
     <Folder Include="wwwroot\db_backups\" />
     <Folder Include="Views\Search\" />
     <Folder Include="Models\Search\" />
+    <Folder Include="Infrastructure\Notifications\" />
+    <Folder Include="Infrastructure\Hubs\" />
+    <Folder Include="wwwroot\lib\signalr\" />
+    <Folder Include="wwwroot\lib\signalr\dist\" />
+    <Folder Include="wwwroot\lib\signalr\dist\browser\" />
   </ItemGroup>
 
   <!-- This target execute after "Build" target.
     We use it to clean up folder with plugins from unnecessary and obsolete libraries. -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.SignalR" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNet.SignalR.JS" Version="2.3.0" />
+  </ItemGroup>
   <Target Name="NopTarget" AfterTargets="Build">
     <ItemGroup>
       <!-- Get plugin description files to get plugin paths -->

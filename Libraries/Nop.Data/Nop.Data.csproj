@@ -31,6 +31,7 @@
     <Compile Remove="Mapping\Shipping\DeliveryDateMap.cs" />
     <Compile Remove="Mapping\Gdpr\GdprConsentMap.cs" />
     <Compile Remove="Mapping\Gdpr\GdprLog.cs" />
+    <Compile Remove="Mapping\Notifications\NotificationInfoMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mapping\Notifications\" />

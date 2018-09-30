@@ -100,6 +100,30 @@ namespace Nop.Services.Messages
             string replyToEmailAddress = null, string replyToName = null, 
             string fromEmail = null, string fromName = null, string subject = null);
 
+        /// <summary>
+        /// Sends the notification.
+        /// </summary>
+        /// <returns>The notification.</returns>
+        /// <param name="userIds">User identifiers.</param>
+        /// <param name="messageTemplate">Message template.</param>
+        /// <param name="emailAccount">Email account.</param>
+        /// <param name="languageId">Language identifier.</param>
+        /// <param name="tokens">Tokens.</param>
+        /// <param name="toEmailAddress">To email address.</param>
+        /// <param name="toName">To name.</param>
+        /// <param name="attachmentFilePath">Attachment file path.</param>
+        /// <param name="attachmentFileName">Attachment file name.</param>
+        /// <param name="replyToEmailAddress">Reply to email address.</param>
+        /// <param name="replyToName">Reply to name.</param>
+        /// <param name="fromEmail">From email.</param>
+        /// <param name="fromName">From name.</param>
+        /// <param name="subject">Subject.</param>
+        int SendNotification(string userIds, MessageTemplate messageTemplate,
+            EmailAccount emailAccount, int languageId, IEnumerable<Token> tokens,
+            string toEmailAddress, string toName,
+            string attachmentFilePath = null, string attachmentFileName = null,
+            string replyToEmailAddress = null, string replyToName = null,
+            string fromEmail = null, string fromName = null, string subject = null);
         #endregion
     }
 }

@@ -45,6 +45,7 @@ namespace Nop.Data
 
             //create stored procedures 
             context.ExecuteSqlScriptFromFile(fileProvider.MapPath(NopDataDefaults.SqlServerStoredProceduresFilePath));
+
         }
 
         /// <summary>
