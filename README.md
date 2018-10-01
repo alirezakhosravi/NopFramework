@@ -43,7 +43,7 @@ Route = new RouteModel()
 ```
 On above code 'Name value' replace with {0} and 'Description value' replace with {1}.
 
-If you want to change some attribites by default parameter type, you can use SearchableAttribute above property and set UseFor parameter for this.
+If you want to change some propertis by default parameters type, you can use SearchableAttribute above property and set UseFor parameter for this. In this case, ThreeLetterIsoCode use for Description on search structure.
 ```
 [Searchable(UseFor = ParameterType.Description)]
 public string ThreeLetterIsoCode { get; set; }
