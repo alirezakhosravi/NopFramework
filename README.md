@@ -54,3 +54,7 @@ If you want to change some attribites by default parameter type, you can use Sea
 If you want to ignore property in search but use this property to search structure, you can set iqnore parameter as true. 
 
 If you use SearchableAttribute above property without set parameter, this attribute only use to query string for search.
+```
+[Searchable]
+public string ThreeLetterIsoCode { get; set; }
+```
