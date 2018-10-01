@@ -10,3 +10,34 @@ Fill free to ask me any questions:alirezakhosravi [at] live.com
 
 
 (beta version)
+
+### For create searchable entity follow this code:
+Your entity must implement ISearchable interface in Nop.Core solution.
+```
+public partial class Country : BaseEntity, ILocalizedEntity, ISearchable
+{
+    public Country()
+    {
+       Route = new RouteModel()
+       {
+           RouteUrl = "your route url when you want show detail of entity",
+           RouteName = "if you predefine route, enter route name",
+           Parameters = new List<ParameterType> { ParameterType.Id, ParameterType.Description, ParameterType.Name}
+       };
+    }
+    
+    [NotMapped]
+    public RouteModel Route { get; }
+        ...
+        
+     [Searchable(UseFor = ParameterType.Description)]
+     public string ThreeLetterIsoCode { get; set; }
+     
+     [Searchable(UseFor = ParameterType.Id, Ignore = true)]
+      public string TwoLetterIsoCode { get; set; }
+}
+```
+Parameter field must be used in search query.
+If you want to change some attribites by default parameter type, you can use SearchableAttribute above property and set UseFor parameter for this.
+
+If you want to ignore property in search but use this property to search structure, you can set iqnore parameter as true. 
