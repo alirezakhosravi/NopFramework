@@ -78,7 +78,6 @@
     <Folder Include="Validators\Boards\" />
     <Folder Include="Areas\Admin\Models\Template\" />
     <Folder Include="wwwroot\images\samples\" />
-    <Folder Include="wwwroot\images\thumbs\" />
     <Folder Include="wwwroot\db_backups\" />
     <Folder Include="Views\Search\" />
     <Folder Include="Models\Search\" />
