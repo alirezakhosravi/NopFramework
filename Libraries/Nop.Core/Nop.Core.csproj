@@ -35,5 +35,9 @@
     <Folder Include="Infrastructure\Collections\" />
     <Folder Include="Infrastructure\Reflection\" />
     <Folder Include="Domain\Notification\" />
+    <Folder Include="Data\Linq\" />
+    <Folder Include="Data\Linq\Extensions\" />
+    <Folder Include="Data\Linq\Expressions\" />
+    <Folder Include="Json\" />
   </ItemGroup>
 </Project>
