@@ -29,12 +29,6 @@ public partial class Country : BaseEntity, ILocalizedEntity, ISearchable
     [NotMapped]
     public RouteModel Route { get; }
         ...
-        
-     [Searchable(UseFor = ParameterType.Description)]
-     public string ThreeLetterIsoCode { get; set; }
-     
-     [Searchable(UseFor = ParameterType.Id, Ignore = true)]
-      public string TwoLetterIsoCode { get; set; }
 }
 ```
 You should use one of RoutUrl and RouteName at each time.
@@ -50,8 +44,16 @@ Route = new RouteModel()
 On above code 'Name value' replace with {0} and 'Description value' replace with {1}.
 
 If you want to change some attribites by default parameter type, you can use SearchableAttribute above property and set UseFor parameter for this.
+```
+[Searchable(UseFor = ParameterType.Description)]
+public string ThreeLetterIsoCode { get; set; }
+```
 
 If you want to ignore property in search but use this property to search structure, you can set iqnore parameter as true. 
+```
+[Searchable(UseFor = ParameterType.Id, Ignore = true)]
+public string TwoLetterIsoCode { get; set; }
+```
 
 If you use SearchableAttribute above property without set parameter, this attribute only use to query string for search.
 ```
