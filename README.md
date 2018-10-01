@@ -61,7 +61,7 @@ If you use SearchableAttribute above property without set parameter, this attrib
 public string ThreeLetterIsoCode { get; set; }
 ```
 
-### For create observer to get notification follow this code:
+### For create listener to get notification follow this code:
 You class must implement INotificationObserver interface in Nop.Services solution
 ```
 using Nop.Services.Notifications;
