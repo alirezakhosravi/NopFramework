@@ -60,3 +60,47 @@ If you use SearchableAttribute above property without set parameter, this attrib
 [Searchable]
 public string ThreeLetterIsoCode { get; set; }
 ```
+
+### For create observer to get notification follow this code:
+You class must implement INotificationObserver interface in Nop.Services solution
+```
+using Nop.Services.Notifications;
+....
+
+ public class WebNotificationObserver : INotificationObserver
+ {
+    private readonly INotificationHandler _notificationHandler;
+    private readonly IQueuedNotificationService _queuedNotificationService;
+    
+    public WebNotificationObserver(
+        INotificationHandler notificationHandler, 
+        IQueuedNotificationService queuedNotificationService
+    )
+    {
+         _notificationHandler = notificationHandler;
+         _queuedNotificationService = queuedNotificationService;
+         
+         _notificationHandler.Register(this);
+    }
+    
+    public string Identifier => "WebNotificationObserver";
+    
+    public INotificationHandler Handler
+    {
+        get => _notificationHandler;
+        set => throw new NotImplementedException();
+    }
+     
+    public void Notify(QueuedNotification message)
+    {
+        if (!message.IsCheckMessage(this.Identifier))
+        {
+            ...
+            message.AddObserver(this.Identifier);
+            _queuedNotificationService.UpdateQueuedNotification(message);
+        }
+    } 
+ }
+```
+
+Identifier is very important beacause when your listener observed message,it puts it's own identifier on message so if later get this message, do not process it.
