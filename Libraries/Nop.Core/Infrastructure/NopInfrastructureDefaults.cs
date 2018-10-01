@@ -10,5 +10,6 @@ namespace Nop.Core.Infrastructure
         /// Gets a path to the web config file
         /// </summary>
         public static string WebConfigPath => "~/web.config";
+        public static string AppSettingPath => "~/appsettings.json";
     }
 }

@@ -85,6 +85,13 @@ namespace Nop.Core
             try
             {
                 _fileProvider.SetLastWriteTimeUtc(_fileProvider.MapPath(NopInfrastructureDefaults.WebConfigPath), DateTime.UtcNow);
+                try
+                {
+                    _fileProvider.SetLastWriteTimeUtc(_fileProvider.MapPath(NopInfrastructureDefaults.AppSettingPath), DateTime.UtcNow);
+                }
+#pragma warning disable RECS0022 // A catch clause that catches System.Exception and has an empty body
+                catch { }
+#pragma warning restore RECS0022 // A catch clause that catches System.Exception and has an empty body
                 return true;
             }
             catch
@@ -175,7 +182,7 @@ namespace Nop.Core
         {
             if (!IsRequestAvailable())
                 return string.Empty;
-            
+
             //get site location
             var siteLocation = GetSiteLocation(useSsl ?? IsCurrentConnectionSecured());
 

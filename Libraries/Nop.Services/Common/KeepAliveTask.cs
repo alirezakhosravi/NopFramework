@@ -32,7 +32,7 @@ namespace Nop.Services.Common
         /// </summary>
         public void Execute()
         {
-            var keepAliveUrl = $"{NopHttpDefaults.KeepAlivePath}";
+            var keepAliveUrl = $"{_webHelper.GetSiteLocation()}{NopHttpDefaults.KeepAlivePath}";
             using (var wc = new WebClient())
             {
                 wc.DownloadString(keepAliveUrl);
