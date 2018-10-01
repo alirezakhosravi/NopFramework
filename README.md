@@ -37,7 +37,20 @@ public partial class Country : BaseEntity, ILocalizedEntity, ISearchable
       public string TwoLetterIsoCode { get; set; }
 }
 ```
-Parameter field must be used in search query.
+You should use one of RoutUrl and RouteName at each time.
+Parameter field must be used in route parameter, when you want pass parameter to route.
+
+```
+Route = new RouteModel()
+{
+   RouteUrl = "/Country/Detail?name={0}&isocode={1}",
+   Parameters = new List<ParameterType> { ParameterType.Name, ParameterType.Description}
+};
+```
+On above code 'Name value' replace with {0} and 'Description value' replace with {1}.
+
 If you want to change some attribites by default parameter type, you can use SearchableAttribute above property and set UseFor parameter for this.
 
 If you want to ignore property in search but use this property to search structure, you can set iqnore parameter as true. 
+
+If you use SearchableAttribute above property without set parameter, this attribute only use to query string for search.
