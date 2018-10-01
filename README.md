@@ -62,7 +62,7 @@ public string ThreeLetterIsoCode { get; set; }
 ```
 
 ### For create listener to get notification follow this code:
-You class must implement INotificationObserver interface in Nop.Services solution
+Your class must implement INotificationObserver interface in Nop.Services solution
 ```
 using Nop.Services.Notifications;
 ....
