@@ -11,7 +11,7 @@ Feel free to ask any question: alirezakhosravi [at] live.com
 
 (beta version)
 
-### TO create searchable entity follow this code:
+### To create searchable entity follow this code:
 Your entity must implement ISearchable interface in Nop.Core solution.
 ```
 public partial class Country : BaseEntity, ILocalizedEntity, ISearchable
