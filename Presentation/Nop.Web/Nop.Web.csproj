@@ -90,6 +90,7 @@
   <!-- This target execute after "Build" target.
     We use it to clean up folder with plugins from unnecessary and obsolete libraries. -->
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" />
     <PackageReference Include="Microsoft.AspNet.SignalR" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNet.SignalR.JS" Version="2.3.0" />
   </ItemGroup>

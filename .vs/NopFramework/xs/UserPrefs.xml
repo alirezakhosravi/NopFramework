@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{4F1F649C-1020-45BE-A487-F416D9297FF3}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Nop.Web/appsettings.json">
+    <Files>
+      <File FileName="Presentation/Nop.Web/Startup.cs" Line="1" Column="1" />
+      <File FileName="Presentation/Nop.Web/appsettings.json" Line="3" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Presentation.Nop.Web PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
