@@ -1,0 +1,16 @@
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/bin/Debug/netcoreapp2.1/Nop.Web.Framework.deps.json
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/bin/Debug/netcoreapp2.1/Nop.Web.Framework.dll
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/bin/Debug/netcoreapp2.1/Nop.Web.Framework.pdb
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/bin/Debug/netcoreapp2.1/Nop.Core.dll
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/bin/Debug/netcoreapp2.1/Nop.Data.dll
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/bin/Debug/netcoreapp2.1/Nop.Services.dll
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/bin/Debug/netcoreapp2.1/Nop.Core.pdb
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/bin/Debug/netcoreapp2.1/Nop.Data.pdb
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/bin/Debug/netcoreapp2.1/Nop.Services.pdb
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/obj/Debug/netcoreapp2.1/Nop.Web.Framework.csprojAssemblyReference.cache
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/obj/Debug/netcoreapp2.1/Nop.Web.Framework.csproj.CoreCompileInputs.cache
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/obj/Debug/netcoreapp2.1/Nop.Web.Framework.AssemblyInfoInputs.cache
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/obj/Debug/netcoreapp2.1/Nop.Web.Framework.AssemblyInfo.cs
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/obj/Debug/netcoreapp2.1/Nop.Web.Framework.csproj.CopyComplete
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/obj/Debug/netcoreapp2.1/Nop.Web.Framework.dll
+/Users/alireza/Documents/GitHub/NopFramework/Presentation/Nop.Web.Framework/obj/Debug/netcoreapp2.1/Nop.Web.Framework.pdb

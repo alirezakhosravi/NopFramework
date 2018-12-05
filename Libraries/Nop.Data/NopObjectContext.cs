@@ -221,7 +221,7 @@ namespace Nop.Data
             {
                 this.Database.Migrate();
             }
-            catch (Exception ex)
+            catch
             {
                 // do noting
             }
