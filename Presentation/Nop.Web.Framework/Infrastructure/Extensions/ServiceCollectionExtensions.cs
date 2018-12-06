@@ -335,7 +335,10 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
             }).AddEntityFramework();
         }
 
-
+        /// <summary>
+        /// Adds the nop ignite distributed caching.
+        /// </summary>
+        /// <param name="services">Collection of service descriptors.</param>
         public static void AddNopIgniteDistributedCaching(this IServiceCollection services)
         {
             services.AddDistributedIgniteCache(option =>
