@@ -1,7 +1,13 @@
 ﻿<Properties StartupConfiguration="{4F1F649C-1020-45BE-A487-F416D9297FF3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Libraries/Nop.Core/Caching/PerRequestCacheManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Nop.Web.Framework/Infrastructure/Extensions/ServiceCollectionExtensions.cs">
     <Files>
-      <File FileName="Libraries/Nop.Core/Caching/PerRequestCacheManager.cs" Line="1" Column="1" />
+      <File FileName="Presentation/Nop.Web/Startup.cs" Line="44" Column="49" />
+      <File FileName="Presentation/Nop.Web.Framework/Infrastructure/Extensions/ServiceCollectionExtensions.cs" Line="342" Column="26" />
+      <File FileName="Presentation/Nop.Web.Framework/Infrastructure/NopMvcStartup.cs" Line="25" Column="22" />
+      <File FileName="Presentation/Nop.Web.Framework/Infrastructure/NopCommonStartup.cs" Line="32" Column="13" />
+      <File FileName="Libraries/Nop.Core/Infrastructure/NopFileProvider.cs" Line="23" Column="29" />
+      <File FileName="Presentation/Nop.Web/Controllers/InstallController.cs" Line="31" Column="38" />
+      <File FileName="Libraries/Nop.Core/Data/DataSettingsManager.cs" Line="35" Column="85" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

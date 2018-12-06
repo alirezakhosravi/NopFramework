@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "e80f5d314101fa12bf151c0ab23f803d3b755d5e"
+    "signature": "ca6f8d0fd534437d973565eae7be5170f2192368"
   },
   "compilationOptions": {},
   "targets": {
@@ -16,6 +16,18 @@
         },
         "runtime": {
           "Nop.Data.dll": {}
+        }
+      },
+      "Apache.Ignite/2.6.0": {
+        "runtime": {
+          "lib/net40/Apache.Ignite.Core.dll": {
+            "assemblyVersion": "2.6.0.30134",
+            "fileVersion": "2.6.0.30134"
+          },
+          "lib/net40/Apache.Ignite.exe": {
+            "assemblyVersion": "2.6.0.30134",
+            "fileVersion": "2.6.0.30134"
+          }
         }
       },
       "Autofac/4.2.0": {
@@ -80,6 +92,20 @@
           "lib/netstandard1.3/Castle.Core.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.2.1.0"
+          }
+        }
+      },
+      "IgniteCachingDistricuted/1.0.0": {
+        "dependencies": {
+          "Apache.Ignite": "2.6.0",
+          "Microsoft.Extensions.Caching.Abstractions": "2.1.1",
+          "Microsoft.Extensions.DependencyInjection": "2.1.1",
+          "Microsoft.Extensions.Options": "2.1.1"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/IgniteCachingDistributed.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -3703,6 +3729,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "Autofac.Extensions.DependencyInjection": "4.2.2",
+          "IgniteCachingDistricuted": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.2",
           "Microsoft.AspNetCore.DataProtection.Redis": "0.4.1",
           "MiniProfiler.AspNetCore.Mvc": "4.0.133",
@@ -3721,6 +3748,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Apache.Ignite/2.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZXeBRxgXiisuK3rS5/Hsvdu3uJ4vQ15TNo/FCMUXG+d42kGwZzF/z/lqr4oNkBEA32inWiDkqvzhmV9ontT2CA==",
+      "path": "apache.ignite/2.6.0",
+      "hashPath": "apache.ignite.2.6.0.nupkg.sha512"
     },
     "Autofac/4.2.0": {
       "type": "package",
@@ -3756,6 +3790,13 @@
       "sha512": "sha512-XSNA0Gc1Zu33L+8+/3Tqt+aFu8QWS8UenVHZ7RenIP5wJfhoLrA4PnNscpxReeo5aBq8PDoGnV8rNaOzIOUo/w==",
       "path": "castle.core/4.2.1",
       "hashPath": "castle.core.4.2.1.nupkg.sha512"
+    },
+    "IgniteCachingDistricuted/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QvANlz442JVRytGvrORrhxzNzpp9sdhK1MYmNjyLp+rwL1ZAAkScDEi7EX0E6Nc0nqyUvWMauk959GIPYbHtYQ==",
+      "path": "ignitecachingdistricuted/1.0.0",
+      "hashPath": "ignitecachingdistricuted.1.0.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "3e912ce92f25e0859d1fe9ff777a3b12367faf4c"
+    "signature": "b1acdc8f22cc2202cb755e6610d480fc98ba3ecd"
   },
   "compilationOptions": {
     "defines": [
@@ -37,6 +37,22 @@
         },
         "compile": {
           "Nop.Web.dll": {}
+        }
+      },
+      "Apache.Ignite/2.6.0": {
+        "runtime": {
+          "lib/net40/Apache.Ignite.Core.dll": {
+            "assemblyVersion": "2.6.0.30134",
+            "fileVersion": "2.6.0.30134"
+          },
+          "lib/net40/Apache.Ignite.exe": {
+            "assemblyVersion": "2.6.0.30134",
+            "fileVersion": "2.6.0.30134"
+          }
+        },
+        "compile": {
+          "lib/net40/Apache.Ignite.Core.dll": {},
+          "lib/net40/Apache.Ignite.exe": {}
         }
       },
       "Autofac/4.2.0": {
@@ -192,6 +208,23 @@
         },
         "compile": {
           "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {}
+        }
+      },
+      "IgniteCachingDistricuted/1.0.0": {
+        "dependencies": {
+          "Apache.Ignite": "2.6.0",
+          "Microsoft.Extensions.Caching.Abstractions": "2.1.1",
+          "Microsoft.Extensions.DependencyInjection": "2.1.1",
+          "Microsoft.Extensions.Options": "2.1.1"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/IgniteCachingDistributed.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.1/IgniteCachingDistributed.dll": {}
         }
       },
       "iTextSharp.LGPLv2.Core/1.4.4": {
@@ -4849,6 +4882,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "Autofac.Extensions.DependencyInjection": "4.2.2",
+          "IgniteCachingDistricuted": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.2",
           "Microsoft.AspNetCore.DataProtection.Redis": "0.4.1",
           "MiniProfiler.AspNetCore.Mvc": "4.0.133",
@@ -5101,6 +5135,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Apache.Ignite/2.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZXeBRxgXiisuK3rS5/Hsvdu3uJ4vQ15TNo/FCMUXG+d42kGwZzF/z/lqr4oNkBEA32inWiDkqvzhmV9ontT2CA==",
+      "path": "apache.ignite/2.6.0",
+      "hashPath": "apache.ignite.2.6.0.nupkg.sha512"
+    },
     "Autofac/4.2.0": {
       "type": "package",
       "serviceable": true,
@@ -5163,6 +5204,13 @@
       "sha512": "sha512-Y5id7IHwHUyqem3cibw+XuRyZNPeN/bt8fECsn6TfMphbKrcqUoLT4DwLSPmFSJtBp0v1RK+ALtAHmjV/pcf5A==",
       "path": "fluentvalidation.aspnetcore/7.6.104",
       "hashPath": "fluentvalidation.aspnetcore.7.6.104.nupkg.sha512"
+    },
+    "IgniteCachingDistricuted/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QvANlz442JVRytGvrORrhxzNzpp9sdhK1MYmNjyLp+rwL1ZAAkScDEi7EX0E6Nc0nqyUvWMauk959GIPYbHtYQ==",
+      "path": "ignitecachingdistricuted/1.0.0",
+      "hashPath": "ignitecachingdistricuted.1.0.0.nupkg.sha512"
     },
     "iTextSharp.LGPLv2.Core/1.4.4": {
       "type": "package",

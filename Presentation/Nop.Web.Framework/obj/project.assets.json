@@ -2,6 +2,17 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "Apache.Ignite/2.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Apache.Ignite.Core.dll": {},
+          "lib/net40/Apache.Ignite.exe": {}
+        },
+        "runtime": {
+          "lib/net40/Apache.Ignite.Core.dll": {},
+          "lib/net40/Apache.Ignite.exe": {}
+        }
+      },
       "Autofac/4.2.0": {
         "type": "package",
         "dependencies": {
@@ -137,6 +148,21 @@
         },
         "runtime": {
           "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {}
+        }
+      },
+      "IgniteCachingDistricuted/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Apache.Ignite": "2.6.0",
+          "Microsoft.Extensions.Caching.Abstractions": "2.1.1",
+          "Microsoft.Extensions.DependencyInjection": "2.1.1",
+          "Microsoft.Extensions.Options": "2.1.1"
+        },
+        "compile": {
+          "lib/netcoreapp2.1/IgniteCachingDistributed.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/IgniteCachingDistributed.dll": {}
         }
       },
       "iTextSharp.LGPLv2.Core/1.4.4": {
@@ -5164,6 +5190,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "Autofac.Extensions.DependencyInjection": "4.2.2",
+          "IgniteCachingDistricuted": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.2",
           "Microsoft.AspNetCore.DataProtection.Redis": "0.4.1",
           "MiniProfiler.AspNetCore.Mvc": "4.0.133",
@@ -5219,6 +5246,54 @@
     }
   },
   "libraries": {
+    "Apache.Ignite/2.6.0": {
+      "sha512": "ZXeBRxgXiisuK3rS5/Hsvdu3uJ4vQ15TNo/FCMUXG+d42kGwZzF/z/lqr4oNkBEA32inWiDkqvzhmV9ontT2CA==",
+      "type": "package",
+      "path": "apache.ignite/2.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "apache.ignite.2.6.0.nupkg.sha512",
+        "apache.ignite.nuspec",
+        "lib/net40/Apache.Ignite.Core.dll",
+        "lib/net40/Apache.Ignite.Core.xml",
+        "lib/net40/Apache.Ignite.exe",
+        "lib/net40/Apache.Ignite.exe.config",
+        "libs/cache-api-1.0.0.jar",
+        "libs/commons-beanutils-1.9.2.jar",
+        "libs/commons-codec-1.11.jar",
+        "libs/commons-lang-2.6.jar",
+        "libs/commons-logging-1.1.1.jar",
+        "libs/commons-logging-1.2.jar",
+        "libs/commons-rng-core-1.0.jar",
+        "libs/commons-rng-simple-1.0.jar",
+        "libs/h2-1.4.195.jar",
+        "libs/ignite-core-2.6.0.jar",
+        "libs/ignite-indexing-2.6.0.jar",
+        "libs/ignite-shmem-1.0.0.jar",
+        "libs/ignite-spring-2.6.0.jar",
+        "libs/ignite-spring-data-2.6.0.jar",
+        "libs/lucene-analyzers-common-5.5.2.jar",
+        "libs/lucene-core-5.5.2.jar",
+        "libs/lucene-queryparser-5.5.2.jar",
+        "libs/spring-aop-4.3.16.RELEASE.jar",
+        "libs/spring-beans-4.3.16.RELEASE.jar",
+        "libs/spring-context-4.3.16.RELEASE.jar",
+        "libs/spring-core-4.3.16.RELEASE.jar",
+        "libs/spring-data-commons-1.13.11.RELEASE.jar",
+        "libs/spring-expression-4.3.16.RELEASE.jar",
+        "libs/spring-jdbc-4.3.16.RELEASE.jar",
+        "libs/spring-tx-4.3.16.RELEASE.jar",
+        "linqpad-samples/BinaryModeExample.linq",
+        "linqpad-samples/ComputeExample.linq",
+        "linqpad-samples/PutGetExample.linq",
+        "linqpad-samples/QueryExample.linq",
+        "linqpad-samples/ThinClient.linq",
+        "tools/Install.ps1",
+        "tools/PostBuild.ps1",
+        "tools/Uninstall.ps1"
+      ]
+    },
     "Autofac/4.2.0": {
       "sha512": "WHiPMqI8FYa4Mf4yTb0P/aBibHn7Z0B9r02CEXy9oAAkQMJpHxLOE45iIMMW+xthXu26V9nRIz7o5lA7V3ztgw==",
       "type": "package",
@@ -5361,6 +5436,18 @@
         "fluentvalidation.aspnetcore.nuspec",
         "lib/netstandard2.0/FluentValidation.AspNetCore.dll",
         "lib/netstandard2.0/FluentValidation.AspNetCore.xml"
+      ]
+    },
+    "IgniteCachingDistricuted/1.0.0": {
+      "sha512": "QvANlz442JVRytGvrORrhxzNzpp9sdhK1MYmNjyLp+rwL1ZAAkScDEi7EX0E6Nc0nqyUvWMauk959GIPYbHtYQ==",
+      "type": "package",
+      "path": "ignitecachingdistricuted/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ignitecachingdistricuted.1.0.0.nupkg.sha512",
+        "ignitecachingdistricuted.nuspec",
+        "lib/netcoreapp2.1/IgniteCachingDistributed.dll"
       ]
     },
     "iTextSharp.LGPLv2.Core/1.4.4": {
@@ -14156,5 +14243,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Apache.Ignite 2.6.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Apache.Ignite",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    }
+  ]
 }

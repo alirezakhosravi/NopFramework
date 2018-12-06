@@ -20,6 +20,7 @@ using Nop.Web.Framework.Security;
 using Nop.Web.Framework.Themes;
 using Nop.Web.Infrastructure.Installation;
 using Nop.Web.Models.Install;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Nop.Web.Controllers
 {

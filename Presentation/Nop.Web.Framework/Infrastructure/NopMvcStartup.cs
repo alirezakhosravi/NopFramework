@@ -26,6 +26,8 @@ namespace Nop.Web.Framework.Infrastructure
 
             //add custom redirect result executor
             services.AddNopRedirectResultExecutor();
+
+            services.AddNopIgniteDistributedCaching();
         }
 
         /// <summary>

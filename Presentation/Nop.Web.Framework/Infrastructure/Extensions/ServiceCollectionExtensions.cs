@@ -29,6 +29,7 @@ using Nop.Web.Framework.Mvc.ModelBinding;
 using Nop.Web.Framework.Mvc.Routing;
 using Nop.Web.Framework.Themes;
 using StackExchange.Profiling.Storage;
+using IgniteCachingDistributed;
 
 namespace Nop.Web.Framework.Infrastructure.Extensions
 {
@@ -332,6 +333,16 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
                     !EngineContext.Current.Resolve<SiteInformationSettings>().DisplayMiniProfilerForAdminOnly ||
                     EngineContext.Current.Resolve<IPermissionService>().Authorize(StandardPermissionProvider.AccessAdminPanel);
             }).AddEntityFramework();
+        }
+
+
+        public static void AddNopIgniteDistributedCaching(this IServiceCollection services)
+        {
+            services.AddDistributedIgniteCache(option =>
+            {
+                option.Endpoints = new string[] { "localhost:11211", "localhost:47100", "localhost:47500", "localhost:49112" };
+                option.PersistenceEnabled = true;
+            });
         }
     }
 }
