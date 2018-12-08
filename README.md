@@ -8,9 +8,6 @@ I'll be adding some other capabilities and components to this primitive solution
 
 Feel free to ask any question: alirezakhosravi [at] live.com
 
-
-(beta version)
-
 ### To create searchable entity follow this code:
 Your entity must implement ISearchable interface in Nop.Core solution.
 ```
