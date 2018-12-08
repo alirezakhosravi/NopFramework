@@ -13,6 +13,12 @@
     <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
@@ -40,5 +46,6 @@
     <Folder Include="Data\Linq\Extensions\" />
     <Folder Include="Data\Linq\Expressions\" />
     <Folder Include="Json\" />
+    <Folder Include="Cryptography\" />
   </ItemGroup>
 </Project>
