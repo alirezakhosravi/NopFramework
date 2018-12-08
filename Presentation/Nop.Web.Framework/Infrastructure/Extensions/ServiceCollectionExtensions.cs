@@ -341,11 +341,17 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
         /// <param name="services">Collection of service descriptors.</param>
         public static void AddNopIgniteDistributedCaching(this IServiceCollection services)
         {
-            services.AddDistributedIgniteCache(option =>
+            var nopConfig = services.BuildServiceProvider().GetService<NopConfig>();
+            var ipAddresses = nopConfig.IgniteCachingConnectionString?.Split(',') ?? null;
+            var persistenceEnabled = nopConfig.PersistenceEnabledToIgnite;
+            if (ipAddresses != null || ipAddresses?.Length > 0)
             {
-                option.Endpoints = new string[] { "localhost:11211", "localhost:47100", "localhost:47500", "localhost:49112" };
-                option.PersistenceEnabled = true;
-            });
+                services.AddDistributedIgniteCache(option =>
+                {
+                    option.Endpoints = ipAddresses;
+                    option.PersistenceEnabled = persistenceEnabled;
+                });
+            }
         }
     }
 }

@@ -95,5 +95,18 @@ namespace Nop.Core.Configuration
         /// By default the cookie-based TempData provider is used to store TempData in cookies.
         /// </summary>
         public bool UseSessionStateTempDataProvider { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether we should use Redis server for caching (instead of default in-memory caching)
+        /// </summary>
+        public bool IgniteCachingEnabled { get; set; }
+        /// <summary>
+        /// Gets or sets Redis connection string. Used when Redis caching is enabled
+        /// </summary>
+        public string IgniteCachingConnectionString { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether the data protection system should be configured to persist keys in the Redis database
+        /// </summary>
+        public bool PersistenceEnabledToIgnite { get; set; }
     }
 }
