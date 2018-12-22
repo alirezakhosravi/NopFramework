@@ -29,7 +29,7 @@ using Nop.Web.Framework.Mvc.ModelBinding;
 using Nop.Web.Framework.Mvc.Routing;
 using Nop.Web.Framework.Themes;
 using StackExchange.Profiling.Storage;
-using IgniteCachingDistributed;
+using Raveshmand.Cache.Ignite;
 
 namespace Nop.Web.Framework.Infrastructure.Extensions
 {

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.SignalR;
 using Nop.Core.Domain.Notification;
 using Nop.Services.Notifications;
 using Nop.Web.Infrastructure.Hubs;

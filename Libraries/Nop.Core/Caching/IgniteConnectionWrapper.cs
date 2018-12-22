@@ -6,7 +6,7 @@ using Apache.Ignite.Core.Configuration;
 using Apache.Ignite.Core.Discovery.Tcp;
 using Apache.Ignite.Core.Discovery.Tcp.Static;
 using Apache.Ignite.Core.Events;
-using IgniteCachingDistributed;
+using Raveshmand.Cache.Ignite;
 using Nop.Core.Configuration;
 
 namespace Nop.Core.Caching
