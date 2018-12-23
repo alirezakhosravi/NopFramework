@@ -1,5 +1,39 @@
 ﻿<Properties StartupConfiguration="{4F1F649C-1020-45BE-A487-F416D9297FF3}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Nop.Web/Views/Common/ContactVendor.cshtml">
+    <Files>
+      <File FileName="Presentation/Nop.Web/Areas/Admin/Views/Shared/_ConfigurePlugin.cshtml" Line="7" Column="28" />
+      <File FileName="Presentation/Nop.Web/obj/Debug/netcoreapp2.2/Razor/Areas/Admin/Views/Shared/Components/NopCommerceNews/Default.g.cshtml.cs" Line="402" Column="97" />
+      <File FileName="Presentation/Nop.Web/obj/Debug/netcoreapp2.2/Razor/Areas/Admin/Views/Shared/Components/StoreScopeConfiguration/Default.g.cshtml.cs" Line="280" Column="97" />
+      <File FileName="Presentation/Nop.Web/obj/Debug/netcoreapp2.2/Razor/Views/Common/ContactVendor.g.cshtml.cs" Line="695" Column="97" />
+      <File FileName="Presentation/Nop.Web/obj/Debug/netcoreapp2.2/Razor/Views/User/UserAgreement.g.cshtml.cs" Line="175" Column="97" />
+      <File FileName="Presentation/Nop.Web/Views/Common/ContactVendor.cshtml" Line="54" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NopFramework" expanded="True">
+            <Node name="Libraries" expanded="True" />
+            <Node name="Presentation" expanded="True">
+              <Node name="Nop.Web" expanded="True">
+                <Node name="Areas" expanded="True">
+                  <Node name="Admin" expanded="True">
+                    <Node name="Views" expanded="True">
+                      <Node name="Shared" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+                <Node name="Views" expanded="True">
+                  <Node name="Common" expanded="True">
+                    <Node name="ContactVendor.cshtml" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Presentation.Nop.Web PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

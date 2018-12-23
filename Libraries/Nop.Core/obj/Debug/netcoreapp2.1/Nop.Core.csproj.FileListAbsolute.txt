@@ -9,13 +9,3 @@
 /Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.dll
 /Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.pdb
 /Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.csprojAssemblyReference.cache
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/bin/Debug/netcoreapp2.1/Nop.Core.deps.json
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/bin/Debug/netcoreapp2.1/Nop.Core.runtimeconfig.json
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/bin/Debug/netcoreapp2.1/Nop.Core.runtimeconfig.dev.json
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/bin/Debug/netcoreapp2.1/Nop.Core.dll
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/bin/Debug/netcoreapp2.1/Nop.Core.pdb
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.csproj.CoreCompileInputs.cache
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.AssemblyInfoInputs.cache
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.AssemblyInfo.cs
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.dll
-/Users/alireza/Downloads/NopFramework-master/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.pdb
