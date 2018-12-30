@@ -101,3 +101,52 @@ using Nop.Services.Notifications;
 ```
 
 Identifier is very important beacause when your listener observed the message,it puts it's own identifier on the message so if ,later, the observer got this message, do not process it.
+
+### Enable Ignite Cache
+To enable ignite cache, edit ``appsettings.json`` in root directory of Nop.Web.
+```
+    "IgniteCachingConnectionString": ["Address1", "Address2", "Address3", ...],
+```
+For enable persisted change `` "PersistDataProtectionKeysToIgnite" `` to `` true``.
+```
+    "PersistDataProtectionKeysToIgnite": true,
+```
+
+### Set Ignite to default caching
+For Enable Ignite to default cachng set ``IgniteCachingEnabled`` attribute in ``appsettings.json`` file in root directory of Nop.Web to ``true``.
+```
+    "IgniteCachingEnabled": true,
+    "IgniteCachingConnectionString": ["Address1", "Address2", "Address3", ...],
+```
+
+### Temporal Table
+For enabling temporal feauture, your entity must be inherited from ``ITemporal`` interface.
+```
+    public class User : BaseEntity, ITemporal
+    {
+        ...
+    }
+```
+
+If you want to retrieve data at specific time, you must add `` using Nop.Data.Extensions; ``.
+```
+    public class UserServices : IUserServices
+    {
+        private readonly IRepository<User> _user;
+        
+        public UserServices(IRepository<User> user)
+        {
+            this._user = user;
+        }
+        
+        public List<User> GetUsers()
+        {
+            return _user.TemporalTable(DateTime.Now).ToList(); // or add specific time
+        }
+        
+        public User GetUser(int id)
+        {
+            return _user.GetTemporalById(id, DateTime.Now).ToList(); // or add specific time
+        }
+    }
+```
