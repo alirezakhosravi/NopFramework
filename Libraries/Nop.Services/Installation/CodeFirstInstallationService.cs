@@ -35,6 +35,7 @@ namespace Nop.Services.Installation
         #region Fields
 
         private readonly IGenericAttributeService _genericAttributeService;
+        private readonly IConfigurationDbContext _configurationDbContext;
         private readonly INopFileProvider _fileProvider;
         private readonly IRepository<ActivityLog> _activityLogRepository;
         private readonly IRepository<ActivityLogType> _activityLogTypeRepository;
@@ -58,6 +59,7 @@ namespace Nop.Services.Installation
         #region Ctor
 
         public CodeFirstInstallationService(IGenericAttributeService genericAttributeService,
+            IConfigurationDbContext configurationDbContext,
             INopFileProvider fileProvider,
             IRepository<ActivityLog> activityLogRepository,
             IRepository<ActivityLogType> activityLogTypeRepository,
@@ -77,6 +79,7 @@ namespace Nop.Services.Installation
             IWebHelper webHelper)
         {
             this._genericAttributeService = genericAttributeService;
+            this._configurationDbContext = configurationDbContext;
             this._fileProvider = fileProvider;
             this._activityLogRepository = activityLogRepository;
             this._activityLogTypeRepository = activityLogTypeRepository;
@@ -4062,6 +4065,7 @@ namespace Nop.Services.Installation
         public virtual void InstallData(string defaultUserEmail,
             string defaultUserPassword, bool installSampleData = true)
         {
+            _configurationDbContext.AddTemporal();
             InstallLanguages();
             InstallCountriesAndStates();
             InstallEmailAccounts();

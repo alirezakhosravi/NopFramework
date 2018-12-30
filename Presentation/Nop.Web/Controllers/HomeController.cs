@@ -2,6 +2,9 @@
 using Nop.Web.Framework.Mvc.Filters;
 using Nop.Web.Framework.Security;
 using Nop.Services.Notifications;
+using Nop.Core.Data;
+using Nop.Core.Domain.Users;
+using Nop.Data.Extensions;
 
 namespace Nop.Web.Controllers
 {
@@ -11,6 +14,7 @@ namespace Nop.Web.Controllers
         public HomeController(IWorkflowNotificationService workflowNotificationService)
         {
             _workflowNotificationService = workflowNotificationService;
+
         }
         [HttpsRequirement(SslRequirement.NoMatter)]
         public virtual IActionResult Index()

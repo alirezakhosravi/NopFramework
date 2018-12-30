@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Nop.Core.Data
@@ -17,7 +18,7 @@ namespace Nop.Core.Data
         /// <param name="id">Identifier</param>
         /// <returns>Entity</returns>
         TEntity GetById(object id);
-
+        
         /// <summary>
         /// Insert entity
         /// </summary>
@@ -62,7 +63,7 @@ namespace Nop.Core.Data
         /// Gets a table
         /// </summary>
         IQueryable<TEntity> Table { get; }
-
+        
         /// <summary>
         /// Gets a table with "no tracking" enabled (EF feature) Use it only when you load record(s) only for read-only operations
         /// </summary>

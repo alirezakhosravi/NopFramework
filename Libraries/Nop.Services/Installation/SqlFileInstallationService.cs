@@ -22,6 +22,7 @@ namespace Nop.Services.Installation
         #region Fields
 
         private readonly IDbContext _dbContext;
+        private readonly IConfigurationDbContext _configurationDbContext;
         private readonly INopFileProvider _fileProvider;
         private readonly IRepository<User> _userRepository;
         private readonly IRepository<Language> _languageRepository;
@@ -32,12 +33,14 @@ namespace Nop.Services.Installation
         #region Ctor
 
         public SqlFileInstallationService(IDbContext dbContext,
+            IConfigurationDbContext configurationDbContext,
             INopFileProvider fileProvider,
             IRepository<User> userRepository,
             IRepository<Language> languageRepository,
             IWebHelper webHelper)
         {
             this._dbContext = dbContext;
+            this._configurationDbContext = configurationDbContext;
             this._fileProvider = fileProvider;
             this._userRepository = userRepository;
             this._languageRepository = languageRepository;
@@ -148,6 +151,7 @@ namespace Nop.Services.Installation
         public virtual void InstallData(string defaultUserEmail,
             string defaultUserPassword, bool installSampleData = true)
         {
+            _configurationDbContext.AddTemporal();
             ExecuteSqlFile(_fileProvider.MapPath(NopInstallationDefaults.RequiredDataPath));
             InstallLocaleResources();
             UpdateDefaultUser(defaultUserEmail, defaultUserPassword);

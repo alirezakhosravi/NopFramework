@@ -67,6 +67,9 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
 
                 //log application start
                 EngineContext.Current.Resolve<ILogger>().Information("Application started", null, null);
+
+                EngineContext.Current.Resolve<IConfigurationDbContext>().AddTemporal();
+                EngineContext.Current.Resolve<ILogger>().Information("Add Temporal", null, null);
             }
 
             return serviceProvider;

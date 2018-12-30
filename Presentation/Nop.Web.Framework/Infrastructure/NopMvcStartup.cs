@@ -29,6 +29,7 @@ namespace Nop.Web.Framework.Infrastructure
 
             //add ignite distributed services
             services.AddNopIgniteDistributedCaching();
+            
         }
 
         /// <summary>

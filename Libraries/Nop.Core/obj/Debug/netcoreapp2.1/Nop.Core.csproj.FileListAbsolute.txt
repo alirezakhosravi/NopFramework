@@ -9,3 +9,14 @@
 /Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.dll
 /Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.pdb
 /Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Core/obj/Debug/netcoreapp2.1/Nop.Core.csprojAssemblyReference.cache
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\bin\Debug\netcoreapp2.1\Nop.Core.deps.json
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\bin\Debug\netcoreapp2.1\Nop.Core.runtimeconfig.json
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\bin\Debug\netcoreapp2.1\Nop.Core.runtimeconfig.dev.json
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\bin\Debug\netcoreapp2.1\Nop.Core.dll
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\bin\Debug\netcoreapp2.1\Nop.Core.pdb
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\obj\Debug\netcoreapp2.1\Nop.Core.csproj.CoreCompileInputs.cache
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\obj\Debug\netcoreapp2.1\Nop.Core.AssemblyInfoInputs.cache
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\obj\Debug\netcoreapp2.1\Nop.Core.AssemblyInfo.cs
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\obj\Debug\netcoreapp2.1\Nop.Core.dll
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\obj\Debug\netcoreapp2.1\Nop.Core.pdb
+C:\Users\alireza\Desktop\NopFramework-master\Libraries\Nop.Core\obj\Debug\netcoreapp2.1\Nop.Core.csprojAssemblyReference.cache

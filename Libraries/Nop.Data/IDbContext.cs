@@ -73,7 +73,7 @@ namespace Nop.Data
         /// </summary>
         /// <returns>The table name with schema.</returns>
         /// <param name="type">Type.</param>
-        string GetTableNameByType(Type type);
+        string GetTableNameByType(Type type, bool sqlType = false);
 
         /// <summary>
         /// Creates a LINQ query for the query type based on a raw SQL query
@@ -82,11 +82,7 @@ namespace Nop.Data
         /// <param name="sql">The raw SQL query</param>
         /// <returns>An IQueryable representing the raw SQL query</returns>
         IList<TQuery> DynamicSqlQuery<TQuery>(string sql, CommandType commandType, params DbParameter[] parameters) where TQuery : class;
-
-        /// <summary>
-        /// Update the database.
-        /// </summary>
-        void UpdateDatabase();
+        
         #endregion
     }
 }

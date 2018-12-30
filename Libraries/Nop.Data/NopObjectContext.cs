@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Nop.Core;
+using Nop.Core.Infrastructure;
 using Nop.Data.Extensions;
 using Nop.Data.Mapping;
 
@@ -14,7 +15,7 @@ namespace Nop.Data
     /// <summary>
     /// Represents base object context
     /// </summary>
-    public partial class NopObjectContext : DbContext, IDbContext
+    public partial class NopObjectContext : DbContext, IDbContext, IConfigurationDbContext
     {
         #region Ctor
 
@@ -168,12 +169,12 @@ namespace Nop.Data
             entityEntry.State = EntityState.Detached;
         }
 
-        public string GetTableNameByType(Type type)
+        public string GetTableNameByType(Type type, bool sqlType = false)
         {
             var tableName = base.Model.FindEntityType(type).Relational().TableName;
             var schema = base.Model.FindEntityType(type).Relational().Schema ?? "dbo";
 
-            return $"{schema}.{tableName}";
+            return sqlType ? $"[{schema}].[{tableName}]" : $"{schema}.{tableName}";
         }
 
         /// <summary>
@@ -224,6 +225,37 @@ namespace Nop.Data
             catch
             {
                 // do noting
+            }
+        }
+
+        public void AddTemporal()
+        {
+            string createSchema = $@"IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'History')
+                            BEGIN
+                                EXEC('CREATE SCHEMA History')
+                            END";
+            ExecuteSqlCommand(createSchema);
+            
+            ITypeFinder _typeFinder = EngineContext.Current.Resolve<ITypeFinder>();
+            var listOfTempralClass = _typeFinder.FindClassesOfType<ITemporal>(_typeFinder.GetAssemblies().Where(e => e.GetName().ToString().ToLower().Contains("nop.core"))).ToList();
+            
+            foreach (var item in listOfTempralClass)
+            {
+                string query = $@"IF NOT EXISTS(SELECT * FROM {this.GetTableNameByType(item, true)}) BEGIN
+                                IF NOT EXISTS(SELECT * FROM   INFORMATION_SCHEMA.COLUMNS WHERE  CONCAT(TABLE_SCHEMA, '.', TABLE_NAME) = '{this.GetTableNameByType(item)}' AND COLUMN_NAME = 'SysStartTime')
+                                BEGIN
+	                                ALTER TABLE {this.GetTableNameByType(item, true)} ADD 
+                                        SysStartTime datetime2(0) GENERATED ALWAYS AS ROW START HIDDEN NOT NULL,
+                                        SysEndTime datetime2(0) GENERATED ALWAYS AS ROW END HIDDEN NOT NULL,
+                                        PERIOD FOR SYSTEM_TIME (SysStartTime, SysEndTime);
+                                END
+                            END";
+
+                ExecuteSqlCommand(query);
+
+                query = $@"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History' AND  TABLE_NAME = '{this.GetTableNameByType(item).Split('.')[1]}') ALTER TABLE {this.GetTableNameByType(item, true)} SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE = history.{this.GetTableNameByType(item, true).Split('.')[1]}));";
+
+                ExecuteSqlCommand(query);
             }
         }
         #endregion

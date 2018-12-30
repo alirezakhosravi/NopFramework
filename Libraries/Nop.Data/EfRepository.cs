@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Nop.Core;
 using Nop.Core.Data;
+using Nop.Data.Extensions;
 
 namespace Nop.Data
 {
@@ -65,7 +66,7 @@ namespace Nop.Data
         {
             return Entities.Find(id);
         }
-
+        
         /// <summary>
         /// Insert entity
         /// </summary>

@@ -68,8 +68,12 @@ namespace Nop.Web.Framework.Infrastructure
             //data layer
             builder.RegisterType<EfDataProviderManager>().As<IDataProviderManager>().InstancePerDependency();
             builder.Register(context => context.Resolve<IDataProviderManager>().DataProvider).As<IDataProvider>().InstancePerDependency();
+
             builder.Register(context => new NopObjectContext(context.Resolve<DbContextOptions<NopObjectContext>>()))
                 .As<IDbContext>().InstancePerLifetimeScope();
+
+            builder.Register(context => new NopObjectContext(context.Resolve<DbContextOptions<NopObjectContext>>()))
+                .As<IConfigurationDbContext>().InstancePerLifetimeScope();
 
             //repositories
             builder.RegisterGeneric(typeof(EfRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();

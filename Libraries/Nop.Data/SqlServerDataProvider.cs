@@ -24,6 +24,7 @@ namespace Nop.Data
         public virtual void InitializeDatabase()
         {
             var context = EngineContext.Current.Resolve<IDbContext>();
+            var contextConfig = EngineContext.Current.Resolve<IConfigurationDbContext>();
 
             //check some of table names to ensure that we have nopCommerce 2.00+ installed
             var tableNamesToValidate = new List<string> { "User" };
@@ -47,7 +48,7 @@ namespace Nop.Data
             //create stored procedures 
             context.ExecuteSqlScriptFromFile(fileProvider.MapPath(NopDataDefaults.SqlServerStoredProceduresFilePath));
 
-            context.UpdateDatabase();
+            contextConfig.UpdateDatabase();
         }
 
         /// <summary>

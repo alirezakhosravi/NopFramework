@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Nop.Core;
 
@@ -333,7 +334,11 @@ namespace Nop.Data.Extensions
                 return objT;
             }).ToList();
         }
-
+        
+        public static IQueryable<T> GetTemporal<T>(this IDbContext context, DateTime date) where T : BaseEntity
+        {
+            return context.EntityFromSql<T>($"SELECT * FROM {context.GetTableNameByType(typeof(T))} FOR SYSTEM_TIME AS OF {{0}}", date.ToUniversalTime());
+        }
         #endregion
     }
 }
