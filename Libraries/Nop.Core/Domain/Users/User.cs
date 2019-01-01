@@ -9,7 +9,7 @@ namespace Nop.Core.Domain.Users
     /// <summary>
     /// Represents a User
     /// </summary>
-    public partial class User : BaseEntity, IChangeTracking
+    public partial class User : BaseEntity
     {
         protected ICollection<UserAddressMapping> _userAddressMappings;
         private ICollection<UserUserRoleMapping> _userUserRoleMappings;
@@ -147,17 +147,5 @@ namespace Nop.Core.Domain.Users
             protected set => _userAddressMappings = value;
         }
         #endregion
-
-        [NotMapped]
-        public string SYS_CHANGE_VERSION { get; set; }
-        [NotMapped]
-        public string SYS_CHANGE_CREATION_VERSION { get; set; }
-        [NotMapped]
-        public string SYS_CHANGE_OPERATION { get; set; }
-        [NotMapped]
-        public string SYS_CHANGE_COLUMNS { get; set; }
-        [NotMapped]
-        public string SYS_CHANGE_CONTEXT { get; set; }
-
     }
 }
