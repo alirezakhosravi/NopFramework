@@ -169,7 +169,7 @@ For Enable Temporal Table, You must set value of ``EnableChangeTracking`` on roo
     public string SYS_CHANGE_CONTEXT { get; set; }
  }
 ```
-If you want to retrieve history if changed data, you must add `` using Nop.Data.Extensions; ``.
+If you want to retrieve history of changed data, you must add `` using Nop.Data.Extensions; ``.
 ```
    public class UserServices : IUserServices
     {
