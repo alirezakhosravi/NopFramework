@@ -46,6 +46,8 @@ namespace Nop.Data
                 configuration.ApplyConfiguration(modelBuilder);
             }
 
+            this.CheckConflict();
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -217,6 +219,9 @@ namespace Nop.Data
             }
         }
 
+        /// <summary>
+        /// Update the database.
+        /// </summary>
         public void UpdateDatabase()
         {
             try
@@ -229,6 +234,9 @@ namespace Nop.Data
             }
         }
 
+        /// <summary>
+        /// create temporal table
+        /// </summary>
         public void AddTemporal()
         {
             string createSchema = $@"IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'History')
@@ -282,6 +290,23 @@ namespace Nop.Data
             {
                 query = $@"IF NOT EXISTS (SELECT * FROM sys.change_tracking_tables WHERE object_id = OBJECT_ID('{this.GetTableNameByType(item)}')) ALTER TABLE {this.GetTableNameByType(item, true)} ENABLE CHANGE_TRACKING WITH (TRACK_COLUMNS_UPDATED = ON)";
                 ExecuteSqlCommand(query);
+            }
+        }
+
+        /// <summary>
+        /// check conflict between change traking and temporal table
+        /// </summary>
+        public void CheckConflict()
+        {
+            ITypeFinder _typeFinder = EngineContext.Current.Resolve<ITypeFinder>();
+            var listOfChangeTraking = _typeFinder.FindClassesOfType<IChangeTracking>(_typeFinder.GetAssemblies().Where(e => e.GetName().ToString().ToLower().Contains("nop.core"))).ToList();
+            
+            foreach(var item in listOfChangeTraking)
+            {
+                if(item.GetInterface(nameof(ITemporal)) != null)
+                {
+                    throw new Exception($"The {item.Name} in {item.Namespace} namespace has both of interface ITemporal and IChangeTracking");
+                }
             }
         }
         #endregion

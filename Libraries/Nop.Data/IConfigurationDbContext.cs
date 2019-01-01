@@ -18,5 +18,10 @@ namespace Nop.Data
         /// create change traking
         /// </summary>
         void AddChangeTracking(NopConfig config);
+
+        /// <summary>
+        /// check conflict between change traking and temporal table
+        /// </summary>
+        void CheckConflict();
     }
 }

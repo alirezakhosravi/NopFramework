@@ -14485,11 +14485,11 @@
   "project": {
     "version": "4.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Presentation\\Nop.Web\\Nop.Web.csproj",
+      "projectUniqueName": "\\\\Mac\\Public\\NopFramework-master\\Presentation\\Nop.Web\\Nop.Web.csproj",
       "projectName": "Nop.Web",
-      "projectPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Presentation\\Nop.Web\\Nop.Web.csproj",
+      "projectPath": "\\\\Mac\\Public\\NopFramework-master\\Presentation\\Nop.Web\\Nop.Web.csproj",
       "packagesPath": "C:\\Users\\alireza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Presentation\\Nop.Web\\obj\\",
+      "outputPath": "\\\\Mac\\Public\\NopFramework-master\\Presentation\\Nop.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14508,17 +14508,17 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-              "projectPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj"
+            "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+              "projectPath": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj"
             },
-            "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-              "projectPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Data\\Nop.Data.csproj"
+            "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+              "projectPath": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Data\\Nop.Data.csproj"
             },
-            "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-              "projectPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Services\\Nop.Services.csproj"
+            "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+              "projectPath": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Services\\Nop.Services.csproj"
             },
-            "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-              "projectPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+            "\\\\Mac\\Public\\NopFramework-master\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+              "projectPath": "\\\\Mac\\Public\\NopFramework-master\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
             }
           }
         }

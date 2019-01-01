@@ -12896,11 +12896,11 @@
   "project": {
     "version": "4.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj",
+      "projectUniqueName": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj",
       "projectName": "Nop.Core",
-      "projectPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj",
+      "projectPath": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj",
       "packagesPath": "C:\\Users\\alireza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Core\\obj\\",
+      "outputPath": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -68,12 +68,10 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
                 //log application start
                 EngineContext.Current.Resolve<ILogger>().Information("Application started", null, null);
 
-                EngineContext.Current.Resolve<IConfigurationDbContext>().AddTemporal();
-                EngineContext.Current.Resolve<ILogger>().Information("Add Temporal", null, null);
-
-                EngineContext.Current.Resolve<IConfigurationDbContext>().AddChangeTracking(EngineContext.Current.Resolve<NopConfig>());
-                EngineContext.Current.Resolve<ILogger>().Information("Add Change Tracking", null, null);
-
+                IConfigurationDbContext context = EngineContext.Current.Resolve<IConfigurationDbContext>();
+                context.CheckConflict();
+                context.AddTemporal();
+                context.AddChangeTracking(EngineContext.Current.Resolve<NopConfig>());
             }
 
             return serviceProvider;

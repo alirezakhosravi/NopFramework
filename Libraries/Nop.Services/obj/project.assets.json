@@ -14105,11 +14105,11 @@
   "project": {
     "version": "4.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Services\\Nop.Services.csproj",
+      "projectUniqueName": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Services\\Nop.Services.csproj",
       "projectName": "Nop.Services",
-      "projectPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Services\\Nop.Services.csproj",
+      "projectPath": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Services\\Nop.Services.csproj",
       "packagesPath": "C:\\Users\\alireza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Services\\obj\\",
+      "outputPath": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14128,11 +14128,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-              "projectPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj"
+            "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+              "projectPath": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Core\\Nop.Core.csproj"
             },
-            "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-              "projectPath": "C:\\Users\\alireza\\Desktop\\NopFramework-master\\Libraries\\Nop.Data\\Nop.Data.csproj"
+            "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+              "projectPath": "\\\\Mac\\Public\\NopFramework-master\\Libraries\\Nop.Data\\Nop.Data.csproj"
             }
           }
         }
