@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Nop.Core;
+using Nop.Core.Configuration;
 using Nop.Core.Infrastructure;
 using Nop.Data.Extensions;
 using Nop.Data.Mapping;
@@ -255,6 +256,31 @@ namespace Nop.Data
 
                 query = $@"IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History' AND  TABLE_NAME = '{this.GetTableNameByType(item).Split('.')[1]}') ALTER TABLE {this.GetTableNameByType(item, true)} SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE = history.{this.GetTableNameByType(item, true).Split('.')[1]}));";
 
+                ExecuteSqlCommand(query);
+            }
+        }
+
+        /// <summary>
+        /// create change traking
+        /// </summary>
+        public void AddChangeTracking(NopConfig config)
+        {
+            if (!config.EnableChangeTracking)
+            {
+                return;
+            }
+
+            string query = $@"IF NOT EXISTS (SELECT * FROM sys.change_tracking_databases WHERE database_id=DB_ID(DB_NAME())) BEGIN
+	                            ALTER DATABASE CURRENT SET CHANGE_TRACKING = ON (CHANGE_RETENTION = {config.ChangeRetention} DAYS, AUTO_CLEANUP = ON)
+                            END";
+            ExecuteSqlCommand(query, doNotEnsureTransaction: true);
+
+            ITypeFinder _typeFinder = EngineContext.Current.Resolve<ITypeFinder>();
+            var listOfTempralClass = _typeFinder.FindClassesOfType<IChangeTracking>(_typeFinder.GetAssemblies().Where(e => e.GetName().ToString().ToLower().Contains("nop.core"))).ToList();
+
+            foreach (var item in listOfTempralClass)
+            {
+                query = $@"IF NOT EXISTS (SELECT * FROM sys.change_tracking_tables WHERE object_id = OBJECT_ID('{this.GetTableNameByType(item)}')) ALTER TABLE {this.GetTableNameByType(item, true)} ENABLE CHANGE_TRACKING WITH (TRACK_COLUMNS_UPDATED = ON)";
                 ExecuteSqlCommand(query);
             }
         }

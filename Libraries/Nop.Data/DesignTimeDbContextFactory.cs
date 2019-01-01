@@ -29,7 +29,7 @@ namespace Nop.Data
             if (string.IsNullOrEmpty(connection))
             {
                 //this connection string used when programmer need forec start migration as design time
-                connection = "Data Source=localhost;Initial Catalog=nopFramework;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123qweRt";
+                connection = "Data Source=10.1.11.102,1433;Initial Catalog=NopFramework;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123qweRt";
             }
 
             var optionsBuilder = new DbContextOptionsBuilder<NopObjectContext>();

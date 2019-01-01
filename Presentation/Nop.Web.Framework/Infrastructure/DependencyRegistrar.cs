@@ -94,6 +94,14 @@ namespace Nop.Web.Framework.Infrastructure
                     .SingleInstance();
                 builder.RegisterType<RedisCacheManager>().As<IStaticCacheManager>().InstancePerLifetimeScope();
             }
+            else if(config.IgniteCachingEnabled)
+            {
+                builder.RegisterType<IgniteConnectionWrapper>()
+                    .As<ILocker>()
+                    .As<IRedisConnectionWrapper>()
+                    .SingleInstance();
+                builder.RegisterType<IgniteCacheManager>().As<IStaticCacheManager>().InstancePerLifetimeScope();
+            }
             else
             {
                 builder.RegisterType<MemoryCacheManager>()

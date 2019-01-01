@@ -70,6 +70,10 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
 
                 EngineContext.Current.Resolve<IConfigurationDbContext>().AddTemporal();
                 EngineContext.Current.Resolve<ILogger>().Information("Add Temporal", null, null);
+
+                EngineContext.Current.Resolve<IConfigurationDbContext>().AddChangeTracking(EngineContext.Current.Resolve<NopConfig>());
+                EngineContext.Current.Resolve<ILogger>().Information("Add Change Tracking", null, null);
+
             }
 
             return serviceProvider;

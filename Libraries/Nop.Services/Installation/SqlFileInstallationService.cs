@@ -11,6 +11,7 @@ using Nop.Core.Infrastructure;
 using Nop.Data;
 using Nop.Services.Users;
 using Nop.Services.Localization;
+using Nop.Core.Configuration;
 
 namespace Nop.Services.Installation
 {
@@ -27,7 +28,7 @@ namespace Nop.Services.Installation
         private readonly IRepository<User> _userRepository;
         private readonly IRepository<Language> _languageRepository;
         private readonly IWebHelper _webHelper;
-
+        private readonly NopConfig _nopConfig;
         #endregion
 
         #region Ctor
@@ -37,7 +38,8 @@ namespace Nop.Services.Installation
             INopFileProvider fileProvider,
             IRepository<User> userRepository,
             IRepository<Language> languageRepository,
-            IWebHelper webHelper)
+            IWebHelper webHelper,
+            NopConfig nopConfig)
         {
             this._dbContext = dbContext;
             this._configurationDbContext = configurationDbContext;
@@ -45,6 +47,7 @@ namespace Nop.Services.Installation
             this._userRepository = userRepository;
             this._languageRepository = languageRepository;
             this._webHelper = webHelper;
+            this._nopConfig = nopConfig;
         }
 
         #endregion
@@ -152,6 +155,7 @@ namespace Nop.Services.Installation
             string defaultUserPassword, bool installSampleData = true)
         {
             _configurationDbContext.AddTemporal();
+            _configurationDbContext.AddChangeTracking(_nopConfig);
             ExecuteSqlFile(_fileProvider.MapPath(NopInstallationDefaults.RequiredDataPath));
             InstallLocaleResources();
             UpdateDefaultUser(defaultUserEmail, defaultUserPassword);

@@ -160,7 +160,7 @@ namespace Nop.Data.Extensions
             //try to get the EF database context
             if (!(context is DbContext dbContext))
                 throw new InvalidOperationException("Context does not support operation");
-            
+
             var entityTypeFullName = typeof(TEntity).FullName;
             if (!tableNames.ContainsKey(entityTypeFullName))
             {
@@ -198,7 +198,7 @@ namespace Nop.Data.Extensions
                 var entityType = dbContext.Model.FindEntityType(typeof(TEntity));
 
                 //get property name - max length pairs
-                columnsMaxLength.TryAdd(entityTypeFullName, 
+                columnsMaxLength.TryAdd(entityTypeFullName,
                     entityType.GetProperties().Select(property => (property.Name, property.GetMaxLength())));
             }
 
@@ -239,7 +239,7 @@ namespace Nop.Data.Extensions
                     if (!mapping.Precision.HasValue || !mapping.Scale.HasValue)
                         return (property.Name, null);
 
-                    return (property.Name, new decimal?((decimal) Math.Pow(10, mapping.Precision.Value - mapping.Scale.Value)));
+                    return (property.Name, new decimal?((decimal)Math.Pow(10, mapping.Precision.Value - mapping.Scale.Value)));
                 }));
             }
 
@@ -262,7 +262,7 @@ namespace Nop.Data.Extensions
             if (!(context is DbContext dbContext))
                 throw new InvalidOperationException("Context does not support operation");
 
-            if (!string.IsNullOrEmpty(databaseName)) 
+            if (!string.IsNullOrEmpty(databaseName))
                 return databaseName;
 
             //get database connection
@@ -320,13 +320,16 @@ namespace Nop.Data.Extensions
                 {
                     if (columnNames.Contains(pro.Name))
                     {
-                        if (pro.PropertyType.Name == typeof(string).Name)
+                        if (row[pro.Name] != DBNull.Value)
                         {
-                            pro.SetValue(objT, row[pro.Name].ToString());
-                        }
-                        else
-                        {
-                            pro.SetValue(objT, row[pro.Name]);
+                            if (pro.PropertyType.Name == typeof(string).Name)
+                            {
+                                pro.SetValue(objT, row[pro.Name].ToString());
+                            }
+                            else
+                            {
+                                pro.SetValue(objT, row[pro.Name]);
+                            }
                         }
                     }
                 }
@@ -334,7 +337,7 @@ namespace Nop.Data.Extensions
                 return objT;
             }).ToList();
         }
-        
+
         public static IQueryable<T> GetTemporal<T>(this IDbContext context, DateTime date) where T : BaseEntity
         {
             return context.EntityFromSql<T>($"SELECT * FROM {context.GetTableNameByType(typeof(T))} FOR SYSTEM_TIME AS OF {{0}}", date.ToUniversalTime());

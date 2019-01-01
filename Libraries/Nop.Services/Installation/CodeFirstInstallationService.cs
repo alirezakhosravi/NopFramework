@@ -24,6 +24,7 @@ using Nop.Services.Helpers;
 using Nop.Services.Localization;
 using Nop.Services.Seo;
 using Nop.Data;
+using Nop.Core.Configuration;
 
 namespace Nop.Services.Installation
 {
@@ -53,6 +54,7 @@ namespace Nop.Services.Installation
         private readonly IRepository<UrlRecord> _urlRecordRepository;
         private readonly IRepository<UserUserRoleMapping> _userUserRoleMapping;
         private readonly IWebHelper _webHelper;
+        private readonly NopConfig _nopConfig;
 
         #endregion
 
@@ -76,7 +78,8 @@ namespace Nop.Services.Installation
             IRepository<StateProvince> stateProvinceRepository,
             IRepository<UrlRecord> urlRecordRepository,
             IRepository<UserUserRoleMapping> userUserRoleMapping,
-            IWebHelper webHelper)
+            IWebHelper webHelper,
+            NopConfig nopConfig)
         {
             this._genericAttributeService = genericAttributeService;
             this._configurationDbContext = configurationDbContext;
@@ -97,6 +100,7 @@ namespace Nop.Services.Installation
             this._urlRecordRepository = urlRecordRepository;
             this._userUserRoleMapping = userUserRoleMapping;
             this._webHelper = webHelper;
+            this._nopConfig = nopConfig;
         }
 
         #endregion
@@ -4066,6 +4070,7 @@ namespace Nop.Services.Installation
             string defaultUserPassword, bool installSampleData = true)
         {
             _configurationDbContext.AddTemporal();
+            _configurationDbContext.AddChangeTracking(_nopConfig);
             InstallLanguages();
             InstallCountriesAndStates();
             InstallEmailAccounts();

@@ -8,7 +8,7 @@ namespace Nop.Data.Mapping.Common
     /// <summary>
     /// Represents an address attribute mapping configuration
     /// </summary>
-    public partial class AddressAttributeMap : NopEntityTypeConfiguration<AddressAttribute>
+    public partial class ChangeTrackingMap : NopEntityTypeConfiguration<AddressAttribute>
     {
         #region Methods
 

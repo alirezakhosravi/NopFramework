@@ -28,5 +28,14 @@ namespace Nop.Data.Extensions
             date = (date.HasValue) ? date : DateTime.Now;
             return repository.Table.FromSql($"SELECT * FROM {EngineContext.Current.Resolve<IDbContext>().GetTableNameByType(typeof(TEntity), true)} FOR SYSTEM_TIME AS OF {{0}}", date.Value.ToUniversalTime().ToString("MM/dd/yyyy hh:mm:ss")).First(e => e.Id == int.Parse(id.ToString()));
         }
+
+        /// <summary>
+        /// Gets list of change
+        /// </summary>
+        public static IQueryable<TEntity> ChangeTraking<TEntity>(this IRepository<TEntity> repository) where TEntity : BaseEntity, IChangeTracking
+        {
+            var query = $@"SELECT SYS_CHANGE_VERSION, SYS_CHANGE_CREATION_VERSION, SYS_CHANGE_OPERATION, SYS_CHANGE_COLUMNS, SYS_CHANGE_CONTEXT, J.* FROM CHANGETABLE (CHANGES {EngineContext.Current.Resolve<IDbContext>().GetTableNameByType(typeof(TEntity), true)}, null) CT INNER JOIN {EngineContext.Current.Resolve<IDbContext>().GetTableNameByType(typeof(TEntity), true)} J ON J.Id = CT.Id";
+            return EngineContext.Current.Resolve<IDbContext>().DynamicSqlQuery<TEntity>(query, System.Data.CommandType.Text).AsQueryable();
+        }
     }
 }

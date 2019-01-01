@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using Nop.Core.Domain.Common;
 
@@ -8,7 +9,7 @@ namespace Nop.Core.Domain.Users
     /// <summary>
     /// Represents a User
     /// </summary>
-    public partial class User : BaseEntity
+    public partial class User : BaseEntity, IChangeTracking
     {
         protected ICollection<UserAddressMapping> _userAddressMappings;
         private ICollection<UserUserRoleMapping> _userUserRoleMappings;
@@ -145,7 +146,18 @@ namespace Nop.Core.Domain.Users
             get => _userAddressMappings ?? (_userAddressMappings = new List<UserAddressMapping>());
             protected set => _userAddressMappings = value;
         }
-
         #endregion
+
+        [NotMapped]
+        public string SYS_CHANGE_VERSION { get; set; }
+        [NotMapped]
+        public string SYS_CHANGE_CREATION_VERSION { get; set; }
+        [NotMapped]
+        public string SYS_CHANGE_OPERATION { get; set; }
+        [NotMapped]
+        public string SYS_CHANGE_COLUMNS { get; set; }
+        [NotMapped]
+        public string SYS_CHANGE_CONTEXT { get; set; }
+
     }
 }

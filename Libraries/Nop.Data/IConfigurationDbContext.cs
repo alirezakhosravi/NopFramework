@@ -1,4 +1,6 @@
-﻿namespace Nop.Data
+﻿using Nop.Core.Configuration;
+
+namespace Nop.Data
 {
     public interface IConfigurationDbContext
     {
@@ -11,5 +13,10 @@
         /// create temporal table
         /// </summary>
         void AddTemporal();
+
+        /// <summary>
+        /// create change traking
+        /// </summary>
+        void AddChangeTracking(NopConfig config);
     }
 }

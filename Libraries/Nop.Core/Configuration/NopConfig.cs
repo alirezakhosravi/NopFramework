@@ -108,5 +108,15 @@ namespace Nop.Core.Configuration
         /// Gets or sets a value indicating whether the data protection system should be configured to persist keys in the Redis database
         /// </summary>
         public bool PersistenceEnabledToIgnite { get; set; }
+
+        /// <summary>
+        /// Gets or Sets a value to enable change traking
+        /// </summary>
+        public bool EnableChangeTracking { get; set; }
+
+        /// <summary>
+        /// Gets or Sets a value to change retention (days)
+        /// </summary>
+        public int ChangeRetention { get; set; }
     }
 }
