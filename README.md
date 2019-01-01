@@ -150,3 +150,39 @@ If you want to retrieve data at specific time, you must add `` using Nop.Data.Ex
         }
     }
 ```
+
+### Enable Change Traking for entity
+For Enable Temporal Table, You must set value of ``EnableChangeTracking`` on root of Nop.Web is true, and your entity must implemented ``IChangeTraking`` interface.
+```
+ public partial class User : BaseEntity, IChangeTracking
+ {
+    ...
+    [NotMapped]
+    public string SYS_CHANGE_VERSION { get; set; }
+    [NotMapped]
+    public string SYS_CHANGE_CREATION_VERSION { get; set; }
+    [NotMapped]
+    public string SYS_CHANGE_OPERATION { get; set; }
+    [NotMapped]
+    public string SYS_CHANGE_COLUMNS { get; set; }
+    [NotMapped]
+    public string SYS_CHANGE_CONTEXT { get; set; }
+ }
+```
+If you want to retrieve history if changed data, you must add `` using Nop.Data.Extensions; ``.
+```
+   public class UserServices : IUserServices
+    {
+        private readonly IRepository<User> _user;
+        
+        public UserServices(IRepository<User> user)
+        {
+            this._user = user;
+        }
+        
+        public List<User> GetHistory()
+        {
+            return _user.ChangeTraking().ToList();
+        }
+    } 
+```
