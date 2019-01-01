@@ -186,3 +186,4 @@ If you want to retrieve history of data, you must add `` using Nop.Data.Extensio
         }
     } 
 ```
+By default, removed history after 10 days, if you want changing this time, you must changed the ``ChangeRetention`` attribute in ``appsettings.json`` on root directory of ``Nop.Web``.
