@@ -1,9 +1,41 @@
 ﻿<Properties StartupConfiguration="{4AEEB09F-FD79-4902-8FF0-78800C509CEC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Libraries/Nop.Services/Configuration/SettingService.cs">
+    <Files>
+      <File FileName="Libraries/Nop.Core/Caching/MemoryCacheManager.cs" Line="61" Column="30" />
+      <File FileName="Presentation/Nop.Web.Framework/Infrastructure/Extensions/ServiceCollectionExtensions.cs" Line="339" Column="110" />
+      <File FileName="Presentation/Nop.Web.Framework/Infrastructure/NopCommonStartup.cs" Line="28" Column="37" />
+      <File FileName="Libraries/Nop.Services/Configuration/SettingService.cs" Line="102" Column="28" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="NopFramework" expanded="True" />
+          <Node name="NopFramework" expanded="True">
+            <Node name="Libraries" expanded="True">
+              <Node name="Nop.Core" expanded="True">
+                <Node name="Caching" expanded="True" />
+              </Node>
+              <Node name="Nop.Services" expanded="True">
+                <Node name="Configuration" expanded="True">
+                  <Node name="SettingService.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Presentation" expanded="True">
+              <Node name="Nop.Web" expanded="True">
+                <Node name="App_Data" expanded="True" />
+                <Node name="Areas" expanded="True">
+                  <Node name="Admin" expanded="True">
+                    <Node name="Controllers" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Nop.Web.Framework" expanded="True">
+                <Node name="Infrastructure" expanded="True">
+                  <Node name="Extensions" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
