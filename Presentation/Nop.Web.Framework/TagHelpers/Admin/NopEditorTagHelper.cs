@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
+using Microsoft.AspNetCore.Mvc.ViewFeatures.Buffers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Nop.Core;
 using Nop.Web.Framework.Extensions;
@@ -137,19 +137,19 @@ namespace Nop.Web.Framework.TagHelpers.Admin
             //just ensure that they are not renamed by asp.net core team in future versions
             var viewEngine = CommonHelper.GetPrivateFieldValue(_htmlHelper, "_viewEngine") as IViewEngine;
             var bufferScope = CommonHelper.GetPrivateFieldValue(_htmlHelper, "_bufferScope") as IViewBufferScope;
-            var templateBuilder = new TemplateBuilder(
-                viewEngine,
-                bufferScope,
-                _htmlHelper.ViewContext,
-                _htmlHelper.ViewData,
-                For.ModelExplorer,
-                For.Name,
-                Template,
-                readOnly: false,
-                additionalViewData: new { htmlAttributes, postfix = this.Postfix });
+            //var templateBuilder = new TemplateBuilder(
+            //    viewEngine,
+            //    bufferScope,
+            //    _htmlHelper.ViewContext,
+            //    _htmlHelper.ViewData,
+            //    For.ModelExplorer,
+            //    For.Name,
+            //    Template,
+            //    readOnly: false,
+            //    additionalViewData: new { htmlAttributes, postfix = this.Postfix });
 
-            var htmlOutput = templateBuilder.Build();
-            output.Content.SetHtmlContent(htmlOutput.RenderHtmlContent());
+            //var htmlOutput = templateBuilder.Build();
+            //output.Content.SetHtmlContent(htmlOutput.RenderHtmlContent());
         }
     }
 }

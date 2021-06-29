@@ -15,7 +15,8 @@ namespace Nop.Data.Extensions
         public static IQueryable<TEntity> TemporalTable<TEntity>(this IRepository<TEntity> repository, DateTime? date = null) where TEntity : BaseEntity, ITemporal
         {
             date = (date.HasValue) ? date : DateTime.Now;
-            return repository.Table.FromSql($"SELECT * FROM {EngineContext.Current.Resolve<IDbContext>().GetTableNameByType(typeof(TEntity), true)} FOR SYSTEM_TIME AS OF {{0}}", date.Value.ToUniversalTime().ToString("MM/dd/yyyy hh:mm:ss"));
+            var query = $@"SELECT * FROM {EngineContext.Current.Resolve<IDbContext>().GetTableNameByType(typeof(TEntity), true)} FOR SYSTEM_TIME AS OF '{date.Value.ToUniversalTime().ToString("MM/dd/yyyy hh:mm:ss")}'";
+            return EngineContext.Current.Resolve<IDbContext>().QueryFromSql<TEntity>(query);
         }
 
         /// <summary>
@@ -26,7 +27,8 @@ namespace Nop.Data.Extensions
         public static TEntity GetTemporalById<TEntity>(this IRepository<TEntity> repository, object id, DateTime? date = null) where TEntity : BaseEntity, ITemporal
         {
             date = (date.HasValue) ? date : DateTime.Now;
-            return repository.Table.FromSql($"SELECT * FROM {EngineContext.Current.Resolve<IDbContext>().GetTableNameByType(typeof(TEntity), true)} FOR SYSTEM_TIME AS OF {{0}}", date.Value.ToUniversalTime().ToString("MM/dd/yyyy hh:mm:ss")).First(e => e.Id == int.Parse(id.ToString()));
+            var query = $@"SELECT * FROM {EngineContext.Current.Resolve<IDbContext>().GetTableNameByType(typeof(TEntity), true)} FOR SYSTEM_TIME AS OF '{date.Value.ToUniversalTime().ToString("MM/dd/yyyy hh:mm:ss")}'";
+            return EngineContext.Current.Resolve<IDbContext>().DynamicSqlQuery<TEntity>(query, System.Data.CommandType.Text).FirstOrDefault(e => e.Id == int.Parse(id.ToString()));
         }
 
         /// <summary>

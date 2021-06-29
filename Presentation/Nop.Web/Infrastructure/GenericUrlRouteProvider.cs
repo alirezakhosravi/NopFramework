@@ -16,13 +16,13 @@ namespace Nop.Web.Infrastructure
         /// Register routes
         /// </summary>
         /// <param name="routeBuilder">Route builder</param>
-        public void RegisterRoutes(IRouteBuilder routeBuilder)
+        public void RegisterRoutes(IEndpointRouteBuilder routeBuilder)
         {
             //and default one
-            routeBuilder.MapRoute("Default", "{controller}/{action}/{id?}");
+            routeBuilder.MapControllerRoute("Default", "{controller}/{action}/{id?}");
 
             //generic URLs
-            routeBuilder.MapGenericPathRoute("GenericUrl", "{GenericSeName}",
+            routeBuilder.MapControllerRoute("GenericUrl", "{GenericSeName}",
                 new { controller = "Common", action = "GenericUrl" });
         }
 

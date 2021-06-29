@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Principal;
 using System.Threading;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Nop.Core;
 using Nop.Core.Caching;
 using Nop.Core.Configuration;
@@ -15,12 +15,9 @@ using Nop.Core.Plugins;
 using Nop.Services.Installation;
 using Nop.Services.Plugins;
 using Nop.Services.Security;
-using Nop.Services.Themes;
 using Nop.Web.Framework.Security;
-using Nop.Web.Framework.Themes;
 using Nop.Web.Infrastructure.Installation;
 using Nop.Web.Models.Install;
-using Microsoft.Extensions.Caching.Distributed;
 
 namespace Nop.Web.Controllers
 {

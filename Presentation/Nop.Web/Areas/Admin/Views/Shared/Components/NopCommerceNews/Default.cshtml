@@ -1,4 +1,4 @@
-﻿@model NopCommerceNewsModel
+﻿@*@model NopCommerceNewsModel
 @inject IWorkContext workContext
 
 @using Nop.Core
@@ -47,9 +47,9 @@
                             else
                             {
                                 <div class="pull-left">@item.Title</div>
-                            }
+                            }*@
                             @*<div class="pull-right">@item.PublishDate.ToString("d")</div>*@
-                        </div>
+                        @*</div>
                         <div class="panel-body">
                             @Html.Raw(item.Summary)
                         </div>
@@ -67,4 +67,4 @@
             });
         </script>
     </div>
-</div>
+</div>*@

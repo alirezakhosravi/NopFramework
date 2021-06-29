@@ -37,8 +37,7 @@ namespace Nop.Data
             //dynamically load all entity and query type configurations
             var typeConfigurations = Assembly.GetExecutingAssembly().GetTypes().Where(type =>
                 (type.BaseType?.IsGenericType ?? false)
-                    && (type.BaseType.GetGenericTypeDefinition() == typeof(NopEntityTypeConfiguration<>)
-                        || type.BaseType.GetGenericTypeDefinition() == typeof(NopQueryTypeConfiguration<>)));
+                    && (type.BaseType.GetGenericTypeDefinition() == typeof(NopEntityTypeConfiguration<>)));
 
             foreach (var typeConfiguration in typeConfigurations)
             {
@@ -46,7 +45,7 @@ namespace Nop.Data
                 configuration.ApplyConfiguration(modelBuilder);
             }
 
-            this.CheckConflict();
+            //this.CheckConflict();
 
             base.OnModelCreating(modelBuilder);
         }
@@ -106,7 +105,7 @@ namespace Nop.Data
         /// <returns>An IQueryable representing the raw SQL query</returns>
         public virtual IQueryable<TQuery> QueryFromSql<TQuery>(string sql) where TQuery : class
         {
-            return this.Query<TQuery>().FromSql(sql);
+            return base.Set<TQuery>().FromSqlRaw(sql);
         }
 
         /// <summary>
@@ -118,7 +117,7 @@ namespace Nop.Data
         /// <returns>An IQueryable representing the raw SQL query</returns>
         public virtual IQueryable<TEntity> EntityFromSql<TEntity>(string sql, params object[] parameters) where TEntity : BaseEntity
         {
-            return this.Set<TEntity>().FromSql(CreateSqlWithParameters(sql, parameters), parameters);
+            return this.Set<TEntity>().FromSqlRaw(CreateSqlWithParameters(sql, parameters), parameters);
         }
 
         /// <summary>
@@ -129,7 +128,7 @@ namespace Nop.Data
         /// <param name="timeout">The timeout to use for command. Note that the command timeout is distinct from the connection timeout, which is commonly set on the database connection string</param>
         /// <param name="parameters">Parameters to use with the SQL</param>
         /// <returns>The number of rows affected</returns>
-        public virtual int ExecuteSqlCommand(RawSqlString sql, bool doNotEnsureTransaction = false, int? timeout = null, params object[] parameters)
+        public virtual int ExecuteSqlCommand(string sql, bool doNotEnsureTransaction = false, int? timeout = null, params object[] parameters)
         {
             //set specific command timeout
             var previousTimeout = this.Database.GetCommandTimeout();
@@ -141,12 +140,12 @@ namespace Nop.Data
                 //use with transaction
                 using (var transaction = this.Database.BeginTransaction())
                 {
-                    result = this.Database.ExecuteSqlCommand(sql, parameters);
+                    result = this.Database.ExecuteSqlRaw(sql, parameters);
                     transaction.Commit();
                 }
             }
             else
-                result = this.Database.ExecuteSqlCommand(sql, parameters);
+                result = this.Database.ExecuteSqlRaw(sql, parameters);
 
             //return previous timeout back
             this.Database.SetCommandTimeout(previousTimeout);
@@ -174,8 +173,8 @@ namespace Nop.Data
 
         public string GetTableNameByType(Type type, bool sqlType = false)
         {
-            var tableName = base.Model.FindEntityType(type).Relational().TableName;
-            var schema = base.Model.FindEntityType(type).Relational().Schema ?? "dbo";
+            var tableName = base.Model.FindEntityType(type).GetTableName();
+            var schema = base.Model.FindEntityType(type).GetSchema();
 
             return sqlType ? $"[{schema}].[{tableName}]" : $"{schema}.{tableName}";
         }
@@ -300,10 +299,10 @@ namespace Nop.Data
         {
             ITypeFinder _typeFinder = EngineContext.Current.Resolve<ITypeFinder>();
             var listOfChangeTraking = _typeFinder.FindClassesOfType<IChangeTracking>(_typeFinder.GetAssemblies().Where(e => e.GetName().ToString().ToLower().Contains("nop.core"))).ToList();
-            
-            foreach(var item in listOfChangeTraking)
+
+            foreach (var item in listOfChangeTraking)
             {
-                if(item.GetInterface(nameof(ITemporal)) != null)
+                if (item.GetInterface(nameof(ITemporal)) != null)
                 {
                     throw new Exception($"The {item.Name} in {item.Namespace} namespace has both of interface ITemporal and IChangeTracking");
                 }

@@ -14,7 +14,7 @@ namespace Nop.Web.Areas.Admin.Controllers
 {
     [Area(AreaNames.Admin)]
     [HttpsRequirement(SslRequirement.Yes)]
-    [AdminAntiForgery]
+    [AutoValidateAntiforgeryToken]
     [ValidateIpAddress]
     [AuthorizeAdmin]
     public abstract partial class BaseAdminController : BaseController
@@ -78,9 +78,9 @@ namespace Nop.Web.Areas.Admin.Controllers
         /// <returns>The created object that serializes the specified data to JSON format for the response.</returns>
         public override JsonResult Json(object data)
         {
-            //use IsoDateFormat on writing JSON text to fix issue with dates in KendoUI grid
+            //use IsoDateFormat on writing JSON text to fix issue with dates in grid
             var useIsoDateFormat = EngineContext.Current.Resolve<AdminAreaSettings>()?.UseIsoDateFormatInJsonResult ?? false;
-            var serializerSettings = EngineContext.Current.Resolve<IOptions<MvcJsonOptions>>()?.Value?.SerializerSettings 
+            var serializerSettings = EngineContext.Current.Resolve<IOptions<MvcNewtonsoftJsonOptions>>()?.Value?.SerializerSettings
                 ?? new JsonSerializerSettings();
 
             if (!useIsoDateFormat)

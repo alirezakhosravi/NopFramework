@@ -57,7 +57,8 @@ namespace Nop.Core.Caching
                 // add cancellation token for clear cache
                 .AddExpirationToken(new CancellationChangeToken(_cancellationTokenSource.Token))
                 //add post eviction callback
-                .RegisterPostEvictionCallback(PostEviction);
+                .RegisterPostEvictionCallback(PostEviction)
+                .SetSize(int.MaxValue);
 
             //set cache time
             options.AbsoluteExpirationRelativeToNow = cacheTime;

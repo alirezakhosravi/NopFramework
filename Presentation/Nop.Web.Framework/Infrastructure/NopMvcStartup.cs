@@ -29,7 +29,7 @@ namespace Nop.Web.Framework.Infrastructure
 
             //add ignite distributed services
             services.AddNopIgniteDistributedCaching();
-            
+
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Nop.Web.Framework.Infrastructure
             application.UseMiniProfiler();
 
             //MVC routing
-            application.UseNopMvc();
+            //application.UseNopMvc();
         }
 
         /// <summary>

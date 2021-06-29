@@ -1,9 +1,13 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Nop.Core.Infrastructure;
 using Nop.Web.Framework.Infrastructure.Extensions;
+using Nop.Web.Framework.Mvc.Routing;
 using Nop.Web.Infrastructure.Hubs;
 
 namespace Nop.Web
@@ -13,21 +17,19 @@ namespace Nop.Web
     /// </summary>
     public class Startup
     {
-        #region Properties
+        #region Fields
 
-        /// <summary>
-        /// Get Configuration of the application
-        /// </summary>
-        public IConfiguration Configuration { get; }
+        private readonly IConfiguration _configuration;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
         #endregion
 
         #region Ctor
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
-            //set configuration
-            Configuration = configuration;
+            _configuration = configuration;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         #endregion
@@ -41,7 +43,7 @@ namespace Nop.Web
             services.AddSignalR();
             services.AddSingleton<IUserIdProvider, CustomUserIdProvider>();
 
-            return services.ConfigureApplicationServices(Configuration);
+            return services.ConfigureApplicationServices(_configuration);
         }
 
         /// <summary>
@@ -50,12 +52,21 @@ namespace Nop.Web
         /// <param name="application">Builder for configuring an application's request pipeline</param>
         public void Configure(IApplicationBuilder application)
         {
-            application.UseSignalR(routes =>
-            {
-                routes.MapHub<NotificationHub>("/notificationHub");
-            });
+            application.UseRouting();
 
+            //application.UseSignalR(routes =>
+            //{
+            //    routes.MapHub<NotificationHub>("/notificationHub");
+            //});
+
+            
             application.ConfigureRequestPipeline();
+            application.UseEndpoints(endpoints =>
+            {
+                endpoints.MapHub<NotificationHub>("/notificationHub");
+                //register all routes
+                EngineContext.Current.Resolve<IRoutePublisher>().RegisterRoutes(endpoints);
+            });
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model UserAgreementModel
+﻿@*@model UserAgreementModel
 @{
     Layout = "_ColumnsOne";
 
@@ -31,4 +31,4 @@
             <input type="submit" id="continue-downloading" class="button-1 user-agreement-button" value="@T("Common.Continue")" onclick="setLocation('@Url.RouteUrl("GetDownload", new { orderItemId = Model.OrderItemGuid, agree = true })')" />
         </div>
     </div>
-</div>
+</div>*@

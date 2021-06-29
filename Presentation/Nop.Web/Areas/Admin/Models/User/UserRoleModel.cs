@@ -1,16 +1,11 @@
-﻿using System.Collections.Generic;
-using FluentValidation.Attributes;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Nop.Web.Areas.Admin.Validators.Users;
+﻿using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
-using Nop.Web.Framework.Models;
 
 namespace Nop.Web.Areas.Admin.Models.Users
 {
     /// <summary>
     /// Represents a user role model
     /// </summary>
-    [Validator(typeof(UserRoleValidator))]
     public partial class UserRoleModel : BaseNopEntityModel
     {
         #region Ctor

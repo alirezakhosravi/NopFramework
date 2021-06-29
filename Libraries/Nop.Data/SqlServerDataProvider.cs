@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.SqlClient;
 using System.Linq;
-using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Data.SqlClient;
 using Nop.Core.Data;
 using Nop.Core.Domain.Common;
 using Nop.Core.Infrastructure;
@@ -55,10 +54,7 @@ namespace Nop.Data
         /// Get a support database parameter object (used by stored procedures)
         /// </summary>
         /// <returns>Parameter</returns>
-        public virtual DbParameter GetParameter()
-        {
-            return new SqlParameter();
-        }
+        public virtual DbParameter GetParameter() => new SqlParameter();
 
         #endregion
 

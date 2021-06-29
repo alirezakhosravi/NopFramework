@@ -38,11 +38,15 @@ namespace Nop.Core.Infrastructure
         /// Get IServiceProvider
         /// </summary>
         /// <returns>IServiceProvider</returns>
-        protected IServiceProvider GetServiceProvider()
+        protected IServiceProvider GetServiceProvider(IServiceScope scope = null)
         {
-            var accessor = ServiceProvider.GetService<IHttpContextAccessor>();
-            var context = accessor.HttpContext;
-            return context?.RequestServices ?? ServiceProvider;
+            if (scope == null)
+            {
+                var accessor = ServiceProvider?.GetService<IHttpContextAccessor>();
+                var context = accessor?.HttpContext;
+                return context?.RequestServices ?? ServiceProvider;
+            }
+            return scope.ServiceProvider;
         }
 
         /// <summary>
@@ -146,7 +150,7 @@ namespace Nop.Core.Infrastructure
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             var provider = services.BuildServiceProvider();
-            var hostingEnvironment = provider.GetRequiredService<IHostingEnvironment>();
+            var hostingEnvironment = provider.GetRequiredService<IWebHostEnvironment>();
             CommonHelper.DefaultFileProvider = new NopFileProvider(hostingEnvironment);
 
             //initialize plugins
@@ -213,6 +217,8 @@ namespace Nop.Core.Infrastructure
         /// <param name="application">Builder for configuring an application's request pipeline</param>
         public void ConfigureRequestPipeline(IApplicationBuilder application)
         {
+            _serviceProvider = application.ApplicationServices;
+
             //find startup configurations provided by other assemblies
             var typeFinder = Resolve<ITypeFinder>();
             var startupConfigurations = typeFinder.FindClassesOfType<INopStartup>();
@@ -235,7 +241,7 @@ namespace Nop.Core.Infrastructure
         /// <returns>Resolved service</returns>
         public T Resolve<T>() where T : class
         {
-            return (T)GetServiceProvider().GetRequiredService(typeof(T));
+            return (T)GetServiceProvider()?.GetRequiredService(typeof(T));
         }
 
         /// <summary>

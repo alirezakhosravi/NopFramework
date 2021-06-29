@@ -1,0 +1,17 @@
+
+*.cache
+Presentation/Nop.Web/obj/*
+Presentation/Nop.Web/obj/*.*
+.vs/NopFramework/xs/project-cache/*
+Libraries/Nop.Core/obj/*
+Libraries/Nop.Core/obj/*.*
+Libraries/Nop.Data/obj/*
+Libraries/Nop.Data/obj/*.*
+Libraries/Nop.Services/obj/*
+Libraries/Nop.Services/obj/*.*
+*.targets
+Presentation/Nop.Web/App_Data/dataSettings.json
+Presentation/Nop.Web.Framework/obj/*
+Presentation/Nop.Web.Framework/obj/*.*
+*.cache
+*.props

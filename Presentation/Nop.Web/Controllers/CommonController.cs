@@ -133,7 +133,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost, ActionName("ContactUs")]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         [ValidateCaptcha]
         public virtual IActionResult ContactUsSend(ContactUsModel model, bool captchaValid)
         {

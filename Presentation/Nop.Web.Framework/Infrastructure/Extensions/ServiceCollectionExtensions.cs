@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Linq;
 using FluentValidation.AspNetCore;
+using IgniteCachingDistributed;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json.Serialization;
 using Nop.Core;
 using Nop.Core.Caching;
 using Nop.Core.Configuration;
@@ -24,12 +25,11 @@ using Nop.Services.Authentication.External;
 using Nop.Services.Logging;
 using Nop.Services.Security;
 using Nop.Services.Tasks;
-using Nop.Web.Framework.FluentValidation;
 using Nop.Web.Framework.Mvc.ModelBinding;
 using Nop.Web.Framework.Mvc.Routing;
 using Nop.Web.Framework.Themes;
 using StackExchange.Profiling.Storage;
-using IgniteCachingDistributed;
+using Newtonsoft.Json.Serialization;
 
 namespace Nop.Web.Framework.Infrastructure.Extensions
 {
@@ -251,7 +251,7 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
             var mvcBuilder = services.AddMvc();
 
             //sets the default value of settings on MvcOptions to match the behavior of asp.net core mvc 2.1
-            mvcBuilder.SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            mvcBuilder.SetCompatibilityVersion(CompatibilityVersion.Latest);
 
             var nopConfig = services.BuildServiceProvider().GetRequiredService<NopConfig>();
             if (nopConfig.UseSessionStateTempDataProvider)
@@ -272,8 +272,11 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
                 });
             }
 
+            services.AddRazorPages();
+
             //MVC now serializes JSON with camel case names by default, use this code to avoid it
-            mvcBuilder.AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+            mvcBuilder.AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
 
             //add custom display metadata provider
             mvcBuilder.AddMvcOptions(options => options.ModelMetadataDetailsProviders.Add(new NopMetadataProvider()));
@@ -284,7 +287,13 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
             //add fluent validation
             mvcBuilder.AddFluentValidation(configuration =>
             {
-                configuration.ValidatorFactoryType = typeof(NopValidatorFactory);
+                //register all available validators from Nop assemblies
+                var assemblies = mvcBuilder.PartManager.ApplicationParts
+                    .OfType<AssemblyPart>()
+                    .Where(part => part.Name.StartsWith("Nop", StringComparison.InvariantCultureIgnoreCase))
+                    .Select(part => part.Assembly);
+                configuration.RegisterValidatorsFromAssemblies(assemblies);
+
                 //implicit/automatic validation of child properties
                 configuration.ImplicitlyValidateChildProperties = true;
             });

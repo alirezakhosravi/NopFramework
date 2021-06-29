@@ -1,14 +1,11 @@
-﻿using FluentValidation.Attributes;
-using Nop.Web.Areas.Admin.Validators.Settings;
+﻿using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
-using Nop.Web.Framework.Models;
 
 namespace Nop.Web.Areas.Admin.Models.Settings
 {
     /// <summary>
     /// Represents a setting model
     /// </summary>
-    [Validator(typeof(SettingValidator))]
     public partial class SettingModel : BaseNopEntityModel
     {
         #region Properties

@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using Nop.Core;
@@ -25,7 +26,7 @@ namespace Nop.Web.Areas.Admin.Controllers
     //the original file was \RoxyFileman-1.4.5-net\fileman\asp_net\main.ashx
 
     //do not validate request token (XSRF)
-    [AdminAntiForgery(true)]
+    [IgnoreAntiforgeryToken]
     public class RoxyFilemanController : BaseAdminController
     {
         #region Constants

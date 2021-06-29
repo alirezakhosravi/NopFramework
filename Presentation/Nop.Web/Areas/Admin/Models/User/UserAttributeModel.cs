@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using FluentValidation.Attributes;
-using Nop.Web.Areas.Admin.Validators.Users;
 using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
 
@@ -9,7 +7,6 @@ namespace Nop.Web.Areas.Admin.Models.Users
     /// <summary>
     /// Represents a user attribute model
     /// </summary>
-    [Validator(typeof(UserAttributeValidator))]
     public partial class UserAttributeModel : BaseNopEntityModel, ILocalizedModel<UserAttributeLocalizedModel>
     {
         #region Ctor

@@ -1,15 +1,9 @@
 ﻿using System.Collections.Generic;
-using FluentValidation.Attributes;
-using Nop.Web.Areas.Admin.Validators.Common;
 using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
 
 namespace Nop.Web.Areas.Admin.Models.Common
 {
-    /// <summary>
-    /// Represents an address attribute model
-    /// </summary>
-    [Validator(typeof(AddressAttributeValidator))]
     public partial class AddressAttributeModel : BaseNopEntityModel, ILocalizedModel<AddressAttributeLocalizedModel>
     {
         #region Ctor

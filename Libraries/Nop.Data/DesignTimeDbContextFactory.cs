@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Nop.Core.Data;
@@ -36,7 +35,7 @@ namespace Nop.Data
             try
             {
                 //test connection string
-                var _ = new SqlConnectionStringBuilder(connection);
+                //var _ = new SqlConnectionStringBuilder(connection);
 
                 optionsBuilder
                     .UseSqlServer(connection

@@ -1,16 +1,11 @@
-﻿using System.Collections.Generic;
-using FluentValidation.Attributes;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Nop.Web.Areas.Admin.Validators.Localization;
+﻿using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
-using Nop.Web.Framework.Models;
 
 namespace Nop.Web.Areas.Admin.Models.Localization
 {
     /// <summary>
     /// Represents a language model
     /// </summary>
-    [Validator(typeof(LanguageValidator))]
     public partial class LanguageModel : BaseNopEntityModel
     {
         #region Ctor

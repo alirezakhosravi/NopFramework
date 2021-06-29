@@ -18,13 +18,13 @@ namespace Nop.Web.Infrastructure
         /// Register routes
         /// </summary>
         /// <param name="routeBuilder">Route builder</param>
-        public void RegisterRoutes(IRouteBuilder routeBuilder)
+        public void RegisterRoutes(IEndpointRouteBuilder routeBuilder)
         {
             if (DataSettingsManager.DatabaseIsInstalled && !EngineContext.Current.Resolve<CommonSettings>().SupportPreviousNopcommerceVersions)
                 return;
 
             //all old aspx URLs
-            routeBuilder.MapRoute("", "{oldfilename}.aspx",
+            routeBuilder.MapControllerRoute("", "{oldfilename}.aspx",
                 new { controller = "BackwardCompatibility1X", action = "GeneralRedirect" });
         }
 

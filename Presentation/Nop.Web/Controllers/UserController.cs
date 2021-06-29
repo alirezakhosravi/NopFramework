@@ -167,7 +167,7 @@ namespace Nop.Web.Controllers
 
         [HttpPost]
         [ValidateCaptcha]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         public virtual IActionResult Login(LoginModel model, string returnUrl, bool captchaValid)
         {
             //validate CAPTCHA
@@ -272,7 +272,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost, ActionName("PasswordRecovery")]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         [FormValueRequired("send-email")]
         public virtual IActionResult PasswordRecoverySend(PasswordRecoveryModel model)
         {
@@ -343,7 +343,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost, ActionName("PasswordRecoveryConfirm")]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         [FormValueRequired("set-password")]
         public virtual IActionResult PasswordRecoveryConfirmPOST(string token, string email, PasswordRecoveryConfirmModel model)
         {
@@ -410,7 +410,7 @@ namespace Nop.Web.Controllers
         [HttpPost]
         [ValidateCaptcha]
         [ValidateHoneypot]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         public virtual IActionResult Register(RegisterModel model, string returnUrl, bool captchaValid)
         {
             //check whether registration is allowed
@@ -475,7 +475,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         public virtual IActionResult CheckUsernameAvailability(string username)
         {
             var usernameAvailable = false;
@@ -556,7 +556,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         public virtual IActionResult Info(UserInfoModel model)
         {
             if (!_workContext.CurrentUser.IsRegistered())
@@ -655,7 +655,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         public virtual IActionResult RemoveExternalAssociation(int id)
         {
             if (!_workContext.CurrentUser.IsRegistered())
@@ -734,7 +734,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         [HttpsRequirement(SslRequirement.NoMatter)]
         public virtual IActionResult AddressDelete(int addressId)
         {
@@ -777,7 +777,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         public virtual IActionResult AddressAdd(UserAddressEditModel model)
         {
             if (!_workContext.CurrentUser.IsRegistered())
@@ -845,7 +845,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         public virtual IActionResult AddressEdit(UserAddressEditModel model, int addressId)
         {
             if (!_workContext.CurrentUser.IsRegistered())
@@ -905,7 +905,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         public virtual IActionResult ChangePassword(ChangePasswordModel model)
         {
             if (!_workContext.CurrentUser.IsRegistered())
@@ -952,7 +952,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost, ActionName("Avatar")]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         [FormValueRequired("upload-avatar")]
         public virtual IActionResult UploadAvatar(UserAvatarModel model, IFormFile uploadedFile)
         {
@@ -1006,7 +1006,7 @@ namespace Nop.Web.Controllers
         }
 
         [HttpPost, ActionName("Avatar")]
-        [PublicAntiForgery]
+        [AutoValidateAntiforgeryToken]
         [FormValueRequired("remove-avatar")]
         public virtual IActionResult RemoveAvatar(UserAvatarModel model)
         {

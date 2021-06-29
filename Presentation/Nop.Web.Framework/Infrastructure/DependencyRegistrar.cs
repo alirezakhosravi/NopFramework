@@ -233,7 +233,7 @@ namespace Nop.Web.Framework.Infrastructure
         /// <returns>Registrations</returns>
         public IEnumerable<IComponentRegistration> RegistrationsFor(
             Service service,
-            Func<Service, IEnumerable<IComponentRegistration>> registrations)
+            Func<Service, IEnumerable<ServiceRegistration>> registrations)
         {
             var ts = service as TypedService;
             if (ts != null && typeof(ISettings).IsAssignableFrom(ts.ServiceType))

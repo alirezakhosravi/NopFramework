@@ -1,10 +1,29 @@
-﻿<Properties StartupConfiguration="{4F1F649C-1020-45BE-A487-F416D9297FF3}|Default">
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupConfiguration="{4AEEB09F-FD79-4902-8FF0-78800C509CEC}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NopFramework" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Presentation.Nop.Web PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Presentation.Nop.Web PreferredExecutionTarget="/Applications/Firefox.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/EfRepository.cs" relfile="Libraries/Nop.Data/EfRepository.cs" line="42" column="1" />
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/Extensions/DbContextExtensions.cs" relfile="Libraries/Nop.Data/Extensions/DbContextExtensions.cs" line="43" column="1" />
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/Extensions/DbContextExtensions.cs" relfile="Libraries/Nop.Data/Extensions/DbContextExtensions.cs" line="68" column="1" />
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/Extensions/DbContextExtensions.cs" relfile="Libraries/Nop.Data/Extensions/DbContextExtensions.cs" line="156" column="1" />
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/Extensions/DbContextExtensions.cs" relfile="Libraries/Nop.Data/Extensions/DbContextExtensions.cs" line="186" column="1" />
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/Extensions/DbContextExtensions.cs" relfile="Libraries/Nop.Data/Extensions/DbContextExtensions.cs" line="219" column="1" />
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/Extensions/DbContextExtensions.cs" relfile="Libraries/Nop.Data/Extensions/DbContextExtensions.cs" line="258" column="1" />
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/Extensions/DbContextExtensions.cs" relfile="Libraries/Nop.Data/Extensions/DbContextExtensions.cs" line="284" column="1" />
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/Extensions/DbContextExtensions.cs" relfile="Libraries/Nop.Data/Extensions/DbContextExtensions.cs" line="297" column="1" />
+      <Breakpoint file="/Users/alireza/Documents/GitHub/NopFramework/Libraries/Nop.Data/Extensions/DbContextExtensions.cs" relfile="Libraries/Nop.Data/Extensions/DbContextExtensions.cs" line="342" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

@@ -56,7 +56,7 @@ namespace Nop.Web.Areas.Admin.Controllers
 
         [HttpPost]
         //do not validate request token (XSRF)
-        [AdminAntiForgery(true)]
+        [IgnoreAntiforgeryToken]
         public virtual IActionResult SaveDownloadUrl(string downloadUrl)
         {
             //insert
@@ -74,7 +74,7 @@ namespace Nop.Web.Areas.Admin.Controllers
 
         [HttpPost]
         //do not validate request token (XSRF)
-        [AdminAntiForgery(true)]
+        [IgnoreAntiforgeryToken]
         public virtual IActionResult AsyncUpload()
         {
             var httpPostedFile = Request.Form.Files.FirstOrDefault();

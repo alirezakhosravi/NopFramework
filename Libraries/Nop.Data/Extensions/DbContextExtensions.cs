@@ -168,7 +168,7 @@ namespace Nop.Data.Extensions
                 var entityType = dbContext.Model.FindRuntimeEntityType(typeof(TEntity));
 
                 //get the name of the table to which the entity type is mapped
-                tableNames.TryAdd(entityTypeFullName, entityType.Relational().TableName);
+                tableNames.TryAdd(entityTypeFullName, entityType.GetTableName());
             }
 
             tableNames.TryGetValue(entityTypeFullName, out var tableName);
